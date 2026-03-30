@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Bash(open /Users/andreas/Documents/Git/flowbeaver-marketing/landingpage-waitlist-v2.html)",
+      "Bash(find /Users/andreas/.claude/skills/flowbeaver-marketing -type f -name *.md)",
+      "Read(//Users/andreas/.claude-aai/**)",
+      "Read(//Users/andreas/.claude/plugins/cache/claude-plugins-official/skill-creator/6b70f99f769f/skills/skill-creator/references/**)",
+      "Bash(ls -la /Users/andreas/.claude/skills/flowbeaver-marketing/humanizer-workspace/iteration-1/eval-*/with_skill/outputs/ /Users/andreas/.claude/skills/flowbeaver-marketing/humanizer-workspace/iteration-1/eval-*/without_skill/outputs/)",
+      "Bash(python3 -c \":*)",
+      "Read(//Users/andreas/.claude/plugins/cache/claude-plugins-official/skill-creator/6b70f99f769f/skills/skill-creator/agents/**)",
+      "Read(//Users/andreas/.claude/plugins/cache/claude-plugins-official/skill-creator/6b70f99f769f/skills/skill-creator/**)",
+      "Bash(python3 -m scripts.aggregate_benchmark /Users/andreas/.claude/skills/flowbeaver-marketing/humanizer-workspace/iteration-1 --skill-name humanizer)"
+    ],
+    "additionalDirectories": [
+      "/Users/andreas/.claude/skills/flowbeaver-marketing",
+      "/Users/andreas/Documents/Git/flowbeaver-marketing",
+      "/Users/andreas/.claude/skills/flowbeaver-marketing/humanizer"
+    ]
+  }
+}
