@@ -1,0 +1,13 @@
+# ----------------------------------------
+# Conversions mit Wert
+# Account: Flowbeaver GmbH
+# Property: flowbeaver.de
+# ----------------------------------------
+# 
+# All Users
+# Start date: 20260306
+# End date: 20260402
+Event name,Total users,Key events,Event value
+clicks_buttons,7,25,2.5
+clicks_demo_buchen,5,8,8
+kontakt_formular_allgemein,1,1,100

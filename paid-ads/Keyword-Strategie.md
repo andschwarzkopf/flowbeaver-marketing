@@ -1,6 +1,6 @@
 # Keyword-Strategie Flowbeaver
 
-**Stand:** März 2026 | **Basiert auf:** Google Ads Daten (13. Jan – 10. Mär 2026), GA4 User Acquisition, SEO-Referenz
+**Stand:** April 2026 | **Basiert auf:** Google Ads Daten (13. Jan – 10. Mär 2026), GA4/GSC-Update (19. Mär – 3. Apr 2026), SEO-Referenz
 
 ---
 
@@ -294,6 +294,50 @@ Gesamtes Paid-Search-Budget in einer spitzen Kampagne. Kein Tier-2- oder Tier-3-
 - **Primär:** Organische Impressionen + Klicks für Tier-1-Keywords (Google Search Console)
 - **Sekundär:** Engagement-Zeit auf Blogartikeln (GA4 zeigt 331s für Organic Search -- sehr gut)
 - **Tertiär:** Keyword-Rankings für Tier-1- und Tier-3-Keywords
+
+### Update April 2026: GA4 & GSC-Daten (19.03.–03.04.2026)
+
+#### Traffic nach Quelle/Medium
+
+| Quelle/Medium | Nutzer | Sessions | Bounce Rate | Key Events | Key Event Rate | Avg. Session |
+|----------------|--------|----------|-------------|------------|----------------|--------------|
+| (direct) / (none) | 9 | 12 | 25 % | 2 | 16,7 % | 8:51 Min |
+| google / cpc | 7 | 11 | 45,5 % | 2 | 18,2 % | 15:42 Min |
+| google / organic | 4 | 4 | 0 % | 3 | 50 % | 3:37 Min |
+| chatgpt.com | 1 | 1 | 100 % | 0 | 0 % | — |
+| linkedin.com | 1 | 1 | 100 % | 0 | 0 % | — |
+
+**Erkenntnis:** Organic ist der stärkste Kanal nach Conversion-Rate (50 % Key Event Rate, 0 % Bounce). Google Ads hat hohe Session-Dauer (Nutzer beschäftigen sich intensiv), aber 45 % Bounce Rate — fast jeder zweite Ads-Klick springt sofort ab.
+
+#### Conversion-Trend: Demo-Buchungen rückläufig
+
+| Metrik | 06.03.–02.04. | 19.03.–03.04. | Trend |
+|--------|--------------|--------------|-------|
+| Demo buchen (User) | 5 | 2 | ↓ -60 % |
+| Demo buchen (Events) | 8 | 2 | ↓ -75 % |
+| Button-Klicks (User) | 7 | 5 | ↓ -29 % |
+
+**Handlungsbedarf:** Demo-Conversions brechen ein. Ursache klären — Ads-Budget, Landingpage-Änderung, oder saisonaler Effekt?
+
+#### Landingpage-Performance
+
+| Landingpage | Sessions | Bounce Rate | Key Events | Avg. Engagement |
+|-------------|----------|-------------|------------|-----------------|
+| `/` | 15 | 26,7 % | 4 | 41,8 s |
+| `/ki-belegerkennung` | 13 | 30,8 % | 3 | 80,2 s |
+
+`/ki-belegerkennung` hat deutlich höheres Engagement (80 s vs. 42 s) — bestätigt, dass diese Seite als Ads-Landingpage richtig gewählt ist.
+
+#### SEO-Chance: GSC-Daten
+
+| Seite | Impressions | Clicks | CTR | Avg. Position |
+|-------|------------|--------|-----|---------------|
+| `/` | 17 | 3 | 17,6 % | 2,2 |
+| `/ki-belegerkennung` | 54 | 0 | 0 % | 18,9 |
+| `/ki-workshops` | 40 | 0 | 0 % | 72,0 |
+| `/ki-strategie-workshop` | 26 | 0 | 0 % | 25,1 |
+
+**Größte SEO-Chance:** `/ki-belegerkennung` hat 54 Impressions bei Position ~19 (Seite 2). Mit gezielter On-Page-Optimierung und einem unterstützenden Blogartikel kann diese Seite auf Seite 1 klettern. Die Workshop-Seiten (`/ki-workshops`, `/ki-strategie-workshop`) sind Altlasten vom alten Geschäftsmodell und nicht relevant.
 
 ### Optimierungsrhythmus
 - **Wöchentlich:** Suchbegriff-Bericht prüfen, neue Negative Keywords hinzufügen

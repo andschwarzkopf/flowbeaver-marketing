@@ -10,7 +10,14 @@
       "Bash(python3 -c \":*)",
       "Read(//Users/andreas/.claude/plugins/cache/claude-plugins-official/skill-creator/6b70f99f769f/skills/skill-creator/agents/**)",
       "Read(//Users/andreas/.claude/plugins/cache/claude-plugins-official/skill-creator/6b70f99f769f/skills/skill-creator/**)",
-      "Bash(python3 -m scripts.aggregate_benchmark /Users/andreas/.claude/skills/flowbeaver-marketing/humanizer-workspace/iteration-1 --skill-name humanizer)"
+      "Bash(python3 -m scripts.aggregate_benchmark /Users/andreas/.claude/skills/flowbeaver-marketing/humanizer-workspace/iteration-1 --skill-name humanizer)",
+      "Bash(du -sh /Users/andreas/Documents/Git/flowbeaver-marketing/landingpages/*)",
+      "Bash(grep -E \"\\\\.md$|^d\")",
+      "Read(//Users/andreas/.claude/skills/venue-finder/**)",
+      "Read(//Users/andreas/.claude/skills/**)",
+      "Bash(ls /Users/andreas/Documents/Git/flowbeaver-marketing/assets/*.jpg /Users/andreas/Documents/Git/flowbeaver-marketing/assets/*.png /Users/andreas/Documents/Git/flowbeaver-marketing/assets/*.jpeg)",
+      "Bash(find /Users/andreas/Documents/Git/flowbeaver-marketing -maxdepth 2 -name *.jpg -o -name *.png -o -name *.jpeg)",
+      "Bash(ls -la /Users/andreas/Documents/Git/flowbeaver-marketing/assets/andreas-schwarzkopf.*)"
     ],
     "additionalDirectories": [
       "/Users/andreas/.claude/skills/flowbeaver-marketing",

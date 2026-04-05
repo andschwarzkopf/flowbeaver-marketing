@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Branchenreport 2026: KI in der Buchhaltung | Flowbeaver</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --brand-primary: #1a2b4a;
+      --brand-accent: #e8850c;
+      --brand-accent-muted: #c47a1a;
+      --brand-bg: #ffffff;
+      --brand-text: #2d2d2d;
+      --brand-text-secondary: #555555;
+      --brand-text-tertiary: #888888;
+      --brand-border: #d0d0d0;
+      --brand-border-accent: #1a2b4a;
+      --brand-font: 'Inter', 'Source Sans Pro', system-ui, -apple-system, sans-serif;
+      --page-max-width: 210mm;
+      --page-padding: 20mm;
+      --content-max-width: 680px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--brand-font);
+      color: var(--brand-text);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      background: white;
+    }
+
+    a { color: var(--brand-accent); text-decoration: none; }
+
+    /* --- PRINT --- */
+    @page { size: A4; margin: 13mm 15mm 16mm 20mm; }
+
+    @media print {
+      body { font-size: 10pt; background: white; }
+      .no-print { display: none !important; }
+      a { color: inherit; text-decoration: none; }
+      .page-break { page-break-before: always; }
+      .avoid-break { page-break-inside: avoid; }
+      h1, h2, h3 { page-break-after: avoid; }
+      figure, .stat-callout, .quote-box, .highlight-box, .sidebar-box { page-break-inside: avoid; }
+      .title-page { page-break-after: always; height: 100vh; }
+      .page { padding: 0; box-shadow: none; min-height: auto; margin: 0; max-width: none; }
+    }
+
+    /* --- SCREEN PREVIEW --- */
+    @media screen {
+      body { background: #e8e8e8; padding: 20px 0; }
+      .page {
+        background: white;
+        max-width: var(--page-max-width);
+        margin: 0 auto 20px;
+        padding: 25mm var(--page-padding);
+        box-shadow: 0 1px 8px rgba(0,0,0,0.1);
+        min-height: 297mm;
+      }
+      .title-page {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 297mm;
+      }
+    }
+
+    /* --- TYPOGRAFIE --- */
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--brand-primary);
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--brand-primary);
+      margin-bottom: 20px;
+      margin-top: 56px;
+      padding-bottom: 10px;
+    }
+
+    h2::after {
+      content: "";
+      display: block;
+      width: 40px;
+      height: 1.5px;
+      background: var(--brand-primary);
+      margin-top: 10px;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      line-height: 1.4;
+      color: var(--brand-primary);
+      margin-bottom: 8px;
+      margin-top: 28px;
+    }
+
+    p { margin-bottom: 18px; max-width: var(--content-max-width); }
+
+    .subtitle {
+      font-size: 1.15rem;
+      font-weight: 300;
+      color: var(--brand-text-secondary);
+      line-height: 1.5;
+      margin-bottom: 32px;
+    }
+
+    .small { font-size: 0.8rem; color: var(--brand-text-tertiary); }
+
+    .chapter-number {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--brand-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    strong { font-weight: 600; }
+
+    /* --- TITELSEITE --- */
+    .title-page { text-align: left; padding-top: 80px; padding-bottom: 60px; }
+    .title-page h1 { font-size: 2.8rem; margin-bottom: 16px; letter-spacing: -0.02em; }
+    .title-page .doc-subtitle {
+      font-size: 1.2rem; font-weight: 300; color: var(--brand-text-secondary);
+      max-width: 520px; margin-bottom: 48px; line-height: 1.6;
+    }
+    .title-page .doc-meta { font-size: 0.85rem; color: var(--brand-text-tertiary); line-height: 2; }
+    .title-page .accent-line { width: 40px; height: 1.5px; background: var(--brand-primary); margin-bottom: 28px; }
+    .title-page .brand-logo { font-size: 1.2rem; font-weight: 700; color: var(--brand-primary); letter-spacing: 0.02em; margin-bottom: 80px; }
+    .title-page .headline-stats { display: flex; gap: 32px; margin-top: 48px; }
+    .title-page .headline-stat { }
+    .title-page .headline-stat .hs-number { font-size: 1.8rem; font-weight: 700; color: var(--brand-accent); line-height: 1; }
+    .title-page .headline-stat .hs-label { font-size: 0.8rem; color: var(--brand-text-secondary); margin-top: 4px; }
+
+    /* --- STAT CALLOUT --- */
+    .stat-callout { display: flex; gap: 40px; margin: 36px 0; }
+    .stat-item { flex: 1; text-align: center; padding: 20px 12px; border: 1px solid var(--brand-border); }
+    .stat-item .stat-number { font-size: 2rem; font-weight: 700; color: var(--brand-accent); line-height: 1; margin-bottom: 8px; }
+    .stat-item .stat-label { font-size: 0.85rem; color: var(--brand-text-secondary); line-height: 1.3; font-weight: 400; }
+
+    /* --- QUOTE --- */
+    .quote-box { border-left: 2px solid var(--brand-accent-muted); padding: 16px 24px; margin: 32px 0; background: none; }
+    .quote-box .quote-text { font-size: 1.05rem; font-style: italic; color: var(--brand-primary); margin-bottom: 8px; line-height: 1.6; }
+    .quote-box .quote-source { font-size: 0.8rem; color: var(--brand-text-secondary); font-weight: 500; }
+
+    /* --- HIGHLIGHT BOX --- */
+    .highlight-box { background: white; border: 1px solid var(--brand-border); border-top: 2px solid var(--brand-primary); padding: 28px 32px; margin: 36px 0; }
+    .highlight-box h3 { color: var(--brand-primary); margin-bottom: 16px; margin-top: 0; }
+    .highlight-box ul { list-style: none; padding: 0; }
+    .highlight-box li { padding: 8px 0 8px 20px; position: relative; font-size: 0.95rem; border-bottom: 0.5px solid var(--brand-border); }
+    .highlight-box li:last-child { border-bottom: none; }
+    .highlight-box li::before { content: "→"; position: absolute; left: 0; color: var(--brand-accent); font-weight: 500; }
+
+    /* --- SIDEBAR BOX --- */
+    .sidebar-box { border: 1px solid var(--brand-border); padding: 20px 24px; margin: 28px 0; font-size: 0.9rem; background: none; }
+    .sidebar-box .sidebar-title { font-weight: 600; color: var(--brand-primary); margin-bottom: 10px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; }
+
+    /* --- CTA --- */
+    .cta-block { border: 1.5px solid var(--brand-primary); text-align: center; padding: 40px 36px; margin: 44px 0; background: none; }
+    .cta-block h2 { color: var(--brand-primary); margin-top: 0; padding-bottom: 0; }
+    .cta-block h2::after { display: none; }
+    .cta-block p { color: var(--brand-text-secondary); max-width: 480px; margin: 0 auto 20px; }
+    .cta-block .btn-accent { display: inline-block; border: 1.5px solid var(--brand-accent); color: var(--brand-accent); font-weight: 600; padding: 12px 28px; text-decoration: none; font-size: 1rem; letter-spacing: 0.02em; background: none; }
+
+    /* --- QUELLEN --- */
+    .sources { margin-top: 44px; padding-top: 20px; border-top: 0.5px solid var(--brand-border); }
+    .sources h2 { font-size: 1.2rem; margin-bottom: 16px; }
+    .sources h2::after { display: none; }
+    .sources ol { padding-left: 24px; font-size: 0.75rem; color: var(--brand-text-secondary); line-height: 1.9; }
+    .sources ol a { color: var(--brand-text-tertiary); word-break: break-all; }
+    .footnote-ref { font-size: 0.7rem; vertical-align: super; color: var(--brand-accent); font-weight: 600; }
+
+    /* --- AUTHOR --- */
+    .author-block { display: flex; gap: 20px; align-items: center; padding: 24px 0; border-top: 0.5px solid var(--brand-border); border-bottom: 0.5px solid var(--brand-border); margin: 36px 0; background: none; }
+    .author-block .author-avatar { width: 72px; height: 72px; border-radius: 50%; border: none; flex-shrink: 0; overflow: hidden; }
+    .author-block .author-avatar img { width: 110%; height: 110%; object-fit: cover; object-position: center 15%; margin-left: -5%; margin-top: -3%; display: block; }
+    .author-block .author-name { font-weight: 600; color: var(--brand-primary); margin-bottom: 2px; font-size: 0.95rem; }
+    .author-block .author-role { font-size: 0.85rem; color: var(--brand-text-secondary); font-weight: 400; }
+
+    /* --- TABELLEN --- */
+    table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 0.9rem; }
+    th { text-align: left; font-weight: 600; color: var(--brand-primary); padding: 10px 12px; border-bottom: 1.5px solid var(--brand-primary); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    td { padding: 10px 12px; border-bottom: 0.5px solid var(--brand-border); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+
+    /* --- CHART --- */
+    .chart-container { margin: 32px 0; text-align: center; }
+    .chart-container svg { max-width: 100%; height: auto; }
+    .chart-container .chart-caption { font-size: 0.8rem; color: var(--brand-text-tertiary); margin-top: 10px; font-style: italic; }
+
+    /* --- TOC --- */
+    .toc { margin: 36px 0; }
+    .toc-item { display: flex; justify-content: space-between; align-items: baseline; padding: 10px 0; border-bottom: 0.5px solid var(--brand-border); font-size: 0.95rem; }
+    .toc-item .toc-title { color: var(--brand-primary); }
+    .toc-item.toc-h2 { font-weight: 600; }
+
+    /* --- HR --- */
+    hr { border: none; border-top: 0.5px solid var(--brand-border); margin: 36px 0; }
+
+    /* --- UTILITIES --- */
+    .text-center { text-align: center; }
+    .text-accent { color: var(--brand-accent); }
+    .text-primary { color: var(--brand-primary); }
+    .text-light { font-weight: 300; }
+    .mt-1 { margin-top: 16px; }
+    .mt-2 { margin-top: 32px; }
+    .mb-1 { margin-bottom: 16px; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px; }
+    .chart-legend { display: flex; gap: 20px; justify-content: center; margin-top: 14px; font-size: 0.8rem; color: var(--brand-text-secondary); }
+    .legend-line { display: inline-block; width: 16px; height: 3px; margin-right: 6px; vertical-align: middle; }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================ -->
+<!-- TITELSEITE                                                    -->
+<!-- ============================================================ -->
+<div class="page title-page">
+  <div class="brand-logo">Flowbeaver</div>
+  <div class="accent-line"></div>
+  <h1>Branchenreport 2026</h1>
+  <div class="doc-subtitle">KI-Automatisierung in der Buchhaltung – mit besonderem Fokus auf Steuerkanzleien</div>
+  <div class="headline-stats">
+    <div class="headline-stat">
+      <div class="hs-number">72,7 %</div>
+      <div class="hs-label">Fachkräftemangel<br>in Steuerkanzleien</div>
+    </div>
+    <div class="headline-stat">
+      <div class="hs-number">91,6 %</div>
+      <div class="hs-label">stufen KI<br>als relevant ein</div>
+    </div>
+    <div class="headline-stat">
+      <div class="hs-number">30 %</div>
+      <div class="hs-label">nutzen KI bei<br>Belegerfassung</div>
+    </div>
+  </div>
+  <div class="doc-meta" style="margin-top: auto; padding-top: 48px;">
+    Herausgegeben von Andreas Schwarzkopf / Flowbeaver<br>
+    flowbeaver.de | März 2026<br>
+    Basierend auf 21 Studien von BStBK, ifo, KPMG, PwC, DATEV, Bitkom u. a.
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KEY FINDINGS                                                  -->
+<!-- ============================================================ -->
+<div class="page page-break">
+
+  <span class="chapter-number">Auf einen Blick</span>
+  <h2 style="margin-top: 0;">Die fünf zentralen Ergebnisse</h2>
+
+  <div class="highlight-box">
+    <h3>Was die Daten zeigen</h3>
+    <ul>
+      <li><strong>Fachkräftemangel ist strukturell.</strong> 72,7 % der Steuer- und Rechtsberatungsunternehmen melden personelle Engpässe – der höchste Wert aller Branchen in Deutschland. Nur 23,2 % der Einzelkanzleien konnten alle offenen Stellen besetzen.</li>
+      <li><strong>Personalkosten steigen schneller als der Umsatz.</strong> 43,8 % vom Kanzleiumsatz fließen in Personal (2018: 37 %). Der gleichzeitige Trend zu Pauschalvergütungen (32,4 %) macht Effizienz zum Margenhebel.</li>
+      <li><strong>Die KI-Lücke bei Belegen kostet Kapazität.</strong> 91,6 % der Steuerberater kennen KI. 80 % nutzen sie für Recherche. Aber nur 30 % setzen sie bei Belegerfassung und Dateneingabe ein – genau dort, wo der größte operative Hebel liegt.</li>
+      <li><strong>Rückfragen sind der eigentliche Zeitkiller.</strong> Nicht das Abtippen. Unklare Geschäftsvorfälle, fremdsprachige Rechnungen, fehlende Angaben – jede Rückfrage löst eine Kommunikationskette mit dem Mandanten aus.</li>
+      <li><strong>Die E-Rechnungspflicht verändert die Spielregeln.</strong> Seit 2025 Empfangspflicht, ab 2027/2028 Sendepflicht. Aber der Mischbetrieb aus strukturierten E-Rechnungen und Papierbelegen bleibt das neue Normal.</li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <div class="sidebar-title">Methodik &amp; Datenbasis</div>
+    <p style="margin-bottom: 0; max-width: none;">Dieser Report wertet aktuelle Studien und Veröffentlichungen zum Einsatz von Künstlicher Intelligenz im Finanz- und Rechnungswesen sowie im steuerberatenden Berufsstand aus. Berücksichtigt wurden insbesondere Studien von Bitkom, PwC, KPMG, der Bundessteuerberaterkammer (BStBK, STAX 2024, N=5.815), des Deutschen Steuerberaterverbands (DStV), DATEV, des ifo Instituts sowie SWI Finance/Handelsblatt (N=4.100). Alle 21 Quellen sind im Quellenverzeichnis aufgeführt.</p>
+  </div>
+
+</div>
+
+<!-- ============================================================ -->
+<!-- KAPITEL 1: FACHKRÄFTEMANGEL                                   -->
+<!-- ============================================================ -->
+<div class="page page-break">
+
+  <span class="chapter-number">Kapitel 01</span>
+  <h2 style="margin-top: 0;">Fachkräftemangel: Die Zahlen hinter dem Gefühl</h2>
+
+  <p>Dass Fachkräfte fehlen, weiß jeder Kanzleiinhaber. Was viele unterschätzen: Das Ausmaß.</p>
+
+  <p>Kein anderer Wirtschaftszweig in Deutschland ist stärker betroffen. Laut ifo-Konjunkturumfrage vom August 2025 melden 72,7 % der Unternehmen in der Steuer- und Rechtsberatung Fachkräftemangel.<span class="footnote-ref">14</span> Zum Vergleich: Im gesamten Dienstleistungssektor sind es 33,7 %. In der IT-Branche 21,3 %.</p>
+
+  <div class="chart-container avoid-break">
+    <svg viewBox="0 0 460 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fachkräftemangel nach Branchen – ifo August 2025" style="max-width: 480px;">
+      <!-- Zeile 1 -->
+      <text x="5" y="28" font-size="10" fill="#555" font-family="Inter, sans-serif">Steuer-/Rechtsberatung</text>
+      <rect x="155" y="18" width="254" height="16" fill="#1a2b4a" opacity="0.85"/>
+      <text x="416" y="30" font-size="10" font-weight="600" fill="#1a2b4a" font-family="Inter, sans-serif">72,7 %</text>
+      <!-- Zeile 2 -->
+      <text x="5" y="64" font-size="10" fill="#555" font-family="Inter, sans-serif">Dienstleistungssektor</text>
+      <rect x="155" y="54" width="118" height="16" fill="#c47a1a" opacity="0.7"/>
+      <text x="280" y="66" font-size="10" font-weight="600" fill="#c47a1a" font-family="Inter, sans-serif">33,7 %</text>
+      <!-- Zeile 3 -->
+      <text x="5" y="100" font-size="10" fill="#555" font-family="Inter, sans-serif">IT-Branche</text>
+      <rect x="155" y="90" width="74" height="16" fill="#1a2b4a" opacity="0.45"/>
+      <text x="236" y="102" font-size="10" font-weight="600" fill="#1a2b4a" font-family="Inter, sans-serif">21,3 %</text>
+      <!-- Basislinie -->
+      <line x1="155" y1="8" x2="155" y2="115" stroke="#d0d0d0" stroke-width="0.5"/>
+    </svg>
+    <p class="chart-caption">Quelle: ifo-Konjunkturumfrage August 2025</p>
+  </div>
+
+  <p>Die Konsequenzen zeigt die STAX-2024-Befragung der Bundessteuerberaterkammer. Mit über 5.800 teilnehmenden Kanzleien eine der größten Erhebungen der Branche.</p>
+
+  <div class="stat-callout avoid-break">
+    <div class="stat-item">
+      <div class="stat-number">59,1 %</div>
+      <div class="stat-label">offene Stellen<br>nicht besetzt</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">43,8 %</div>
+      <div class="stat-label">Personalkosten<br>vom Umsatz</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">32,4 %</div>
+      <div class="stat-label">Kanzleien mit<br>Pauschalvergütung</div>
+    </div>
+  </div>
+
+  <p>Von zehn offenen Stellen in einer durchschnittlichen Einzelkanzlei bleiben sechs unbesetzt.<span class="footnote-ref">15</span> Die Personalkosten steigen: Von 37 % des Umsatzes im Jahr 2018 auf 43,8 % im Jahr 2024. Fast jeder zweite Euro, den eine Kanzlei einnimmt, geht an Mitarbeiter.</p>
+
+  <p>Gleichzeitig verändert sich die Vergütungsstruktur. 32,4 % der Kanzleien arbeiten inzwischen mit Pauschalvergütungen (2018: 13,5 %). Wer pauschal abrechnet, profitiert von Effizienz. Und verliert bei Ineffizienz. Jede eingesparte Stunde in der Belegverarbeitung wirkt sich direkt auf die Marge aus.</p>
+
+  <div class="chart-container avoid-break">
+    <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Personalkosten und Pauschalvergütung im Zeitverlauf" style="max-width: 420px;">
+      <!-- Achsen -->
+      <line x1="50" y1="170" x2="370" y2="170" stroke="#d0d0d0" stroke-width="0.5"/>
+      <!-- Hilfslinien -->
+      <line x1="50" y1="50" x2="370" y2="50" stroke="#e8e8e8" stroke-width="0.5" stroke-dasharray="3"/>
+      <line x1="50" y1="90" x2="370" y2="90" stroke="#e8e8e8" stroke-width="0.5" stroke-dasharray="3"/>
+      <line x1="50" y1="130" x2="370" y2="130" stroke="#e8e8e8" stroke-width="0.5" stroke-dasharray="3"/>
+      <!-- Y-Achse -->
+      <text x="45" y="54" text-anchor="end" font-size="9" fill="#888" font-family="Inter, sans-serif">50 %</text>
+      <text x="45" y="94" text-anchor="end" font-size="9" fill="#888" font-family="Inter, sans-serif">35 %</text>
+      <text x="45" y="134" text-anchor="end" font-size="9" fill="#888" font-family="Inter, sans-serif">20 %</text>
+      <text x="45" y="174" text-anchor="end" font-size="9" fill="#888" font-family="Inter, sans-serif">5 %</text>
+      <!-- Personalkosten-Linie -->
+      <polyline points="110,104 290,64" fill="none" stroke="#1a2b4a" stroke-width="1.5"/>
+      <circle cx="110" cy="104" r="3" fill="white" stroke="#1a2b4a" stroke-width="1.5"/>
+      <circle cx="290" cy="64" r="3.5" fill="#1a2b4a"/>
+      <text x="110" y="98" text-anchor="middle" font-size="9" font-weight="600" fill="#1a2b4a" font-family="Inter, sans-serif">37,0 %</text>
+      <text x="290" y="58" text-anchor="middle" font-size="9" font-weight="600" fill="#1a2b4a" font-family="Inter, sans-serif">43,8 %</text>
+      <!-- Pauschalvergütung-Linie -->
+      <polyline points="110,157 290,130" fill="none" stroke="#c47a1a" stroke-width="1.5" stroke-dasharray="5,3"/>
+      <circle cx="110" cy="157" r="3" fill="white" stroke="#c47a1a" stroke-width="1.5"/>
+      <circle cx="290" cy="130" r="3.5" fill="#c47a1a"/>
+      <text x="110" y="151" text-anchor="middle" font-size="9" font-weight="600" fill="#c47a1a" font-family="Inter, sans-serif">13,5 %</text>
+      <text x="290" y="124" text-anchor="middle" font-size="9" font-weight="600" fill="#c47a1a" font-family="Inter, sans-serif">32,4 %</text>
+      <!-- X-Achse -->
+      <text x="110" y="188" text-anchor="middle" font-size="9" fill="#888" font-family="Inter, sans-serif">2018</text>
+      <text x="290" y="188" text-anchor="middle" font-size="9" fill="#888" font-family="Inter, sans-serif">2024</text>
+    </svg>
+    <div class="chart-legend">
+      <span><span class="legend-line" style="background:#1a2b4a"></span> Personalkosten (% vom Umsatz)</span>
+      <span><span class="legend-line" style="background:#c47a1a"></span> Pauschalvergütung (% der Kanzleien)</span>
+    </div>
+    <p class="chart-caption">Quelle: STAX 2024, BStBK / Institut für Demoskopie Allensbach</p>
+  </div>
+
+  <p>Für Kanzleien ab vier Mitarbeitern ist die Rechnung klar: Mehr Mandate aufnehmen ohne mehr Personal einzustellen erfordert Automatisierung. Die Buchführung macht 21 bis 25 % des Kanzleiumsatzes aus – Kerngeschäft, nicht Nebenprodukt. Wer hier effizienter wird, hebelt direkt die Profitabilität.</p>
+
+</div>
+
+<!-- ============================================================ -->
+<!-- KAPITEL 2: E-RECHNUNG                                         -->
+<!-- ============================================================ -->
+<div class="page page-break">
+
+  <span class="chapter-number">Kapitel 02</span>
+  <h2 style="margin-top: 0;">E-Rechnungspflicht: Zeitplan und Realität</h2>
+
+  <p>Die verpflichtende E-Rechnung im B2B-Bereich ist die größte infrastrukturelle Veränderung im Rechnungswesen seit Einführung der GoBD. Der Zeitplan steht fest:</p>
+
+  <table class="avoid-break">
+    <thead>
+      <tr><th>Datum</th><th>Was gilt</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Seit 1. Januar 2025</td><td>Alle inländischen B2B-Unternehmen müssen E-Rechnungen empfangen können</td></tr>
+      <tr><td>Ab 1. Januar 2027</td><td>Sendepflicht für Unternehmen mit Vorjahresumsatz über 800.000 EUR</td></tr>
+      <tr><td>Ab 1. Januar 2028</td><td>Sendepflicht für alle übrigen Unternehmen</td></tr>
+    </tbody>
+  </table>
+
+  <p>E-Rechnungen nach dem europäischen Standard EN 16931 enthalten strukturierte, maschinenlesbare Datenfelder.<span class="footnote-ref">4</span> Im Unterschied zu klassischen PDF-Rechnungen müssen Informationen nicht erst per OCR extrahiert werden. Rechnungsnummer, Beträge, Steuersätze, Leistungsbeschreibung: alles in definierten Feldern, direkt verarbeitbar.</p>
+
+  <p>Für Steuerkanzleien bedeutet das zweierlei.</p>
+
+  <p><strong>Erstens:</strong> Ein wachsender Anteil der Mandantenbelege kommt strukturiert an. Das reduziert den Aufwand für klassische Texterkennung und verschiebt den Fokus von der Datenerfassung hin zu Validierung, Kontierung und DATEV-Integration.</p>
+
+  <p><strong>Zweitens, und das wird oft übersehen:</strong> Der Mischbetrieb bleibt. Neben E-Rechnungen werden Kanzleien weiterhin handgescannte Quittungen, fremdsprachige Lieferantenrechnungen und unstrukturierte PDF-Anhänge verarbeiten müssen. Ein Handwerksbetrieb mit Zulieferern aus Osteuropa, ein Gastronom mit Importware aus Südamerika – deren Belege kommen nicht als XRechnung.</p>
+
+  <p>Dieser Mischbetrieb ist die eigentliche Herausforderung der kommenden Jahre. Kanzleien brauchen Systeme, die beide Welten beherrschen: strukturierte E-Rechnungen automatisiert verarbeiten und gleichzeitig mit dem Papierchaos umgehen, das auf absehbare Zeit nicht verschwindet.</p>
+
+</div>
+
+<!-- ============================================================ -->
+<!-- KAPITEL 3: KI-MARKTSTAND                                      -->
+<!-- ============================================================ -->
+<div class="page page-break">
+
+  <span class="chapter-number">Kapitel 03</span>
+  <h2 style="margin-top: 0;">KI in der Buchhaltung: Wo steht die Branche?</h2>
+
+  <p>KI in der Buchhaltung hat sich in den vergangenen zwei Jahren vom Experimentierfeld zum operativen Werkzeug entwickelt. Mehr als die Hälfte der deutschen Unternehmen nutzt KI-Anwendungen im Rechnungswesen produktiv oder bereitet den Einsatz konkret vor.<span class="footnote-ref">1</span></p>
+
+  <p>Vollständig autonome Buchhaltung? Bleibt auch 2026 unrealistisch. Was funktioniert, sind hybride Modelle: KI übernimmt die Vorarbeit, der Mensch prüft und entscheidet. Der einzige Ansatz, der regulatorisch und praktisch trägt.</p>
+
+  <table class="avoid-break">
+    <thead>
+      <tr><th>Reifegrad</th><th>Anwendungsfälle</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Produktiv etabliert</td><td>Rechnungsverarbeitung, Kontierungsvorschläge, Anomalieerkennung</td><td>Hohe Automatisierungsquote</td></tr>
+      <tr><td>Teilautomatisiert</td><td>Kontoabstimmungen, Zahlungsabgleiche</td><td>KI unterstützt Analyse</td></tr>
+      <tr><td>Assistenzsysteme</td><td>Generative KI für Berichte</td><td>Entscheidungsunterstützung</td></tr>
+      <tr><td>Experimentell</td><td>Vollautonome Buchhaltung</td><td>Nicht realisierbar</td></tr>
+    </tbody>
+  </table>
+
+  <p>Am weitesten fortgeschritten ist die automatisierte Rechnungsverarbeitung. Moderne Systeme kombinieren OCR mit semantischer Dokumentenanalyse, regelbasierter Validierung und lernenden Modellen für Buchungsvorschläge.<span class="footnote-ref">5</span></p>
+
+  <p>In der Praxis dominiert der hybride Ansatz: Klassische regelbasierte Buchungslogik kombiniert mit lernenden Systemen. Diese Kombination gilt als kontrollierbar und revisionssicher.<span class="footnote-ref">2</span></p>
+
+  <h3>Automatisierungsgrad im Finanzprozess</h3>
+
+  <div class="chart-container avoid-break">
+    <svg viewBox="0 0 460 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Automatisierungsgrad im Finanzprozess" style="max-width: 480px;">
+      <!-- Y-Achse Labels -->
+      <text x="5" y="30" font-size="9" fill="#555" font-family="Inter, sans-serif">Rechnungseingang</text>
+      <text x="5" y="64" font-size="9" fill="#555" font-family="Inter, sans-serif">Zahlungsabgleich</text>
+      <text x="5" y="98" font-size="9" fill="#555" font-family="Inter, sans-serif">Kontierung</text>
+      <text x="5" y="132" font-size="9" fill="#555" font-family="Inter, sans-serif">Kontoabstimmung</text>
+      <text x="5" y="166" font-size="9" fill="#555" font-family="Inter, sans-serif">Monatsabschluss</text>
+      <!-- Balken: Hoch = 90%, Mittel-hoch = 70%, Mittel = 50%, Niedrig-mittel = 30% -->
+      <rect x="115" y="20" width="288" height="16" fill="#1a2b4a" opacity="0.85"/>
+      <text x="410" y="32" font-size="9" font-weight="600" fill="#1a2b4a" font-family="Inter, sans-serif">Hoch</text>
+      <rect x="115" y="54" width="288" height="16" fill="#1a2b4a" opacity="0.7"/>
+      <text x="410" y="66" font-size="9" font-weight="600" fill="#1a2b4a" font-family="Inter, sans-serif">Hoch</text>
+      <rect x="115" y="88" width="224" height="16" fill="#c47a1a" opacity="0.7"/>
+      <text x="346" y="100" font-size="9" font-weight="600" fill="#c47a1a" font-family="Inter, sans-serif">Mittel–Hoch</text>
+      <rect x="115" y="122" width="160" height="16" fill="#1a2b4a" opacity="0.5"/>
+      <text x="282" y="134" font-size="9" font-weight="600" fill="#1a2b4a" font-family="Inter, sans-serif">Mittel</text>
+      <rect x="115" y="156" width="96" height="16" fill="#c47a1a" opacity="0.45"/>
+      <text x="218" y="168" font-size="9" font-weight="600" fill="#c47a1a" font-family="Inter, sans-serif">Niedrig–Mittel</text>
+      <!-- Basislinie -->
+      <line x1="115" y1="10" x2="115" y2="180" stroke="#d0d0d0" stroke-width="0.5"/>
+    </svg>
+    <p class="chart-caption">Einschätzung basierend auf Marktbeobachtungen und Studien, Stand 2026</p>
+  </div>
+
+  <p>Das Muster ist klar: Je transaktionsnäher der Prozess, desto höher der Automatisierungsgrad. Die vorbereitende Buchhaltung liegt genau im Bereich, in dem KI bereits heute die größte Wirkung entfaltet.</p>
+
+</div>
+
+<!-- ============================================================ -->
+<!-- KAPITEL 4: KI-LÜCKE                                           -->
+<!-- ============================================================ -->
+<div class="page page-break">
+
+  <span class="chapter-number">Kapitel 04</span>
+  <h2 style="margin-top: 0;">Die KI-Lücke in Kanzleien</h2>
+
+  <p>Die Zahlen zeigen ein Paradox.</p>
+
+  <p>91,6 % der Steuerberater geben an, KI sei in ihrem Berufsfeld angekommen. Über 60 % setzen KI bereits in Teilbereichen ein. Und über 80 % nutzen sie für Recherchezwecke.<span class="footnote-ref">18</span></p>
+
+  <p>Aber nur rund 30 % setzen KI bei Belegerfassung und Dateneingabe ein.</p>
+
+  <div class="chart-container avoid-break">
+    <svg viewBox="0 0 420 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="KI-Nutzung: Recherche vs. Belegerfassung" style="max-width: 440px;">
+      <!-- KI für Recherche: 80% -->
+      <text x="5" y="28" font-size="10" fill="#555" font-family="Inter, sans-serif">KI für Recherche</text>
+      <rect x="130" y="18" width="224" height="16" fill="#1a2b4a" opacity="0.85"/>
+      <text x="362" y="30" font-size="10" font-weight="600" fill="#1a2b4a" font-family="Inter, sans-serif">80 %</text>
+      <!-- KI für Belegerfassung: 30% -->
+      <text x="5" y="68" font-size="10" fill="#555" font-family="Inter, sans-serif">KI für Belegerfassung</text>
+      <rect x="130" y="58" width="84" height="16" fill="#c47a1a" opacity="0.7"/>
+      <text x="222" y="70" font-size="10" font-weight="600" fill="#c47a1a" font-family="Inter, sans-serif">30 %</text>
+      <!-- Basislinie -->
+      <line x1="130" y1="8" x2="130" y2="82" stroke="#d0d0d0" stroke-width="0.5"/>
+    </svg>
+    <p class="chart-caption">Quelle: SWI Finance / Handelsblatt 2025, N=4.100 Steuerberater</p>
+  </div>
+
+  <p>Die Branche weiß, dass KI funktioniert. Sie nutzt sie sogar. Nur eben nicht dort, wo der operative Hebel am größten ist. Die Belegerfassung und Vorkontierung, die 21 bis 25 % des Kanzleiumsatzes ausmacht: kaum.</p>
+
+  <h3>Der eigentliche Zeitkiller: Rückfragen</h3>
+
+  <p>Was Kanzleiteams wirklich Zeit kostet, ist nicht das Abtippen von Belegen. Es sind die Rückfragen beim Mandanten.</p>
+
+  <p>Ein Mitarbeiter öffnet einen Beleg. Italienische Hotelrechnung, kein Geschäftszweck erkennbar. Also: E-Mail an den Mandanten. Warten. Antwort kommt drei Tage später, halb verständlich. Noch eine Rückfrage. Wieder warten. Dann buchen.</p>
+
+  <p>Und genau hier verschiebt KI den Hebel. Nicht durch schnelleres Abtippen. Sondern durch inhaltliches Verstehen. Ein LLM liest eine italienische Hotelrechnung und erkennt: Geschäftsreise, Übernachtungskosten, Bewirtungsanteil. Es leitet einen Geschäftsvorfall ab, schlägt eine Kontierung vor. Ohne Rückfrage beim Mandanten. Das funktioniert sprachunabhängig, bei jeder Belegart.</p>
+
+  <div class="quote-box avoid-break">
+    <p class="quote-text">"Künstliche Intelligenz ist kein Ersatz für steuerliche Expertise – sie ist ein Verstärker. Richtig eingesetzt verschafft sie Steuerberatern mehr Zeit für Beratung, erhöht die Qualität der Arbeitsergebnisse und macht komplexe Sachverhalte transparenter."</p>
+    <p class="quote-source">Bundessteuerberaterkammer, FAQ-Katalog KI, Januar 2026</p>
+  </div>
+
+  <p>Die BStBK nennt als konkreten Anwendungsfall ausdrücklich die "0-Eingabe-Buchung": die automatisierte Belegerfassung als KI-gestützten Prozessschritt vor der eigentlichen Verbuchung in DATEV.<span class="footnote-ref">19</span> Bei der Auswahl empfiehlt sie branchenspezifische Anbieter und EU-basierte Datenverarbeitung.</p>
+
+</div>
+
+<!-- ============================================================ -->
+<!-- KAPITEL 5: HANDLUNGSFELDER                                    -->
+<!-- ============================================================ -->
+<div class="page page-break">
+
+  <span class="chapter-number">Kapitel 05</span>
+  <h2 style="margin-top: 0;">Handlungsfelder für wachstumsorientierte Kanzleien</h2>
+
+  <p>Vier Handlungsfelder kristallisieren sich aus den Daten heraus. Keines davon erfordert ein Großprojekt.</p>
+
+  <table class="avoid-break">
+    <thead>
+      <tr><th>Handlungsfeld</th><th>Konkreter Hebel</th><th>Wirkung</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Belegeingang standardisieren</td><td>Klare Mandantenvorgaben, digitale Einreichungswege</td><td>Weniger Rückfragen, kürzere Durchlaufzeiten</td></tr>
+      <tr><td>Vorkontierung automatisieren</td><td>KI-gestützte Kontierungsvorschläge mit Human-in-the-Loop</td><td>Entlastung bei Routinevorgängen</td></tr>
+      <tr><td>DATEV-Kompatibilität sichern</td><td>KI als Vorsystem, nicht als DATEV-Ersatz</td><td>Passt in bestehende Workflows</td></tr>
+      <tr><td>Ausnahmen gezielt eskalieren</td><td>Automatische Priorisierung unklarer Vorfälle</td><td>Fokussierte Qualitätskontrolle</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Systemarchitektur: Vom Beleg zum Buchungsstapel</h3>
+
+  <table class="avoid-break">
+    <thead>
+      <tr><th>Schritt</th><th>Tätigkeit</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1. Input</td><td>Eingangsrechnungen, E-Rechnungen (EN 16931), Belege in allen Formaten und Sprachen</td></tr>
+      <tr><td>2. Datenverarbeitung</td><td>OCR-Texterkennung, Dokumentenklassifikation, strukturierte Datenextraktion</td></tr>
+      <tr><td>3. KI-Analyse</td><td>Kontierungsvorschläge, Mustererkennung, Ableitung von Geschäftsvorfällen</td></tr>
+      <tr><td>4. Entscheidungslogik</td><td>Regelbasierte Validierung, Human-in-the-Loop bei Grenzfällen</td></tr>
+      <tr><td>5. Integration</td><td>DATEV-kompatibler Buchungsstapel, Reporting, Compliance-Dokumentation</td></tr>
+    </tbody>
+  </table>
+
+  <p>Der Kern liegt in der Kombination von Schritt 3 und 4. Reine KI-Ergebnisse ohne regelbasierte Kontrolle sind in der Buchhaltung nicht tragfähig. Umgekehrt reichen reine Regelsysteme nicht aus, weil sie an unstrukturierten Belegen und Sonderfällen scheitern.</p>
+
+  <p>Die Kombination aus LLM, KI-OCR und deterministischem Regelwerk verbindet das inhaltliche Verständnis generativer KI mit der Prüfbarkeit klassischer Systeme.</p>
+
+  <h3>Erfolgsfaktoren</h3>
+
+  <p><strong>Prozessklarheit geht vor Technologie.</strong> Wer seine Abläufe nicht kennt, automatisiert Chaos. Der erste Schritt ist eine Bestandsaufnahme: Wie läuft der Weg vom Belegeingang bis zur Verbuchung heute?<span class="footnote-ref">9</span></p>
+
+  <p><strong>Messen statt hoffen.</strong> Automatisierungsquote im Rechnungseingang, Durchlaufzeit pro Beleg, Anzahl manueller Eingriffe. Ohne Kennzahlen bleibt jede Optimierung Spekulation.</p>
+
+  <p><strong>Schrittweise vorgehen.</strong> Erst einen klar abgegrenzten Prozessschritt automatisieren, Ergebnisse messen, dann erweitern.<span class="footnote-ref">10</span></p>
+
+</div>
+
+<!-- ============================================================ -->
+<!-- AUSBLICK                                                      -->
+<!-- ============================================================ -->
+<div class="page page-break">
+
+  <span class="chapter-number">Ausblick</span>
+  <h2 style="margin-top: 0;">Die nächsten 12 bis 24 Monate</h2>
+
+  <p>Die kommenden zwei Jahre werden weniger von technologischen Durchbrüchen geprägt sein als von Konsolidierung und Integration.</p>
+
+  <table class="avoid-break">
+    <thead>
+      <tr><th>Zeitraum</th><th>Entwicklung</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>2025</td><td>E-Rechnungs-Empfangspflicht in Kraft; erste KI-Vorsysteme in der Kanzleipraxis</td></tr>
+      <tr><td>2026/2027</td><td>Stärkere Integration von KI in DATEV-Workflows; E-Rechnungs-Sendepflicht ab 800.000 EUR Umsatz</td></tr>
+      <tr><td>2028+</td><td>Sendepflicht für alle; weitgehend datengetriebene Finanzprozesse; Aufgabenprofil verschiebt sich zu Steuerung und Analyse</td></tr>
+    </tbody>
+  </table>
+
+  <p>Die Antwort auf die Frage, welchem Technologiepartner eine Kanzlei ihre Belegverarbeitung anvertraut, sollte drei Kriterien folgen: DATEV-Kompatibilität (nicht verhandelbar), Branchenspezifität (die BStBK empfiehlt es ausdrücklich) und EU-basierte Datenverarbeitung.</p>
+
+  <p>Parallel verändert sich das Berufsbild. Manuelle Datenerfassung tritt in den Hintergrund. Prüfung automatisierter Ergebnisse, Prozesssteuerung und Datenmanagement werden zu den zentralen Aufgaben. Kanzleien, die ihre Mitarbeiter jetzt auf diese Verschiebung vorbereiten, haben in zwei Jahren einen Vorsprung.</p>
+
+  <p>Kanzleien, die jetzt in strukturierte Prozesse und KI-gestützte Automatisierung investieren, schaffen die Grundlage für Mandatswachstum ohne proportionalen Personalaufbau. In einem Markt, in dem 72,7 % der Branche unter Fachkräftemangel leidet, ist das keine Option. Es ist die Voraussetzung dafür, in drei Jahren noch wettbewerbsfähig zu sein.</p>
+
+  <hr>
+
+  <!-- CTA -->
+  <div class="cta-block avoid-break">
+    <h2>Automatisierung in der vorbereitenden Buchhaltung</h2>
+    <p>Flowbeaver entwickelt ein KI-Vorsystem für Steuerkanzleien. LLM + KI-OCR + Regelwerk = DATEV-kompatibler Buchungsstapel.</p>
+    <a href="https://www.flowbeaver.de" class="btn-accent">flowbeaver.de</a>
+  </div>
+
+  <!-- AUTHOR -->
+  <div class="author-block avoid-break">
+    <div class="author-avatar"><img src="../assets/andreas-schwarzkopf.jpg" alt="Andreas Schwarzkopf"></div>
+    <div>
+      <div class="author-name">Andreas Schwarzkopf</div>
+      <div class="author-role">Gründer, Flowbeaver – KI-Vorsystem für die vorbereitende Buchhaltung in Steuerkanzleien</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ============================================================ -->
+<!-- QUELLENVERZEICHNIS                                            -->
+<!-- ============================================================ -->
+<div class="page page-break">
+
+  <div class="sources">
+    <h2>Quellenverzeichnis</h2>
+    <ol>
+      <li>KPMG AG Wirtschaftsprüfungsgesellschaft (2025): Digitalisierung im Rechnungswesen 2025/2026.</li>
+      <li>PwC Deutschland (2025): Künstliche Intelligenz wird die Abschlussprüfung drastisch verändern.</li>
+      <li>PwC Deutschland (2025): Anforderungen an Prüfungs- und Dokumentationsprozesse beim Einsatz von KI.</li>
+      <li>Bundesministerium der Finanzen (2024): FAQ zur Einführung der obligatorischen elektronischen Rechnung bei Umsätzen zwischen inländischen Unternehmen.</li>
+      <li>PwC Deutschland (2025): Digitalisierung im Finanz- und Rechnungswesen.</li>
+      <li>KPMG AG Wirtschaftsprüfungsgesellschaft (2025): Automatisierung und Machine Learning im Accounting.</li>
+      <li>PwC Deutschland (2025): Anomalieerkennung und datengetriebene Prüfung.</li>
+      <li>PwC Deutschland (2025): Transparenzanforderungen in automatisierten Finanzprozessen.</li>
+      <li>KPMG AG Wirtschaftsprüfungsgesellschaft (2025): Bedeutung der Datenqualität für KI-Systeme.</li>
+      <li>KPMG AG Wirtschaftsprüfungsgesellschaft (2025): Governance-Modelle für KI im Unternehmen.</li>
+      <li>Bundesministerium der Finanzen (2024): Strukturierte Rechnungsformate nach EN 16931.</li>
+      <li>Bundesministerium der Finanzen (2024): Regulatorische Auswirkungen der verpflichtenden E-Rechnung im B2B-Bereich.</li>
+      <li>Bitkom e. V. (2025): Repräsentative Umfrage zur KI-Adoption in deutschen Unternehmen.</li>
+      <li>ifo Institut (2025): Konjunkturumfrage August 2025 – Fachkräftemangel nach Branchen.</li>
+      <li>Bundessteuerberaterkammer / Institut für Demoskopie Allensbach (2024): STAX 2024 – Sonderauswertung Digitalisierung und Fachkräftemangel (N=5.815).</li>
+      <li>BStBK / DStV / DATEV (2024): Gemeinsame Initiative zur Gewinnung von Fachkräften für die Steuerberatung.</li>
+      <li>DATEV eG (2025): Digitalisierungsumfrage Mai 2025 – Digitalisierungsstand in deutschen Steuerkanzleien.</li>
+      <li>SWI Finance / Handelsblatt (2025): KI in Steuerkanzleien – Status quo und Perspektiven (N=4.100).</li>
+      <li>Bundessteuerberaterkammer (2026): FAQ-Katalog: KI im steuerberatenden Berufsstand, Stand 27. Januar 2026, 37 Seiten.</li>
+      <li>Bundesministerium der Finanzen (2024): E-Rechnung – Einführungszeitplan und Anforderungen für Steuerberater.</li>
+      <li>Taxdoo (2025): Die große Taxdoo Steuerkanzlei(meta)studie 2025 – Branchenstruktur und Digitalisierung.</li>
+    </ol>
+  </div>
+
+  <div style="margin-top: 48px; padding-top: 24px; border-top: 0.5px solid var(--brand-border);">
+    <p class="small">© 2026 Andreas Schwarzkopf / Flowbeaver. Alle Rechte vorbehalten. Die Vervielfältigung oder Weitergabe dieses Reports ist mit Quellenangabe gestattet. Alle Daten und Interpretationen basieren auf den genannten Quellen und wurden nach bestem Wissen zusammengestellt.</p>
+    <p class="small" style="margin-top: 8px;">flowbeaver.de</p>
+  </div>
+
+</div>
+
+</body>
+</html>
