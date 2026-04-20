@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Woechentlicher Marketing-Report</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #1a1a2e;
+            background: #f8f9fa;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+        header h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+        header .meta { opacity: 0.8; font-size: 0.9rem; }
+        .section-divider {
+            background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            margin: 2rem 0 1.5rem 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .stat-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.2rem;
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #1a1a2e;
+        }
+        .stat-label {
+            font-size: 0.8rem;
+            color: #64748b;
+            margin-top: 0.3rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        section {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+        }
+        section h2 {
+            font-size: 1.2rem;
+            color: #1a1a2e;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #f1f5f9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+        th {
+            background: #f8fafc;
+            text-align: left;
+            padding: 0.7rem 0.8rem;
+            font-weight: 600;
+            color: #475569;
+            border-bottom: 2px solid #e2e8f0;
+            white-space: nowrap;
+        }
+        td {
+            padding: 0.6rem 0.8rem;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        tr:hover { background: #f8fafc; }
+        .executive-summary {
+            line-height: 1.6;
+            color: #334155;
+        }
+        .executive-summary p { margin-bottom: 0.8rem; }
+        .executive-summary ul { margin: 0.5rem 0 1rem 1.5rem; }
+        .executive-summary li { margin-bottom: 0.4rem; }
+        .next-steps {
+            line-height: 1.6;
+            color: #334155;
+        }
+        .next-steps ol { margin: 0.5rem 0 0 1.5rem; }
+        .next-steps li { margin-bottom: 0.6rem; }
+        .next-steps li strong { color: #1a1a2e; }
+        footer {
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.8rem;
+            margin-top: 2rem;
+            padding: 1rem;
+        }
+        @media print {
+            body { padding: 1rem; background: white; }
+            header { break-after: avoid; }
+            section { break-inside: avoid; }
+        }
+        @media (max-width: 600px) {
+            body { padding: 1rem; }
+            .summary-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Woechentlicher Marketing-Report</h1>
+        <div class="meta">12.04.2026 - 18.04.2026 | Erstellt: 19.04.2026 22:07</div>
+    </header>
+
+    
+        <section>
+            <h2>Executive Summary</h2>
+            
+    <div class="executive-summary">
+        <p><strong>Website (GA4):</strong> Im Berichtszeitraum wurden <strong>12 Sitzungen</strong>
+        von <strong>12 Nutzern</strong> verzeichnet.
+        Es gab <strong>3 Conversions</strong>
+        (Conversion Rate: <strong>25.0%</strong>).</p>
+        
+        <p><strong>Google Ads:</strong> 44 Impressionen,
+        5 Klicks (CTR: 11.4%),
+        40,48 € Gesamtkosten,
+        0 Conversions.</p>
+        
+        <ul>
+            <li><strong>Staerkster Kanal:</strong> Direct mit 4 Sitzungen</li>
+            <li><strong>Top Landingpage:</strong> /ki-belegerkennung</li>
+        </ul>
+    </div>
+    
+        </section>
+        
+        <section>
+            <h2>📊 Website-Analytics (GA4)</h2>
+            <div class="section-divider">Google Analytics</div>
+    <div class="summary-grid">
+        <div class="stat-card">
+            <div class="stat-value">12</div>
+            <div class="stat-label">Sitzungen</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">12</div>
+            <div class="stat-label">Nutzer</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">7</div>
+            <div class="stat-label">Neue Nutzer</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">39</div>
+            <div class="stat-label">Seitenaufrufe</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">3</div>
+            <div class="stat-label">Conversions</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">25.0%</div>
+            <div class="stat-label">Conv. Rate</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">6:11</div>
+            <div class="stat-label">Avg. Dauer</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">27,8%</div>
+            <div class="stat-label">Absprungrate</div>
+        </div>
+    </div>
+    
+        </section>
+        
+        <section>
+            <h2>Traffic nach Kanal</h2>
+            <table>
+<thead><tr><th>Kanal</th><th>Sitzungen</th><th>Nutzer</th><th>Conversions</th><th>Absprungrate</th></tr></thead>
+<tbody>
+<tr><td>Direct</td><td>4</td><td>3</td><td>1</td><td>50,0%</td></tr>
+<tr><td>Paid Search</td><td>4</td><td>4</td><td>0</td><td>25,0%</td></tr>
+<tr><td>Organic Search</td><td>3</td><td>3</td><td>1</td><td>0,0%</td></tr>
+<tr><td>Referral</td><td>1</td><td>1</td><td>1</td><td>0,0%</td></tr>
+</tbody>
+</table>
+        </section>
+        
+        <section>
+            <h2>Top Landingpages</h2>
+            <table>
+<thead><tr><th>Landingpage</th><th>Sitzungen</th><th>Nutzer</th><th>Conversions</th><th>Absprungrate</th><th>Avg. Dauer</th></tr></thead>
+<tbody>
+<tr><td>/ki-belegerkennung</td><td>5</td><td>5</td><td>0</td><td>40,0%</td><td>0:37</td></tr>
+<tr><td>/</td><td>4</td><td>4</td><td>1</td><td>0,0%</td><td>21:08</td></tr>
+<tr><td>(not set)</td><td>1</td><td>1</td><td>0</td><td>1,0%</td><td>0:00</td></tr>
+<tr><td>/ki-belegerkennung?gtm_debug=1776080051065</td><td>1</td><td>1</td><td>1</td><td>0,0%</td><td>7:22</td></tr>
+<tr><td>/ki-in-buchhaltung-2026</td><td>1</td><td>1</td><td>1</td><td>0,0%</td><td>0:30</td></tr>
+</tbody>
+</table>
+        </section>
+        
+        <section>
+            <h2>Conversions nach Quelle</h2>
+            <table>
+<thead><tr><th>Kanal</th><th>Quelle/Medium</th><th>Conversions</th><th>Sitzungen</th><th>Nutzer</th></tr></thead>
+<tbody>
+<tr><td>Direct</td><td>(direct) / (none)</td><td>1</td><td>4</td><td>3</td></tr>
+<tr><td>Organic Search</td><td>google / organic</td><td>1</td><td>3</td><td>3</td></tr>
+<tr><td>Referral</td><td>tagassistant.google.com / referral</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>Paid Search</td><td>google / cpc</td><td>0</td><td>4</td><td>4</td></tr>
+</tbody>
+</table>
+        </section>
+        
+        <section>
+            <h2>Geraete</h2>
+            <table>
+<thead><tr><th>Geraet</th><th>Sitzungen</th><th>Nutzer</th><th>Conversions</th></tr></thead>
+<tbody>
+<tr><td>desktop</td><td>7</td><td>6</td><td>3</td></tr>
+<tr><td>mobile</td><td>5</td><td>5</td><td>0</td></tr>
+</tbody>
+</table>
+        </section>
+        
+        <section>
+            <h2>Laender</h2>
+            <table>
+<thead><tr><th>Land</th><th>Sitzungen</th><th>Nutzer</th><th>Conversions</th></tr></thead>
+<tbody>
+<tr><td>Germany</td><td>12</td><td>11</td><td>3</td></tr>
+</tbody>
+</table>
+        </section>
+        
+        <section>
+            <h2>💰 Google Ads</h2>
+            <div class="section-divider">Google Ads</div>
+    <div class="summary-grid">
+        <div class="stat-card">
+            <div class="stat-value">44</div>
+            <div class="stat-label">Impressionen</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">5</div>
+            <div class="stat-label">Klicks</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">11.4%</div>
+            <div class="stat-label">CTR</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">8,10 €</div>
+            <div class="stat-label">Avg. CPC</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">40,48 €</div>
+            <div class="stat-label">Gesamtkosten</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">0</div>
+            <div class="stat-label">Conversions</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">0,00 €</div>
+            <div class="stat-label">Kosten/Conv.</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value">0.00x</div>
+            <div class="stat-label">ROAS</div>
+        </div>
+    </div>
+    
+        </section>
+        
+        <section>
+            <h2>Kampagnen-Performance</h2>
+            <table>
+<thead><tr><th>Kampagne</th><th>Status</th><th>Impressionen</th><th>Klicks</th><th>CTR</th><th>Avg. CPC</th><th>Kosten</th><th>Conversions</th><th>Kosten/Conv.</th></tr></thead>
+<tbody>
+<tr><td>[GSN] KI-Belegerkennung Steuerkanzlei</td><td>ENABLED</td><td>44</td><td>5</td><td>11,4%</td><td>8,10 €</td><td>40,48 €</td><td>0</td><td>0,00 €</td></tr>
+<tr><td>[GSN] der-ki-check.de</td><td>PAUSED</td><td>0</td><td>0</td><td>0,0%</td><td>0,00 €</td><td>0,00 €</td><td>0</td><td>0,00 €</td></tr>
+<tr><td>[GSN] Schatten-KI</td><td>PAUSED</td><td>0</td><td>0</td><td>0,0%</td><td>0,00 €</td><td>0,00 €</td><td>0</td><td>0,00 €</td></tr>
+<tr><td>[GDN] KI-Buchhaltung</td><td>PAUSED</td><td>0</td><td>0</td><td>0,0%</td><td>0,00 €</td><td>0,00 €</td><td>0</td><td>0,00 €</td></tr>
+<tr><td>[GSN] KI-Buchhaltung</td><td>PAUSED</td><td>0</td><td>0</td><td>0,0%</td><td>0,00 €</td><td>0,00 €</td><td>0</td><td>0,00 €</td></tr>
+<tr><td>[PMax] KI-Belegerfassung</td><td>PAUSED</td><td>0</td><td>0</td><td>0,0%</td><td>0,00 €</td><td>0,00 €</td><td>0</td><td>0,00 €</td></tr>
+</tbody>
+</table>
+        </section>
+        
+        <section>
+            <h2>Keyword-Performance (Top 30)</h2>
+            <table>
+<thead><tr><th>Keyword</th><th>Match-Typ</th><th>Kampagne</th><th>Impressionen</th><th>Klicks</th><th>CTR</th><th>Avg. CPC</th><th>Kosten</th><th>Conversions</th><th>Impr. Share</th></tr></thead>
+<tbody>
+<tr><td>ki rechnungsprüfung</td><td>EXACT</td><td>[GSN] KI-Belegerkennung Steuerkanzlei</td><td>26</td><td>3</td><td>11,5%</td><td>7,47 €</td><td>22,41 €</td><td>0</td><td>69,4%</td></tr>
+<tr><td>ki belegerfassung</td><td>EXACT</td><td>[GSN] KI-Belegerkennung Steuerkanzlei</td><td>8</td><td>1</td><td>12,5%</td><td>8,20 €</td><td>8,20 €</td><td>0</td><td>66,7%</td></tr>
+<tr><td>ki belegerkennung</td><td>EXACT</td><td>[GSN] KI-Belegerkennung Steuerkanzlei</td><td>7</td><td>0</td><td>0,0%</td><td>0,00 €</td><td>0,00 €</td><td>0</td><td>83,3%</td></tr>
+<tr><td>finmatics alternative</td><td>EXACT</td><td>[GSN] KI-Belegerkennung Steuerkanzlei</td><td>3</td><td>1</td><td>33,3%</td><td>9,87 €</td><td>9,87 €</td><td>0</td><td>50,0%</td></tr>
+<tr><td>ki beratung</td><td>EXACT</td><td>[GSN] der-ki-check.de</td><td>0</td><td>0</td><td>0,0%</td><td>0,00 €</td><td>0,00 €</td><td>0</td><td>0,0%</td></tr>
+<tr><td>künstliche intelligenz beratung</td><td>EXACT</td><td>[GSN] der-ki-check.de</td><td>0</td><td>0</td><td>0,0%</td><td>0,00 €</td><td>0,00 €</td><td>0</td><td>0,0%</td></tr>
+<tr><td>ki beratung</td><td>PHRASE</td><td>[GSN] der-ki-check.de</td><td>0</td><td>0</td><td>0,0%</td><td>0,00 €</td><td>0,00 €</td><td>0</td><td>0,0%</td></tr>
+<tr><td>ki beratungsunternehmen</td><td>EXACT</td><td>[GSN] der-ki-check.de</td><td>0</td><td>0</td><td>0,0%</td><td>0,00 €</td><td>0,00 €</td><td>0</td><td>0,0%</td></tr>
+<tr><td>ki beratung mittelstand</td><td>EXACT</td><td>[GSN] der-ki-check.de</td><td>0</td><td>0</td><td>0,0%</td><td>0,00 €</td><td>0,00 €</td><td>0</td><td>0,0%</td></tr>
+<tr><td>ki potenzial analyse</td><td>EXACT</td><td>[GSN] der-ki-check.de</td><td>0</td><td>0</td><td>0,0%</td><td>0,00 €</td><td>0,00 €</td><td>0</td><td>0,0%</td></tr>
+<tr><td>ki beratung berlin</td><td>EXACT</td><td>[GSN] der-ki-check.de</td><td>0</td><td>0</td><td>0,0%</td><td>0,00 €</td><td>0,00 €</td><td>0</td><td>0,0%</td></tr>
+<tr><td>ki beratung für unternehmen</td><td>PHRASE</td><td>[GSN] der-ki-check.de</td><td>0</td><td>0</td><td>0,0%</td><td>0,00 €</td><td>0,00 €</td><td>0</td><td>0,0%</td></tr>
+<tr><td>ki readiness check</td><td>EXACT</td><td>[GSN] der-ki-check.de</td><td>0</td><td>0</td><td>0,0%</td><td>0,00 €</td><td>0,00 €</td><td>0</td><td>0,0%</td></tr>
+<tr><td>ki beratung kmu</td><td>EXACT</td><td>[GSN] der-ki-check.de</td><td>0</td><td>0</td><td>0,0%</td><td>0,00 €</td><td>0,00 €</td><td>0</td><td>0,0%</td></tr>
+<tr><td>ki check kostenlos</td><td>EXACT</td><td>[GSN] der-ki-check.de</td><td>0</td><td>0</td><td>0,0%</td><td>0,00 €</td><td>0,00 €</td><td>0</td><td>0,0%</td></tr>
+<tr><td>ki check unternehmen</td><td>EXACT</td><td>[GSN] der-ki-check.de</td><td>0</td><td>0</td><td>0,0%</td><td>0,00 €</td><td>0,00 €</td><td>0</td><td>0,0%</td></tr>
+<tr><td>ki check buchen</td><td>EXACT</td><td>[GSN] der-ki-check.de</td><td>0</td><td>0</td><td>0,0%</td><td>0,00 €</td><td>0,00 €</td><td>0</td><td>0,0%</td></tr>
+<tr><td>KI check angebot</td><td>EXACT</td><td>[GSN] der-ki-check.de</td><td>0</td><td>0</td><td>0,0%</td><td>0,00 €</td><td>0,00 €</td><td>0</td><td>0,0%</td></tr>
+<tr><td>KI check preis</td><td>EXACT</td><td>[GSN] der-ki-check.de</td><td>0</td><td>0</td><td>0,0%</td><td>0,00 €</td><td>0,00 €</td><td>0</td><td>0,0%</td></tr>
+<tr><td>KI check kosten</td><td>EXACT</td><td>[GSN] der-ki-check.de</td><td>0</td><td>0</td><td>0,0%</td><td>0,00 €</td><td>0,00 €</td><td>0</td><td>0,0%</td></tr>
+<tr><td>KI assessment</td><td>EXACT</td><td>[GSN] der-ki-check.de</td><td>0</td><td>0</td><td>0,0%</td><td>0,00 €</td><td>0,00 €</td><td>0</td><td>0,0%</td></tr>
+<tr><td>ai check business</td><td>EXACT</td><td>[GSN] der-ki-check.de</td><td>0</td><td>0</td><td>0,0%</td><td>0,00 €</td><td>0,00 €</td><td>0</td><td>0,0%</td></tr>
+<tr><td>ki check kmu</td><td>EXACT</td><td>[GSN] der-ki-check.de</td><td>0</td><td>0</td><td>0,0%</td><td>0,00 €</td><td>0,00 €</td><td>0</td><td>0,0%</td></tr>
+<tr><td>ki check buchen</td><td>PHRASE</td><td>[GSN] der-ki-check.de</td><td>0</td><td>0</td><td>0,0%</td><td>0,00 €</td><td>0,00 €</td><td>0</td><td>0,0%</td></tr>
+<tr><td>ki potenzialanalyse kostenlos</td><td>EXACT</td><td>[GSN] der-ki-check.de</td><td>0</td><td>0</td><td>0,0%</td><td>0,00 €</td><td>0,00 €</td><td>0</td><td>0,0%</td></tr>
+<tr><td>ki strategie analyse</td><td>EXACT</td><td>[GSN] der-ki-check.de</td><td>0</td><td>0</td><td>0,0%</td><td>0,00 €</td><td>0,00 €</td><td>0</td><td>0,0%</td></tr>
+<tr><td>shadow ai</td><td>EXACT</td><td>[GSN] Schatten-KI</td><td>0</td><td>0</td><td>0,0%</td><td>0,00 €</td><td>0,00 €</td><td>0</td><td>0,0%</td></tr>
+<tr><td>schatten ki</td><td>EXACT</td><td>[GSN] Schatten-KI</td><td>0</td><td>0</td><td>0,0%</td><td>0,00 €</td><td>0,00 €</td><td>0</td><td>0,0%</td></tr>
+<tr><td>unkontrollierte ki nutzung</td><td>EXACT</td><td>[GSN] Schatten-KI</td><td>0</td><td>0</td><td>0,0%</td><td>0,00 €</td><td>0,00 €</td><td>0</td><td>0,0%</td></tr>
+<tr><td>ki ohne genehmigung</td><td>EXACT</td><td>[GSN] Schatten-KI</td><td>0</td><td>0</td><td>0,0%</td><td>0,00 €</td><td>0,00 €</td><td>0</td><td>0,0%</td></tr>
+</tbody>
+</table>
+        </section>
+        
+        <section>
+            <h2>Suchbegriffe (Top 30)</h2>
+            <table>
+<thead><tr><th>Suchbegriff</th><th>Kampagne</th><th>Impressionen</th><th>Klicks</th><th>CTR</th><th>Kosten</th><th>Conversions</th></tr></thead>
+<tbody>
+<tr><td>ki rechnungsprüfung</td><td>[GSN] KI-Belegerkennung Steuerkanzlei</td><td>5</td><td>1</td><td>20,0%</td><td>8,10 €</td><td>0</td></tr>
+<tr><td>rechnungsprüfung mit ki</td><td>[GSN] KI-Belegerkennung Steuerkanzlei</td><td>5</td><td>0</td><td>0,0%</td><td>0,00 €</td><td>0</td></tr>
+<tr><td>ki belegerkennung</td><td>[GSN] KI-Belegerkennung Steuerkanzlei</td><td>1</td><td>0</td><td>0,0%</td><td>0,00 €</td><td>0</td></tr>
+</tbody>
+</table>
+        </section>
+        
+        <section>
+            <h2>Anzeigen-Performance</h2>
+            <table>
+<thead><tr><th>Anzeige</th><th>Kampagne</th><th>Impressionen</th><th>Klicks</th><th>CTR</th><th>Avg. CPC</th><th>Kosten</th><th>Conversions</th></tr></thead>
+<tbody>
+<tr><td>{KeyWord:KI-Belegerkennung} | Speziell für Steuerkanzleien | Kostenlose Demo anf</td><td>[GSN] KI-Belegerkennung Steuerkanzlei</td><td>41</td><td>4</td><td>9,8%</td><td>7,65 €</td><td>30,61 €</td><td>0</td></tr>
+<tr><td>{KeyWord:KI-Belegerkennung} | Speziell für Steuerkanzleien | Jetzt Demo anfragen</td><td>[GSN] KI-Belegerkennung Steuerkanzlei</td><td>3</td><td>1</td><td>33,3%</td><td>9,87 €</td><td>9,87 €</td><td>0</td></tr>
+<tr><td>KI erfolgreich einführen | KI-Check für Unternehmen | Gratisanalyse, Ergebnis so</td><td>[GSN] der-ki-check.de</td><td>0</td><td>0</td><td>0,0%</td><td>0,00 €</td><td>0,00 €</td><td>0</td></tr>
+<tr><td>Gratis KI-Check für Firmen | KI-Potenziale entdecken | In 5 Minuten zum Report</td><td>[GSN] der-ki-check.de</td><td>0</td><td>0</td><td>0,0%</td><td>0,00 €</td><td>0,00 €</td><td>0</td></tr>
+<tr><td>{KeyWord:Schatten-KI in Ihrer Firma?} | Risiken minimieren | Jetzt Risiko-Check </td><td>[GSN] Schatten-KI</td><td>0</td><td>0</td><td>0,0%</td><td>0,00 €</td><td>0,00 €</td><td>0</td></tr>
+<tr><td>KI erfolgreich einführen | KI-Check für Unternehmen | Gratisanalyse, Ergebnis so</td><td>[GSN] Schatten-KI</td><td>0</td><td>0</td><td>0,0%</td><td>0,00 €</td><td>0,00 €</td><td>0</td></tr>
+<tr><td>KI-Buchhaltung [Placement-Nutzer] -200116-</td><td>[GDN] KI-Buchhaltung</td><td>0</td><td>0</td><td>0,0%</td><td>0,00 €</td><td>0,00 €</td><td>0</td></tr>
+<tr><td>Für vorbereitende Buchhaltung | {KeyWord:Eingangsrechnungen erfassen} | Rechnung</td><td>[GSN] KI-Buchhaltung</td><td>0</td><td>0</td><td>0,0%</td><td>0,00 €</td><td>0,00 €</td><td>0</td></tr>
+<tr><td>{KeyWord:KI-Belegerkennung} | Speziell für Steuerkanzleien | Kostenlose Demo anf</td><td>[GSN] KI-Belegerkennung Steuerkanzlei</td><td>0</td><td>0</td><td>0,0%</td><td>0,00 €</td><td>0,00 €</td><td>0</td></tr>
+</tbody>
+</table>
+        </section>
+        
+        <section>
+            <h2>Empfohlene naechste Schritte</h2>
+            <div class="next-steps"><ol><li><strong>SEO staerken:</strong> Organic liegt hinter Paid Search. Content-Produktion und interne Verlinkung intensivieren.</li>
+<li><strong>Ads Budget pruefen:</strong> 40,48 € ausgegeben ohne Conversions. Keywords und Landingpages auf Relevanz pruefen.</li></ol></div>
+        </section>
+        
+
+    <footer>
+        Flowbeaver Marketing Report | Automatisch generiert via GA4 + Google Ads API
+    </footer>
+</body>
+</html>

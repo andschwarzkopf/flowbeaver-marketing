@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flowbeaver · Markterschließungs-Playbook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=JetBrains+Mono:wght@400;500;600&family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #141312;
+    --paper: #f4efe6;
+    --paper-warm: #ede5d3;
+    --accent: #c8410b;
+    --accent-deep: #8a2a05;
+    --ochre: #d4a24c;
+    --forest: #2d4a2b;
+    --muted: #6b6458;
+    --rule: #c9bfae;
+    --shadow: rgba(20, 19, 18, 0.08);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 400;
+    line-height: 1.55;
+    font-size: 16px;
+    overflow-x: hidden;
+    background-image:
+      radial-gradient(circle at 10% 10%, rgba(200, 65, 11, 0.04) 0%, transparent 40%),
+      radial-gradient(circle at 90% 90%, rgba(45, 74, 43, 0.03) 0%, transparent 40%);
+  }
+
+  /* Typography */
+  .display {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.02;
+  }
+
+  .mono {
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: -0.02em;
+  }
+
+  /* Layout wrapper */
+  .wrap {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+
+  @media (max-width: 768px) {
+    .wrap { padding: 0 24px; }
+  }
+
+  /* Header / Cover */
+  header.cover {
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 48px 0 64px;
+    position: relative;
+  }
+
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  .topbar-left { display: flex; align-items: center; gap: 16px; }
+
+  .mark {
+    width: 32px; height: 32px;
+    border: 1.5px solid var(--ink);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: 18px;
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .cover-content {
+    margin-top: 80px;
+  }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 32px; height: 1px;
+    background: var(--accent);
+  }
+
+  h1.title {
+    font-size: clamp(52px, 9vw, 132px);
+    font-weight: 900;
+    line-height: 0.94;
+    letter-spacing: -0.04em;
+    margin-bottom: 40px;
+    font-family: 'Fraunces', serif;
+  }
+
+  h1.title .it {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--accent);
+  }
+
+  .lede {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(20px, 2.2vw, 28px);
+    font-weight: 400;
+    line-height: 1.35;
+    max-width: 780px;
+    color: var(--ink);
+    margin-bottom: 64px;
+    letter-spacing: -0.01em;
+  }
+
+  .cover-meta {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    padding-top: 32px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .cover-meta .cell {
+    font-size: 12px;
+  }
+
+  .cover-meta .cell-label {
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    font-size: 10px;
+    margin-bottom: 6px;
+  }
+
+  .cover-meta .cell-value {
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  @media (max-width: 768px) {
+    .cover-meta { grid-template-columns: 1fr 1fr; gap: 20px; }
+  }
+
+  /* Section structure */
+  section {
+    padding: 96px 0;
+    position: relative;
+  }
+
+  section + section {
+    border-top: 1px solid var(--rule);
+  }
+
+  .section-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+  }
+
+  .section-num .num {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  h2.section-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 700;
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    margin-bottom: 24px;
+    max-width: 900px;
+  }
+
+  h2.section-title em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--accent);
+  }
+
+  .section-intro {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    line-height: 1.45;
+    max-width: 720px;
+    color: var(--muted);
+    margin-bottom: 64px;
+    font-weight: 400;
+  }
+
+  /* Diagnosis section */
+  .diagnosis {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+
+  @media (max-width: 860px) {
+    .diagnosis { grid-template-columns: 1fr; }
+  }
+
+  .diagnosis-card {
+    background: var(--paper-warm);
+    padding: 40px;
+    border: 1px solid var(--rule);
+    position: relative;
+  }
+
+  .diagnosis-card.hard {
+    background: var(--ink);
+    color: var(--paper);
+    border: none;
+  }
+
+  .diagnosis-card .card-kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+
+  .diagnosis-card.hard .card-kicker { color: var(--ochre); }
+
+  .diagnosis-card h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+  }
+
+  .diagnosis-card p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--muted);
+  }
+
+  .diagnosis-card.hard p { color: rgba(244, 239, 230, 0.75); }
+
+  .diagnosis-card p + p { margin-top: 14px; }
+
+  /* Channel grid */
+  .channels-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 48px;
+    margin-bottom: 56px;
+  }
+
+  .scale {
+    display: flex;
+    gap: 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+  }
+
+  .scale .leichter { color: var(--forest); }
+  .scale .harter { color: var(--accent-deep); }
+
+  .channel {
+    display: grid;
+    grid-template-columns: 80px 1fr 340px;
+    gap: 48px;
+    padding: 40px 0;
+    border-top: 1px solid var(--rule);
+    position: relative;
+    transition: background 0.4s ease;
+  }
+
+  .channel:hover {
+    background: rgba(200, 65, 11, 0.02);
+  }
+
+  .channel:last-of-type {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .channel-num {
+    font-family: 'Fraunces', serif;
+    font-size: 56px;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1;
+    color: var(--accent);
+    font-feature-settings: "lnum";
+  }
+
+  .channel-body h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+    line-height: 1.1;
+  }
+
+  .channel-body .tagline {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--muted);
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .channel-body p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink);
+    max-width: 620px;
+  }
+
+  .channel-body ul {
+    margin-top: 16px;
+    list-style: none;
+  }
+
+  .channel-body ul li {
+    font-size: 14px;
+    padding: 6px 0 6px 24px;
+    position: relative;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+
+  .channel-body ul li::before {
+    content: "›";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .channel-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px 24px;
+    background: var(--paper-warm);
+    border-left: 2px solid var(--accent);
+    font-size: 13px;
+  }
+
+  .channel-meta-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .channel-meta-label {
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    display: block;
+    margin-bottom: 3px;
+  }
+
+  .channel-meta-value {
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  .intensity-bar {
+    display: flex;
+    gap: 3px;
+    margin-top: 6px;
+  }
+
+  .intensity-bar span {
+    width: 16px;
+    height: 5px;
+    background: var(--rule);
+    border-radius: 1px;
+  }
+
+  .intensity-bar span.on { background: var(--accent); }
+
+  @media (max-width: 920px) {
+    .channel { grid-template-columns: 1fr; gap: 24px; }
+    .channel-num { font-size: 40px; }
+    .channel-meta { border-left: none; border-top: 2px solid var(--accent); }
+    .channels-header { grid-template-columns: 1fr; }
+  }
+
+  /* Script block - cold call dialogue */
+  .script-section {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 120px 0;
+    margin-top: 0;
+  }
+
+  .script-section .section-num { color: rgba(244, 239, 230, 0.5); }
+  .script-section .section-num .num { color: var(--ochre); }
+  .script-section h2.section-title em { color: var(--ochre); }
+  .script-section .section-intro { color: rgba(244, 239, 230, 0.7); }
+
+  .script-block {
+    background: rgba(244, 239, 230, 0.04);
+    border: 1px solid rgba(244, 239, 230, 0.12);
+    padding: 48px 56px;
+    max-width: 880px;
+    margin-top: 48px;
+    position: relative;
+  }
+
+  .script-block::before {
+    content: '"';
+    position: absolute;
+    top: -32px;
+    left: 24px;
+    font-family: 'Fraunces', serif;
+    font-size: 180px;
+    color: var(--accent);
+    line-height: 1;
+    font-weight: 900;
+  }
+
+  .script-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--ochre);
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .script-text {
+    font-family: 'Fraunces', serif;
+    font-size: 21px;
+    line-height: 1.55;
+    font-weight: 400;
+    color: var(--paper);
+    letter-spacing: -0.005em;
+  }
+
+  .script-text em {
+    font-style: italic;
+    color: var(--ochre);
+  }
+
+  .script-annotations {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  .annotation {
+    padding-left: 16px;
+    border-left: 2px solid var(--accent);
+  }
+
+  .annotation-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--ochre);
+    margin-bottom: 8px;
+  }
+
+  .annotation-text {
+    font-size: 13px;
+    color: rgba(244, 239, 230, 0.8);
+    line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    .script-block { padding: 32px 24px; }
+    .script-annotations { grid-template-columns: 1fr; gap: 20px; }
+  }
+
+  /* Timeline */
+  .timeline-wrap {
+    margin-top: 48px;
+    position: relative;
+  }
+
+  .timeline-rail {
+    position: absolute;
+    left: 140px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent) 0%, var(--ochre) 50%, var(--forest) 100%);
+  }
+
+  .week {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 48px;
+    padding: 32px 0;
+    position: relative;
+  }
+
+  .week::before {
+    content: "";
+    position: absolute;
+    left: 134px;
+    top: 48px;
+    width: 14px;
+    height: 14px;
+    background: var(--paper);
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  .week-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding-top: 48px;
+    color: var(--muted);
+    text-align: right;
+  }
+
+  .week-label .num {
+    display: block;
+    font-family: 'Fraunces', serif;
+    font-size: 48px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    font-style: italic;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .week-body {
+    padding: 40px 0 0 32px;
+  }
+
+  .week-body h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+    line-height: 1.1;
+  }
+
+  .week-body .focus {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--accent);
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+
+  .task-list {
+    list-style: none;
+  }
+
+  .task-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 20px;
+    align-items: baseline;
+    font-size: 14px;
+  }
+
+  .task-list li:last-child { border-bottom: none; }
+
+  .task-check {
+    width: 14px;
+    height: 14px;
+    border: 1px solid var(--muted);
+    border-radius: 2px;
+    display: inline-block;
+    flex-shrink: 0;
+  }
+
+  .task-hours {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .week-total {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 2px solid var(--ink);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  .week-total .total-value {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    text-transform: none;
+    letter-spacing: -0.01em;
+    font-weight: 500;
+    color: var(--accent);
+  }
+
+  @media (max-width: 768px) {
+    .timeline-rail { left: 16px; }
+    .week { grid-template-columns: 1fr; gap: 8px; padding-left: 48px; }
+    .week::before { left: 10px; top: 12px; }
+    .week-label { text-align: left; padding-top: 0; }
+    .week-label .num { font-size: 36px; }
+    .week-body { padding: 16px 0 0 0; }
+  }
+
+  /* ICP filter */
+  .filter-stack {
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .filter-layer {
+    background: var(--paper-warm);
+    padding: 32px 40px;
+    border-left: 4px solid var(--accent);
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 40px;
+    align-items: start;
+    transition: background 0.3s ease;
+  }
+
+  .filter-layer:hover { background: #e5dbc5; }
+
+  .filter-layer:nth-child(2) { border-left-color: var(--ochre); }
+  .filter-layer:nth-child(3) { border-left-color: var(--forest); }
+
+  .filter-level {
+    font-family: 'Fraunces', serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .filter-level .big {
+    display: block;
+    font-family: 'Fraunces', serif;
+    font-size: 40px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--accent);
+    letter-spacing: -0.02em;
+    margin-bottom: 4px;
+    text-transform: none;
+  }
+
+  .filter-layer:nth-child(2) .filter-level .big { color: var(--ochre); }
+  .filter-layer:nth-child(3) .filter-level .big { color: var(--forest); }
+
+  .filter-content h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 12px;
+  }
+
+  .filter-content p {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+
+  .signal-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .signal {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    padding: 4px 10px;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    color: var(--ink);
+    border-radius: 2px;
+  }
+
+  @media (max-width: 768px) {
+    .filter-layer { grid-template-columns: 1fr; gap: 16px; padding: 24px; }
+  }
+
+  /* Psychology section */
+  .psych-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 48px;
+  }
+
+  .psych-card {
+    padding: 32px;
+    background: var(--paper-warm);
+    position: relative;
+  }
+
+  .psych-card:nth-child(1) { border-top: 3px solid var(--accent); }
+  .psych-card:nth-child(2) { border-top: 3px solid var(--ochre); }
+  .psych-card:nth-child(3) { border-top: 3px solid var(--forest); }
+
+  .psych-glyph {
+    font-family: 'Fraunces', serif;
+    font-size: 48px;
+    line-height: 1;
+    font-weight: 300;
+    font-style: italic;
+    margin-bottom: 16px;
+  }
+
+  .psych-card:nth-child(1) .psych-glyph { color: var(--accent); }
+  .psych-card:nth-child(2) .psych-glyph { color: var(--ochre); }
+  .psych-card:nth-child(3) .psych-glyph { color: var(--forest); }
+
+  .psych-card h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+
+  .psych-card p {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--muted);
+  }
+
+  @media (max-width: 768px) {
+    .psych-grid { grid-template-columns: 1fr; }
+  }
+
+  /* Metrics / numbers */
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    margin-top: 48px;
+    background: var(--rule);
+    padding: 1px;
+    border: 1px solid var(--rule);
+  }
+
+  .metric {
+    background: var(--paper);
+    padding: 36px 28px;
+    text-align: left;
+  }
+
+  .metric-num {
+    font-family: 'Fraunces', serif;
+    font-size: 56px;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1;
+    color: var(--accent);
+    letter-spacing: -0.03em;
+    margin-bottom: 12px;
+  }
+
+  .metric-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+  }
+
+  .metric-label .sub {
+    display: block;
+    color: var(--ink);
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: normal;
+    margin-top: 6px;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 768px) {
+    .metrics { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* Footer */
+  footer {
+    background: var(--ink);
+    color: rgba(244, 239, 230, 0.6);
+    padding: 80px 0 48px;
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+
+  footer .foot-mark {
+    font-family: 'Fraunces', serif;
+    font-size: 48px;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--ochre);
+    text-transform: none;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    line-height: 1;
+  }
+
+  footer p { margin-bottom: 12px; }
+
+  /* Reveal on scroll */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Pullquote style divider */
+  .pull {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: clamp(24px, 3vw, 36px);
+    line-height: 1.3;
+    color: var(--ink);
+    max-width: 860px;
+    margin: 64px auto;
+    text-align: center;
+    position: relative;
+    padding: 40px 0;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+  }
+
+  .pull::before, .pull::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 48px;
+    height: 2px;
+    background: var(--accent);
+  }
+
+  .pull::before { top: 0; }
+  .pull::after { bottom: 0; }
+
+  /* Section decorations */
+  .decorator {
+    position: absolute;
+    top: 48px;
+    right: 48px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+
+  @media (max-width: 768px) {
+    .decorator { display: none; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- Cover -->
+<header class="cover">
+  <div class="wrap">
+    <div class="topbar">
+      <div class="topbar-left">
+        <div class="mark">F</div>
+        <span>Flowbeaver GmbH · Internal</span>
+      </div>
+      <span>April 2026 · v1.0</span>
+    </div>
+
+    <div class="cover-content">
+      <div class="eyebrow">Playbook Nr. 7 · Markterschliessung</div>
+      <h1 class="title">
+        Wie kommt<br>
+        Flowbeaver<br>
+        <span class="it">in den Markt?</span>
+      </h1>
+      <p class="lede">
+        Ein 6-Wochen-Sprint zur Kundenerschließung für den deutschen Steuerkanzleimarkt – jenseits von Google Ads und Landingpages. Sechs parallele Kanäle. Klare Priorisierung. Ehrliche Botschaft.
+      </p>
+      <div class="cover-meta">
+        <div class="cell">
+          <div class="cell-label">Ausgangslage</div>
+          <div class="cell-value">0 Leads trotz Google Ads</div>
+        </div>
+        <div class="cell">
+          <div class="cell-label">Ziel</div>
+          <div class="cell-value">2–4 Beta-Kanzleien in 6 Wochen</div>
+        </div>
+        <div class="cell">
+          <div class="cell-label">Zeitbudget</div>
+          <div class="cell-value">8–12 Stunden pro Woche</div>
+        </div>
+        <div class="cell">
+          <div class="cell-label">Kernprinzip</div>
+          <div class="cell-value">Präsenz an mehreren Orten</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Diagnosis -->
+<section>
+  <div class="wrap">
+    <div class="decorator">Kapitel 01 / Diagnose</div>
+    <div class="section-num"><span class="num">01</span><span>Die Realität ansehen</span></div>
+    <h2 class="section-title">Der Markt hat <em>gesprochen.</em><br>Wir müssen zuhören.</h2>
+    <p class="section-intro">
+      Null Leads trotz intensiv vorbereiteter Google-Ads-Kampagne ist kein Feintuning-Problem. Es ist ein strukturelles Signal. Steuerkanzleien kommen nicht über digitale Performance-Kanäle zu Flowbeaver — weil sie dort nicht nach Software suchen.
+    </p>
+
+    <div class="diagnosis reveal">
+      <div class="diagnosis-card">
+        <div class="card-kicker">Was nicht funktioniert</div>
+        <h3>Digital-direkte Akquise in einem konservativen Markt</h3>
+        <p>
+          Steuerkanzleien kaufen Software nicht über Google-Suche. Sie vertrauen auf Empfehlungen von Kollegen, DATEV-Marktplatz-Listungen, Verbandskontakte, Fachmessen und den Einfluss ihrer IT-Betreuer.
+        </p>
+        <p>
+          Finmatics hat über zehntausend Kunden gewonnen — nicht durch Google Ads, sondern durch systematische Präsenz in Messen, Verbänden und Partnernetzwerken. Dieser Markt funktioniert nicht wie SaaS für Tech-Zielgruppen.
+        </p>
+      </div>
+
+      <div class="diagnosis-card hard">
+        <div class="card-kicker">Was das für uns bedeutet</div>
+        <h3>Wir brauchen Zugang, nicht Positionierung</h3>
+        <p>
+          Das Produkt ist bereit. Die Positionierung ist geschärft. Die eigentliche offene Frage ist: wie kommen wir mit Kanzleien überhaupt ins Gespräch?
+        </p>
+        <p>
+          Die Antwort ist kein einzelner Hebel. Es ist ein Multi-Kanal-Ansatz, der parallel auf sechs Wegen Präsenz aufbaut — von niedrigschwellig (Fachcommunity-Beiträge) bis hart (Cold Calls mit klarem Skript).
+        </p>
+      </div>
+    </div>
+
+    <p class="pull">
+      In diesem Markt gewinnt man durch Präsenz<br>an mehreren Orten — nicht durch Brillanz an einem Ort.
+    </p>
+  </div>
+</section>
+
+<!-- Channels -->
+<section>
+  <div class="wrap">
+    <div class="decorator">Kapitel 02 / Kanäle</div>
+    <div class="section-num"><span class="num">02</span><span>Sechs Wege in den Raum</span></div>
+    <h2 class="section-title">Die Kanäle — <em>von weich zu hart</em></h2>
+
+    <div class="channels-header">
+      <p class="section-intro" style="margin-bottom:0;">
+        Geordnet nach psychologischer Schwierigkeit. Fangen leicht an. Eskalation nur, wenn die leichten nicht ausreichen. Jeder Kanal läuft parallel.
+      </p>
+      <div class="scale">
+        <span class="leichter">◆ leichter</span>
+        <span class="harter">harter ◆</span>
+      </div>
+    </div>
+
+    <!-- Channel 01 -->
+    <div class="channel reveal">
+      <div class="channel-num">01</div>
+      <div class="channel-body">
+        <h3>Fachcommunitys online</h3>
+        <p class="tagline">Du wirst als Fachperson wahrgenommen, bevor du verkaufst.</p>
+        <p>
+          Steuerberater diskutieren in digitalen Räumen über Software, OCR, ZUGFeRD-Probleme, Kanzlei-Digitalisierung. Du bist dort präsent mit substantiellen Antworten — ohne zu pitchen. Nach zwei bis drei Monaten regelmäßiger Beiträge kommen Direct Messages.
+        </p>
+        <ul>
+          <li>DATEV-Community (community.datev.de) — öffentliches Forum, täglich aktiv</li>
+          <li>Facebook-Gruppen "Steuerberater Netzwerk" sowie LinkedIn-Pendants</li>
+          <li>XING-Gruppen zu Steuerberatung und Kanzleimanagement</li>
+          <li>kanzlei.land als Community-Plattform</li>
+        </ul>
+      </div>
+      <div class="channel-meta">
+        <div>
+          <span class="channel-meta-label">Zeitaufwand</span>
+          <span class="channel-meta-value">2–3 Std. pro Woche</span>
+        </div>
+        <div>
+          <span class="channel-meta-label">Psychologisch</span>
+          <span class="channel-meta-value">Minimal</span>
+          <div class="intensity-bar"><span class="on"></span><span></span><span></span><span></span><span></span></div>
+        </div>
+        <div>
+          <span class="channel-meta-label">Wirkungshorizont</span>
+          <span class="channel-meta-value">2–3 Monate</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Channel 02 -->
+    <div class="channel reveal">
+      <div class="channel-num">02</div>
+      <div class="channel-body">
+        <h3>Regionale Veranstaltungen</h3>
+        <p class="tagline">Netzwerken, ohne verkaufen zu müssen.</p>
+        <p>
+          Events, bei denen der Kontext ein anderer ist als ein Akquisegespräch. Du gehst hin, hörst zu, tauschst Visitenkarten. Wenn jemand fragt, was du machst, antwortest du beiläufig. Berlin hat hier einen echten Vorteil mit seiner aktiven FinTech- und Digital-Community.
+        </p>
+        <ul>
+          <li>Veranstaltungen der Steuerberaterkammer Berlin</li>
+          <li>IHK-Veranstaltungen zu "Digitalisierung im Mittelstand"</li>
+          <li>DATEV-Regionalveranstaltungen in Berlin</li>
+          <li>Meetups zu FinTech und Buchhaltungs-Tech</li>
+        </ul>
+      </div>
+      <div class="channel-meta">
+        <div>
+          <span class="channel-meta-label">Zeitaufwand</span>
+          <span class="channel-meta-value">1–2 Events/Monat</span>
+        </div>
+        <div>
+          <span class="channel-meta-label">Psychologisch</span>
+          <span class="channel-meta-value">Mittel</span>
+          <div class="intensity-bar"><span class="on"></span><span class="on"></span><span></span><span></span><span></span></div>
+        </div>
+        <div>
+          <span class="channel-meta-label">Wirkungshorizont</span>
+          <span class="channel-meta-value">Sofort</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Channel 03 -->
+    <div class="channel reveal">
+      <div class="channel-num">03</div>
+      <div class="channel-body">
+        <h3>LinkedIn-DMs an warme Leads</h3>
+        <p class="tagline">Keine Cold-DMs. Nur Nachrichten mit echtem Bezugspunkt.</p>
+        <p>
+          Kalte LinkedIn-Nachrichten sind nutzlos. Aber DMs an Personen, mit denen es einen konkreten Anknüpfungspunkt gibt, funktionieren: Post-Interaktion, gemeinsame Kontakte, Forum-Beiträge. Drei durchdachte DMs pro Woche bringen mehr als dreißig Massen-Nachrichten.
+        </p>
+        <ul>
+          <li>Autoren von Fachartikeln, die du tatsächlich gelesen hast</li>
+          <li>Teilnehmer von Veranstaltungen, auf denen du selbst warst</li>
+          <li>Kontakte zweiten Grades — gemeinsame Verbindungen nutzen</li>
+          <li>Personen aus Community-Diskussionen, die interessante Posts schreiben</li>
+        </ul>
+      </div>
+      <div class="channel-meta">
+        <div>
+          <span class="channel-meta-label">Zeitaufwand</span>
+          <span class="channel-meta-value">1–2 Std. pro Woche</span>
+        </div>
+        <div>
+          <span class="channel-meta-label">Psychologisch</span>
+          <span class="channel-meta-value">Niedrig-Mittel</span>
+          <div class="intensity-bar"><span class="on"></span><span class="on"></span><span></span><span></span><span></span></div>
+        </div>
+        <div>
+          <span class="channel-meta-label">Wirkungshorizont</span>
+          <span class="channel-meta-value">1–3 Wochen</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Channel 04 -->
+    <div class="channel reveal">
+      <div class="channel-num">04</div>
+      <div class="channel-body">
+        <h3>DATEV-IT-Partner als Multiplikatoren</h3>
+        <p class="tagline">Ein Partner öffnet, was hundert Cold Calls nicht schaffen.</p>
+        <p>
+          IT-Dienstleister betreuen jeweils dreißig bis hundertfünfzig Kanzleien bei der DATEV-Infrastruktur. Sie haben etablierten Zugang und Glaubwürdigkeit. Eine Empfehlung durch sie wiegt hundert Cold Calls auf. Der Pitch an sie ist Partner-Vertrieb, nicht Endkundenverkauf.
+        </p>
+        <ul>
+          <li>DATEV-Partner-Verzeichnis auf der DATEV-Website systematisch durchgehen</li>
+          <li>CONVOTIS und ähnliche überregionale DATEV-IT-Dienstleister</li>
+          <li>Lokale Berliner IT-Dienstleister für Steuerkanzleien (Google-Suche)</li>
+          <li>Pitch: Provisionsmodell auf vermittelte Beta-Kanzleien</li>
+        </ul>
+      </div>
+      <div class="channel-meta">
+        <div>
+          <span class="channel-meta-label">Zeitaufwand</span>
+          <span class="channel-meta-value">5–10 Partner in 2–3 Wochen</span>
+        </div>
+        <div>
+          <span class="channel-meta-label">Psychologisch</span>
+          <span class="channel-meta-value">Niedrig</span>
+          <div class="intensity-bar"><span class="on"></span><span></span><span></span><span></span><span></span></div>
+        </div>
+        <div>
+          <span class="channel-meta-label">Wirkungshorizont</span>
+          <span class="channel-meta-value">Hoher Hebel, längerer Aufbau</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Channel 05 -->
+    <div class="channel reveal">
+      <div class="channel-num">05</div>
+      <div class="channel-body">
+        <h3>Gastvorträge und Podcasts</h3>
+        <p class="tagline">Du wirst als Experte vorgestellt. Nicht als Verkäufer.</p>
+        <p>
+          Kein eigenes Webinar veranstalten, sondern bei existierenden Veranstaltern als Experte auftreten. Lexware, sevdesk und Fachmedien suchen laufend Gastreferenten und Autoren für KI-Themen. Die Glaubwürdigkeit, die daraus entsteht, ist ein Mehrfaches eines Kaltkontakts.
+        </p>
+        <ul>
+          <li>Podcasts: "Der Kanzleifunk", "Digital Breakfast für Kanzleien"</li>
+          <li>DATEV-Magazin und NWB-Verlag für Fachbeiträge</li>
+          <li>Lexware-Office-Webinare als Gastreferent</li>
+          <li>sevdesk-Steuerberater-Webinare</li>
+        </ul>
+      </div>
+      <div class="channel-meta">
+        <div>
+          <span class="channel-meta-label">Zeitaufwand</span>
+          <span class="channel-meta-value">5–10 Anfragen initial</span>
+        </div>
+        <div>
+          <span class="channel-meta-label">Psychologisch</span>
+          <span class="channel-meta-value">Mittel</span>
+          <div class="intensity-bar"><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span></div>
+        </div>
+        <div>
+          <span class="channel-meta-label">Wirkungshorizont</span>
+          <span class="channel-meta-value">Hoher Autoritäts-Hebel</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Channel 06 -->
+    <div class="channel reveal">
+      <div class="channel-num">06</div>
+      <div class="channel-body">
+        <h3>Strukturierte Cold Calls</h3>
+        <p class="tagline">Nicht um zu verkaufen. Um zu verstehen.</p>
+        <p>
+          Die härteste Methode — aber mit klarer Struktur machbar. Fünf Anrufe pro Tag an drei Tagen pro Woche. Vormittags zwischen 9:30 und 11:00. Der Grund ist ehrlich: Marktforschung, nicht Verkauf. Du lernst, was im Markt passiert. Nebenbei fallen Beta-Kontakte ab.
+        </p>
+        <ul>
+          <li>15 Anrufe pro Woche — dosiert, zeitlich begrenzt</li>
+          <li>Ehrlicher Gesprächsöffner ohne Verkaufs-Druck (Skript unten)</li>
+          <li>Empfangsmitarbeiterin nicht umgehen — nach "richtiger Ansprechperson" fragen</li>
+          <li>Nach jeder Session: Pause, Spaziergang, Kaffee</li>
+        </ul>
+      </div>
+      <div class="channel-meta">
+        <div>
+          <span class="channel-meta-label">Zeitaufwand</span>
+          <span class="channel-meta-value">3–5 Std. pro Woche</span>
+        </div>
+        <div>
+          <span class="channel-meta-label">Psychologisch</span>
+          <span class="channel-meta-value">Hoch</span>
+          <div class="intensity-bar"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></div>
+        </div>
+        <div>
+          <span class="channel-meta-label">Wirkungshorizont</span>
+          <span class="channel-meta-value">2–4 Wochen</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Cold call script -->
+<section class="script-section">
+  <div class="wrap">
+    <div class="decorator">Kapitel 03 / Sprechen</div>
+    <div class="section-num"><span class="num">03</span><span>Der Cold-Call-Gesprächsöffner</span></div>
+    <h2 class="section-title">Der Satz, der <em>die Tür öffnet</em></h2>
+    <p class="section-intro">
+      Ein Gesprächsöffner muss zwei Bedingungen erfüllen: Er muss zu 100% ehrlich sein — und er muss interessant genug sein, dass eine Kanzlei ihre teure Zeit schenkt. Hier ist die Formulierung, die beides leistet.
+    </p>
+
+    <div class="script-block">
+      <span class="script-label">Gesprächsöffner · 40 Sekunden</span>
+      <p class="script-text">
+        Mein Name ist Andreas Schwarzkopf. Ich bin Diplom-Kaufmann und habe <em>fünfzehn Jahre lang KI-Systeme gebaut</em>, zuletzt vier Jahre bei Mercedes-Benz und der Mercedes-Benz Bank für produktive KI-Lösungen. Jetzt baue ich eine KI für die Belegbearbeitung in Kanzleien und möchte von Ihnen lernen, wie Ihr heutiger Prozess aussieht und wo Sie Frust haben.<br><br>
+        <em>Das ist kein Verkaufsgespräch</em> — ich will verstehen, nicht zeigen. Hätten Sie zehn Minuten für mich?
+      </p>
+    </div>
+
+    <div class="script-annotations">
+      <div class="annotation">
+        <div class="annotation-label">Warum es funktioniert · 01</div>
+        <div class="annotation-text">Mercedes-Benz und 15 Jahre KI sind keine leichtgewichtigen Referenzen. Sie etablieren in zwei Sätzen eine Glaubwürdigkeit, die Software-Verkäufer selten haben.</div>
+      </div>
+      <div class="annotation">
+        <div class="annotation-label">Warum es funktioniert · 02</div>
+        <div class="annotation-text">Die explizite Absage an das Verkaufsgespräch bricht das Verteidigungsmuster der Kanzlei. Du bist nicht der nächste Vertriebler, du bist jemand, der lernen will.</div>
+      </div>
+      <div class="annotation">
+        <div class="annotation-label">Warum es funktioniert · 03</div>
+        <div class="annotation-text">Zehn Minuten ist ein ehrlicher, überschaubarer Zeitrahmen. Dreißig Minuten klingen nach Demo. Zehn Minuten klingen nach Gespräch unter Kollegen.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ICP Filter -->
+<section>
+  <div class="wrap">
+    <div class="decorator">Kapitel 04 / Zielgruppe</div>
+    <div class="section-num"><span class="num">04</span><span>Wen rufen wir an?</span></div>
+    <h2 class="section-title">Die <em>drei Filterebenen</em> des ICP</h2>
+    <p class="section-intro">
+      Vorgehen multiplikativ, nicht additiv. Eine Kanzlei muss mindestens ein Kriterium aus Ebene eins erfüllen und dazu noch zwei aus den Ebenen zwei und drei. Das Ergebnis ist eine handgezählte Liste von hundert bis dreihundert echten ICP-Kandidaten.
+    </p>
+
+    <div class="filter-stack">
+      <div class="filter-layer reveal">
+        <div class="filter-level">
+          <span class="big">01</span>
+          Ebene eins · Hart
+        </div>
+        <div class="filter-content">
+          <h4>Plattform-Signal</h4>
+          <p>Eine Kanzlei qualifiziert nur dann, wenn mindestens eines dieser öffentlich sichtbaren Signale vorhanden ist. Ohne Plattform-Signal ist die Kanzlei nicht in der Nische — und es lohnt sich nicht, Zeit zu investieren.</p>
+          <div class="signal-tags">
+            <span class="signal">Lexware-Office-Verzeichnis</span>
+            <span class="signal">sevdesk-Partner (Silber/Gold)</span>
+            <span class="signal">BuchhaltungsButler-Partner</span>
+            <span class="signal">Taxdoo-Partner</span>
+            <span class="signal">Cloud-Tools auf Website</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="filter-layer reveal">
+        <div class="filter-level">
+          <span class="big">02</span>
+          Ebene zwei · Mittel
+        </div>
+        <div class="filter-content">
+          <h4>Größen- und Wachstumssignal</h4>
+          <p>Die Kanzlei muss skalierungsorientiert sein, sonst ist der Leidensdruck beim Thema Belegbearbeitung zu gering. Stellenausschreibungen für FiBu-Personal sind ein starkes Indiz für akuten Fachkräftemangel.</p>
+          <div class="signal-tags">
+            <span class="signal">Mindestens 5 Mitarbeiter</span>
+            <span class="signal">Idealspanne 8–30 MA</span>
+            <span class="signal">Aktuelle FiBu-Stellenanzeigen</span>
+            <span class="signal">Website kommuniziert Wachstum</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="filter-layer reveal">
+        <div class="filter-level">
+          <span class="big">03</span>
+          Ebene drei · Weich
+        </div>
+        <div class="filter-content">
+          <h4>Digitalisierungs-Signal</h4>
+          <p>Ein weiches, aber kraftvolles Kriterium. Kanzleien, deren Inhaber öffentlich über Digitalisierung schreiben, sind psychologisch empfänglicher für KI-Produkte. Das senkt die Verkaufsschwelle erheblich.</p>
+          <div class="signal-tags">
+            <span class="signal">LinkedIn-Präsenz des Inhabers</span>
+            <span class="signal">Digitalisierungs-Content im Blog</span>
+            <span class="signal">DATEV-"Digitale Kanzlei"-Label</span>
+            <span class="signal">Moderne Website</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Timeline -->
+<section>
+  <div class="wrap">
+    <div class="decorator">Kapitel 05 / Zeitplan</div>
+    <div class="section-num"><span class="num">05</span><span>Der 6-Wochen-Sprint</span></div>
+    <h2 class="section-title">Sechs Wochen, <em>drei Phasen</em></h2>
+    <p class="section-intro">
+      Kein Kanal steht allein. Die Wochen sind so gebaut, dass du parallel auf mehreren Wegen Präsenz aufbaust. Wenn einer scheitert, laufen die anderen weiter. Wenn einer explodiert, skalierst du ihn.
+    </p>
+
+    <div class="timeline-wrap">
+      <div class="timeline-rail"></div>
+
+      <div class="week reveal">
+        <div class="week-label">
+          <span class="num">1–2</span>
+          Woche
+        </div>
+        <div class="week-body">
+          <h3>Grundlagen legen</h3>
+          <p class="focus">Phase eins · Infrastruktur und Listen aufbauen</p>
+          <ul class="task-list">
+            <li>
+              <span class="task-check"></span>
+              <span>DATEV-Community-Account anlegen und erste 2–3 substantielle Beiträge verfassen</span>
+              <span class="task-hours">3 h</span>
+            </li>
+            <li>
+              <span class="task-check"></span>
+              <span>Liste von 20 Berliner Cloud-First-Kanzleien mit allen drei Filterebenen erstellen</span>
+              <span class="task-hours">4 h</span>
+            </li>
+            <li>
+              <span class="task-check"></span>
+              <span>5 DATEV-IT-Partner identifizieren, erste Kontaktaufnahme per E-Mail/LinkedIn</span>
+              <span class="task-hours">2 h</span>
+            </li>
+            <li>
+              <span class="task-check"></span>
+              <span>Anfrage an Podcast-Host senden ("Kanzleifunk" oder vergleichbar)</span>
+              <span class="task-hours">1 h</span>
+            </li>
+            <li>
+              <span class="task-check"></span>
+              <span>Gesprächsleitfaden finalisieren, Cold-Call-Skript ausdrucken, Kalender-Blöcke reservieren</span>
+              <span class="task-hours">2 h</span>
+            </li>
+          </ul>
+          <div class="week-total">
+            <span>Summe über 2 Wochen</span>
+            <span class="total-value">~12 Stunden</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="week reveal">
+        <div class="week-label">
+          <span class="num">3–4</span>
+          Woche
+        </div>
+        <div class="week-body">
+          <h3>Aktivierung</h3>
+          <p class="focus">Phase zwei · Alle Kanäle gleichzeitig anlaufen</p>
+          <ul class="task-list">
+            <li>
+              <span class="task-check"></span>
+              <span>2 Fachbeiträge pro Woche in DATEV-Community / Facebook-Gruppe</span>
+              <span class="task-hours">2 h / Wo.</span>
+            </li>
+            <li>
+              <span class="task-check"></span>
+              <span>5 Cold Calls pro Woche — vormittags 9:30–11:00, in einem Block</span>
+              <span class="task-hours">3 h / Wo.</span>
+            </li>
+            <li>
+              <span class="task-check"></span>
+              <span>Mindestens 1 ausführliches Gespräch mit einem DATEV-IT-Partner</span>
+              <span class="task-hours">1 h / Wo.</span>
+            </li>
+            <li>
+              <span class="task-check"></span>
+              <span>Anmeldung zu 1–2 Berliner Fachveranstaltungen im Mai oder Juni</span>
+              <span class="task-hours">1 h</span>
+            </li>
+            <li>
+              <span class="task-check"></span>
+              <span>3 gezielte LinkedIn-DMs pro Woche an warme Leads</span>
+              <span class="task-hours">1 h / Wo.</span>
+            </li>
+          </ul>
+          <div class="week-total">
+            <span>Summe pro Woche</span>
+            <span class="total-value">~8 Stunden</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="week reveal">
+        <div class="week-label">
+          <span class="num">5–6</span>
+          Woche
+        </div>
+        <div class="week-body">
+          <h3>Vertiefung und Auswertung</h3>
+          <p class="focus">Phase drei · Erfolgreiche Kanäle skalieren</p>
+          <ul class="task-list">
+            <li>
+              <span class="task-check"></span>
+              <span>Besuch der angemeldeten Fachveranstaltungen, Visitenkarten sammeln, Gespräche führen</span>
+              <span class="task-hours">4 h</span>
+            </li>
+            <li>
+              <span class="task-check"></span>
+              <span>Cold Calls hochfahren auf 10 pro Woche — nur im erfolgreichsten Segment</span>
+              <span class="task-hours">4 h / Wo.</span>
+            </li>
+            <li>
+              <span class="task-check"></span>
+              <span>Erste DM-Welle an 15 warme LinkedIn-Leads, auf Basis erster Community-Erkenntnisse</span>
+              <span class="task-hours">2 h</span>
+            </li>
+            <li>
+              <span class="task-check"></span>
+              <span>Partnerschaft mit einem IT-Partner konkretisieren — Provisionsmodell vereinbaren</span>
+              <span class="task-hours">2 h</span>
+            </li>
+            <li>
+              <span class="task-check"></span>
+              <span>Auswertung: welche Kanäle haben gezogen, welche Messages, welches Segment?</span>
+              <span class="task-hours">2 h</span>
+            </li>
+          </ul>
+          <div class="week-total">
+            <span>Summe pro Woche</span>
+            <span class="total-value">~10 Stunden</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Psychology -->
+<section>
+  <div class="wrap">
+    <div class="decorator">Kapitel 06 / Haltung</div>
+    <div class="section-num"><span class="num">06</span><span>Psychologische Infrastruktur</span></div>
+    <h2 class="section-title">Was <em>dich trägt</em>, wenn es hart wird</h2>
+    <p class="section-intro">
+      Cold Calls sind psychologisch hart. Ablehnungen werden kommen — realistisch 80% sagen nein oder gehen gar nicht erst ran. Diese drei Mechanismen sind nicht Nice-to-have, sie sind der Unterschied zwischen durchhalten und aufgeben.
+    </p>
+
+    <div class="psych-grid">
+      <div class="psych-card reveal">
+        <div class="psych-glyph">I.</div>
+        <h4>Tracking in Zahlen, nicht in Gefühlen</h4>
+        <p>
+          Führe ein einfaches Logbuch: "15 Anrufe, 4 durchgekommen, 2 Gespräche, 1 Follow-up." Das sind neutrale Fakten. Ablehnungen sind Datenpunkte, kein persönliches Versagen. Jeder Anruf bringt dich näher zur statistisch erwartbaren Zusage.
+        </p>
+      </div>
+
+      <div class="psych-card reveal">
+        <div class="psych-glyph">II.</div>
+        <h4>Batches statt Einzelanrufe</h4>
+        <p>
+          Fünf Anrufe in 45 Minuten sind psychologisch leichter als fünf verteilt über den Tag. Die ersten beiden sind die schwersten; ab dem dritten bist du im Modus. Nicht zwischendurch E-Mails checken. Nicht zwischendurch eine Pause machen. Durch.
+        </p>
+      </div>
+
+      <div class="psych-card reveal">
+        <div class="psych-glyph">III.</div>
+        <h4>Belohnung nach jeder Session</h4>
+        <p>
+          Nach jeder Cold-Call-Batch etwas tun, das nichts mit Vertrieb zu tun hat. Spaziergang, Kaffee, dreißig Minuten Musik. Das Gehirn muss den emotionalen Preis des Anrufens verarbeiten dürfen. Das ist keine Selbstnachsicht — das ist Betriebsbedingung.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Metrics / Targets -->
+<section>
+  <div class="wrap">
+    <div class="decorator">Kapitel 07 / Zielwerte</div>
+    <div class="section-num"><span class="num">07</span><span>Was am Ende da steht</span></div>
+    <h2 class="section-title">Die <em>realistischen</em> Zielwerte</h2>
+    <p class="section-intro">
+      Nicht "zehn Beta-Kunden in sechs Wochen". Das wäre unehrlich. Die realistischen Zielwerte sind niedriger und gleichzeitig wertvoller — weil sie Marktwissen beinhalten, nicht nur Umsatz.
+    </p>
+
+    <div class="metrics">
+      <div class="metric">
+        <div class="metric-num">60</div>
+        <div class="metric-label">
+          Anrufe
+          <span class="sub">Über sechs Wochen, dosiert und strukturiert</span>
+        </div>
+      </div>
+      <div class="metric">
+        <div class="metric-num">12</div>
+        <div class="metric-label">
+          Gespräche
+          <span class="sub">Qualifizierte 10-Minuten-Conversations</span>
+        </div>
+      </div>
+      <div class="metric">
+        <div class="metric-num">3</div>
+        <div class="metric-label">
+          Beta-Zusagen
+          <span class="sub">Realistisches Minimum — Trigger für Kohorte 1</span>
+        </div>
+      </div>
+      <div class="metric">
+        <div class="metric-num">∞</div>
+        <div class="metric-label">
+          Marktwissen
+          <span class="sub">Das wertvollste Ergebnis des Sprints</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="pull">
+      Wenn nach sechs Wochen null Beta-Zusagen da sind,<br>ist die nächste Frage grundlegender als jede Kanal-Optimierung.
+    </p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="wrap">
+    <div class="foot-mark">F.</div>
+    <p>Playbook Nr. 7 · Markterschliessung · April 2026</p>
+    <p>Flowbeaver GmbH · Andreas Schwarzkopf · Vertraulich</p>
+    <p style="margin-top:24px;opacity:0.4;">Erstellt mit Unterstützung von Claude</p>
+  </div>
+</footer>
+
+<script>
+  // Reveal on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
