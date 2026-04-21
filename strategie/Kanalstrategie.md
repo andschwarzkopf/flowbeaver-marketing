@@ -8,35 +8,60 @@ Systematische Kanalauswahl auf Basis von ICP-Verhalten,
 
 Awareness-Stufen und Wettbewerber-Analyse
 
-März 2026 \| Version 1.0 \| Vertraulich
+März 2026 | Version 1.0
+Letzte Überarbeitung: April 2026 | Version 2.0
+Vertraulich
 
 Andreas Schwarzkopf, Flowbeaver GmbH
 
 *Ergänzungsdokument zur GTM-Strategie und zum Positionierungspapier*
 
+**Changelog April 2026 (Version 2.0)**
+
+- Executive Summary neu priorisiert: Community-Kanäle (DATEV, Facebook, newgen.tax) werden Haupt-Hebel, Paid-Search als kontrolliertes Experiment zurückgestuft.
+- Google Ads: Realitätscheck aus STRATEGY.md (292,90 € / 0 Conversions über 19 Tage) eingearbeitet. Dual-Track-Kampagnenlogik (A Kanzlei-Waitlist, B Branchenreport, C Unternehmens-Funnel).
+- LinkedIn-Abschnitt korrigiert: keine Gruppen (in DE tot), Hashtag-Folgen Ende 2024 abgeschafft, Strategie ist Kommentar-Spiel unter Multiplikator-Posts.
+- Neuer Abschnitt 3.8: DATEV-Community als eigenständiger Primärkanal mit Antwort-Template.
+- Neuer Abschnitt 3.9: Facebook-Gruppe "Steuerberater unter sich".
+- Neuer Abschnitt 3.10: New Generation Steuerberater Community (community.newgen.tax).
+- kanzlei.land aus Fachmedien-Liste gestrichen: ist Mandantenportal-Software, kein Community- oder Medien-Kanal.
+- XING auf passive Profilpflege zurückgestuft (2024-Rebrand zur Recruiting-App).
+- Dual-Track-Logik (Kanzlei-Beachhead + Unternehmens-Track) an den relevanten Stellen eingezogen.
+
 0\. Executive Summary
 
-Die GTM-Strategie setzt LinkedIn als Hauptkanal und Google Ads als
-Nebenkanal. Diese Kanalanalyse hinterfragt diese Annahme systematisch --
-auf Basis von ICP-Verhaltensanalyse, Wettbewerber-Beobachtung und dem
-Five Stages of Awareness Framework (Eugene Schwartz). Die zentrale
-Erkenntnis:
+Die ursprüngliche Fassung dieses Dokuments (März 2026) hat Google Search zum Primärkanal befördert und LinkedIn zum Sekundärkanal. Die empirischen Daten aus der ersten Google-Ads-Phase (19. März – 8. April 2026, 292,90 € Spend, 0 Conversions, ≈8 Impressionen/Tag auf den Kern-Keywords) zeigen: der Kanzlei-Suchraum ist zu klein, um ihn rein über Paid zu erschließen. Gleichzeitig ist die systematische Auswertung der Fachcommunitys (siehe `Fachcommunitys-Anknuepfungspunkte.md`) zu klaren Ergebnissen gekommen. Die Kernaussage wird damit neu formuliert:
 
 +-----------------------------------------------------------------------+
-| **Kernaussage**                                                       |
+| **Kernaussage (Version 2.0)**                                         |
 |                                                                       |
-| Der typische wachstumsorientierte Kanzleiinhaber sucht nicht auf      |
-| LinkedIn nach Software. Er sucht auf Google, im DATEV-Ökosystem, auf  |
-| Fachveranstaltungen und in Branchenpublikationen. LinkedIn ist        |
-| wertvoll für Awareness und Personal Branding -- aber nicht der        |
-| primäre Conversion-Kanal.                                             |
+| Der wachstumsorientierte Kanzleiinhaber ist erreichbar — aber nicht   |
+| über Paid-Search allein. Er ist in drei Fachcommunitys aktiv (DATEV-  |
+| Community, Facebook "Steuerberater unter sich", newgen.tax) und liest |
+| LinkedIn passiv mit. Flowbeaver baut in diesen Räumen über Monate     |
+| fachliche Autorität auf — ohne Pitch, ohne Link, mit substantiellen   |
+| Antworten. Paid-Search, Webinare und Fachmessen bleiben als gezielte  |
+| Conversion-Experimente, nicht als Haupt-Traffic-Quellen.              |
 |                                                                       |
-| Die effektivste Kanalstrategie kombiniert: (1) Google Search für      |
-| Intent-basierte Leads, (2) Webinare als Conversion-Event, (3)         |
-| LinkedIn für Thought Leadership und Audience-Aufbau, (4) Fachmessen   |
-| für High-Trust-Kontakte, (5) DATEV-Marktplatz als langfristiger       |
-| Skalierungskanal.                                                     |
+| Die neue Kanalhierarchie (sortiert nach Wochenbudget und Hebel):      |
+|                                                                       |
+| 1. **DATEV-Community** (60 min/Woche) — höchster Hebel, SEO-         |
+|    Sichtbarkeit und exaktes ICP.                                      |
+| 2. **Facebook "Steuerberater unter sich"** (30 min/Woche) — hohe     |
+|    Reichweite über Multiplikatoren.                                   |
+| 3. **New Generation Community** (20 min/Woche) — kuratierte,         |
+|    ICP-nahe Zielgruppe.                                               |
+| 4. **LinkedIn** (15 min/Tag Kommentarspiel + 2 Posts/Woche) —        |
+|    Hashtag- und Kommentar-Mechanik, keine Gruppen.                    |
+| 5. **SEO-Content & Website** — langsam aufbauend, dauerhaft.         |
+| 6. **Google Ads** (Kampagnen A/B/C) — kontrolliertes Experiment,     |
+|    nicht Hauptkanal.                                                  |
+| 7. **Webinare** — Selling Event, wenn genug Waitlist-Volumen da ist. |
+| 8. **Fachmessen & DATEV-Marktplatz** — ab Kohorte 2, nicht jetzt.    |
+| 9. **XING** — passive Profilpflege, kein aktiver Kanal.              |
 +-----------------------------------------------------------------------+
+
+Die Dual-Track-Entscheidung aus dem Positionierungspapier (Kanzlei-Beachhead plus Unternehmens-Track) läuft durch die Kanalstrategie hindurch: Community-Arbeit fokussiert auf Kanzleien, Google Ads Kampagne C und SEO-Content für "Rechnungseingang automatisieren" bedienen den Unternehmens-Track — mit strikt getrennten Landingpages und Sprach-Welten.
 
 1\. Ausgangslage: Warum diese Analyse notwendig ist
 
@@ -154,16 +179,29 @@ Jeder Kanal wird anhand von sechs Dimensionen bewertet:
 3.1 Google Search (SEO + Google Ads)
 
 +-----------------------------------------------------------------------+
-| **Bewertung: PRIMÄRKANAL**                                            |
+| **Bewertung (Version 2.0): EXPERIMENT-KANAL für Kanzlei-Track,       |
+| potenzieller VOLUMEN-KANAL für Unternehmens-Track**                  |
 |                                                                       |
-| ICP-Erreichbarkeit: ★★★★ \| Intent: ★★★★★ \| Gründer-Fit: ★★★★        |
+| ICP-Erreichbarkeit: ★★ (Kanzlei) / ★★★★ (Unternehmen) \|             |
+| Intent: ★★★★★ \| Gründer-Fit: ★★★★                                   |
 +-----------------------------------------------------------------------+
 
-**Warum dieser Kanal entscheidend ist:** Wenn ein Kanzleiinhaber
+**Realitätscheck April 2026:** Die erste Paid-Phase (19. März – 8. April, Kampagne A auf `/ki-belegerkennung`) hat 292,90 € gekostet, 173 Impressionen und 17 Klicks erzeugt, 15 Sessions auf die Landingpage gebracht und null reale Conversions ausgelöst. Der Kanzlei-Suchraum auf Kern-Keywords ("DATEV Vorsystem", "KI Belegerkennung") liegt bei ≈8 Impressionen/Tag — zu wenig Volumen, um aus Paid-Search allein einen Funnel zu bauen. Gleichzeitig zeigt die Organic-Kohorte auf derselben Seite eine Key-Event-Rate von 50 % vs. 16,7 % bei Paid — Organic-Traffic konvertiert deutlich besser.
+
+**Konsequenz:** Google Ads wird vom Primärkanal zum **kontrollierten Experiment** zurückgestuft. Die Struktur folgt dem Dual-Track aus `STRATEGY.md`:
+
+- **Kampagne A — Kanzlei-Waitlist:** auf `/ki-belegerkennung`, Budget 300–450 €/Monat. Zweck: beobachten, ob Conversions bei gleichem Landingpage-Redesign entstehen. Kein Skalierungskanal.
+- **Kampagne B — Branchenreport-Leadmagnet:** breitere Kanzlei-Keywords (Fachkräftemangel, STAX-Zahlen), 300–450 €/Monat. Zweck: E-Mail-Leads für Welcome-Sequenz gewinnen, CPCs günstiger.
+- **Kampagne C — Unternehmens-Track:** auf `/rechnungseingang-automatisieren` (neu), 300–500 €/Monat. Zweck: die 10–20× größere Nachfrage ("rechnungseingang automatisieren", "eingangsrechnungen verarbeiten", "belege digitalisieren") erschließen. Niedrigere CPCs, größerer Markt.
+
+**Warum SEO weiterhin wichtig ist:** Organische Sichtbarkeit ist der dauerhafte Hebel — höhere Conversion-Rate, keine laufenden Kosten, und stabiler als Ads im Niche-Suchraum. Die Blog-Artikel, die in der ursprünglichen Fassung als Nebenprodukt geplant waren, werden zum eigenständigen Arbeitsstrang (Keyword-Strategie in `paid-ads/Keyword-Strategie.md` und Content-Plan in `seo/content-plan.md`).
+
+**Warum dieser Kanal trotzdem berechtigt bleibt:** Wenn ein Kanzleiinhaber
 „Belegerfassung automatisieren" oder „KI Buchhaltung Steuerkanzlei"
 googelt, hat er bereits Solution Awareness (Stufe 3). Das ist die
 höchste Kaufabsicht aller Kanäle. Im Gegensatz zu LinkedIn, wo Nutzer
 passiv scrollen, zeigt Google Search aktive Problemlösungsabsicht.
+Das gilt — nur eben für ein sehr kleines Volumen im Kanzlei-Track.
 
 **Awareness-Stufen:** Primär Stufe 3 (Solution Aware) und Stufe 4
 (Product Aware). Nutzer googeln nach Lösungskategorien oder spezifischen
@@ -229,10 +267,18 @@ müssen".
 3.3 LinkedIn (Organisch + Outbound)
 
 +-----------------------------------------------------------------------+
-| **Bewertung: SEKUNDÄRKANAL (Awareness & Nurturing)**                  |
+| **Bewertung (Version 2.0): SEKUNDÄRKANAL — Hashtag- und              |
+| Kommentarspiel, keine Gruppen**                                      |
 |                                                                       |
 | ICP-Erreichbarkeit: ★★★ \| Intent: ★★ \| Gründer-Fit: ★★★             |
 +-----------------------------------------------------------------------+
+
+**Mechanik-Korrektur April 2026:** Zwei Annahmen aus der Vorfassung stimmen nicht mehr:
+
+- **LinkedIn-Gruppen sind in Deutschland tot.** Die Diskussion im deutschen B2B-LinkedIn findet im Feed statt, unter Posts von Multiplikatoren — nicht in Gruppen. Eine Gruppen-Strategie war in der ursprünglichen GTM-Planung implizit mitgedacht und wird gestrichen.
+- **Hashtag-Folgen wurde Ende 2024 abgeschafft.** Hashtags sind heute nur noch Suchfilter, kein Abonnement-Mechanismus. Sie helfen bei der Auffindbarkeit eines Posts, aber man baut darüber keine Leserschaft mehr auf. Die Reichweiten-Logik verschiebt sich komplett zu Algorithmus-Signalen (frühe Kommentare, Engagement der ersten Minuten).
+
+**Was stattdessen funktioniert:** Das Kommentar-Spiel unter Posts relevanter Opinion Leader der Branche. 10 Minuten pro Tag, substanzielle Antworten unter Posts von Jens Henke, Sebastian Merla, Gregor Ganschow, Carola Heinen, Benjamin Herz und Falk Weinreich (die in `Fachcommunitys-Anknuepfungspunkte.md` namentlich aufgeführten Multiplikatoren). Zusätzlich 2×/Woche eigene Posts unter den Hashtags #steuerberater, #steuerkanzlei, #digitalisierung, #erechnung, #zugferd, #datev, #kanzleimanagement — als Such-Entdeckungspfad, nicht als Follower-Mechanik.
 
 **Differenzierte Bewertung:** LinkedIn ist nicht wertlos für den
 Kanzleimarkt -- aber es ist auch nicht der Primärkanal, als den die
@@ -272,12 +318,14 @@ Stufe.
 -   Gegen den bestehenden Follower-Stamm (12.000 Developer/Data
     Scientists) schnell umpositionieren
 
-**Angepasste Empfehlung:** LinkedIn von 3x/Woche auf 2x/Woche reduzieren
-(Zeitersparnis: ca. 1,5 Std./Woche), dafür jeder Post strategischer.
-Fokus auf zwei Zwecke: (a) Problem-Awareness schaffen für Stufe 1→2, (b)
-Webinar-Registrierungen treiben. Outbound-Aktivität beibehalten (10--15
-Requests/Tag), da dies die einzige proaktive Art ist, den ICP direkt
-anzusprechen.
+**Angepasste Empfehlung (Version 2.0):**
+
+- **2 eigene Posts/Woche**, jeder strategisch. Fokus auf zwei Zwecke:
+  (a) Problem-Awareness schaffen für Stufe 1→2, (b) Community-Anschluss über fachliche Tiefe.
+- **10 Minuten Kommentarspiel pro Tag** unter Posts der genannten Multiplikatoren. Substanzielle Antworten, kein Selbstpromotion, keine Emojis, keine "#Hustle"-Tonalität.
+- **Outbound-Aktivität** (5–10 Connection Requests/Tag) beibehalten, Nachrichten ohne Produkt-Pitch — erst auf fachlichen Austausch reagieren.
+- **Keine LinkedIn-Gruppen** bespielen, keine Hashtag-Follower-Mechanik planen.
+- **Unternehmens-Track auf LinkedIn separat:** Posts, die explizit Buchhaltungsleitungen und Finance-Manager ansprechen, laufen unter #buchhaltung, #rechnungseingang, #digitalisierung — und verlinken auf `/rechnungseingang-automatisieren`, nicht auf die Kanzlei-Waitlist.
 
 3.4 Fachmessen & Branchenevents
 
@@ -388,7 +436,7 @@ durch DATEV. Ohne diese Voraussetzung ist der Kanal nicht zugänglich.
 
 -   **Fachzeitschrift des DStV**DStR (Deutsches Steuerrecht):
 
--   **Plattform für Kanzleidigitalisierung, DATEV-Partner**kanzlei.land:
+*Hinweis April 2026:* kanzlei.land ist KEIN Fach- oder Community-Kanal, sondern eine Mandantenportal-Software (Wettbewerber zu DATEV "Meine Steuern"). Die vorherige Einordnung hier war falsch und wurde entfernt.
 
 **Awareness-Stufen:** Stufe 1→3 (Unaware bis Solution Aware).
 Fachartikel schaffen Problembewusstsein und positionieren Lösungsansätze
@@ -425,30 +473,108 @@ Webinar-Teaser).
 und erfordert kein persönliches Auftreten in Echtzeit. Andreas kann die
 Texte einmal schreiben und automatisiert ausspielen.
 
-4\. Kanalmatrix: Gesamtbewertung
+3.8 DATEV-Community (neu, Primärkanal seit April 2026)
+
++-----------------------------------------------------------------------+
+| **Bewertung: PRIMÄRKANAL (Autoritätsaufbau über 3 Monate)**          |
+|                                                                       |
+| ICP-Erreichbarkeit: ★★★★★ \| Intent: ★★★★★ \| Gründer-Fit: ★★★★      |
++-----------------------------------------------------------------------+
+
+Die DATEV-Community (datev-community.de, nicht "community.datev.de") ist der einzige Kanal, in dem das exakte ICP aktiv fachliche Probleme diskutiert — mit konkreten Belegen, Fehlercodes und Workflow-Problemen. Relevante Boards: "Unternehmen online", "Betriebliches Rechnungswesen", "Ideen zu Unternehmen online". In `Fachcommunitys-Anknuepfungspunkte.md` sind 16 konkrete Threads mit Anknüpfungspunkten und Antwortmustern gelistet.
+
+**Zeitbudget:** 60 min/Woche, verteilt auf 2–3 substantielle Thread-Antworten unter Klarnamen (Andreas Schwarzkopf).
+
+**Antwort-Template (für alle Community-Kanäle gleich):**
+
+1. Problem des Thread-Starters paraphrasieren (zeigt Verständnis).
+2. Eine fachliche Nuance ergänzen, die noch nicht im Thread steht (Belegtyp, GoBD-Aspekt, strukturiert vs. unstrukturiert, Fremdsprachenrobustheit).
+3. Kein Produkthinweis, kein Link zu flowbeaver.de — nur Profilname und Positionierung.
+4. Offene Rückfrage an den Thread-Starter (Einladung zum Weiterreden, Signal: verstehen wollen, nicht verkaufen).
+
+**Awareness-Stufen:** Primär Stufe 3→4 (Solution Aware → Product Aware). Wer in der DATEV-Community schreibt, hat ein konkretes Problem und evaluiert Lösungsansätze.
+
+**Warum dieser Kanal so stark ist:** (a) SEO-Sichtbarkeit — Community-Threads ranken auf Google für Longtail-Kanzlei-Keywords; (b) Profil-Klicks konvertieren zu Direktnachrichten; (c) drei Monate konsistente Präsenz bauen Autorität auf, die kein Ad-Budget kaufen kann.
+
+3.9 Facebook-Gruppe "Steuerberater unter sich"
+
++-----------------------------------------------------------------------+
+| **Bewertung: PRIMÄRKANAL (nach Mitgliedschaftsfreigabe)**            |
+|                                                                       |
+| ICP-Erreichbarkeit: ★★★★ \| Intent: ★★★★ \| Gründer-Fit: ★★★         |
++-----------------------------------------------------------------------+
+
+7.600+ Mitglieder, gegründet 2019, Geburtsort der Deutschen Steuerberatergenossenschaft (DEUS eG). Aktive Multiplikatoren wie Jens Henke, Sebastian Merla und Gregor Ganschow erreichen über diese Gruppe eine sehr weite Kanzlei-Audience.
+
+**Zeitbudget:** 30 min/Woche.
+
+**Vorgehen:**
+
+1. Mitgliedschaft beantragen (Aufnahmefragen sachlich beantworten, nicht als Software-Anbieter positionieren).
+2. 2 Wochen mitlesen, Tonalität und Themenverteilung verstehen.
+3. Erste gezielte Posts/Kommentare zu Digitalisierung, Belegverarbeitung, Fachkräftemangel. Kein Produkthinweis.
+
+**Awareness-Stufen:** Stufe 2→3 (Problem Aware → Solution Aware).
+
+3.10 New Generation Steuerberater Community (community.newgen.tax)
+
++-----------------------------------------------------------------------+
+| **Bewertung: SEKUNDÄRKANAL (kuratierte Audience)**                   |
+|                                                                       |
+| ICP-Erreichbarkeit: ★★★★ \| Intent: ★★★★ \| Gründer-Fit: ★★★★        |
++-----------------------------------------------------------------------+
+
+Kuratierte, moderierte Community mit Fokus auf digital-affine, zukunftsorientierte Kanzleien — exakt der Flowbeaver-ICP-Kern. Kollaborations- und Fach-Foren. Ersetzt die fälschlich vormals aufgeführte kanzlei.land-Einordnung.
+
+**Zeitbudget:** 20 min/Woche.
+
+**Vorgehen:** Profil-Prüfung abwarten (Community ist moderiert), dann selektive, substantielle Beiträge in Fach-Foren. Der kleinere, kuratierte Rahmen erlaubt persönlichere Interaktion als die DATEV-Community.
+
+**Awareness-Stufen:** Stufe 3→5.
+
+3.11 XING (zurückgestuft)
+
++-----------------------------------------------------------------------+
+| **Bewertung (Version 2.0): PASSIVE PROFILPFLEGE, kein aktiver Kanal**|
++-----------------------------------------------------------------------+
+
+XING hat sich mit dem 2024er-Rebrand zur reinen Recruiting-App entwickelt. Die klassischen Gruppen sind überwiegend inaktiv. Empfehlung: Profil vollständig ausfüllen, damit Suchen nach "Andreas Schwarzkopf" fündig werden — keine aktive Content-Produktion.
+
+4\. Kanalmatrix: Gesamtbewertung (Version 2.0)
 
 Die folgende Matrix bewertet alle Kanäle entlang der sechs Dimensionen
 (5 = sehr gut, 1 = schlecht):
 
-  --------------------- -------------- ------------ ------------- --------------- ------------- ---------------
-  **Kanal**             **ICP-Err.**   **Intent**   **Kosten†**   **Skalierb.**   **Gr.-Fit**   **Priorität**
+  ------------------------ -------------- ------------ ------------- --------------- ------------- ---------------
+  **Kanal**                **ICP-Err.**   **Intent**   **Kosten†**   **Skalierb.**   **Gr.-Fit**   **Priorität**
 
-  **Google Search**     4              5            4             5               4             **★ Primär**
+  **DATEV-Community**      5              5            5             3               4             **★★ Primär**
 
-  **Webinare**          3              5            5             3               5             **★ Primär**
+  **Facebook "StB u.s."**  4              4            5             3               3             **★★ Primär**
 
-  **LinkedIn**          3              2            5             3               3             **○ Sekundär**
+  **newgen.tax**           4              4            5             2               4             **★ Sekundär**
 
-  **Fachmessen**        5              4            2             2               2             **○
-                                                                                                Strategisch**
+  **LinkedIn**             3              2            5             3               3             **○ Kommentar-/Postspiel**
 
-  **DATEV-Ökosystem**   5              5            3             5               4             **★
-                                                                                                Langfristig**
+  **E-Mail**               4              4            5             4               5             **★ Zwingend**
 
-  **Fachmedien**        4              3            4             3               4             **○ Mittelfr.**
+  **SEO-Content**          4              5            4             5               4             **★ Dauerhaft**
 
-  **E-Mail**            4              4            5             4               5             **★ Zwingend**
-  --------------------- -------------- ------------ ------------- --------------- ------------- ---------------
+  **Google Ads**           2–4            5            3             3               4             **○ Experiment (A/B/C)**
+
+  **Webinare**             3              5            5             3               5             **○ Conversion-Event**
+
+  **Fachmessen**           5              4            2             2               2             **○ ab Kohorte 2**
+
+  **DATEV-Marktplatz**     5              5            3             5               4             **★ Langfristig**
+
+  **Fachmedien**           4              3            4             3               4             **○ Mittelfr.**
+
+  **XING**                 1              1            5             1               1             **— Passiv**
+  ------------------------ -------------- ------------ ------------- --------------- ------------- ---------------
+
+*ICP-Erreichbarkeit bei Google Ads: 2 im Kanzlei-Track (Nische zu klein),
+4 im Unternehmens-Track (deutlich größerer Suchraum).*
 
 *† Kosten-Score: 5 = günstig/effizient, 1 = teuer. Berücksichtigt sowohl
 monetäre Kosten als auch Zeitinvestment.*
@@ -670,23 +796,29 @@ Aufwertung von Google Ads als Intent-basierter Primärkanal.
 9\. Zusammenfassung: Was sich gegenüber der GTM-Strategie ändert
 
 +-----------------------------------------------------------------------+
-| **Die 5 wichtigsten Änderungen**                                      |
+| **Die 5 wichtigsten Änderungen (Version 1.0 → 2.0, April 2026)**     |
 |                                                                       |
-| 1\. Google Search wird Primärkanal (statt Nebenkanal) -- weil dort    |
-| der höchste Kaufintent liegt.                                         |
+| 1\. **Fachcommunitys werden Primärkanäle**: DATEV-Community (60 min/  |
+| Woche), Facebook "Steuerberater unter sich" (30 min/Woche), newgen.   |
+| tax (20 min/Woche). Autoritätsaufbau über drei Monate, Antwort-       |
+| Template statt Pitch.                                                 |
 |                                                                       |
-| 2\. LinkedIn wird Sekundärkanal (statt Primärkanal) -- weiterhin      |
-| wichtig für Awareness, aber nicht für Conversion. Reduzierung auf     |
-| 2x/Woche.                                                             |
+| 2\. **Google Ads wird zum Experiment-Kanal zurückgestuft**: die       |
+| Nische ist zu klein (8 Impressionen/Tag, 292,90 € / 0 Conversions     |
+| validiert). Dual-Track-Struktur mit Kampagnen A (Kanzlei-Waitlist), B |
+| (Branchenreport), C (Unternehmens-Funnel).                            |
 |                                                                       |
-| 3\. DATEV-Ökosystem wird als eigenständiger, langfristiger            |
-| Skalierungskanal eingeplant -- mit Phasenplan von CSV-Export bis      |
-| Marktplatz-Partnerschaft.                                             |
+| 3\. **LinkedIn-Mechanik korrigiert**: Gruppen sind tot, Hashtag-      |
+| Folgen seit Ende 2024 abgeschafft. Der Hebel ist das tägliche         |
+| Kommentarspiel unter Multiplikator-Posts (10 min/Tag) plus 2 eigene   |
+| Posts pro Woche.                                                      |
 |                                                                       |
-| 4\. Fachmessen kommen als strategischer Kanal ab Kohorte 2 hinzu --   |
-| beginnend als Besucher, später als Aussteller/Referent.               |
+| 4\. **Dual-Track-Disziplin**: jeder Kanal bedient einen Funnel. Com-  |
+| munity-Arbeit fokussiert Kanzleien; Unternehmens-Track läuft über     |
+| `/rechnungseingang-automatisieren` mit eigenen Keywords, Lead-Magne-  |
+| ten und Sprach-Welt — strikt getrennt.                                |
 |                                                                       |
-| 5\. Jeder Kanal wird einer Awareness-Stufe zugeordnet -- so dass      |
-| Content und Botschaft zur jeweiligen Stufe passen (kein Produktpitch  |
-| auf LinkedIn, kein Awareness-Building auf Google Ads).                |
+| 5\. **Falsch eingeordnete Kanäle korrigiert**: kanzlei.land ist keine |
+| Community/Publikation (ist Mandantenportal-Software), XING ist passi- |
+| ve Profilpflege (keine aktive Content-Produktion).                    |
 +-----------------------------------------------------------------------+

@@ -7,7 +7,16 @@ Flowbeaver vs. DATEV-Ökosystem & Marktbegleiter
 Strategische Positionierung als KI-Vorsystem für die vorbereitende
 Buchhaltung
 
-Februar 2026 \| Vertraulich \| Flowbeaver GmbH
+Februar 2026 | Version 1.0
+Letzte Ergänzung: April 2026 | Version 1.1 (geschärfter Differenziator, Gründer-Positionierung, Dual-Track)
+Vertraulich | Flowbeaver GmbH
+
+**Changelog April 2026**
+
+- Abschnitt 1.1 neu: geschärfter Differenziator "LLM versteht jede Sprache → weniger Rückfragen"
+- Abschnitt 1.2 neu: Gründer-Positionierung "Techniker, der das Werkzeug baut"
+- Abschnitt 6.4 neu: Dual-Track (Kanzlei-Beachhead + Unternehmens-Skalierung, strikt getrennte Funnels)
+- Messaging-Framework (7.2) um Unternehmens-Track-Kernbotschaft ergänzt
 
 **1. Executive Summary**
 
@@ -31,6 +40,63 @@ zugleich die größte Schwachstelle des Ökosystems: Die eigene
 Belegverarbeitung (Buchungsassistent Online / ASR) wird von vielen
 Anwendern als unzureichend bewertet. Genau hier liegt die Chance für
 Flowbeaver.
+
+**1.1 Der geschärfte Differenziator (April 2026)**
+
+Nach systematischer Auswertung der DATEV-Community und Gesprächen mit
+Kanzleien hat sich der eigentliche Hebel von Flowbeaver klarer herauskristallisiert
+als in der ursprünglichen Technologie-Beschreibung:
+
++-----------------------------------------------------------------------+
+| **Differenzierungsaussage**                                           |
+|                                                                       |
+| Flowbeavers LLM versteht jede Sprache und leitet aus exotischen       |
+| Rechnungen klare Geschäftsvorfälle ab — das reduziert die Rückfragen  |
+| beim Mandanten, die in Kanzleien mehr Zeit kosten als das eigentliche |
+| Abtippen.                                                             |
++-----------------------------------------------------------------------+
+
+Zwei validierte Schmerzpunkte aus der DATEV-Community (Originalzitate liegen
+im Dokument `Session-Handoff-Website-Ueberarbeitung.md`):
+
+- **Fremdsprachige Belege:** DATEVs ASR ist musterbasiert und auf deutsche
+  Rechnungslayouts trainiert. Englische Rechnungen, Schweizer Zahlenformate
+  (1'500.80), osteuropäische Quittungen oder asiatische Lieferantenbelege
+  produzieren systematisch Falscherkennungen. In der Community finden sich
+  konkrete Fälle wie "'Invoice No.' wird als Barcode erkannt" oder
+  "OCR merkt sich falsche Werte".
+- **Rückfragen als Zeitkiller:** Kanzleiteams verbringen nicht die meiste Zeit
+  mit dem Abtippen, sondern mit dem Nachfragen bei Mandanten, wenn aus einem
+  Beleg nicht hervorgeht, was passiert ist. Ein LLM, das Beleginhalt und
+  Kontext versteht, kann den Geschäftsvorfall selbst formulieren und die
+  Kommunikationsschleife verkürzen.
+
+Dieser Differenziator ist in allen Außenkommunikationen der Leitsatz
+— Website-Hero, Landingpages, LinkedIn, Community-Antworten, Webinar-Demo.
+Er ersetzt nicht den Dreiklang (LLM + KI-OCR + Regeln) als technologische
+Grundlage, sondern übersetzt ihn in den konkreten Kundenvorteil.
+
+**1.2 Gründer-Positionierung: Techniker, nicht Kanzlei-Insider**
+
+Andreas Schwarzkopf ist nicht Steuerberater und tarnt sich auch nicht
+als einer. Die Gründer-Positionierung lautet: *Techniker, der das Werkzeug
+für die Kanzlei baut — und die Kanzlei als Expertin in den Prozess einbezieht.*
+Die Grundlage ist 15 Jahre KI-Erfahrung (u.a. Mercedes-Benz) plus Diplom-Kaufmann
+mit Buchhaltungsverständnis; der Zugang zur Branche entsteht über
+Community-Präsenz, nicht über vorgespielte Insider-Identität.
+
+Konkrete Folgen für die Kommunikation:
+
+- **Ehrlichkeit schlägt Tarnung.** Website und LinkedIn dürfen explizit sagen,
+  dass Flowbeaver aus der Technik heraus entsteht. Kein "wir kennen den
+  Kanzleialltag" ohne Beleg.
+- **Solo-Founder ist Vorteil:** direkter Zugang, schnelle Iteration,
+  White-Glove-Beta. Nicht als Schwäche rahmen.
+- **Kein Startup-Jargon:** "erste Runde" statt "Pioneer-Kohorte",
+  "Ergänzung" statt "Disruption". Der Ton ist leise, technisch, spezifisch
+  (Belegtypen, Zahlen, Fehlermuster) — nicht laut.
+- **Keine Stock-Fotos lachender Buchhalter.** Keine Emojis. Keine
+  Dark-Patterns. Belege statt Meinungen.
 
 **2. DATEV: Marktstellung & Ökosystem**
 
@@ -359,6 +425,62 @@ bereits. Die Differenzierung muss über folgende Achsen laufen:
                                                      mit hohem Belegvolumen**
   --------------------------- ---------------------- -------------------------------
 
+**6.4 Dual-Track: Kanzlei-Beachhead + Unternehmens-Skalierung (April 2026)**
+
+Die Auswertung der Google-Ads-Daten (19. März – 8. April 2026) hat ergeben:
+der reine Kanzlei-Suchraum ist zu klein für einen rein Paid-getriebenen
+Funnel (≈8 Impressionen/Tag auf "DATEV Vorsystem", 292,90 € ohne
+Conversion). Gleichzeitig gibt es einen zweiten, 10- bis 20-mal
+größeren Suchraum rund um "Rechnungseingang automatisieren",
+"Eingangsrechnungen verarbeiten", "Belege digitalisieren" — die
+Nachfrage von Unternehmen, die ihre eigene Belegverarbeitung
+automatisieren wollen. Die ausführliche Analyse steht in `STRATEGY.md`.
+
+Daraus folgt eine Dual-Track-Strategie mit zwei Funnels und einem Produkt:
+
+  -------------------- ------------------------------ ----------------------------------
+  **Dimension**        **Kanzlei-Track (Beachhead)**  **Unternehmens-Track (Skalierung)**
+
+  **Rolle**            Produkt schärfen, Referenzen   Volumen, Daten, Umsatz
+                       gewinnen, ICP validieren
+
+  **Landingpage**      `/ki-belegerkennung`           `/rechnungseingang-automatisieren`
+
+  **Sprache**          Kanzlei-Fachsprache            Kaufmännisches Deutsch
+                       (Mandanten, SKR03,             (Rechnungseingang, Zeitersparnis,
+                       Vorkontierung)                 Prozessoptimierung)
+
+  **Keywords**         ki belegerkennung,             rechnungseingang automatisieren,
+                       ki belegerfassung,             eingangsrechnungen verarbeiten,
+                       datev vorsystem                belege digitalisieren
+
+  **CTA**              Waitlist / Demo                Testzugang / Kostenloser Test
+
+  **Lead-Magnete**     Branchenreport, §203-Checkliste E-Rechnungs-Leitfaden,
+                                                      Zeitersparnis-Rechner
+
+  **Preisanker**       299 €/Monat Beta               Freemium / Testzugang, spätere
+                                                      Volumenpakete
+  -------------------- ------------------------------ ----------------------------------
+
++-----------------------------------------------------------------------+
+| **Positionierungsregel Nr. 2 (Dual-Track-Disziplin)**                 |
+|                                                                       |
+| Kein Steuerberater sieht je die Unternehmens-Landingpage und          |
+| umgekehrt. Zwei Funnels, ein Produkt, strikte Trennung von Sprache,   |
+| Vokabular und Lead-Magneten. Wer beide mischt, verwässert beide.      |
+| Die gemeinsame Klammer bleibt: DATEV-kompatibel (Buchungsstapel-Export|
+| ist universeller Standard), LLM versteht jede Sprache, weniger        |
+| Rückfragen, Dreiklang als technologischer Kern.                       |
++-----------------------------------------------------------------------+
+
+Wichtig: Die DATEV-Komplementär-Positionierung gilt auch im Unternehmens-Track.
+Die Landingpage `/rechnungseingang-automatisieren` positioniert Flowbeaver
+nicht als DATEV-Alternative, sondern als Vorstufe, deren Buchungsstapel in
+jedes deutsche Buchhaltungssystem fließt — am prominentesten DATEV, aber
+eben nicht ausschließlich. Das erweitert den Markt, ohne die Kernaussage
+zu brechen.
+
 **7. Messaging-Framework**
 
 **7.1 Elevator Pitch (30 Sekunden)**
@@ -389,6 +511,11 @@ bereits. Die Differenzierung muss über folgende Achsen laufen:
   **Kanzleimanager /                  \"Flowbeaver integriert sich in Ihre bestehende
   Digitalisierungsverantwortliche**   DATEV-Infrastruktur. Kein Systemwechsel, keine
                                       Umstellung \-- nur schnellere Belegverarbeitung.\"
+
+  **Unternehmen                       \"Rechnungseingang, der auch mit englischen,
+  (Buchhaltungsleitung,               fremdsprachigen und exotischen Belegen umgeht.
+  Finance-Manager) —                  Weniger Rückfragen, saubere Buchungsstapel für
+  Unternehmens-Track**                Ihr DATEV oder Ihren Steuerberater.\"
   ----------------------------------- ----------------------------------------------------
 
 **7.3 Messaging-Dont\'s**

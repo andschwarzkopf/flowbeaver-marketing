@@ -1,5 +1,17 @@
-# Content-Strategie: Website, LinkedIn Company & LinkedIn Personal (CEO)
+# Content-Strategie: Website, LinkedIn & Fachcommunitys
 *Stand: März 2026 — 6-Wochen-Sprint bis Kohorte-1-Webinar*
+*Letzte Überarbeitung: April 2026 (Community-Kanäle, Techniker-Positionierung, Dual-Track)*
+
+---
+
+## Changelog April 2026
+
+- **Fachcommunitys als gleichrangige Content-Kanäle** aufgenommen (neuer Abschnitt 4b): DATEV-Community, Facebook "Steuerberater unter sich", newgen.tax — mit eigenem Antwort-Template und Zeitbudget.
+- **Website-Startseite** an `Session-Handoff-Website-Ueberarbeitung.md` angeglichen: Techniker-Gründer-Sektion, konkrete Community-Zitate als Problem-Beleg, LLM-Sprach-Differenziator prominent.
+- **Conversion-Tracking-Realitätscheck** ergänzt: GA4-Button-Clicks sind keine echten Conversions (keine verlässlichen Lead-Daten bisher). Primär zählt die Brevo-Waitlist-Liste.
+- **LinkedIn Personal** auf Kommentar-Spiel + 2 Posts/Woche umgestellt; LinkedIn-Gruppen-Hinweis entfernt (in DE tot).
+- **Dual-Track** andeuten: zweite Landingpage `/rechnungseingang-automatisieren` für Unternehmens-Track — getrenntes Vokabular, getrennte Hashtags.
+- **Hierarchie-Satz** relativiert: DATEV-Community wird zum Primärkanal für fachliche Autorität, LinkedIn bleibt wichtig — aber nicht mehr allein an der Spitze.
 
 ---
 
@@ -7,11 +19,14 @@
 
 | Kanal | Primäre Funktion | Ziel (6 Wochen) |
 |---|---|---|
+| **DATEV-Community** | Fachliche Autorität, SEO-Sichtbarkeit, Profil-Klicks | 20–30 substantielle Thread-Antworten, 2–3 Folge-DMs |
 | **Website (vollständig)** | SEO-Traffic + Conversion in Waitlist | 80–150 Waitlist-Anmeldungen |
-| **LinkedIn Personal (CEO)** | Demand Generation + Vertrauen aufbauen | 2x/Woche Rhythmus, Waitlist-Wachstum |
+| **LinkedIn Personal (CEO)** | Demand Generation + Vertrauen aufbauen | 2 Posts/Woche + 10 min/Tag Kommentare unter Multiplikatoren |
+| **Facebook "Steuerberater unter sich"** | Reichweite über Multiplikatoren | Mitgliedschaft + erste 3–5 Posts nach Lurken |
 | **LinkedIn Company Page** | Credibility Signal, Produktkommunikation | Page live, 50+ Follower |
+| **newgen.tax Community** | Kuratierte Zielgruppe | Profil aktiv, 2–3 Fachbeiträge |
 
-**Hierarchie:** LinkedIn Personal > Website/Blog > LinkedIn Company. Die Personal Page hat bei Steuerkanzleien mehr Reichweite und Überzeugungskraft als jede Unternehmensseite — das ist kein Kompromiss, sondern Strategie.
+**Hierarchie (revidiert April 2026):** Fachcommunitys (DATEV, Facebook, newgen.tax) bauen über drei Monate die fachliche Autorität auf, die kein Ad-Budget kaufen kann. Parallel dazu LinkedIn Personal (Kommentar-Spiel + Posts) und Website als Traffic-Ziel. LinkedIn Company bleibt Credibility Signal, nicht Traffic-Treiber. Die ursprüngliche Einzel-Spitze "LinkedIn Personal" wird durch ein Kanal-Duo ersetzt: Community-Räume für fachliche Tiefe, LinkedIn für Breite.
 
 ---
 
@@ -28,13 +43,18 @@
 | **Blog** | SEO-Traffic, Long-Tail-Keywords, Awareness | Artikel 1 Woche 2 |
 | **FAQ** | Einwände ausräumen (DATEV, Datenschutz, Genauigkeit) | Woche 2 live |
 
-### Startseite — Pflicht-Elemente
-- Hero: DATEV-Ergänzung als Kernbotschaft, keine Alternative
-- Problem-Section: Rückfragen als versteckter Zeitkiller, fremdsprachige Belege, abgelehnte Mandate
-- Dreiklang-Erklärung: LLM + KI-OCR + Regelwerk (visuell, nicht textlastig)
-- Trust-Sektion: DATEV-Logo/Badge, Datenschutz Deutschland, Gründer-Foto
-- Beta-Einladung: "10 Plätze — wenn vergeben, frühestens in 6 Monaten wieder verfügbar"
-- CTA überall: "Jetzt Platz sichern" → Waitlist-Formular
+### Startseite — Pflicht-Elemente (überarbeitet April 2026)
+
+Die Elemente folgen `Session-Handoff-Website-Ueberarbeitung.md`. Tonalität: leise, technisch, konkret — keine Stockfotos lachender Buchhalter, keine Emojis, keine Dark Patterns.
+
+- **Hero:** DATEV-Ergänzung als Kernbotschaft, keine Alternative. Kein "KI revolutioniert …"-Opener. Konkret formulieren: *"Flowbeavers KI-Vorsystem liefert fertig vorkontierte Belege direkt in Ihren DATEV-Workflow — auch bei englischen Rechnungen, Schweizer Belegen und exotischen Geschäftsvorfällen."*
+- **Differenziator prominent:** LLM versteht jede Sprache → weniger Rückfragen beim Mandanten. Das ist der April-2026-geschärfte Hebel aus `Positionierung.md` 1.1.
+- **Problem-Section mit konkreten Community-Zitaten:** Rückfragen als versteckter Zeitkiller, fremdsprachige Belege, abgelehnte Mandate. Original-Zitate aus DATEV-Community nutzen (aus `Session-Handoff-Website-Ueberarbeitung.md`), nicht erfinden: *"Belegerkennung treibt mich in den Wahnsinn"*, *"'Invoice No.' wird als Barcode erkannt"*, *"OCR merkt sich falsche Werte"* — jeweils mit "Stimme aus der DATEV-Community" gekennzeichnet.
+- **Dreiklang-Erklärung:** LLM + KI-OCR + Regelwerk (visuell, nicht textlastig).
+- **Techniker-Gründer-Sektion (neu):** "Ich bin der Techniker, der das Werkzeug baut — nicht der Kanzlei-Insider." Andreas mit Foto, 15 Jahre KI, Mercedes-Benz, Diplom-Kaufmann. Ehrlichkeit schlägt Tarnung.
+- **Trust-Sektion:** DATEV-Kompatibilitätshinweis (Logo nur, wenn lizenzrechtlich geklärt — sonst Text-Badge "kompatibel mit DATEV Unternehmen Online"), Datenschutz Deutschland, Gründer-Foto.
+- **Beta-Einladung:** "10 Plätze — wenn vergeben, frühestens in 6 Monaten wieder verfügbar."
+- **CTA:** "Jetzt Platz sichern" → Waitlist-Formular. Ob Waitlist oder echtes Demo-Formular primär sein soll, ist offen (15 Sessions auf `/ki-belegerkennung` reichen statistisch nicht — siehe `STRATEGY.md`).
 
 ### Conversion-Pfade
 
@@ -53,6 +73,10 @@ Pricing-Seite
 ```
 
 **UTM-Tracking:** Jeder LinkedIn-Post, der auf die Website verlinkt, erhält einen UTM-Parameter (`utm_source=linkedin&utm_medium=social&utm_campaign=personal` bzw. `company`), um den Kanal-Beitrag zur Waitlist messbar zu machen.
+
+**Conversion-Tracking-Realitätscheck (April 2026):** GA4-Conversions sind aktuell unzuverlässig — Button-Clicks werden als Conversions gezählt, es gibt keine verlässlichen echten Lead-Daten aus Paid-Search über den gesamten Zeitraum März/April. Primäre Wahrheit ist die Brevo-Waitlist-Liste (tatsächlich abgeschickte Formulare), nicht GA4- oder Ads-Events. Konsequenz: keine Paid-Budget-Entscheidungen auf GA4-Conversion-Zahlen stützen, bis echtes Server-Side-Tracking oder Brevo-Logs als Grundlage hinterlegt sind.
+
+**Dual-Track-Landingpages (April 2026):** Neben `/ki-belegerkennung` (Kanzlei-Track) entsteht eine zweite Landingpage `/rechnungseingang-automatisieren` (Unternehmens-Track). Copy, Keywords, CTA und Lead-Magnete sind strikt getrennt (siehe `Positionierung.md` 6.4). LinkedIn-Posts verlinken abhängig von Hashtag-Welt auf jeweils eine der beiden Seiten — kein Mischen.
 
 ### Lead-Magnet (ab Woche 4, optional)
 Checkliste: *"Rechnungseingang digitalisieren — 7 Schritte für Steuerkanzleien"* als PDF.
@@ -111,17 +135,25 @@ Sachlich, produktzentriert. Keine persönlichen Anekdoten, kein Startup-Jargon. 
 ## 4. LinkedIn Personal (CEO — Andreas Schwarzkopf)
 
 ### Kanalrolle
-Primärer Awareness- und Vertrauenskanal. Andreas' persönliche Stimme ist das stärkste Marketinginstrument von Flowbeaver — mehr Reichweite als jede Unternehmensseite, mehr Vertrauen als jede Anzeige. Solo-Founder-Vorteil wird explizit eingesetzt: direkter Zugang, schnelle Iteration, persönliche Haftung für Produktqualität.
+Primärer Awareness- und Vertrauenskanal auf LinkedIn. Andreas' persönliche Stimme erreicht mehr Kanzleien als die Company Page. Solo-Founder-Vorteil wird explizit eingesetzt: direkter Zugang, schnelle Iteration, persönliche Haftung für Produktqualität. Die **Techniker-Positionierung** (Andreas = baut das Werkzeug, ist nicht Kanzlei-Insider) ist der rote Faden — siehe `Positionierung.md` 1.2.
 
-### 5 Content-Pillar
+### Mechanik (April 2026)
+- **Keine Gruppen.** LinkedIn-Gruppen sind in Deutschland tot.
+- **Hashtag-Folgen wurde Ende 2024 abgeschafft.** Hashtags sind nur noch Suchfilter. Trotzdem unter jedem Post setzen (#steuerberater, #steuerkanzlei, #datev, #digitalisierung, #erechnung, #zugferd, #kanzleimanagement) — für Auffindbarkeit, nicht für Follower.
+- **Kommentar-Spiel (10 Min./Tag):** 3–5 substantielle Kommentare unter Posts von Jens Henke, Sebastian Merla, Gregor Ganschow, Carola Heinen, Benjamin Herz, Falk Weinreich. Kein Selbstpromotion, keine Links. Nur fachlicher Beitrag.
+- **Eigene Posts (2×/Woche):** Di und Do, nach unten aufgelisteten Pillars.
+- **Unternehmens-Track separat:** Posts für Buchhaltungsleitungen laufen unter #buchhaltung, #rechnungseingang, verlinken auf `/rechnungseingang-automatisieren`.
+
+### 6 Content-Pillar (inkl. Pillar 6 neu)
 
 | # | Pillar | Thema | Frequenz |
 |---|---|---|---|
 | 1 | **Fachkräftemangel & Skalierung** | Schmerz der Kanzlei, keine Lösung pitchen | 1–2x/Monat |
 | 2 | **KI-Expertise** | Edukativ: OCR vs. LLM, Grenzen der KI, was Dreiklang bedeutet | 1–2x/Monat |
-| 3 | **Behind the Scenes** | Screenshots, Loom-Videos, Entwicklungsfortschritt, Fehler | 1x/Monat |
+| 3 | **Behind the Scenes / Techniker-Gründer** | Screenshots, Loom-Videos, Entwicklungsfortschritt, Fehler — mit Techniker-Stimme | 1x/Monat |
 | 4 | **Scarcity / Waitlist-Updates** | Echte Zahlen, Plätze werden knapp, Webinar-Ankündigung | 1x/Monat |
 | 5 | **DATEV-Optimierung** | DATEV-Frustration aufnehmen, Flowbeaver als Ergänzung positionieren | 1x/Monat |
+| 6 | **Sprach- und Kontextrobustheit** (neu) | Fremdsprachige Belege, exotische Rechnungen, Rückfragen-Reduktion | 1–2x/Monat |
 
 ### Wöchentlicher Rhythmus
 - **Dienstag:** Pillar 1 oder 2 (Problem/Expertise — wachstumsstärkstes Format)
@@ -139,6 +171,38 @@ Primärer Awareness- und Vertrauenskanal. Andreas' persönliche Stimme ist das s
 - Avg. Impressionen/Post: 500–1.500
 - Profil-Aufrufe: steigend Woche über Woche
 - Waitlist-Anmeldungen aus LinkedIn: messbar per UTM
+
+---
+
+## 4b. Fachcommunitys als Content-Kanäle (neu, April 2026)
+
+Parallel zu Website und LinkedIn wird Content in drei Fachcommunitys produziert — als Antworten, nicht als Posts. Kein Pitch, keine Links, keine Selbstpromotion. Die vollständige Channel-Mechanik steht in `Kanalstrategie.md` 3.8–3.10; hier nur der Content-Aspekt.
+
+### DATEV-Community (datev-community.de)
+
+- **Zeitbudget:** 60 Min./Woche, 2–3 substantielle Thread-Antworten.
+- **Boards:** "Unternehmen online", "Betriebliches Rechnungswesen", "Ideen zu Unternehmen online".
+- **Anknüpfungspunkte:** 16 konkrete Threads in `Fachcommunitys-Anknuepfungspunkte.md` gelistet — priorisiert nach Match-Stärke (ASR-Erfahrungen, DUO-Belegerkennung, Pre-Kontierung, Fremdsprachen-Belege, E-Rechnung).
+- **Antwort-Template:** Paraphrase → fachliche Nuance → offene Rückfrage → kein Link/Pitch. (Siehe `Content-Framework.md` Hook-Bibliothek.)
+
+### Facebook-Gruppe "Steuerberater unter sich"
+
+- **Zeitbudget:** 30 Min./Woche.
+- **Phasierung:** Aufnahme beantragen → 2 Wochen Lurken → erste gezielte Beiträge zu Digitalisierung, Belegverarbeitung, Fachkräftemangel.
+- **Multiplikatoren:** Jens Henke, Sebastian Merla, Gregor Ganschow sind hier aktiv — Beiträge unter ihren Posts erreichen die weiteste Kanzlei-Audience.
+
+### New Generation Steuerberater Community (community.newgen.tax)
+
+- **Zeitbudget:** 20 Min./Woche.
+- **Fokus:** Kuratierte Audience, passt exakt auf Flowbeaver-ICP. Beiträge in Fach-Foren, persönlicher als in der DATEV-Community.
+
+### Messgrößen Community-Content
+
+Nicht Impressionen oder Likes, sondern:
+- Profil-Klicks auf "Andreas Schwarzkopf"
+- Folge-Direktnachrichten mit konkreten Rückfragen
+- Indirekt: Google-Sichtbarkeit alter Threads (SEO)
+- Indirekt: Waitlist-Einträge, die in Brevo "über Empfehlung" oder ohne UTM auftauchen
 
 ---
 
@@ -169,13 +233,17 @@ E-Mail-Sequenz (Brevo Welcome) → Webinar-Einladung → Beta-Auswahl
 
 | Tag | Kanal | Content-Typ | Aufwand |
 |---|---|---|---|
-| Di | LinkedIn Personal | Pillar 1 oder 2 | 30–45 Min. |
+| Mo | DATEV-Community | 1 substantielle Thread-Antwort | 20–25 Min. |
+| Di | LinkedIn Personal | Pillar 1 oder 2 (Eigenpost) | 30–45 Min. |
 | Di | LinkedIn Company | Repost des CEO-Posts + 1 Satz | 5 Min. |
-| Do | LinkedIn Personal | Pillar 3, 4 oder 5 | 30–45 Min. |
+| Mi | DATEV-Community + Facebook | 1 DATEV-Antwort + 1 Facebook-Beitrag | 30–40 Min. |
+| Do | LinkedIn Personal | Pillar 3, 4, 5 oder 6 (Eigenpost) | 30–45 Min. |
 | Fr | LinkedIn Company | Produktschaufenster-Post | 15 Min. |
+| Fr | newgen.tax | 1 Fachbeitrag oder Kommentar | 20 Min. |
+| Täglich | LinkedIn Feed | 3–5 Kommentare unter Multiplikator-Posts | 10 Min. |
 | Laufend | Website/Blog | SEO-Artikel (lt. content-plan.md) | 2–4 Std./Woche |
 
-**Wochentotal Aufwand:** ca. 3–5 Stunden (inkl. Claude-unterstützter Erstellung)
+**Wochentotal Aufwand:** ca. 6–8 Stunden (inkl. Claude-unterstützter Erstellung und Community-Präsenz). Die zusätzliche Zeit für Community-Antworten zahlt sich über fachliche Autorität und SEO-Sichtbarkeit aus, nicht über kurzfristige Klicks.
 
 ---
 
@@ -299,10 +367,14 @@ E-Mail-Sequenz (Brevo Welcome) → Webinar-Einladung → Beta-Auswahl
 
 | Dokument | Inhalt |
 |---|---|
-| `strategie/Kanalstrategie.md` | Kanalpriorisierung, Awareness-Stufen-Framework |
+| `strategie/Kanalstrategie.md` | Kanalpriorisierung (Version 2.0), Community-Kanäle, Paid-Reality-Check |
 | `strategie/GTM-Strategie.md` | 12-Wochen-Gesamtplan, Funnel-Übersicht |
-| `strategie/Positionierung.md` | Messaging Framework, DATEV-Kompatibilitäts-Messaging |
+| `strategie/Positionierung.md` | Messaging-Framework, Differenziator 1.1, Gründer-Positionierung 1.2, Dual-Track 6.4 |
+| `strategie/Content-Framework.md` | Awareness-Stufen-Matrix, Hook-Bibliothek, Community-Antwort-Template |
+| `strategie/Fachcommunitys-Anknuepfungspunkte.md` | 16 konkrete DATEV-Threads mit Antwortmustern, Hashtag-Liste, Multiplikatoren |
+| `strategie/Session-Handoff-Website-Ueberarbeitung.md` | Website-Pflicht-Elemente, konkrete Community-Zitate, Tonalität |
+| `strategie/STRATEGY.md` | Dual-Track-Daten (Ads 292,90 €/0 Conv.), Keyword-Volumen, Kampagnen A/B/C |
 | `seo/content-plan.md` | Artikel-Backlog mit Status (Phasen 1–3) |
 | `email/` | Brevo-Sequenzen Welcome + Webinar |
-| `~/.claude/skills/flowbeaver-marketing/references/linkedin.md` | Ausführliche LinkedIn-Post-Formatregeln + Beispiele |
+| `~/.claude/skills/flowbeaver-marketing/references/linkedin.md` | LinkedIn-Post-Formatregeln + Beispiele |
 | `~/.claude/skills/flowbeaver-marketing/references/seo.md` | SEO-Artikel-Formatregeln + Strukturvorgaben |

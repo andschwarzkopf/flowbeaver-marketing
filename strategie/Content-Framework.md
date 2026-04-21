@@ -1,6 +1,30 @@
 # Content-Framework: Von der Awareness-Stufe zum fertigen Content
 
-*Stand: März 2026 — Flowbeaver Go-to-Market*
+*Stand: März 2026 — Ergänzungen April 2026*
+
+---
+
+## Changelog April 2026
+
+- **Tonalität-Leitplanken** ergänzt (vor Abschnitt A): Techniker-Stimme des Gründers, leise/technisch/spezifisch, keine Emojis, keine "KI-revolutioniert"-Phrasen.
+- **Neuer Content-Pillar 6: Sprach- und Kontextrobustheit** — fremdsprachige Belege, exotische Rechnungen, weniger Mandanten-Rückfragen. Wird in Stufe 2 und 3 prominent.
+- **Neues Format "Community-Antwort"** in der Format-Matrix (für DATEV-Community, Facebook-Gruppe und newgen.tax) mit eigenem Antwort-Template und Messgrößen (Profil-Klicks, Folge-DMs).
+- **Dual-Track-Spalte** in Stufe 3–5: Kanzlei-Vokabular (Mandanten, SKR03, Vorkontierung) vs. Unternehmens-Vokabular (Rechnungseingang, Prozessoptimierung) strikt trennen.
+- **Stufe-5-CTA** markiert: Waitlist vs. echtes Demo-Formular ist offene Entscheidung (15 Sessions zu wenig Daten — siehe STRATEGY.md).
+- **Kanal-zu-Stufen-Matrix** aktualisiert: Community-Kanäle aufgenommen, LinkedIn-Gruppen entfernt, LinkedIn Personal-Gewichtung auf Kommentar-Spiel angepasst.
+
+---
+
+## Tonalität-Leitplanken (vor allem anderen)
+
+Jeder Content-Baustein folgt den Regeln aus `Session-Handoff-Website-Ueberarbeitung.md` und `Positionierung.md`:
+
+- **Techniker-Stimme:** Andreas ist Techniker, der das Werkzeug baut — kein Kanzlei-Insider. Ehrlichkeit schlägt Tarnung. "Ich habe gesehen, wie …" statt "Wir in der Branche …".
+- **Leise, technisch, spezifisch:** Belegtypen, Fehlermuster, konkrete Zahlen statt Meinungen. "Italienische Hotelrechnung mit handschriftlicher Notiz" schlägt "unstrukturierte Dokumente".
+- **Keine Emojis.** Keine Startup-Phrasen ("Pioneer-Kohorte" → "erste Runde", "Disruption" → gar nicht). Keine "KI revolutioniert …"-Eröffnungen.
+- **Sie-Anrede, korrekte Umlaute** (ä/ö/ü, niemals ae/oe/ue).
+- **Keine Anti-DATEV-Rhetorik.** Flowbeaver ist Ergänzung, nie Alternative.
+- **Keine Stockfotos** lachender Buchhalter, keine Dark Patterns.
 
 ---
 
@@ -34,6 +58,29 @@ UNAWARE ──→ PROBLEM AWARE ──→ SOLUTION AWARE ──→ PRODUCT AWARE
 ```
 
 **Wichtig:** Die meisten Steuerkanzleien befinden sich zwischen Stufe 1 und 2. Sie wissen, dass es anstrengend ist — aber halten es für normal. Der größte Hebel liegt darin, sie von "Unaware" nach "Problem Aware" zu bewegen.
+
+### Content-Pillars (Übersicht, inkl. Pillar 6 neu)
+
+1. **Fachkräftemangel & Skalierung** — STAX-Zahlen, Mandate, Personalkosten.
+2. **KI-Expertise & Dreiklang** — LLM + KI-OCR + Regeln, technisches Verständnis.
+3. **Behind the Scenes / Gründer** — Techniker-Perspektive, Bauweise, Iterationen.
+4. **Scarcity / Waitlist** — 10-Plätze-Logik, Kohorten, Pricing.
+5. **DATEV-Optimierung** — ASR-Grenzen sachlich, DATEV-kompatibel, keine Frontalangriffe.
+6. **Sprach- und Kontextrobustheit (neu, April 2026)** — fremdsprachige Belege, exotische Rechnungen, Reduktion von Mandanten-Rückfragen. Der geschärfte Differenziator aus `Positionierung.md` 1.1. Hooks: "Italienische Hotelrechnung", "Schweizer Zahlenformat 1'500.80", "'Invoice No.' wird als Barcode erkannt" (Original-Zitat aus DATEV-Community), "Rückfragen als versteckter Zeitkiller".
+
+### Dual-Track-Vokabular (ab Stufe 3)
+
+Ab Solution Aware wird klar getrennt, für welchen Funnel ein Content-Stück produziert wird:
+
+| Dimension | **Kanzlei-Track** | **Unternehmens-Track** |
+|---|---|---|
+| Vokabular | Mandanten, SKR03/04, Vorkontierung, Buchungsstapel, FiBu, Kanzleiinhaber | Rechnungseingang, Eingangsrechnungen, Prozessoptimierung, Buchhaltungsleitung, Finance |
+| Landingpage | `/ki-belegerkennung` | `/rechnungseingang-automatisieren` |
+| Primärer Hashtag | #steuerberater, #steuerkanzlei, #datev | #buchhaltung, #rechnungseingang, #digitalisierung |
+| Primärer Kanal | DATEV-Community, Facebook StB, LinkedIn (Kanzlei-Multiplikatoren) | LinkedIn (Finance-Leute), Google Ads Kampagne C, SEO |
+| CTA | Waitlist / Demo | Testzugang / Kostenloser Test |
+
+Regel: **kein Content mischt beide Vokabularwelten.** Wer beides in einen Post packt, verwässert beides.
 
 ---
 
@@ -161,6 +208,7 @@ UNAWARE ──→ PROBLEM AWARE ──→ SOLUTION AWARE ──→ PRODUCT AWARE
 - **Scarcity ist echt** — "Ich bin Solo-Founder. Ich kann realistisch nur 10 Kanzleien gleichzeitig betreuen."
 - **Preis framen:** "€299/Monat — weniger als eine halbe Fachkraft-Stelle. Wenn Flowbeaver einer Mitarbeiterin 2 Stunden pro Tag spart, rechnet sich das am ersten Tag."
 - **Zweistufiger CTA** (aus Webinar-Skript): Platz sichern ODER kostenloser 30-Belege-Praxis-Check (niedrigere Schwelle)
+- **Offen (April 2026):** Waitlist-Formular oder echtes Demo-Formular als primärer CTA? Entscheidung steht aus — die 15 Sessions auf `/ki-belegerkennung` reichen statistisch nicht, um das zu beantworten (siehe `STRATEGY.md`). Bis zur Entscheidung beide CTAs parallel, Waitlist primär.
 
 ---
 
@@ -307,6 +355,17 @@ Die ersten 1–2 Zeilen eines LinkedIn-Posts, die erste Headline eines Blogartik
 
 ---
 
+### Community-Antwort-Template (DATEV, Facebook, newgen.tax)
+
+Community-Antworten folgen nicht der Hook-Logik, sondern einem festen vierteiligen Antwort-Template (identisch mit `Kanalstrategie.md` 3.8):
+
+1. **Paraphrase:** Problem des Thread-Starters in eigenen Worten zurückspiegeln. "Wenn ich das richtig verstehe, erkennt ASR bei Ihren englischen Eingangsrechnungen den Rechnungsnummernblock nicht sauber — stimmt das?"
+2. **Fachliche Nuance:** Einen Aspekt ergänzen, der noch nicht im Thread steht. Belegtyp-Detail, GoBD-Aspekt, strukturiert vs. unstrukturiert, Sprach-Robustheit, Kontextverständnis.
+3. **Kein Pitch, kein Link.** Keine URL zu flowbeaver.de, kein "Wir bauen gerade …". Die Positionierung passiert über Profilname und Biografie, nicht über den Post.
+4. **Offene Rückfrage:** "Haben Sie das auch bei handschriftlichen Notizen auf Belegen beobachtet?" Einladung zur Fortsetzung, Signal: verstehen wollen, nicht verkaufen.
+
+Messgrößen für Community-Antworten sind Profil-Klicks und Folge-Direktnachrichten, nicht Impressionen oder Likes.
+
 ## Hook-Formeln (universell einsetzbar)
 
 Diese Formeln funktionieren auf jeder Stufe — der Inhalt wird durch die Stufe bestimmt:
@@ -409,18 +468,23 @@ Welchen Content soll ich heute erstellen?
 
 ---
 
-## Kanal-zu-Stufen-Matrix: Wo erreiche ich wen?
+## Kanal-zu-Stufen-Matrix: Wo erreiche ich wen? (April 2026, Version 2.0)
 
 | Kanal | Stufe 1 | Stufe 2 | Stufe 3 | Stufe 4 | Stufe 5 |
 |---|---|---|---|---|---|
-| **LinkedIn Personal** | ★★★ | ★★★ | ★★☆ | ★★☆ | ★☆☆ |
+| **DATEV-Community** (60 min/Wo.) | ☆☆☆ | ★★☆ | ★★★ | ★★★ | ★★☆ |
+| **Facebook "StB u.s."** (30 min/Wo.) | ★★☆ | ★★★ | ★★★ | ★★☆ | ★☆☆ |
+| **newgen.tax** (20 min/Wo.) | ★☆☆ | ★★☆ | ★★★ | ★★★ | ★★☆ |
+| **LinkedIn Personal** (2 Posts + 10 min/Tag Kommentare) | ★★★ | ★★★ | ★★☆ | ★★☆ | ★☆☆ |
 | **LinkedIn Company** | ★☆☆ | ★☆☆ | ★★☆ | ★★★ | ★☆☆ |
-| **Google Ads (Paid)** | ☆☆☆ | ☆☆☆ | ★★★ | ★★★ | ☆☆☆ |
+| **Google Ads (A/B/C-Experiment)** | ☆☆☆ | ★☆☆ (Kamp. B) | ★★★ | ★★★ | ☆☆☆ |
 | **Google SEO (Blog)** | ☆☆☆ | ★★☆ | ★★★ | ★★★ | ★☆☆ |
 | **E-Mail** | ☆☆☆ | ★★☆ | ★★★ | ★★★ | ★★★ |
 | **Webinar** | ☆☆☆ | ☆☆☆ | ★★☆ | ★★★ | ★★★ |
 | **Fachmedien** | ★★☆ | ★★★ | ★★☆ | ☆☆☆ | ☆☆☆ |
-| **Messen** | ★☆☆ | ★★☆ | ★★★ | ★★★ | ★★☆ |
+| **Messen** (ab Kohorte 2) | ★☆☆ | ★★☆ | ★★★ | ★★★ | ★★☆ |
+
+LinkedIn-Gruppen sind aus der Matrix entfernt — sie sind in Deutschland tot (siehe Kanalstrategie.md 3.3).
 
 ---
 
@@ -428,6 +492,8 @@ Welchen Content soll ich heute erstellen?
 
 | Format | Stufe | Aufwand | Frequenz | Wo veröffentlichen |
 |---|---|---|---|---|
+| **Community-Antwort** (DATEV / Facebook / newgen.tax) | 2–4 | 15–25 Min. pro Antwort | 2–3× pro Woche (DATEV), 1–2× (Facebook), 1× (newgen.tax) | Direkt im Thread, keine Links |
+| LinkedIn Kommentar unter Multiplikator-Post | 1–3 | 5–10 Min. | 10 Min./Tag, 3–5 Kommentare | LinkedIn Feed |
 | LinkedIn Post (kurz, 800–1.300 Z.) | 1–2 | 30–45 Min. | 2x/Woche | LinkedIn Personal |
 | LinkedIn Post (edukativ, 1.000–1.500 Z.) | 2–3 | 45–60 Min. | 1x/Woche | LinkedIn Personal |
 | LinkedIn Company Repost + Kommentar | 1–4 | 5 Min. | 2x/Woche | LinkedIn Company |
