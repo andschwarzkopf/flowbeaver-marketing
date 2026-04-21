@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="de">
+<!--
+  ============================================================
+  FLOWBEAVER HOMEPAGE — ENTWURF v1
+  ============================================================
+  Ziel der Seite (Stand 2026-04-21):
+  Die Homepage ist NICHT der primaere Conversion-Funnel.
+  Sie ist Trust-Hub und Verstaerker fuer die aktiven Kanaele:
+    - LinkedIn-Kommentare + Posts (Hauptkanal)
+    - Community-Arbeit (DATEV, FB "Steuerberater unter sich", newgen.tax)
+    - Direct Messages (Discovery, Studie, Test, Austausch)
+    - Email-Outreach
+    - LinkedIn Company Page
+
+  Wer hier landet, klickt aus einem Post, aus einer DM, aus einer
+  Community-Signatur oder aus einer Mail. Die Seite muss in erster Linie
+  belegen: "Das ist echt, das ist durchdacht, der Gruender ist erreichbar."
+
+  Fokus: 100% Steuerkanzleien. Unternehmens-Track laeuft separat auf
+  /rechnungseingang-automatisieren (siehe Positionierung.md 6.4).
+
+  ============================================================
+  QUELLEN-LEGENDE FUER JEDEN BLOCK
+  ============================================================
+  [QUELLE: OLD-HOME]  = https://www.flowbeaver.de/ (aktuelle Homepage)
+  [QUELLE: LP-KI]     = https://www.flowbeaver.de/ki-belegerkennung
+  [QUELLE: LP-REPORT] = https://www.flowbeaver.de/ki-in-buchhaltung-2026
+  [AKTION: REUSE]     = Text 1:1 uebernehmen
+  [AKTION: ADAPT]     = Text uebernehmen, kleine Anpassungen noetig
+  [AKTION: NEW]       = Neu zu schreiben, Vorschlag ist Platzhalter
+  ============================================================
+
+  Brand: Lila #52267a, DM Sans, keine Gradients, keine Schatten.
+  Tonalitaet: sachlich, Sie-Anrede, keine Emojis, keine Startup-Sprache.
+-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flowbeaver — KI-Vorsystem fuer Steuerkanzleien</title>
+  <meta name="description" content="Flowbeaver automatisiert die vorbereitende Buchhaltung in Steuerkanzleien. DATEV-kompatibel, persoenlich betreut, gebaut von einem KI-Techniker.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap">
+  <style>
+    :root {
+      --fb-purple: #52267a;
+      --fb-dark-red: #3c0f04;
+      --fb-text: #404040;
+      --fb-black: #000;
+      --fb-hover: #606060;
+      --fb-white: #fff;
+      --fb-footer: #111;
+      --fb-border: #e0e0e0;
+      --fb-radius: 10px;
+      --fb-font: 'DM Sans', system-ui, -apple-system, sans-serif;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:var(--fb-font); font-size:20px; line-height:1.6; color:var(--fb-text); background:var(--fb-white); }
+    h1,h2,h3 { color:var(--fb-black); line-height:1.25; font-weight:700; }
+    h1 { font-size:44px; color:var(--fb-dark-red); line-height:1.15; margin-bottom:20px; }
+    h2 { font-size:26px; margin-bottom:20px; }
+    h3 { font-size:22px; font-weight:600; margin-bottom:12px; }
+    p { margin-bottom:20px; }
+    a { color:var(--fb-purple); text-decoration:none; }
+    a:hover { color:var(--fb-hover); }
+    ul { padding-left:1.25rem; margin-bottom:20px; }
+    li { margin-bottom:8px; }
+    section { padding:105px 24px; border-bottom:1px solid var(--fb-border); }
+    .container { max-width:960px; margin:0 auto; }
+    .narrow { max-width:720px; margin:0 auto; }
+    .btn-primary {
+      display:inline-block; background:var(--fb-purple); color:var(--fb-white);
+      font-size:22px; font-weight:500; padding:14px 28px;
+      border-radius:var(--fb-radius); border:none; cursor:pointer;
+      transition:0.2s ease-in-out;
+    }
+    .btn-primary:hover { background:#3d1c5c; color:var(--fb-white); }
+    .btn-sub { font-size:14px; color:var(--fb-hover); margin-top:10px; }
+    .card { border:1px solid var(--fb-border); border-radius:var(--fb-radius); padding:24px; background:var(--fb-white); }
+    .grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+    .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start; }
+    .zitat { border-left:3px solid var(--fb-purple); padding:8px 16px; margin:20px 0; font-style:italic; color:var(--fb-hover); }
+    .block-note {
+      background:#fffbe6; border:1px dashed #d4a900; padding:12px 16px;
+      font-size:14px; font-family:monospace; color:#665200;
+      margin-bottom:20px; border-radius:6px;
+    }
+    nav.top {
+      display:flex; justify-content:space-between; align-items:center;
+      padding:20px 24px; border-bottom:1px solid var(--fb-border);
+      position:sticky; top:0; background:var(--fb-white); z-index:100;
+    }
+    nav.top ul { display:flex; gap:24px; list-style:none; padding:0; margin:0; }
+    nav.top a { color:var(--fb-black); font-weight:500; font-size:16px; }
+    footer { background:var(--fb-footer); color:var(--fb-white); padding:40px 24px; text-align:center; font-size:14px; }
+    footer a { color:var(--fb-white); opacity:0.7; margin:0 12px; }
+    @media (max-width:768px){
+      .grid-3,.grid-2{grid-template-columns:1fr;}
+      h1{font-size:32px;}
+      h2{font-size:22px;}
+      section{padding:60px 20px;}
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ============================================================
+     BLOCK 0: NAVIGATION
+     [QUELLE: neu, orientiert an aktueller Minimal-Nav der OLD-HOME]
+     [AKTION: NEW]
+     NOTIZ: Die alte Homepage hat nur "KI-Belegerkennung / Ueber uns / Kontakt".
+     Fuer die neue Trust-Hub-Rolle brauchen wir zusaetzlich:
+       - Ressourcen/Blog (SEO + Content-Autoritaet)
+       - Branchenreport (Lead-Magnet, existiert schon)
+     "Produkt" bleibt bewusst als Eine-Seite-Deep-Dive (die /ki-belegerkennung-LP).
+     ============================================================ -->
+<nav class="top">
+  <div><strong style="font-size:22px; color:var(--fb-purple);">Flowbeaver</strong></div>
+  <ul>
+    <li><a href="/ki-belegerkennung">Produkt</a></li>
+    <li><a href="/branchenreport">Branchenreport</a></li>
+    <li><a href="/blog">Ressourcen</a></li>
+    <li><a href="/ueber-uns">Ueber</a></li>
+    <li><a href="/kontakt">Kontakt</a></li>
+    <li><a href="#demo" class="btn-primary" style="padding:8px 16px; font-size:16px;">Demo buchen</a></li>
+  </ul>
+</nav>
+
+
+<!-- ============================================================
+     BLOCK 1: HERO
+     [QUELLE: OLD-HOME + LP-KI kombiniert]
+     [AKTION: ADAPT]
+     NOTIZ: Die alte Homepage-Hero ("Vorbereitende Buchhaltung mit KI")
+     richtet sich noch an Buchhaltungsservices + Kanzleien + Unternehmen.
+     Wir fokussieren jetzt 100% auf Steuerkanzleien, entsprechend:
+       - H1 nennt die Zielgruppe direkt
+       - Subline uebernimmt Kernversprechen, aber mit Kanzlei-Vokabular
+         (Mandanten, FiBu, DATEV)
+       - CTA bleibt "Demo buchen" aus OLD-HOME + LP-KI
+
+     Bewusst NICHT im Hero:
+       - Der Sprachen/Rueckfragen-Wedge als "validierter Insight"
+         (ist laut Andreas ausgedacht, siehe Memory feedback_wedge_not_validated)
+       - "98 %" / "90 %"-Zahlen ohne Beleg
+     ============================================================ -->
+<section id="hero">
+  <div class="container grid-2">
+    <div>
+      <div class="block-note">BLOCK 1 HERO — [QUELLE: OLD-HOME adaptiert] [AKTION: ADAPT] — Kanzlei-Fokus statt Mehrfach-Zielgruppe. Keine unbewiesenen Prozent-Zahlen.</div>
+      <h1>Das KI-Vorsystem fuer Steuerkanzleien</h1>
+      <p style="font-size:22px; color:var(--fb-text);">
+        Flowbeaver verarbeitet Mandantenbelege automatisch und liefert fertige
+        Buchungsvorschlaege in Ihre FiBu. Ihre Mitarbeiter pruefen und buchen
+        &mdash; statt abzutippen. DATEV-kompatibel, ohne Systemwechsel.
+      </p>
+      <p>
+        <a href="#demo" class="btn-primary">Demo buchen (15 Min.)</a>
+      </p>
+      <p class="btn-sub">15 Minuten, 1:1 mit dem Gruender. Kein Vertrieb.</p>
+    </div>
+    <div>
+      <!-- PLATZHALTER: Produkt-Screenshot oder Prozess-Mockup
+           Beleg (PDF) -> Flowbeaver -> DATEV-Buchungsstapel
+           Kein Stock-Foto. Lieber echter Screenshot der Anwendung. -->
+      <div style="background:#f7f7fa; border:1px dashed #bbb; border-radius:var(--fb-radius); min-height:320px; display:flex; align-items:center; justify-content:center; color:#999;">
+        [PLATZHALTER: Produkt-Screenshot / Prozess-Mockup]
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BLOCK 2: PROBLEM-FRAMING (mit Branchendaten)
+     [QUELLE: LP-REPORT (2026) fuer Zahlen + OLD-HOME fuer Schmerzpunkte]
+     [AKTION: ADAPT — beides kombinieren]
+     NOTIZ: Die Report-LP liefert die starken STAX-Zahlen mit Quellenangabe.
+     Die alte Homepage liefert 4 konkrete Schmerzpunkte.
+     Beide zusammen: belegte Lage + konkret erlebte Reibung.
+     Die Schmerzpunkte sind sachlich formuliert, keine "KI revolutioniert"-Sprache.
+     ============================================================ -->
+<section id="problem">
+  <div class="narrow">
+    <div class="block-note">BLOCK 2 PROBLEM — [QUELLE: LP-REPORT Zahlen + OLD-HOME Schmerzpunkte] [AKTION: ADAPT] — Report-Zahlen vorne, konkrete Reibung dahinter.</div>
+    <h2>Warum Kanzleien den Rechnungseingang automatisieren</h2>
+
+    <!-- Aus LP-REPORT: Branchenzahlen mit Quellen -->
+    <ul>
+      <li><strong>72,7 % der Kanzleien melden Fachkraeftemangel</strong> (ifo, August 2025).</li>
+      <li><strong>Nur 23,2 % der Einzelkanzleien konnten ihre offenen Stellen besetzen</strong> (STAX 2024, BStBK/Allensbach).</li>
+      <li><strong>Personalkosten machen inzwischen 43,8 % des Kanzleiumsatzes aus</strong> &mdash; Tendenz steigend (STAX 2024).</li>
+      <li><strong>91,6 % stufen KI als relevant ein, nur rund 30 % nutzen sie</strong> (SWI Finance / Handelsblatt).</li>
+    </ul>
+
+    <!-- Aus OLD-HOME: konkrete Schmerzpunkte im Kanzleialltag -->
+    <h3 style="margin-top:40px;">Was Sie wahrscheinlich kennen</h3>
+    <ul>
+      <li>Belege kommen auf fuenf verschiedenen Wegen rein &mdash; Mail, Portal, Scan, E-Rechnung, Papier.</li>
+      <li>Die FiBu-OCR erkennt einen Teil zuverlaessig, der Rest erzeugt manuelle Nachpflege.</li>
+      <li>Fremdsprachige Belege, neue Lieferanten oder unklare Vorgaenge fuehren zu Rueckfragen beim Mandanten.</li>
+      <li>Skontoverluste und Mahngebuehren, wenn Belege liegen bleiben.</li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BLOCK 3: LOESUNG — SO FUNKTIONIERT ES (3 SCHRITTE)
+     [QUELLE: OLD-HOME "So funktioniert Flowbeaver in der Praxis"]
+     [AKTION: REUSE]
+     NOTIZ: Der 3-Schritt-Prozess aus der alten Homepage ist stark:
+     belegtes Ein-Raus-Modell, ohne Hype. Uebernehmen wie er ist.
+     Die Kanzlei-Anpassung ist minimal (bereits Kanzlei-tauglich).
+     ============================================================ -->
+<section id="funktionsweise">
+  <div class="container">
+    <div class="block-note">BLOCK 3 FUNKTIONSWEISE — [QUELLE: OLD-HOME "So funktioniert Flowbeaver in der Praxis"] [AKTION: REUSE] — Text 1:1, nur evtl. "Ihre Buchhaltungssoftware" -> "Ihr DATEV-System".</div>
+    <h2>So funktioniert Flowbeaver in der Praxis</h2>
+    <p>Flowbeaver laesst sich in Ihr bestehendes DATEV-Setup einbinden und an Ihre Prozesse anpassen.</p>
+
+    <div class="grid-3" style="margin-top:32px;">
+      <div class="card">
+        <h3>1. Belege kommen wie bisher rein</h3>
+        <p>PDFs per E-Mail oder Ordner, Portal-Rechnungen und E-Rechnungen (XRechnung / ZUGFeRD) &mdash; Flowbeaver nimmt alles an einem standardisierten Eingang entgegen.</p>
+      </div>
+      <div class="card">
+        <h3>2. KI-gestuetzte Belegerfassung</h3>
+        <p>Belegdaten werden automatisch erkannt und ausgelesen &mdash; auch bei schlechten Scans, fremdsprachigen Rechnungen oder komplizierten Layouts.</p>
+      </div>
+      <div class="card">
+        <h3>3. Buchbare Datensaetze in Ihr DATEV</h3>
+        <p>Inhaltliche Analyse des Vorgangs, Kontierungsvorschlaege (SKR03/04), DATEV-kompatibler Buchungsstapel-Export. Ihr Team arbeitet im gewohnten System &mdash; mit vorbereiteten Buchungssaetzen statt Roh-PDFs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BLOCK 4: DREIKLANG (TECHNOLOGISCHER DIFFERENZIERER)
+     [QUELLE: LP-KI "So funktioniert die automatische Belegerkennung mit KI"]
+     [AKTION: REUSE]
+     NOTIZ: Der Dreiklang (KI-OCR + LLM + Regelwerk) ist der echte
+     technologische Differenzierer gegen DATEV ASR und Finmatics.
+     Das steht so in Positionierung.md 6.3 und ist produktlich belegt.
+     ============================================================ -->
+<section id="dreiklang">
+  <div class="container">
+    <div class="block-note">BLOCK 4 DREIKLANG — [QUELLE: LP-KI] [AKTION: REUSE] — Der technologische Kern. Text und Struktur 1:1 uebernehmen.</div>
+    <h2>Drei Saeulen, die zusammen mehr leisten als klassische OCR</h2>
+    <div class="grid-3" style="margin-top:32px;">
+      <div class="card">
+        <h3>KI-OCR</h3>
+        <p>Robuste Extraktion dank neuer Vision Language Models &mdash; auch bei schlechten Scans, ungewoehnlichen Layouts und handschriftlichen Notizen.</p>
+      </div>
+      <div class="card">
+        <h3>LLM + automatische Recherche</h3>
+        <p>Recherchiert Lieferanten und Positionen automatisch, gleicht gegen Buchungsbeispiele ab &mdash; auch bei fremdsprachigen Belegen.</p>
+      </div>
+      <div class="card">
+        <h3>Regelwerk</h3>
+        <p>Plausibilitaetspruefung, Steuertatbestaende und mandantenspezifische Kontierungslogik. Jeder Vorschlag ist belegt &mdash; nicht geraten.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BLOCK 5: DATEV-KOMPATIBILITAET + SICHERHEIT
+     [QUELLE: LP-KI "DATEV-kompatibel. Kein neues System. Kein Umstieg."]
+     [AKTION: REUSE]
+     NOTIZ: Dieser Block ist zentral (Positionierung.md Regel Nr. 1).
+     Text aus LP-KI uebernehmen. Trust-Badges ebenso.
+     ============================================================ -->
+<section id="datev">
+  <div class="container">
+    <div class="block-note">BLOCK 5 DATEV + TRUST — [QUELLE: LP-KI] [AKTION: REUSE] — DATEV-Ergaenzung, keine Alternative. Trust-Badges direkt mitnehmen.</div>
+    <h2>DATEV-kompatibel. Kein neues System. Kein Umstieg.</h2>
+    <p>Flowbeaver ist kein DATEV-Ersatz &mdash; sondern ein Vorsystem, das die Arbeit erledigt, bevor DATEV ins Spiel kommt. Sie bleiben in Ihrem Oekosystem.</p>
+
+    <h3>So kommen die Ergebnisse in DATEV</h3>
+    <ul>
+      <li><strong>DATEV-CSV Buchungsstapel-Export</strong> &mdash; direkt importierbar in Kanzlei-Rechnungswesen</li>
+      <li><strong>Belegbilder-ZIP</strong> &mdash; fuer Dokumentation und Ablage</li>
+      <li>Kompatibel mit allen Systemen, die den DATEV-Buchungsstapel-Import unterstuetzen</li>
+    </ul>
+
+    <div style="display:flex; gap:32px; flex-wrap:wrap; margin-top:24px;">
+      <div><strong>Deutsche Server</strong></div>
+      <div><strong>DSGVO-konform</strong></div>
+      <div><strong>AI-Act-konform</strong></div>
+      <div><strong>Human-in-the-loop</strong></div>
+      <div><strong>Keine dauerhafte Belegspeicherung</strong></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BLOCK 6: ROI / RECHENBEISPIEL
+     [QUELLE: LP-REPORT + LP-KI (beide haben dieses Rechenbeispiel identisch)]
+     [AKTION: REUSE]
+     NOTIZ: Statisches Rechenbeispiel reicht auf der Homepage.
+     Interaktiver Sparrechner bleibt auf /ki-belegerkennung.
+     Homepage verweist dorthin per CTA.
+     ============================================================ -->
+<section id="roi">
+  <div class="narrow">
+    <div class="block-note">BLOCK 6 ROI — [QUELLE: LP-REPORT / LP-KI] [AKTION: REUSE statisch] — Interaktiver Rechner bleibt auf Produkt-LP, hier nur Beispiel + Link.</div>
+    <h2>Rechenbeispiel: 500 Belege pro Monat (ca. 10 FiBu-Mandate)</h2>
+    <p>Annahmen: 5 Minuten Bearbeitungszeit pro Beleg, 35&nbsp;Euro Vollkosten je Stunde, 90&nbsp;% Automatisierung.</p>
+    <ul>
+      <li>42 Std./Monat heute &rarr; 4 Std./Monat mit Flowbeaver</li>
+      <li>38 Std. gesparte Zeit pro Monat</li>
+      <li>1.330 Euro gesparte Personalkosten pro Monat</li>
+      <li>Abzueglich 299 Euro Flowbeaver-Gebuehr = <strong>1.031 Euro Netto-Ersparnis pro Monat</strong></li>
+    </ul>
+    <p><a href="/ki-belegerkennung#rechner" class="btn-primary">Mit eigenen Zahlen rechnen</a></p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BLOCK 7: GRUENDER — TECHNIKER-POSITIONIERUNG
+     [QUELLE: NEU, basierend auf Positionierung.md 1.2 + Memory
+      project_positioning_techniker_not_steuerberater]
+     [AKTION: NEW]
+     NOTIZ: Die aktuellen Gruender-Zitate (OLD-HOME + LP-KI + LP-REPORT)
+     klingen alle nach "Kanzlei-Insider" oder nach "ich kenne Ihre Schmerzen".
+     Das widerspricht der Techniker-Positionierung aus Positionierung.md 1.2.
+     Hier ein Entwurf, der ehrlich sagt: "Ich bin der Techniker, nicht
+     der Steuerberater." Wird sicher noch redigiert.
+
+     Was bleibt aus vorhandenen Quellen:
+       - 15 Jahre KI-Erfahrung, Mercedes-Benz
+       - Diplom-Kaufmann
+       - Solo-Founder-Vorteil (direkter Zugang)
+
+     Was entfaellt:
+       - "Ich habe mich jahrelang geaergert..." (suggeriert Kanzlei-Erfahrung)
+       - "beides zu verbinden: wenn der kreative KI-Geist..." (zu Marketing)
+     ============================================================ -->
+<section id="gruender">
+  <div class="container">
+    <div class="block-note">BLOCK 7 GRUENDER — [QUELLE: NEW] [AKTION: NEW, auf Basis Positionierung.md 1.2] — Techniker-Positionierung: ehrlich, keine Kanzlei-Insider-Maske. Zitat ist Vorschlag, bitte mit eigenen Worten ersetzen.</div>
+    <h2>Gebaut von einem Techniker &mdash; gemeinsam mit Kanzleien</h2>
+    <div class="grid-2">
+      <div>
+        <!-- PLATZHALTER: Foto Andreas Schwarzkopf, professionell, kein Stock -->
+        <div style="background:#f7f7fa; border:1px dashed #bbb; border-radius:var(--fb-radius); height:280px; display:flex; align-items:center; justify-content:center; color:#999;">
+          [PLATZHALTER: Foto Andreas]
+        </div>
+      </div>
+      <div>
+        <p><strong>Andreas Schwarzkopf</strong><br>
+        Gruender &amp; Geschaeftsfuehrer, Flowbeaver GmbH<br>
+        Diplom-Kaufmann, 15 Jahre KI-Entwicklung (u.a. Mercedes-Benz Bank AG)</p>
+
+        <p class="zitat">
+          Ich bin kein Steuerberater. Ich bin der Techniker, der das Werkzeug baut.
+          Was gute vorbereitende Buchhaltung konkret heisst, lerne ich von den
+          Kanzleien, mit denen ich taeglich arbeite &mdash; und bringe die
+          KI-Seite mit, die heute moeglich ist.
+        </p>
+
+        <p>Flowbeaver ist ein Ein-Mann-Unternehmen. Das heisst: Sie sprechen
+        direkt mit dem Menschen, der das Produkt baut. Keine Support-Tickets,
+        keine Vertriebslayer. Wenn Sie in der ersten Runde dabei sind, fliesst
+        Ihr Feedback innerhalb von Tagen ins Produkt &mdash; nicht in Quartalen.</p>
+
+        <p>
+          <a href="https://www.linkedin.com/in/andreas-schwarzkopf">Auf LinkedIn vernetzen</a>
+          &nbsp;&middot;&nbsp;
+          <a href="mailto:accounting@flowbeaver.de">accounting@flowbeaver.de</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BLOCK 8: CONTENT-HUB / RESSOURCEN
+     [QUELLE: NEU]
+     [AKTION: NEW]
+     NOTIZ: Dieser Block ist der Schluessel zur Trust-Hub-Rolle.
+     Wer von LinkedIn / Community / Email kommt, erwartet Belege:
+     "Hat der Gruender fachlich was zu sagen?"
+     Hier landen:
+       - Der Branchenreport (gibt es bereits als Download)
+       - Blog-Artikel (SEO-Plan laut seo/content-plan.md, Artikel 1 "KI-Belegerkennung vs. OCR" in Woche 2)
+       - Link zur LinkedIn-Praesenz (Posts zum Nachlesen)
+       - Evtl. Community-Beitraege verlinken (DATEV-Community-Profil)
+
+     Das baut Autoritaet auch fuer Besucher, die nicht sofort Demo buchen.
+     ============================================================ -->
+<section id="ressourcen" style="background:#fafafa;">
+  <div class="container">
+    <div class="block-note">BLOCK 8 RESSOURCEN — [QUELLE: NEW] [AKTION: NEW] — Trust-Hub-Kernstueck. Verbindet Website mit LinkedIn / Community / Content.</div>
+    <h2>Ressourcen fuer Kanzleien</h2>
+    <p>Flowbeaver ist keine Werbebroschuere. Wir produzieren fachlichen Content zu KI, Belegerkennung und Kanzlei-Digitalisierung &mdash; und sind in den relevanten Communitys praesent.</p>
+
+    <div class="grid-3" style="margin-top:32px;">
+      <div class="card">
+        <h3>Branchenreport 2026</h3>
+        <p>KI in der Kanzlei: Daten aus BStBK, ifo, DATEV &mdash; 21 Quellen. Kostenlos.</p>
+        <p><a href="/branchenreport">Jetzt herunterladen &rarr;</a></p>
+      </div>
+      <div class="card">
+        <h3>Fachartikel</h3>
+        <p>Hintergrundtexte zu KI-Belegerkennung, DATEV-Integration und Prozessautomatisierung.</p>
+        <p><a href="/blog">Zum Blog &rarr;</a></p>
+      </div>
+      <div class="card">
+        <h3>LinkedIn</h3>
+        <p>Zwei Beitraege pro Woche zu KI, Kanzlei-Praxis und Produktfortschritt. Kommentieren Sie mit.</p>
+        <p><a href="https://www.linkedin.com/company/flowbeaver">Flowbeaver auf LinkedIn &rarr;</a></p>
+      </div>
+    </div>
+
+    <!-- Optionaler vierter Block, falls LinkedIn-Personal + Company getrennt zeigbar -->
+    <p style="margin-top:32px; text-align:center; font-size:16px; color:var(--fb-hover);">
+      Sie haben uns in der DATEV-Community, bei Steuerberater unter sich oder auf newgen.tax gefunden? Schreiben Sie uns einfach direkt: <a href="mailto:accounting@flowbeaver.de">accounting@flowbeaver.de</a>
+    </p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BLOCK 9: DEMO / CTA
+     [QUELLE: OLD-HOME + LP-KI kombiniert]
+     [AKTION: ADAPT]
+     NOTIZ: OLD-HOME fokussiert "Demo (15 Min.)". LP-KI fokussiert
+     "Platz auf der Warteliste sichern".
+     Fuer die Homepage als Trust-Hub ist Demo der bessere primaere CTA
+     (niedrigere Huerde, mehr Vertrauen).
+     Waitlist als sekundaere Option mit Pilotpartner-Mechanik.
+     ============================================================ -->
+<section id="demo">
+  <div class="narrow" style="text-align:center;">
+    <div class="block-note" style="text-align:left;">BLOCK 9 DEMO/CTA — [QUELLE: OLD-HOME Demo + LP-KI Pilot] [AKTION: ADAPT] — Demo primaer (niedrige Huerde), Pilot sekundaer.</div>
+    <h2>15 Minuten. Mit dem Gruender. Unverbindlich.</h2>
+    <p>Wir sehen uns an, wie Ihre Belege heute reinkommen, wo der Engpass liegt und ob Flowbeaver passt. Wenn nicht, sage ich Ihnen das. Wenn ja, koennen Sie sich als Pilotkanzlei bewerben.</p>
+
+    <!-- PLATZHALTER: Termin-Buchungs-Widget (Cal.com, Calendly o.ae.) -->
+    <p style="margin:32px 0;"><a href="/termin" class="btn-primary">Demo buchen (15 Min.)</a></p>
+
+    <p style="font-size:16px; color:var(--fb-hover);">
+      Alternativ: <a href="/pilotpartner">Pilotpartner-Programm ansehen</a>
+      &mdash; 10 Plaetze, persoenliches Onboarding, 299 Euro/Monat festgeschrieben fuer zwei Jahre.
+    </p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BLOCK 10: FAQ
+     [QUELLE: LP-KI FAQ (13 Fragen)]
+     [AKTION: ADAPT — auf die 6-8 homepage-relevanten Fragen reduzieren]
+     NOTIZ: Die vollstaendige FAQ bleibt auf /ki-belegerkennung.
+     Auf der Homepage nur die wichtigsten Einstiegsfragen.
+     ============================================================ -->
+<section id="faq">
+  <div class="narrow">
+    <div class="block-note">BLOCK 10 FAQ — [QUELLE: LP-KI] [AKTION: ADAPT — Kurzversion] — 6-8 wichtigste Fragen, Rest bleibt auf Produkt-LP.</div>
+    <h2>Haeufige Fragen</h2>
+
+    <div style="margin-top:32px;">
+      <h3>Was genau macht Flowbeaver?</h3>
+      <p>KI-Vorsystem fuer die vorbereitende Buchhaltung. Belegerkennung, Geschaeftsvorfall-Ableitung, DATEV-kompatibler Buchungsstapel mit Vorkontierung. Ihr Team prueft und importiert.</p>
+
+      <h3>Muessen wir DATEV wechseln oder etwas umstellen?</h3>
+      <p>Nein. Flowbeaver ist ein Vorsystem. Ihr bestehendes DATEV-Setup bleibt unveraendert.</p>
+
+      <h3>Was ist der Unterschied zu DATEV Buchungsassistent oder ASR?</h3>
+      <p>DATEV ASR nutzt klassische OCR. Flowbeaver kombiniert Vision Language Models, LLM-Recherche und ein Regelwerk &mdash; hoehere Erkennungsquote und bessere Behandlung ungewoehnlicher Belege.</p>
+
+      <h3>Was kostet Flowbeaver?</h3>
+      <p>299 Euro pro Monat, Flatrate, monatlich kuendbar. Fuer die ersten 10 Kanzleien ist dieser Einstiegspreis fuer zwei Jahre festgeschrieben.</p>
+
+      <h3>Ist das DSGVO-konform?</h3>
+      <p>Deutsche Server, EU-KI-Verarbeitungspartner, keine dauerhafte Belegspeicherung.</p>
+
+      <h3>Wie starten wir?</h3>
+      <p>15-Minuten-Demo mit dem Gruender. Bei Fit folgt ein Praxis-Check mit 30 echten Belegen aus Ihrer Kanzlei.</p>
+
+      <p style="margin-top:32px;"><a href="/ki-belegerkennung#faq">Alle FAQ auf der Produkt-Seite &rarr;</a></p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BLOCK 11: FOOTER
+     [QUELLE: OLD-HOME]
+     [AKTION: REUSE]
+     ============================================================ -->
+<footer>
+  <p>&copy; 2026 Flowbeaver GmbH, Berlin</p>
+  <p style="margin-top:12px;">
+    <a href="/">Home</a>
+    <a href="/ueber-uns">Ueber uns</a>
+    <a href="/kontakt">Kontakt</a>
+    <a href="/datenschutz">Datenschutz</a>
+    <a href="/impressum">Impressum</a>
+    <a href="/agb">AGB</a>
+  </p>
+</footer>
+
+</body>
+</html>

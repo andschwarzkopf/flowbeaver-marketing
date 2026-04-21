@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="de">
+<!--
+  ============================================================
+  FLOWBEAVER HOMEPAGE — ENTWURF v2 (nach Humanizer)
+  ============================================================
+  Rolle: Trust-Hub + Verstaerker fuer LinkedIn, Community, DMs, Email-Outreach.
+  Fokus: 100 % Steuerkanzleien. Unternehmens-Track separat auf /rechnungseingang-automatisieren.
+
+  Layout-Logik (bewusst gegen Karten-Redundanz):
+    Hero (Prosa)
+    Problem (Liste Zahlen + Liste Schmerzen)
+    Wie es laeuft (3 Karten)
+    So sieht ein Durchlauf aus (PROSA, NEU — bricht Karten-Rhythmus)
+    DATEV + Sicherheit (Liste)
+    Rechenbeispiel (Prosa)
+    Gruender (Prosa)
+    Ressourcen (3 Karten)
+    Demo (Prosa)
+    FAQ kurz
+    Footer
+
+  Quellen-Legende:
+    [OLD-HOME]   https://www.flowbeaver.de/
+    [LP-KI]      https://www.flowbeaver.de/ki-belegerkennung
+    [LP-REPORT]  https://www.flowbeaver.de/ki-in-buchhaltung-2026
+    [NEW]        neu geschrieben
+    [HUMANIZED]  aus Quelle, nach criteria-german.md entstaubt
+-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flowbeaver – KI-Vorsystem fuer Steuerkanzleien</title>
+  <meta name="description" content="Flowbeaver liest Mandantenbelege, ordnet zu und kontiert vor. Ihr Team prueft und bucht in DATEV. Ohne Systemwechsel.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap">
+  <style>
+    :root{--fb-purple:#52267a;--fb-dark-red:#3c0f04;--fb-text:#404040;--fb-black:#000;--fb-hover:#606060;--fb-white:#fff;--fb-footer:#111;--fb-border:#e0e0e0;--fb-radius:10px;--fb-font:'DM Sans',system-ui,sans-serif;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:var(--fb-font);font-size:20px;line-height:1.6;color:var(--fb-text);background:var(--fb-white);}
+    h1,h2,h3{color:var(--fb-black);line-height:1.25;font-weight:700;}
+    h1{font-size:44px;color:var(--fb-dark-red);line-height:1.15;margin-bottom:20px;}
+    h2{font-size:26px;margin-bottom:20px;}
+    h3{font-size:22px;font-weight:600;margin-bottom:12px;}
+    p{margin-bottom:20px;}
+    a{color:var(--fb-purple);text-decoration:none;}
+    a:hover{color:var(--fb-hover);}
+    ul{padding-left:1.25rem;margin-bottom:20px;}
+    li{margin-bottom:8px;}
+    section{padding:80px 24px;border-bottom:1px solid var(--fb-border);}
+    .container{max-width:960px;margin:0 auto;}
+    .narrow{max-width:720px;margin:0 auto;}
+    .btn-primary{display:inline-block;background:var(--fb-purple);color:var(--fb-white);font-size:20px;font-weight:500;padding:14px 28px;border-radius:var(--fb-radius);border:none;cursor:pointer;transition:.2s ease-in-out;}
+    .btn-primary:hover{background:#3d1c5c;color:var(--fb-white);}
+    .btn-sub{font-size:14px;color:var(--fb-hover);margin-top:10px;}
+    .card{border:1px solid var(--fb-border);border-radius:var(--fb-radius);padding:24px;background:var(--fb-white);}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
+    .zitat{border-left:3px solid var(--fb-purple);padding:8px 16px;margin:20px 0;font-style:italic;color:var(--fb-hover);}
+    .szenario{background:#faf7fd;border-radius:var(--fb-radius);padding:40px;margin:24px 0;}
+    .block-note{background:#fffbe6;border:1px dashed #d4a900;padding:10px 14px;font-size:13px;font-family:monospace;color:#665200;margin-bottom:20px;border-radius:6px;}
+    nav.top{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;border-bottom:1px solid var(--fb-border);position:sticky;top:0;background:var(--fb-white);z-index:100;}
+    nav.top ul{display:flex;gap:24px;list-style:none;padding:0;margin:0;align-items:center;}
+    nav.top a{color:var(--fb-black);font-weight:500;font-size:16px;}
+    footer{background:var(--fb-footer);color:var(--fb-white);padding:40px 24px;text-align:center;font-size:14px;}
+    footer a{color:var(--fb-white);opacity:.7;margin:0 12px;}
+    @media(max-width:768px){.grid-3,.grid-2{grid-template-columns:1fr;}h1{font-size:32px;}h2{font-size:22px;}section{padding:60px 20px;}.szenario{padding:24px;}}
+  </style>
+</head>
+
+<body>
+
+<!-- ============================================================
+     NAVIGATION — [QUELLE: NEW]
+     Schlanke Leiste. Kein CTA in der Nav, damit der Hero-CTA nicht verwaessert.
+     ============================================================ -->
+<nav class="top">
+  <div><strong style="font-size:22px;color:var(--fb-purple);">Flowbeaver</strong></div>
+  <ul>
+    <li><a href="/produkt">Produkt</a></li>
+    <li><a href="/branchenreport">Branchenreport</a></li>
+    <li><a href="/blog">Ressourcen</a></li>
+    <li><a href="/ueber">Über</a></li>
+    <li><a href="/kontakt">Kontakt</a></li>
+  </ul>
+</nav>
+
+
+<!-- ============================================================
+     BLOCK 1: HERO — [QUELLE: OLD-HOME + LP-KI] [AKTION: HUMANIZED]
+     Vorher: "Vorbereitende Buchhaltung mit KI. Flowbeaver verarbeitet
+     Eingangsrechnungen in 30 Sekunden und liefert fertige Buchungsvorschlaege
+     in Ihre FiBu mit 95%+ Genauigkeit."
+     Nachher: konkreter, keine unbelegte Prozentzahl, klares "fuer wen".
+     ============================================================ -->
+<section id="hero">
+  <div class="container grid-2">
+    <div>
+      <div class="block-note">BLOCK 1 HERO · [OLD-HOME + LP-KI → HUMANIZED] · 98/90/95-Prozente raus, Kanzlei als Adressat klar.</div>
+      <h1>Das KI-Vorsystem für Steuerkanzleien</h1>
+      <p style="font-size:22px;color:var(--fb-text);">
+        Flowbeaver liest Mandantenbelege, ordnet zu und kontiert vor.
+        Ihr Team prüft und bucht in DATEV.
+        Kein neues System, kein Umstieg.
+      </p>
+      <p><a href="#demo" class="btn-primary">Demo buchen (15 Min.)</a></p>
+      <p class="btn-sub">15 Minuten, 1:1 mit dem Gründer. Kein Vertrieb dazwischen.</p>
+    </div>
+    <div>
+      <div style="background:#f7f7fa;border:1px dashed #bbb;border-radius:var(--fb-radius);min-height:320px;display:flex;align-items:center;justify-content:center;color:#999;text-align:center;">
+        [PLATZHALTER: Screenshot Beleg-Durchlauf<br>oder Prozess-Mockup]
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BLOCK 2: PROBLEM — [QUELLE: LP-REPORT Zahlen + OLD-HOME Reibungspunkte]
+     [AKTION: HUMANIZED — beide Quellen zusammengefuehrt, Prosa zwischen den Listen]
+     ============================================================ -->
+<section id="problem">
+  <div class="narrow">
+    <div class="block-note">BLOCK 2 PROBLEM · [LP-REPORT Zahlen + OLD-HOME Reibung → HUMANIZED] · Zahlen mit Quellen, danach konkrete Reibung ohne Schimpf-Ton.</div>
+    <h2>Die Lage in den Kanzleien, in Zahlen</h2>
+    <ul>
+      <li>72,7 % der Kanzleien melden Fachkräftemangel (ifo, August 2025).</li>
+      <li>Nur 23,2 % der Einzelkanzleien konnten ihre offenen Stellen besetzen (STAX 2024, BStBK/Allensbach).</li>
+      <li>43,8 % des Kanzleiumsatzes gehen mittlerweile in Personalkosten — 2018 waren es noch 37 % (STAX 2024).</li>
+      <li>91,6 % halten KI für relevant, aber nur rund 30 % nutzen sie (SWI Finance / Handelsblatt).</li>
+    </ul>
+
+    <p>Das schlägt in der vorbereitenden Buchhaltung durch. Belege kommen auf fünf Wegen rein – Mail, Portal, Scan, E-Rechnung, Papier. Die FiBu-OCR erkennt einen Teil zuverlässig, der Rest wandert in die Nachpflege. Fremdsprachige Rechnungen führen zu Rückfragen beim Mandanten. Skonti verfallen, weil Belege liegen bleiben. Mahngebühren kommen dazu.</p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BLOCK 3: WIE ES LAEUFT — [QUELLE: OLD-HOME] [AKTION: HUMANIZED]
+     3-Schritt als Karten. Texte gekuerzt, kein "95 %+", kein "nahtlos".
+     ============================================================ -->
+<section id="ablauf">
+  <div class="container">
+    <div class="block-note">BLOCK 3 ABLAUF · [OLD-HOME → HUMANIZED] · 3 Karten bleiben, Texte klar ohne Marketing-Adjektive.</div>
+    <h2>So läuft es ab</h2>
+    <div class="grid-3" style="margin-top:32px;">
+      <div class="card">
+        <h3>1. Belege kommen rein wie bisher</h3>
+        <p>PDF per Mail, Portal-Upload, E-Rechnung (XRechnung oder ZUGFeRD), gescanntes Papier. Flowbeaver nimmt alles an einem Eingang an.</p>
+      </div>
+      <div class="card">
+        <h3>2. Die KI liest und kontiert vor</h3>
+        <p>Belegdaten werden ausgelesen, der Lieferant erkannt, der Geschäftsvorfall abgeleitet, Konten nach SKR03 oder SKR04 vorgeschlagen.</p>
+      </div>
+      <div class="card">
+        <h3>3. Buchungsstapel in Ihr DATEV</h3>
+        <p>CSV-Export plus Belegbilder-ZIP. Ihr Team importiert, prüft, bucht – im gewohnten Kanzlei-Rechnungswesen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BLOCK 4: KONKRETER DURCHLAUF — [QUELLE: NEW]
+     Prosa-Block, bricht den Karten-Rhythmus nach Block 3.
+     Ein konkretes Beispiel, kein Kunden-Zitat (haben wir nicht), kein Case-Study-Marketing.
+     Formuliert als Produktfaehigkeit an einem Belegtyp.
+     ============================================================ -->
+<section id="szenario" style="background:#fafafa;">
+  <div class="narrow">
+    <div class="block-note">BLOCK 4 SZENARIO · [NEW] · Prosa statt Karten, bricht den 3-Karten-Rhythmus nach Block 3. Kein fiktives Kundenzitat.</div>
+    <h2>Wie das bei einer echten Rechnung aussieht</h2>
+    <div class="szenario">
+      <p>Eine italienische Hotelrechnung für eine Projektreise, mittwochs abends in das Mandantenpostfach geladen. Zwei Positionen, Nettobeträge in Euro, eine Kurtaxe.</p>
+      <p>Flowbeaver liest die Rechnung, erkennt das Hotel als Lieferant, ordnet die Positionen als Reisekosten zu und schlägt die Kontierung nach SKR03 vor. Die Kurtaxe landet als nicht abzugsfähig auf dem korrekten Gegenkonto. Die Rechnung ist am Donnerstagmorgen als vorbereiteter Buchungssatz im Stapel — nicht als Klärfall.</p>
+      <p>Was vorher eine Rückfrage beim Mandanten war, ist jetzt ein Häkchen im Prüfprozess.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BLOCK 5: DATEV + SICHERHEIT — [QUELLE: LP-KI] [AKTION: HUMANIZED]
+     Liste statt Karten, damit der Rhythmus weiter variiert.
+     ============================================================ -->
+<section id="datev">
+  <div class="container">
+    <div class="block-note">BLOCK 5 DATEV + SICHERHEIT · [LP-KI → HUMANIZED] · Liste, keine Karten. "Oekosystem" und "nahtlos" entfernt.</div>
+    <h2>DATEV-kompatibel. Kein neues System. Kein Umstieg.</h2>
+    <p>Flowbeaver ist kein DATEV-Ersatz, sondern ein Vorsystem. Die Arbeit passiert, bevor DATEV ins Spiel kommt. Danach läuft alles wie gewohnt.</p>
+
+    <h3>So kommen die Ergebnisse in DATEV</h3>
+    <ul>
+      <li>DATEV-CSV Buchungsstapel, direkt importierbar in Kanzlei-Rechnungswesen</li>
+      <li>Belegbilder als ZIP für Dokumentation und Ablage</li>
+      <li>Kompatibel mit allen Systemen, die den DATEV-Buchungsstapel-Import unterstützen</li>
+    </ul>
+
+    <h3>Datenschutz und Kontrolle</h3>
+    <ul>
+      <li>Deutsche Server, EU-Verarbeitungspartner</li>
+      <li>DSGVO- und AI-Act-konform</li>
+      <li>Keine dauerhafte Belegspeicherung</li>
+      <li>Jeder Vorschlag wird von Ihrem Team geprüft – automatisch gebucht wird nichts</li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BLOCK 6: ROI — [QUELLE: LP-REPORT/LP-KI] [AKTION: HUMANIZED]
+     Als Prosa mit einer eingebetteten Aufzaehlung. Interaktiver Rechner bleibt auf /produkt.
+     ============================================================ -->
+<section id="roi">
+  <div class="narrow">
+    <div class="block-note">BLOCK 6 ROI · [LP-REPORT/LP-KI → HUMANIZED] · Prosa-Einstieg, dann knappe Liste. Link zum interaktiven Rechner auf /produkt.</div>
+    <h2>Was das konkret rechnet</h2>
+    <p>Eine Kanzlei mit etwa 500 Belegen pro Monat, rund 10 FiBu-Mandaten. Angenommen: 5 Minuten Bearbeitungszeit pro Beleg, 35 € Vollkosten pro Stunde, 90 % Automatisierung.</p>
+    <ul>
+      <li>Heute: 42 Stunden im Monat für Belegarbeit</li>
+      <li>Mit Flowbeaver: 4 Stunden für Prüfung und Ausnahmen</li>
+      <li>Gespart: 38 Stunden und 1.330 € Personalkosten pro Monat</li>
+      <li>Abzüglich 299 € Flowbeaver-Gebühr: 1.031 € netto pro Monat</li>
+    </ul>
+    <p><a href="/produkt#rechner">Mit eigenen Zahlen rechnen →</a></p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BLOCK 7: GRUENDER — [QUELLE: NEW auf Basis Positionierung.md 1.2]
+     Techniker-Positionierung. Kein Kanzlei-Insider-Theater.
+     Die bestehenden Zitate (OLD-HOME / LP-KI / LP-REPORT) passen nicht und fliegen.
+     ============================================================ -->
+<section id="gruender">
+  <div class="container">
+    <div class="block-note">BLOCK 7 GRÜNDER · [NEW auf Basis Positionierung.md 1.2] · Techniker, nicht Kanzlei-Insider. Ehrlichkeit schlägt Tarnung. Zitat Vorschlag – bitte mit eigenen Worten überschreiben.</div>
+    <h2>Wer das baut</h2>
+    <div class="grid-2">
+      <div>
+        <div style="background:#f7f7fa;border:1px dashed #bbb;border-radius:var(--fb-radius);height:280px;display:flex;align-items:center;justify-content:center;color:#999;">
+          [PLATZHALTER: Foto Andreas Schwarzkopf]
+        </div>
+      </div>
+      <div>
+        <p><strong>Andreas Schwarzkopf</strong><br>
+        Gründer &amp; Geschäftsführer, Flowbeaver GmbH<br>
+        Diplom-Kaufmann. 15 Jahre KI-Entwicklung, zuletzt bei Mercedes-Benz Bank.</p>
+
+        <p class="zitat">Ich bin kein Steuerberater. Ich bin der Techniker, der das Werkzeug baut. Was gute vorbereitende Buchhaltung heißt, lerne ich von den Kanzleien, mit denen ich arbeite. Die KI-Seite bringe ich mit.</p>
+
+        <p>Flowbeaver ist aktuell ein Ein-Mann-Unternehmen. Sie sprechen direkt mit dem Menschen, der am Produkt baut. Kein Support-Ticket, keine Vertriebsebene. Wenn Sie in der ersten Runde dabei sind, landet Ihr Feedback innerhalb von Tagen im Produkt.</p>
+
+        <p>
+          <a href="https://www.linkedin.com/in/andreas-schwarzkopf">LinkedIn</a> &middot;
+          <a href="mailto:accounting@flowbeaver.de">accounting@flowbeaver.de</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BLOCK 8: RESSOURCEN — [QUELLE: NEW]
+     Kern des Trust-Hub-Gedankens. Verbindet Website mit LinkedIn, Report, Blog, Community.
+     ============================================================ -->
+<section id="ressourcen" style="background:#fafafa;">
+  <div class="container">
+    <div class="block-note">BLOCK 8 RESSOURCEN · [NEW] · Der Trust-Hub-Kern. Je mehr Artikel/Content, desto stärker dieser Block. Jetzt 3 Karten, später erweiterbar.</div>
+    <h2>Wo Sie tiefer einsteigen</h2>
+    <p>Flowbeaver arbeitet in den Communitys der Branche – DATEV-Community, „Steuerberater unter sich", newgen.tax – und veröffentlicht eigene Fachinhalte. Drei Einstiege, wenn Sie uns erst mal lesen wollen, bevor wir reden:</p>
+    <div class="grid-3" style="margin-top:24px;">
+      <div class="card">
+        <h3>Branchenreport 2026</h3>
+        <p>KI in der Steuerkanzlei: 21 Quellen aus BStBK, ifo, DATEV, KPMG. Kostenlos als PDF.</p>
+        <p><a href="/branchenreport">Report herunterladen →</a></p>
+      </div>
+      <div class="card">
+        <h3>Fachartikel</h3>
+        <p>Hintergrund zu KI-Belegerkennung, E-Rechnung, DATEV-Workflows. Zwei bis vier Artikel pro Monat.</p>
+        <p><a href="/blog">Zum Blog →</a></p>
+      </div>
+      <div class="card">
+        <h3>LinkedIn</h3>
+        <p>Kurzbeiträge zu Produktfortschritt, Kanzlei-Praxis und Gesprächen mit Anwendern.</p>
+        <p><a href="https://www.linkedin.com/company/flowbeaver">Flowbeaver auf LinkedIn →</a></p>
+      </div>
+    </div>
+    <p style="margin-top:32px;text-align:center;font-size:16px;color:var(--fb-hover);">
+      Uns in einer Community gefunden? Schreiben Sie direkt: <a href="mailto:accounting@flowbeaver.de">accounting@flowbeaver.de</a>
+    </p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BLOCK 9: DEMO-CTA — [QUELLE: OLD-HOME + LP-KI] [AKTION: HUMANIZED]
+     ============================================================ -->
+<section id="demo">
+  <div class="narrow" style="text-align:center;">
+    <div class="block-note" style="text-align:left;">BLOCK 9 DEMO · [OLD-HOME + LP-KI → HUMANIZED] · Demo primär. Pilotpartner als zweiter Pfad.</div>
+    <h2>15 Minuten. Direkt mit dem Gründer.</h2>
+    <p>Wir schauen uns gemeinsam an, wie Ihre Belege heute reinkommen, wo es hakt und ob Flowbeaver passt. Wenn nicht, sage ich Ihnen das. Wenn ja, erkläre ich das Pilotpartner-Programm.</p>
+    <p style="margin:32px 0;"><a href="/termin" class="btn-primary">Demo buchen (15 Min.)</a></p>
+    <p style="font-size:16px;color:var(--fb-hover);">
+      Alternativ: <a href="/pilotpartner">Pilotpartner-Programm ansehen</a> – 10 Plätze, persönliches Onboarding, 299 €/Monat, zwei Jahre festgeschrieben.
+    </p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BLOCK 10: FAQ KURZ — [QUELLE: LP-KI] [AKTION: HUMANIZED gekuerzt auf 6 Fragen]
+     ============================================================ -->
+<section id="faq">
+  <div class="narrow">
+    <div class="block-note">BLOCK 10 FAQ · [LP-KI → HUMANIZED, 6 Fragen] · Volle FAQ auf /produkt.</div>
+    <h2>Häufige Fragen</h2>
+
+    <h3>Was macht Flowbeaver genau?</h3>
+    <p>Ein KI-Vorsystem für die vorbereitende Buchhaltung. Belegerkennung, Zuordnung, Vorkontierung, DATEV-kompatibler Buchungsstapel. Ihr Team prüft und importiert.</p>
+
+    <h3>Müssen wir etwas an DATEV ändern?</h3>
+    <p>Nein. Flowbeaver ist ein Vorsystem. Ihr DATEV-Setup bleibt wie es ist.</p>
+
+    <h3>Was ist der Unterschied zu DATEV Buchungsassistent oder ASR?</h3>
+    <p>ASR nutzt klassische OCR. Flowbeaver kombiniert Vision Language Models mit LLM-Recherche und einem Regelwerk. Das schlägt sich in besserer Erkennung bei ungewöhnlichen Belegen nieder, vor allem bei fremdsprachigen Rechnungen und unklaren Positionen.</p>
+
+    <h3>Was kostet das?</h3>
+    <p>299 € pro Monat, Flatrate, monatlich kündbar. Für die ersten 10 Kanzleien zwei Jahre festgeschrieben.</p>
+
+    <h3>Ist das DSGVO-konform?</h3>
+    <p>Deutsche Server, EU-Verarbeitungspartner, keine dauerhafte Belegspeicherung.</p>
+
+    <h3>Wie starten wir?</h3>
+    <p>15-Minuten-Demo mit mir. Bei Fit folgt ein Praxis-Check mit 30 echten Belegen aus Ihrer Kanzlei.</p>
+
+    <p style="margin-top:32px;"><a href="/produkt#faq">Alle Fragen auf der Produkt-Seite →</a></p>
+  </div>
+</section>
+
+
+<footer>
+  <p>© 2026 Flowbeaver GmbH, Berlin</p>
+  <p style="margin-top:12px;">
+    <a href="/">Home</a>
+    <a href="/ueber">Über</a>
+    <a href="/kontakt">Kontakt</a>
+    <a href="/datenschutz">Datenschutz</a>
+    <a href="/impressum">Impressum</a>
+    <a href="/agb">AGB</a>
+  </p>
+</footer>
+
+</body>
+</html>

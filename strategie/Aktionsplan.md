@@ -709,3 +709,52 @@ Marketing-Zeitbudgets.
 | erste LinkedIn-Post muss nicht perfekt sein. Perfektionismus ist der  |
 | Feind von Geschwindigkeit -- und Geschwindigkeit ist gerade alles.    |
 +-----------------------------------------------------------------------+
+
+## 11. Ideen-Parkplatz
+
+### Beleg-Benchmark-Aktion (OCR-Vergleich mit Originalbelegen)
+
+**Status:** Idee, noch nicht terminiert. Festgehalten 2026-04-21.
+
+**Kernidee:** Eine Reihe von Steuerkanzleien bitten, 10 von Andreas
+bereitgestellte **Original-Belege** durch ihr aktuelles System zu jagen und
+die Ergebnisse (Screenshots/Ausdruck der Erkennung) zurückzuschicken.
+Flowbeaver verarbeitet dieselben Belege parallel. Jede teilnehmende Kanzlei
+bekommt im Gegenzug einen individuellen Vergleich.
+
+**Warum Originalbelege (und nicht synthetisch):**
+Flowbeavers OCR-Vorsprung ist nur an echten Scan-Artefakten sichtbar —
+schiefe Winkel, schlechte Fotos, Kassenbons, fremdsprachige Originale,
+handschriftliche Anmerkungen. Saubere PDFs oder synthetische Belege würden
+den Differenzierungspunkt verwässern.
+
+**Warum Andreas' eigene Belege (und nicht von der Kanzlei):**
+Löst das Datenschutz-/Mandantenvertrauens-Problem komplett. Andreas stellt
+10 reale Belege aus seinem eigenen Geschäftsalltag bereit — mit echten
+OCR-Herausforderungen, ohne Mandantendaten. Kanzlei muss nur 15-20 Minuten
+durchlaufen lassen und Screenshot schicken.
+
+**Ehrlichkeits-Move (wichtig für Glaubwürdigkeit):**
+Bewusst 1-2 Belege einbauen, bei denen auch Flowbeaver nicht perfekt ist.
+Nimmt der Aktion den reinen Werbecharakter und macht sie zur echten
+Markt-Momentaufnahme. Verkauft paradoxerweise besser.
+
+**Content-Hebel daraus:**
+- LinkedIn-Serie "Beleg X/10: [Belegtyp] — so reagieren N Systeme"
+- Landingpage mit Belegset zum Download ("Testen Sie Ihr eigenes System")
+- Webinar: Live-Durchlauf der 10 Belege
+- Anonymisierte Einzelfallgeschichten statt Gesamtranking
+  (umgeht vergleichende-Werbung-Risiken)
+
+**Nächste Schritte, falls aktiviert:**
+1. Belegset kuratieren: 10 Belege mit klarer Schwierigkeitsverteilung
+   (fremdsprachig, handschriftlich, Kassenbon, Sammelrechnung, Edge-Cases)
+2. Scoring-Raster definieren (Kopfdaten / Positionen / Kontierung /
+   Rückfragenquote)
+3. Kurze Ansprache (LinkedIn-DM oder E-Mail) formulieren — Hürde niedrig
+   halten: "20 Minuten, Screenshot zurück, individueller Vergleich im
+   Gegenzug"
+4. Rechtliche Prüfung der späteren Veröffentlichung (vergleichende Werbung
+   mit Systemnamen — oder anonymisiert durchführen)
+5. Entscheidung: eigene Domain/Landingpage für das Belegset oder Teil des
+   Hauptauftritts

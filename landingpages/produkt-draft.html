@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="de">
+<!--
+  ============================================================
+  FLOWBEAVER PRODUKT-SEITE — ENTWURF v1 (nach Humanizer)
+  ============================================================
+  URL-Vorschlag: /produkt  (ersetzt langfristig /ki-belegerkennung,
+  oder /ki-belegerkennung bleibt als SEO-Duplikat bestehen).
+
+  Rolle: Produkt-Deep-Dive fuer Besucher, die mehr wollen als die Homepage.
+  Hier leben: Technik-Details (frueher "Dreiklang", jetzt neutral benannt),
+  Sparrechner (interaktiv), Feature-Liste, vollstaendige FAQ, Pilotpartner-Mechanik.
+
+  Quellen-Legende:
+    [LP-KI]      https://www.flowbeaver.de/ki-belegerkennung
+    [OLD-HOME]   https://www.flowbeaver.de/
+    [NEW]        neu geschrieben
+    [HUMANIZED]  aus Quelle, KI-Floskeln entfernt
+-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produkt – Flowbeaver</title>
+  <meta name="description" content="Wie Flowbeaver Mandantenbelege liest, zuordnet und vorkontiert. Technik, Integration, Preis und Pilotpartner-Programm.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap">
+  <style>
+    :root{--fb-purple:#52267a;--fb-dark-red:#3c0f04;--fb-text:#404040;--fb-black:#000;--fb-hover:#606060;--fb-white:#fff;--fb-footer:#111;--fb-border:#e0e0e0;--fb-radius:10px;--fb-font:'DM Sans',system-ui,sans-serif;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:var(--fb-font);font-size:20px;line-height:1.6;color:var(--fb-text);background:var(--fb-white);}
+    h1,h2,h3{color:var(--fb-black);line-height:1.25;font-weight:700;}
+    h1{font-size:44px;color:var(--fb-dark-red);line-height:1.15;margin-bottom:20px;}
+    h2{font-size:26px;margin-bottom:20px;}
+    h3{font-size:22px;font-weight:600;margin-bottom:12px;}
+    p{margin-bottom:20px;}
+    a{color:var(--fb-purple);text-decoration:none;}
+    a:hover{color:var(--fb-hover);}
+    ul{padding-left:1.25rem;margin-bottom:20px;}
+    li{margin-bottom:8px;}
+    section{padding:80px 24px;border-bottom:1px solid var(--fb-border);}
+    .container{max-width:960px;margin:0 auto;}
+    .narrow{max-width:720px;margin:0 auto;}
+    .btn-primary{display:inline-block;background:var(--fb-purple);color:var(--fb-white);font-size:20px;font-weight:500;padding:14px 28px;border-radius:var(--fb-radius);border:none;cursor:pointer;transition:.2s ease-in-out;}
+    .btn-primary:hover{background:#3d1c5c;color:var(--fb-white);}
+    .card{border:1px solid var(--fb-border);border-radius:var(--fb-radius);padding:24px;background:var(--fb-white);}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
+    .block-note{background:#fffbe6;border:1px dashed #d4a900;padding:10px 14px;font-size:13px;font-family:monospace;color:#665200;margin-bottom:20px;border-radius:6px;}
+    nav.top{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;border-bottom:1px solid var(--fb-border);position:sticky;top:0;background:var(--fb-white);z-index:100;}
+    nav.top ul{display:flex;gap:24px;list-style:none;padding:0;margin:0;align-items:center;}
+    nav.top a{color:var(--fb-black);font-weight:500;font-size:16px;}
+    .rechner{background:#faf7fd;border-radius:var(--fb-radius);padding:32px;margin:24px 0;}
+    .rechner-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;gap:16px;}
+    .rechner input[type="range"]{flex:1;accent-color:var(--fb-purple);}
+    .rechner-wert{font-weight:700;color:var(--fb-purple);min-width:80px;text-align:right;}
+    .result{background:var(--fb-white);border-radius:var(--fb-radius);padding:20px;margin-top:16px;border:1px solid var(--fb-border);}
+    .result-big{font-size:32px;font-weight:700;color:var(--fb-purple);}
+    .pilot-box{border:2px solid var(--fb-purple);border-radius:var(--fb-radius);padding:32px;background:#faf7fd;}
+    footer{background:var(--fb-footer);color:var(--fb-white);padding:40px 24px;text-align:center;font-size:14px;}
+    footer a{color:var(--fb-white);opacity:.7;margin:0 12px;}
+    @media(max-width:768px){.grid-3,.grid-2{grid-template-columns:1fr;}h1{font-size:32px;}section{padding:60px 20px;}}
+  </style>
+</head>
+
+<body>
+
+<nav class="top">
+  <div><a href="/"><strong style="font-size:22px;color:var(--fb-purple);">Flowbeaver</strong></a></div>
+  <ul>
+    <li><a href="/produkt"><strong>Produkt</strong></a></li>
+    <li><a href="/branchenreport">Branchenreport</a></li>
+    <li><a href="/blog">Ressourcen</a></li>
+    <li><a href="/ueber">Über</a></li>
+    <li><a href="/kontakt">Kontakt</a></li>
+  </ul>
+</nav>
+
+
+<!-- ============================================================
+     BLOCK 1: HERO — [QUELLE: NEW]
+     Produkt-spezifischer Hero, anders als Homepage.
+     ============================================================ -->
+<section id="hero">
+  <div class="narrow">
+    <div class="block-note">BLOCK 1 HERO · [NEW] · Produkt-spezifisch, nicht Homepage-Wiederholung.</div>
+    <h1>Wie Flowbeaver Mandantenbelege verarbeitet</h1>
+    <p style="font-size:22px;">
+      Eingangsrechnungen, Ausgangsrechnungen, E-Rechnungen, Scans, Fremdsprache. Alles läuft über einen Eingang. Ergebnis: DATEV-kompatibler Buchungsstapel, geprüft von Ihren Mitarbeitern.
+    </p>
+    <p><a href="#demo" class="btn-primary">Demo buchen (15 Min.)</a></p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BLOCK 2: TECHNIK-DEEP-DIVE — [QUELLE: LP-KI "Dreiklang"] [AKTION: HUMANIZED + UMBENANNT]
+     Fruehere "3 Saeulen" / "Dreiklang"-Bezeichnung entfernt.
+     Ueberschrift neutral: "Was unter der Haube passiert".
+     ============================================================ -->
+<section id="technik">
+  <div class="container">
+    <div class="block-note">BLOCK 2 TECHNIK · [LP-KI → HUMANIZED] · Kein "Dreiklang", keine "Säulen". Neutrale Überschrift. Drei Bausteine in Prosa, nicht in uniformen Karten.</div>
+    <h2>Was unter der Haube passiert</h2>
+    <p>Flowbeaver ist kein OCR-Tool mit einem KI-Wrapper. Drei Bausteine greifen ineinander:</p>
+
+    <h3>Vision Language Models lesen den Beleg</h3>
+    <p>Moderne VLMs lesen nicht nur Zeichen, sondern erfassen Struktur und Kontext eines Belegs. Das zahlt sich vor allem bei schlechten Scans, ungewöhnlichen Layouts und handschriftlichen Zusätzen aus, wo klassische OCR aussteigt.</p>
+
+    <h3>Ein LLM recherchiert Lieferanten und Positionen</h3>
+    <p>Das Sprachmodell prüft, wer der Lieferant ist, was die Positionen bedeuten, was dahinter als Geschäftsvorfall plausibel ist. Es funktioniert auch dann, wenn die Rechnung auf Italienisch, Englisch oder Polnisch kommt – und leitet den Geschäftsvorfall in deutscher Kanzleisprache ab.</p>
+
+    <h3>Ein Regelwerk kontrolliert jeden Vorschlag</h3>
+    <p>Plausibilitätsprüfungen, Steuertatbestände, mandantenspezifische Kontierungslogik. Wenn ein Vorschlag die Prüfung nicht besteht, geht der Beleg in die Klärfälle-Liste mit klarem Hinweis, was fehlt. Flowbeaver rät nicht.</p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BLOCK 3: WAS IHR TEAM BEKOMMT — [QUELLE: LP-KI] [AKTION: HUMANIZED]
+     ============================================================ -->
+<section id="output" style="background:#fafafa;">
+  <div class="narrow">
+    <div class="block-note">BLOCK 3 OUTPUT · [LP-KI → HUMANIZED] · Konkrete Ergebnisse, keine Adjektiv-Kette.</div>
+    <h2>Was am Ende im Buchungsstapel steht</h2>
+    <ul>
+      <li>Vorkontierung nach SKR03 oder SKR04 – Sachkonto, Gegenkonto, Steuerschlüssel</li>
+      <li>Problembelege markiert mit konkretem Hinweis auf die offene Stelle</li>
+      <li>DATEV-CSV Buchungsstapel plus Belegbilder-ZIP, direkt importierbar</li>
+      <li>Korrekturen Ihres Teams fließen als Muster zurück. Je länger Flowbeaver läuft, desto genauer die Vorschläge – mandanten- und kanzleispezifisch</li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BLOCK 4: SPARRECHNER — [QUELLE: LP-KI] [AKTION: REUSE + HUMANIZED]
+     Interaktiver Rechner. Hier gehoert er hin, nicht auf die Homepage.
+     ============================================================ -->
+<section id="rechner">
+  <div class="container">
+    <div class="block-note">BLOCK 4 RECHNER · [LP-KI → REUSE + HUMANIZED] · Interaktiver Rechner bleibt hier. JavaScript am Seitenende.</div>
+    <h2>Mit eigenen Zahlen rechnen</h2>
+    <p>Drei Schieberegler, ein Ergebnis. Grundlage: 90 % Automatisierung in der Belegarbeit.</p>
+
+    <div class="rechner">
+      <div class="rechner-row">
+        <label for="s-min" style="min-width:240px;">Minuten pro Beleg</label>
+        <input type="range" id="s-min" min="2" max="20" value="5" step="1">
+        <span class="rechner-wert" id="v-min">5 Min.</span>
+      </div>
+      <div class="rechner-row">
+        <label for="s-beleg" style="min-width:240px;">Belege pro Monat</label>
+        <input type="range" id="s-beleg" min="200" max="15000" value="500" step="100">
+        <span class="rechner-wert" id="v-beleg">500</span>
+      </div>
+      <div class="rechner-row">
+        <label for="s-satz" style="min-width:240px;">Vollkosten pro Stunde</label>
+        <input type="range" id="s-satz" min="20" max="60" value="35" step="1">
+        <span class="rechner-wert" id="v-satz">35 €</span>
+      </div>
+
+      <div class="result">
+        <p style="margin:0;">Gesparte Zeit pro Monat: <strong id="r-zeit">38 Std.</strong></p>
+        <p style="margin:0;">Gesparte Personalkosten: <strong id="r-kosten">1.330 €</strong></p>
+        <p style="margin:16px 0 0;">Netto nach 299 € Flowbeaver-Gebühr:</p>
+        <p class="result-big" id="r-netto">1.031 €</p>
+      </div>
+    </div>
+    <p><a href="#demo" class="btn-primary">Demo buchen (15 Min.)</a></p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BLOCK 5: DATEV + SICHERHEIT — [QUELLE: LP-KI / Homepage] [AKTION: HUMANIZED]
+     Tiefer als auf der Homepage.
+     ============================================================ -->
+<section id="datev">
+  <div class="container">
+    <div class="block-note">BLOCK 5 DATEV · [LP-KI → HUMANIZED] · Ausführlicher als auf Homepage, mit Schnittstellen-Roadmap aus Positionierung.md 6.2.</div>
+    <h2>DATEV-Integration – Stand und Ausblick</h2>
+    <p>Heute läuft die Integration über den Standard: Buchungsstapel-CSV plus Belegbilder-ZIP, importierbar in DATEV Kanzlei-Rechnungswesen. Das reicht, um ohne Medienbruch zu arbeiten.</p>
+    <p>Geplant sind in dieser Reihenfolge:</p>
+    <ul>
+      <li>Belegbilderservice – Belege direkt in DATEV Unternehmen Online übertragen</li>
+      <li>Rechnungsdatenservice – strukturierte Daten an DUO</li>
+      <li>Buchungsdatenservice – vollständige Buchungssätze an Kanzlei-Rechnungswesen</li>
+      <li>Langfristig: Listung im DATEV-Marktplatz</li>
+    </ul>
+
+    <h3>Datenschutz</h3>
+    <ul>
+      <li>Deutsche Server, EU-Verarbeitungspartner</li>
+      <li>DSGVO- und AI-Act-konform</li>
+      <li>Keine dauerhafte Belegspeicherung. Nach der Verarbeitung werden nur anonymisierte Buchungsfälle für Lernzwecke gespeichert</li>
+      <li>Human-in-the-loop: Automatisch gebucht wird nichts</li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BLOCK 6: PILOTPARTNER — [QUELLE: LP-KI] [AKTION: HUMANIZED]
+     10-Plaetze-Mechanik. Auf Produkt-Seite besser aufgehoben als auf Homepage.
+     ============================================================ -->
+<section id="pilot" style="background:#fafafa;">
+  <div class="container">
+    <div class="block-note">BLOCK 6 PILOTPARTNER · [LP-KI → HUMANIZED] · Scarcity bleibt, aber ohne Startup-Ton. Kein "Pioneer-Kohorte", kein "Disruption".</div>
+    <h2>Pilotpartner-Programm: 10 Plätze</h2>
+    <div class="pilot-box">
+      <p>Flowbeaver baut das Produkt gemeinsam mit den ersten 10 Kanzleien. Das heißt konkret:</p>
+      <ul>
+        <li>Persönliches Onboarding, keine Self-Service-Einrichtung</li>
+        <li>Direkter Kontakt zum Gründer, wöchentliche Abstimmung in den ersten Wochen</li>
+        <li>Feedback landet innerhalb von Tagen im Produkt, nicht in Quartalen</li>
+        <li>299 € pro Monat, Flatrate, monatlich kündbar, Einstiegspreis zwei Jahre festgeschrieben</li>
+        <li>Sind die 10 Plätze vergeben, startet die nächste Runde frühestens in 3 bis 6 Monaten</li>
+      </ul>
+      <p><a href="#demo" class="btn-primary">Als Pilotpartner bewerben</a></p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BLOCK 7: VOLLSTAENDIGE FAQ — [QUELLE: LP-KI] [AKTION: HUMANIZED]
+     Alle 13 Fragen, hier gehoert die volle Tiefe hin.
+     ============================================================ -->
+<section id="faq">
+  <div class="narrow">
+    <div class="block-note">BLOCK 7 FAQ · [LP-KI → HUMANIZED alle 13 Fragen] · Volle Tiefe lebt hier, Homepage hat Kurzversion.</div>
+    <h2>Alle Fragen</h2>
+
+    <h3>Was genau macht Flowbeaver?</h3>
+    <p>Ein KI-Vorsystem für die vorbereitende Buchhaltung. Belegerkennung, Zuordnung, Vorkontierung, DATEV-kompatibler Buchungsstapel. Ihr Team prüft, korrigiert wo nötig, importiert.</p>
+
+    <h3>Bucht Flowbeaver automatisch?</h3>
+    <p>Nein. Flowbeaver erzeugt Vorschläge. Die finale Entscheidung liegt bei Ihren Mitarbeitern. Kein Beleg wird ohne menschliche Freigabe gebucht.</p>
+
+    <h3>Kann Flowbeaver fremdsprachige Belege verarbeiten?</h3>
+    <p>Ja. Das Sprachmodell recherchiert jeden Lieferanten und jede Position unabhängig von der Belegsprache. Eine italienische Hotelrechnung oder ein französischer Dienstleister wird genauso kontiert wie eine deutsche Rechnung.</p>
+
+    <h3>Wie kommen die Ergebnisse in DATEV?</h3>
+    <p>Per DATEV-CSV Buchungsstapel plus Belegbilder-ZIP. Import in Kanzlei-Rechnungswesen, dann weiter wie gewohnt. Weitere Schnittstellen (Belegbilderservice, Rechnungsdatenservice) sind in Arbeit.</p>
+
+    <h3>Was ist der Unterschied zu DATEV Buchungsassistent oder ASR?</h3>
+    <p>DATEV-Buchungsassistent und ASR arbeiten mit klassischer OCR plus regelbasierter Erkennung. Flowbeaver kombiniert Vision Language Models mit LLM-Recherche und einem deterministischen Regelwerk. Der Unterschied zeigt sich bei Belegen, die aus dem Muster fallen: fremdsprachig, ungewöhnliches Layout, unklare Positionen.</p>
+
+    <h3>Welche Belege werden unterstützt?</h3>
+    <p>Rechnungseingang und Rechnungsausgang in der ersten Runde. Weitere Belegarten folgen, die Reihenfolge hängt von den Pilotkanzleien ab.</p>
+
+    <h3>Was passiert mit Problembelegen?</h3>
+    <p>Rechnungen mit fehlenden Angaben, Rechenfehlern oder Dubletten landen in einer Klärfälle-Liste mit konkretem Hinweis, was zu klären ist. Flowbeaver rät nicht.</p>
+
+    <h3>Welche Risiken gibt es?</h3>
+    <p>Im schlimmsten Fall landen einzelne Belege als Klärfall statt als fertiger Vorschlag. Sie verlieren nichts, weil alles weiter im Buchungsstapel zur Prüfung bleibt. Der Anteil fertiger Vorkontierung wird deutlich höher.</p>
+
+    <h3>Müssen wir unsere Prozesse umstellen?</h3>
+    <p>Nein. Flowbeaver ist ein Vorsystem. Ihr bestehendes Setup bleibt unverändert – egal ob DATEV, Lexware, Agenda, Addison oder sevDesk. Ihre Mitarbeiter bekommen bessere Vorarbeit, keine neue Software zum Einarbeiten.</p>
+
+    <h3>Lernt Flowbeaver aus Korrekturen?</h3>
+    <p>Ja. Korrekturen werden als Muster gespeichert. Beim nächsten ähnlichen Beleg sind die Vorschläge genauer, mandanten- und kanzleispezifisch.</p>
+
+    <h3>Ist das DSGVO-konform?</h3>
+    <p>Deutsche Server, EU-Verarbeitungspartner. Keine dauerhafte Belegspeicherung. Nur anonymisierte Buchungsfälle werden für Lernzwecke übernommen.</p>
+
+    <h3>Was kostet die Teilnahme?</h3>
+    <p>299 € pro Monat, Flatrate, unlimitiertes Belegvolumen, keine Setup-Fee, monatlich kündbar. Für die ersten 10 Kanzleien zwei Jahre festgeschrieben. Wer später einsteigt, zahlt mehr.</p>
+
+    <h3>Wie starten wir?</h3>
+    <p>15-Minuten-Demo mit mir. Bei Fit folgt ein Praxis-Check mit 30 echten Belegen aus Ihrer Kanzlei. Sie sehen, was automatisch läuft und was Klärfall wird, bevor Sie sich entscheiden.</p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BLOCK 8: DEMO-CTA — [QUELLE: OLD-HOME] [AKTION: HUMANIZED]
+     ============================================================ -->
+<section id="demo">
+  <div class="narrow" style="text-align:center;">
+    <h2>15 Minuten. Mit dem Gründer.</h2>
+    <p>Wir schauen uns Ihre Belegeingänge an und klären, ob Flowbeaver passt.</p>
+    <p style="margin:32px 0;"><a href="/termin" class="btn-primary">Demo buchen</a></p>
+  </div>
+</section>
+
+
+<footer>
+  <p>© 2026 Flowbeaver GmbH, Berlin</p>
+  <p style="margin-top:12px;">
+    <a href="/">Home</a>
+    <a href="/ueber">Über</a>
+    <a href="/kontakt">Kontakt</a>
+    <a href="/datenschutz">Datenschutz</a>
+    <a href="/impressum">Impressum</a>
+    <a href="/agb">AGB</a>
+  </p>
+</footer>
+
+<script>
+(function(){
+  var sMin=document.getElementById('s-min'),sBeleg=document.getElementById('s-beleg'),sSatz=document.getElementById('s-satz');
+  var vMin=document.getElementById('v-min'),vBeleg=document.getElementById('v-beleg'),vSatz=document.getElementById('v-satz');
+  var rZeit=document.getElementById('r-zeit'),rKosten=document.getElementById('r-kosten'),rNetto=document.getElementById('r-netto');
+  function fmt(n){return n.toLocaleString('de-DE',{maximumFractionDigits:0});}
+  function calc(){
+    var min=+sMin.value,beleg=+sBeleg.value,satz=+sSatz.value;
+    vMin.textContent=min+' Min.';vBeleg.textContent=fmt(beleg);vSatz.textContent=satz+' €';
+    var stdHeute=(min*beleg)/60,gespart=stdHeute*0.9,kosten=gespart*satz,netto=kosten-299;
+    rZeit.textContent=fmt(Math.round(gespart))+' Std.';
+    rKosten.textContent=fmt(Math.round(kosten))+' €';
+    rNetto.textContent=fmt(Math.round(netto))+' €';
+  }
+  [sMin,sBeleg,sSatz].forEach(function(s){s.addEventListener('input',calc);});
+  calc();
+})();
+</script>
+
+</body>
+</html>
