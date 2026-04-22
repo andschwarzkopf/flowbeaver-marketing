@@ -9,7 +9,7 @@
 
   Rolle: Produkt-Deep-Dive fuer Besucher, die mehr wollen als die Homepage.
   Hier leben: Technik-Details (frueher "Dreiklang", jetzt neutral benannt),
-  Sparrechner (interaktiv), Feature-Liste, vollstaendige FAQ, Pilotpartner-Mechanik.
+  Sparrechner (interaktiv), Feature-Liste, vollstaendige FAQ, Arbeitsweise in der fruehen Phase.
 
   Quellen-Legende:
     [LP-KI]      https://www.flowbeaver.de/ki-belegerkennung
@@ -22,7 +22,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Produkt – Flowbeaver</title>
-  <meta name="description" content="Wie Flowbeaver Mandantenbelege liest, zuordnet und vorkontiert. Technik, Integration, Preis und Pilotpartner-Programm.">
+  <meta name="description" content="Wie Flowbeaver Mandantenbelege liest, zuordnet und vorkontiert. Technik unter der Haube, DATEV-Integration, Preis und Arbeitsweise in der frühen Phase.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap">
   <style>
@@ -83,11 +83,12 @@
      ============================================================ -->
 <section id="hero">
   <div class="narrow">
-    <div class="block-note">BLOCK 1 HERO · [NEW] · Produkt-spezifisch, nicht Homepage-Wiederholung.</div>
+    <div class="block-note">BLOCK 1 HERO · Aufzählung ohne Konnektor aufgelöst. Subline führt in die Abschnitte der Seite, statt nur Features zu listen.</div>
     <h1>Wie Flowbeaver Mandantenbelege verarbeitet</h1>
     <p style="font-size:22px;">
-      Eingangsrechnungen, Ausgangsrechnungen, E-Rechnungen, Scans, Fremdsprache. Alles läuft über einen Eingang. Ergebnis: DATEV-kompatibler Buchungsstapel, geprüft von Ihren Mitarbeitern.
+      Eingangs- und Ausgangsrechnungen, E-Rechnungen nach XRechnung oder ZUGFeRD, gescanntes Papier, fremdsprachige Belege – alles läuft über einen zentralen Eingang, wird inhaltlich verstanden und mündet in einen DATEV-kompatiblen Buchungsstapel, den Ihr Team prüft und freigibt.
     </p>
+    <p>Auf dieser Seite finden Sie die Technik unter der Haube, eine Roadmap für die DATEV-Integration, einen interaktiven Sparrechner und die Beschreibung der Arbeitsweise in der frühen Phase.</p>
     <p><a href="#demo" class="btn-primary">Demo buchen (15 Min.)</a></p>
   </div>
 </section>
@@ -100,18 +101,18 @@
      ============================================================ -->
 <section id="technik">
   <div class="container">
-    <div class="block-note">BLOCK 2 TECHNIK · [LP-KI → HUMANIZED] · Kein "Dreiklang", keine "Säulen". Neutrale Überschrift. Drei Bausteine in Prosa, nicht in uniformen Karten.</div>
+    <div class="block-note">BLOCK 2 TECHNIK · Einstieg nicht mehr defensiv ("kein OCR-Tool mit Wrapper"), sondern positiv: drei Schichten und was jede davon leistet. Regelwerk-Abschnitt konkreter.</div>
     <h2>Was unter der Haube passiert</h2>
-    <p>Flowbeaver ist kein OCR-Tool mit einem KI-Wrapper. Drei Bausteine greifen ineinander:</p>
+    <p>Flowbeaver kombiniert drei Verarbeitungsschichten, die aufeinander aufbauen. Jede Schicht hat eine klare Aufgabe, und ein Beleg verlässt den Prozess erst, wenn alle drei sauber durchgelaufen sind.</p>
 
-    <h3>Vision Language Models lesen den Beleg</h3>
-    <p>Moderne VLMs lesen nicht nur Zeichen, sondern erfassen Struktur und Kontext eines Belegs. Das zahlt sich vor allem bei schlechten Scans, ungewöhnlichen Layouts und handschriftlichen Zusätzen aus, wo klassische OCR aussteigt.</p>
+    <h3>1. Vision Language Models lesen den Beleg</h3>
+    <p>Klassische OCR erkennt Zeichen. Moderne Vision Language Models lesen zusätzlich die Struktur: Was ist Kopfbereich, was Positionszeile, was Summenblock, was Fußnote? Dadurch fallen auch schlechte Scans, ungewöhnliche Layouts oder handschriftliche Zusätze nicht durchs Raster, bei denen eine reine OCR aussteigen würde.</p>
 
-    <h3>Ein LLM recherchiert Lieferanten und Positionen</h3>
-    <p>Das Sprachmodell prüft, wer der Lieferant ist, was die Positionen bedeuten, was dahinter als Geschäftsvorfall plausibel ist. Es funktioniert auch dann, wenn die Rechnung auf Italienisch, Englisch oder Polnisch kommt – und leitet den Geschäftsvorfall in deutscher Kanzleisprache ab.</p>
+    <h3>2. Ein Sprachmodell erschließt den Inhalt</h3>
+    <p>Im nächsten Schritt prüft ein Large Language Model, wer der Lieferant ist, was die Positionen bedeuten und welcher Geschäftsvorfall plausibel dahintersteht. Entscheidend: Das Modell arbeitet sprachunabhängig. Eine italienische Hotelrechnung, eine englische SaaS-Rechnung, ein polnischer Lieferschein – alle werden inhaltlich erfasst und in deutscher Kanzleisprache als Geschäftsvorfall ausgeformt.</p>
 
-    <h3>Ein Regelwerk kontrolliert jeden Vorschlag</h3>
-    <p>Plausibilitätsprüfungen, Steuertatbestände, mandantenspezifische Kontierungslogik. Wenn ein Vorschlag die Prüfung nicht besteht, geht der Beleg in die Klärfälle-Liste mit klarem Hinweis, was fehlt. Flowbeaver rät nicht.</p>
+    <h3>3. Ein deterministisches Regelwerk prüft jeden Vorschlag</h3>
+    <p>Bevor ein Beleg im Buchungsstapel landet, läuft er durch ein festes Regelwerk: Plausibilitätsprüfung der Beträge, Steuertatbestände nach deutschem Recht, mandantenspezifische Kontierungsvorgaben. Besteht der Vorschlag diese Prüfung nicht, wandert der Beleg nicht zufällig ins richtige Feld, sondern in die Klärfälle-Liste mit konkretem Hinweis, was fehlt oder widersprüchlich ist. Das Sprachmodell darf interpretieren, das Regelwerk hat das letzte Wort.</p>
   </div>
 </section>
 
@@ -121,13 +122,14 @@
      ============================================================ -->
 <section id="output" style="background:#fafafa;">
   <div class="narrow">
-    <div class="block-note">BLOCK 3 OUTPUT · [LP-KI → HUMANIZED] · Konkrete Ergebnisse, keine Adjektiv-Kette.</div>
+    <div class="block-note">BLOCK 3 OUTPUT · Liste aufgebrochen mit kurzer Prosa-Einleitung. Lernschleife ehrlicher beschrieben: erst mandanten-, dann kanzleispezifisch.</div>
     <h2>Was am Ende im Buchungsstapel steht</h2>
+    <p>Jeder Beleg, der Flowbeaver durchläuft, hinterlässt vier Dinge in Ihrer Arbeitsumgebung:</p>
     <ul>
-      <li>Vorkontierung nach SKR03 oder SKR04 – Sachkonto, Gegenkonto, Steuerschlüssel</li>
-      <li>Problembelege markiert mit konkretem Hinweis auf die offene Stelle</li>
-      <li>DATEV-CSV Buchungsstapel plus Belegbilder-ZIP, direkt importierbar</li>
-      <li>Korrekturen Ihres Teams fließen als Muster zurück. Je länger Flowbeaver läuft, desto genauer die Vorschläge – mandanten- und kanzleispezifisch</li>
+      <li>eine Vorkontierung nach SKR03 oder SKR04 mit Sachkonto, Gegenkonto und Steuerschlüssel</li>
+      <li>bei Problembelegen eine Markierung mit konkretem Hinweis, wo die offene Stelle sitzt – fehlende Angabe, Rechenfehler, vermutete Dublette</li>
+      <li>einen DATEV-CSV-Buchungsstapel mit zugehörigen Belegbildern, geordnet nach Mandant und Periode</li>
+      <li>eine Spur der Korrekturen Ihres Teams – diese werden als Muster übernommen, zunächst mandantenspezifisch, später auch kanzleiweit, sodass wiederkehrende Fälle mit der Zeit sauberer vorkontiert kommen</li>
     </ul>
   </div>
 </section>
@@ -178,46 +180,57 @@
      ============================================================ -->
 <section id="datev">
   <div class="container">
-    <div class="block-note">BLOCK 5 DATEV · [LP-KI → HUMANIZED] · Ausführlicher als auf Homepage, mit Schnittstellen-Roadmap aus Positionierung.md 6.2.</div>
-    <h2>DATEV-Integration – Stand und Ausblick</h2>
-    <p>Heute läuft die Integration über den Standard: Buchungsstapel-CSV plus Belegbilder-ZIP, importierbar in DATEV Kanzlei-Rechnungswesen. Das reicht, um ohne Medienbruch zu arbeiten.</p>
-    <p>Geplant sind in dieser Reihenfolge:</p>
+    <div class="block-note">BLOCK 5 DATEV · Roadmap in Prosa statt Fettdruck-Doppelpunkt-Muster. Datenschutz präzisiert analog zur Homepage.</div>
+    <h2>DATEV-Integration: Stand heute und Ausblick</h2>
+    <p>Die heutige Integration läuft über den DATEV-Standardweg: Flowbeaver exportiert einen Buchungsstapel im DATEV-CSV-Format und liefert die zugehörigen Belegbilder als ZIP. Beides importieren Sie direkt in Kanzlei-Rechnungswesen. Kein Medienbruch, kein Zwischensystem, keine spezielle Schnittstelle nötig. Damit ist Flowbeaver in jeder DATEV-Umgebung produktiv, auch wenn wir am Marktplatz noch nicht gelistet sind.</p>
+    <p>Parallel arbeiten wir an der tieferen Anbindung an DATEV. Die Reihenfolge richtet sich nach den Bedürfnissen der ersten Kanzleien, die wir einführen:</p>
     <ul>
-      <li>Belegbilderservice – Belege direkt in DATEV Unternehmen Online übertragen</li>
-      <li>Rechnungsdatenservice – strukturierte Daten an DUO</li>
-      <li>Buchungsdatenservice – vollständige Buchungssätze an Kanzlei-Rechnungswesen</li>
-      <li>Langfristig: Listung im DATEV-Marktplatz</li>
+      <li>Belegbilderservice, damit Belege direkt in DATEV Unternehmen Online landen, statt den Umweg über das ZIP zu nehmen</li>
+      <li>Rechnungsdatenservice für strukturierte Rechnungsdaten an DUO, insbesondere für E-Rechnungen nach XRechnung/ZUGFeRD</li>
+      <li>Buchungsdatenservice für die direkte Übergabe vollständiger Buchungssätze an Kanzlei-Rechnungswesen</li>
+      <li>Listung im DATEV-Marktplatz, sobald die Schnittstellen produktiv getestet sind und belastbare Referenzen aus den ersten Kundenkanzleien vorliegen</li>
     </ul>
 
-    <h3>Datenschutz</h3>
+    <h3>Datenschutz, konkret benannt</h3>
+    <p>Die Anforderungen der Branche an Datenschutz sind hoch. Flowbeaver ist darauf ausgelegt, dass Sie jede Zeile der Verarbeitung im AVV begründen können:</p>
     <ul>
-      <li>Deutsche Server, EU-Verarbeitungspartner</li>
-      <li>DSGVO- und AI-Act-konform</li>
-      <li>Keine dauerhafte Belegspeicherung. Nach der Verarbeitung werden nur anonymisierte Buchungsfälle für Lernzwecke gespeichert</li>
-      <li>Human-in-the-loop: Automatisch gebucht wird nichts</li>
+      <li>Server und Datenhaltung ausschließlich in Deutschland</li>
+      <li>LLM-Verarbeitungen in Rechenzentren innerhalb der EU, kein Datentransfer in Drittstaaten</li>
+      <li>Auftragsverarbeitungsvertrag nach Art. 28 DSGVO für jede Kanzlei</li>
+      <li>Belege werden nach Übergabe des Buchungsstapels gelöscht; in der Lernschleife verbleiben ausschließlich anonymisierte Buchungsmuster</li>
+      <li>Human-in-the-Loop als Produkt-Prinzip: Automatisch gebucht wird nichts, jeder Vorschlag passiert die Freigabe durch Ihr Team</li>
     </ul>
   </div>
 </section>
 
 
 <!-- ============================================================
-     BLOCK 6: PILOTPARTNER — [QUELLE: LP-KI] [AKTION: HUMANIZED]
-     10-Plaetze-Mechanik. Auf Produkt-Seite besser aufgehoben als auf Homepage.
+     BLOCK 6: ARBEITSWEISE — [QUELLE: NEW, ersetzt Pilotpartner-Programm]
+     Kein Label, keine Scarcity, keine 2-Jahres-Bindung.
+     Persönliches Onboarding bleibt als ehrliche Beschreibung der Realität.
      ============================================================ -->
-<section id="pilot" style="background:#fafafa;">
+<section id="arbeitsweise" style="background:#fafafa;">
   <div class="container">
-    <div class="block-note">BLOCK 6 PILOTPARTNER · [LP-KI → HUMANIZED] · Scarcity bleibt, aber ohne Startup-Ton. Kein "Pioneer-Kohorte", kein "Disruption".</div>
-    <h2>Pilotpartner-Programm: 10 Plätze</h2>
+    <div class="block-note">BLOCK 6 ARBEITSWEISE · Pilotpartner-Programm gestrichen. Inhalt bleibt (persönliches Onboarding, direkter Gründer-Kontakt, schneller Feedback-Loop), aber als Beschreibung der Arbeitsweise in der frühen Phase – nicht als verpacktes Programm mit künstlicher Scarcity und 2-Jahres-Lock.</div>
+    <h2>Wie die Einführung in der frühen Phase läuft</h2>
     <div class="pilot-box">
-      <p>Flowbeaver baut das Produkt gemeinsam mit den ersten 10 Kanzleien. Das heißt konkret:</p>
+      <p>Flowbeaver ist heute in der Phase, in der jede neu einsteigende Kanzlei das Produkt spürbar mitprägt. Das ist ein Vorteil – wenn Sie bereit sind, sich darauf einzulassen.</p>
+
+      <p><strong>Was das in der Praxis heißt:</strong> Ich richte jede Kanzlei persönlich ein, wir stimmen uns in den ersten Wochen wöchentlich ab, und Ihre Rückmeldungen fließen innerhalb von Tagen ins Produkt zurück – nicht in ein Quartals-Release. Self-Service-Onboarding gibt es in dieser Phase bewusst nicht, weil die Einrichtung in jeder Kanzlei auf Mandantenstruktur, Belegkanäle und bestehende Konventionen abgestimmt sein muss.</p>
+
+      <p><strong>Was Sie verbindlich bekommen:</strong></p>
       <ul>
-        <li>Persönliches Onboarding, keine Self-Service-Einrichtung</li>
-        <li>Direkter Kontakt zum Gründer, wöchentliche Abstimmung in den ersten Wochen</li>
-        <li>Feedback landet innerhalb von Tagen im Produkt, nicht in Quartalen</li>
-        <li>299 € pro Monat, Flatrate, monatlich kündbar, Einstiegspreis zwei Jahre festgeschrieben</li>
-        <li>Sind die 10 Plätze vergeben, startet die nächste Runde frühestens in 3 bis 6 Monaten</li>
+        <li>299 € pro Monat als Flatrate, unabhängig vom Belegvolumen, monatlich kündbar</li>
+        <li>Persönliches Onboarding ohne Setup-Gebühr</li>
+        <li>Direkter Kontakt zum Gründer über den gesamten Zeitraum der Zusammenarbeit</li>
+        <li>Praxis-Check mit 30 Ihrer echten Belege, bevor Sie sich binden</li>
       </ul>
-      <p><a href="#demo" class="btn-primary">Als Pilotpartner bewerben</a></p>
+
+      <p><strong>Die ehrliche Kapazitätsgrenze:</strong> Mehr als acht bis zehn Kanzleien parallel lassen sich so nicht sauber einarbeiten. Das ist kein Marketing-Hebel und keine künstliche Verknappung – es ist die Realität eines Ein-Personen-Unternehmens. Wenn ich Ihnen einen Termin in zwei Wochen gebe statt morgen, wissen Sie warum.</p>
+
+      <p><strong>Was ich im Gegenzug erwarte:</strong> Echte Belege aus Ihrem Kanzleialltag, regelmäßige Rückmeldung zu den Vorschlägen und die Bereitschaft, ein Produkt in Weiterentwicklung aktiv mitzuformen. Wer ein fertiges, poliertes SaaS-Produkt sucht, ist heute noch nicht bei Flowbeaver richtig.</p>
+
+      <p style="margin-top:24px;"><a href="#demo" class="btn-primary">Demo buchen (15 Min.)</a></p>
     </div>
   </div>
 </section>
@@ -229,47 +242,42 @@
      ============================================================ -->
 <section id="faq">
   <div class="narrow">
-    <div class="block-note">BLOCK 7 FAQ · [LP-KI → HUMANIZED alle 13 Fragen] · Volle Tiefe lebt hier, Homepage hat Kurzversion.</div>
-    <h2>Alle Fragen</h2>
+    <div class="block-note">BLOCK 7 FAQ · 13 Fragen in vier Themengruppen strukturiert, Antworten konkretisiert. DSGVO-Antwort analog zur Homepage.</div>
+    <h2>Ausführliche FAQ</h2>
 
-    <h3>Was genau macht Flowbeaver?</h3>
-    <p>Ein KI-Vorsystem für die vorbereitende Buchhaltung. Belegerkennung, Zuordnung, Vorkontierung, DATEV-kompatibler Buchungsstapel. Ihr Team prüft, korrigiert wo nötig, importiert.</p>
+    <h3 style="color:var(--fb-purple);border-bottom:1px solid var(--fb-border);padding-bottom:8px;margin-top:40px;">Was Flowbeaver macht</h3>
 
-    <h3>Bucht Flowbeaver automatisch?</h3>
-    <p>Nein. Flowbeaver erzeugt Vorschläge. Die finale Entscheidung liegt bei Ihren Mitarbeitern. Kein Beleg wird ohne menschliche Freigabe gebucht.</p>
+    <p><strong>Was genau macht Flowbeaver?</strong><br>Flowbeaver ist ein KI-Vorsystem für die vorbereitende Buchhaltung. Das System liest jeden Eingangs- und Ausgangsbeleg, identifiziert den Lieferanten, leitet den Geschäftsvorfall ab und schlägt eine Kontierung nach SKR03 oder SKR04 vor. Am Ende steht ein DATEV-kompatibler Buchungsstapel. Ihr Team prüft, korrigiert wo nötig und importiert ihn in DATEV Kanzlei-Rechnungswesen.</p>
 
-    <h3>Kann Flowbeaver fremdsprachige Belege verarbeiten?</h3>
-    <p>Ja. Das Sprachmodell recherchiert jeden Lieferanten und jede Position unabhängig von der Belegsprache. Eine italienische Hotelrechnung oder ein französischer Dienstleister wird genauso kontiert wie eine deutsche Rechnung.</p>
+    <p><strong>Bucht Flowbeaver automatisch?</strong><br>Nein. Flowbeaver erzeugt ausschließlich Vorschläge. Die finale Freigabe liegt immer bei Ihren Mitarbeitern, und kein Beleg verlässt den Stapel ohne diese Freigabe. Das ist kein Nachteil, sondern Produkt-Prinzip: Der Mensch entscheidet, die KI bereitet vor.</p>
 
-    <h3>Wie kommen die Ergebnisse in DATEV?</h3>
-    <p>Per DATEV-CSV Buchungsstapel plus Belegbilder-ZIP. Import in Kanzlei-Rechnungswesen, dann weiter wie gewohnt. Weitere Schnittstellen (Belegbilderservice, Rechnungsdatenservice) sind in Arbeit.</p>
+    <p><strong>Welche Belegarten werden unterstützt?</strong><br>In der ersten Ausbaustufe: Eingangs- und Ausgangsrechnungen. Weitere Belegarten wie Kassenbelege, Lieferscheine oder Reisekostenabrechnungen folgen; die Reihenfolge richtet sich nach den konkreten Anforderungen der ersten Kundenkanzleien.</p>
 
-    <h3>Was ist der Unterschied zu DATEV Buchungsassistent oder ASR?</h3>
-    <p>DATEV-Buchungsassistent und ASR arbeiten mit klassischer OCR plus regelbasierter Erkennung. Flowbeaver kombiniert Vision Language Models mit LLM-Recherche und einem deterministischen Regelwerk. Der Unterschied zeigt sich bei Belegen, die aus dem Muster fallen: fremdsprachig, ungewöhnliches Layout, unklare Positionen.</p>
+    <p><strong>Lernt Flowbeaver aus Korrekturen?</strong><br>Ja. Korrekturen Ihres Teams werden als Muster übernommen: Welcher Lieferant wird wie kontiert, welche Position gehört bei diesem Mandanten auf welches Konto? Die Vorschläge werden mit der Zeit mandantenspezifisch präziser und lernen anschließend kanzleiweit.</p>
 
-    <h3>Welche Belege werden unterstützt?</h3>
-    <p>Rechnungseingang und Rechnungsausgang in der ersten Runde. Weitere Belegarten folgen, die Reihenfolge hängt von den Pilotkanzleien ab.</p>
+    <h3 style="color:var(--fb-purple);border-bottom:1px solid var(--fb-border);padding-bottom:8px;margin-top:40px;">Besondere Belegtypen und Risiken</h3>
 
-    <h3>Was passiert mit Problembelegen?</h3>
-    <p>Rechnungen mit fehlenden Angaben, Rechenfehlern oder Dubletten landen in einer Klärfälle-Liste mit konkretem Hinweis, was zu klären ist. Flowbeaver rät nicht.</p>
+    <p><strong>Kann Flowbeaver fremdsprachige Belege verarbeiten?</strong><br>Ja. Das Sprachmodell erfasst jeden Lieferanten und jede Position unabhängig von der Belegsprache. Eine italienische Hotelrechnung, eine englische SaaS-Rechnung oder ein französischer Dienstleisterbeleg werden genauso kontiert wie eine deutsche Rechnung – die Geschäftsvorfall-Ableitung kommt immer auf Deutsch zurück.</p>
 
-    <h3>Welche Risiken gibt es?</h3>
-    <p>Im schlimmsten Fall landen einzelne Belege als Klärfall statt als fertiger Vorschlag. Sie verlieren nichts, weil alles weiter im Buchungsstapel zur Prüfung bleibt. Der Anteil fertiger Vorkontierung wird deutlich höher.</p>
+    <p><strong>Was passiert mit Problembelegen?</strong><br>Rechnungen mit fehlenden Pflichtangaben, Rechenfehlern oder möglichen Dubletten laufen nicht blind durch, sondern landen in einer Klärfälle-Liste mit konkretem Hinweis darauf, was fehlt oder widersprüchlich aussieht. Flowbeaver rät nicht und bucht nicht ins Ungefähre.</p>
 
-    <h3>Müssen wir unsere Prozesse umstellen?</h3>
-    <p>Nein. Flowbeaver ist ein Vorsystem. Ihr bestehendes Setup bleibt unverändert – egal ob DATEV, Lexware, Agenda, Addison oder sevDesk. Ihre Mitarbeiter bekommen bessere Vorarbeit, keine neue Software zum Einarbeiten.</p>
+    <p><strong>Welche Risiken gibt es?</strong><br>Im ungünstigsten Fall rutschen einzelne Belege in die Klärfälle statt in den fertigen Vorschlag – also Mehrarbeit, aber keine falschen Buchungen. Alles bleibt im Prüfprozess Ihres Teams. Der Anteil fertig vorkontierter Belege ist deutlich höher als mit klassischer OCR, der Kontrollaufwand deutlich niedriger.</p>
 
-    <h3>Lernt Flowbeaver aus Korrekturen?</h3>
-    <p>Ja. Korrekturen werden als Muster gespeichert. Beim nächsten ähnlichen Beleg sind die Vorschläge genauer, mandanten- und kanzleispezifisch.</p>
+    <h3 style="color:var(--fb-purple);border-bottom:1px solid var(--fb-border);padding-bottom:8px;margin-top:40px;">DATEV und bestehende Prozesse</h3>
 
-    <h3>Ist das DSGVO-konform?</h3>
-    <p>Deutsche Server, EU-Verarbeitungspartner. Keine dauerhafte Belegspeicherung. Nur anonymisierte Buchungsfälle werden für Lernzwecke übernommen.</p>
+    <p><strong>Wie kommen die Ergebnisse in DATEV?</strong><br>Heute über den Standard: DATEV-CSV-Buchungsstapel plus Belegbilder als ZIP, direkt importierbar in Kanzlei-Rechnungswesen. Weitere Schnittstellen – Belegbilderservice, Rechnungsdatenservice, Buchungsdatenservice – sind in Vorbereitung, siehe Roadmap weiter oben auf dieser Seite.</p>
 
-    <h3>Was kostet die Teilnahme?</h3>
-    <p>299 € pro Monat, Flatrate, unlimitiertes Belegvolumen, keine Setup-Fee, monatlich kündbar. Für die ersten 10 Kanzleien zwei Jahre festgeschrieben. Wer später einsteigt, zahlt mehr.</p>
+    <p><strong>Was ist der Unterschied zu DATEV Buchungsassistent oder ASR?</strong><br>Der DATEV-Buchungsassistent und ASR arbeiten mit klassischer Mustererkennung, trainiert überwiegend auf deutschen Rechnungslayouts. Flowbeaver versteht den Inhalt eines Belegs sprach- und layoutunabhängig. Bei Standardrechnungen deutscher Lieferanten ist der Abstand kleiner. Deutlich wird der Unterschied bei fremdsprachigen Rechnungen, ungewöhnlichen Layouts und Belegen mit gemischten Positionen.</p>
 
-    <h3>Wie starten wir?</h3>
-    <p>15-Minuten-Demo mit mir. Bei Fit folgt ein Praxis-Check mit 30 echten Belegen aus Ihrer Kanzlei. Sie sehen, was automatisch läuft und was Klärfall wird, bevor Sie sich entscheiden.</p>
+    <p><strong>Müssen wir unsere Prozesse umstellen?</strong><br>Nein. Flowbeaver setzt vor Ihrem bestehenden System an, unabhängig davon, ob Sie mit DATEV, Lexware, Agenda, ADDISON oder sevDesk arbeiten. Ihre Mitarbeiter bekommen bessere Vorarbeit im gewohnten Interface, aber keine neue Software, in die sie sich einarbeiten müssten.</p>
+
+    <h3 style="color:var(--fb-purple);border-bottom:1px solid var(--fb-border);padding-bottom:8px;margin-top:40px;">Datenschutz, Preis, Einstieg</h3>
+
+    <p><strong>Ist das DSGVO-konform?</strong><br>Daten liegen ausschließlich auf Servern in Deutschland, LLM-Verarbeitungen laufen in Rechenzentren innerhalb der EU, es gibt keinen Datentransfer in Drittstaaten. Für jede Kanzlei wird ein Auftragsverarbeitungsvertrag nach Art. 28 DSGVO geschlossen. Belege werden nach Übergabe des Buchungsstapels gelöscht; nur anonymisierte Buchungsmuster fließen in die Verbesserung der Erkennung.</p>
+
+    <p><strong>Was kostet Flowbeaver?</strong><br>299 € pro Monat als Flatrate, unabhängig vom Belegvolumen, monatlich kündbar. Keine Setup-Gebühr, keine Pro-Beleg-Abrechnung, keine versteckten Staffeln.</p>
+
+    <p><strong>Wie starten wir?</strong><br>Mit einer 15-Minuten-Demo, in der wir gemeinsam Ihre Belegeingänge besprechen und klären, ob Flowbeaver zu Ihrer Kanzlei passt. Ist der Fit da, folgt ein Praxis-Check mit 30 echten Belegen aus Ihrem Kanzleialltag: Sie sehen schwarz auf weiß, was automatisch durchläuft und was als Klärfall zurückkommt. Erst danach entscheiden Sie, ob Sie mit Flowbeaver produktiv gehen.</p>
   </div>
 </section>
 
@@ -279,9 +287,10 @@
      ============================================================ -->
 <section id="demo">
   <div class="narrow" style="text-align:center;">
-    <h2>15 Minuten. Mit dem Gründer.</h2>
-    <p>Wir schauen uns Ihre Belegeingänge an und klären, ob Flowbeaver passt.</p>
-    <p style="margin:32px 0;"><a href="/termin" class="btn-primary">Demo buchen</a></p>
+    <h2>Jetzt 15 Minuten direkt mit dem Gründer</h2>
+    <p>Keine Verkaufspräsentation. Wir gehen gemeinsam durch, wie Belege heute in Ihre Kanzlei kommen, wo im Prozess die Zeit versickert und ob sich ein Praxis-Check mit 30 echten Belegen aus Ihrem Alltag lohnt. Wenn der Fit nicht da ist, bekommen Sie eine ehrliche Einschätzung und keinen Nachfasstermin.</p>
+    <p style="margin:32px 0;"><a href="/termin" class="btn-primary">Demo buchen (15 Min.)</a></p>
+    <p style="font-size:16px;color:var(--fb-hover);">Lieber schriftlich? <a href="mailto:accounting@flowbeaver.de">accounting@flowbeaver.de</a></p>
   </div>
 </section>
 
