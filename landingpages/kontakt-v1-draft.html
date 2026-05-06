@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="de">
+<!--
+  ============================================================
+  FLOWBEAVER /kontakt — ENTWURF v1 (Tilda-Block-Format, 2026-05-01)
+  ============================================================
+  Grundlage: Empfehlung 6 aus
+  landingpages/empfehlungen-2026-05-01.md.
+
+  Kernaenderungen gegenueber Tilda-Live-Kontakt:
+    - Headline-Subline ersetzt die Tilda-Floskel ("Wir lieben es,
+      mit unseren Kunden zu kommunizieren") durch den direkten Frame
+      "Sie erreichen Andreas direkt".
+    - Submit-Button: Grossschreibung "Absenden" statt "absenden",
+      konsistent zu Homepage-CTAs.
+    - Sekundaerer CTA: Direktlink zur Demo (/#demo). Viele klicken
+      zuerst "Kontakt", obwohl Demo der bessere Weg waere.
+    - Email-/Telefon-Block sichtbar oberhalb des Formulars, damit
+      User auch ohne Form-Submit weiterkommen.
+
+  Email durchgehend info@flowbeaver.de.
+  Form-Submit-Endpoint: derzeit Platzhalter (Tilda-eigene
+  Form-Verarbeitung uebernimmt das in der Tilda-Umgebung).
+-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt | Flowbeaver</title>
+  <meta name="description" content="Schreiben Sie uns. Sie erreichen Andreas direkt — per Mail, Telefon oder Formular. Demo bevorzugt? 15-Min-Slot direkt buchbar.">
+  <link rel="canonical" href="https://flowbeaver.de/kontakt">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap">
+
+  <style>
+    :root {
+      --fb-purple: #52267a;
+      --fb-purple-dark: #3d1c5c;
+      --fb-dark-red: #3c0f04;
+      --fb-text: #404040;
+      --fb-text-light: #606060;
+      --fb-bg-light: #fafafa;
+      --fb-bg-card: #faf7fd;
+      --fb-border: #e0e0e0;
+      --fb-radius: 10px;
+      --fb-font: 'DM Sans', 'TildaSans', Arial, sans-serif;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--fb-font); font-size: 18px; line-height: 1.6; color: var(--fb-text); background: #fff; }
+    h1, h2, h3, h4 { color:#000; line-height:1.25; font-weight:700; }
+    h1 { font-size: 44px; color: var(--fb-dark-red); line-height:1.15; margin-bottom: 20px; }
+    h2 { font-size: 30px; margin-bottom: 20px; }
+    h3 { font-size: 22px; font-weight: 600; margin-bottom: 12px; }
+    p  { font-size: 18px; line-height: 1.6; margin-bottom: 18px; }
+    a  { color: var(--fb-purple); text-decoration: none; }
+    a:hover { color: var(--fb-purple-dark); }
+
+    .t-rec        { padding: 80px 0; border-bottom: 1px solid var(--fb-border); }
+    .t-rec_bg     { background: var(--fb-bg-light); }
+    .t-rec_card   { background: var(--fb-bg-card); }
+    .t-container  { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .t-narrow     { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+    .t-uppertitle { font-size: 13px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--fb-text-light); font-weight: 600; margin-bottom: 12px; }
+    .t-grid-2     { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    .t-card       { border: 1px solid var(--fb-border); border-radius: var(--fb-radius); padding: 28px; background: #fff; }
+
+    .t-btn { display:inline-block; background: var(--fb-purple); color:#fff; font-family: var(--fb-font); font-size: 18px; font-weight: 500; padding: 14px 28px; border-radius: var(--fb-radius); border: none; cursor: pointer; transition: background .2s ease-in-out; text-decoration: none; }
+    .t-btn:hover { background: var(--fb-purple-dark); color: #fff; }
+    .t-btn-secondary { background: transparent; color: var(--fb-purple); border: 2px solid var(--fb-purple); padding: 12px 26px; }
+    .t-btn-secondary:hover { background: var(--fb-purple); color: #fff; }
+
+    /* Form (Tilda: t-form) */
+    .t-form { display: flex; flex-direction: column; gap: 16px; }
+    .t-input-block label { display: block; margin-bottom: 6px; font-size: 14px; color: var(--fb-text-light); font-weight: 500; }
+    .t-input, .t-textarea {
+      width: 100%;
+      font-family: var(--fb-font);
+      font-size: 16px;
+      padding: 12px 16px;
+      border: 1px solid var(--fb-border);
+      border-radius: var(--fb-radius);
+      background: #fff;
+      color: var(--fb-text);
+      transition: border-color .2s;
+    }
+    .t-input:focus, .t-textarea:focus { outline: none; border-color: var(--fb-purple); }
+    .t-textarea { min-height: 140px; resize: vertical; line-height: 1.5; }
+
+    .draft-note { background: #fffbe6; border: 1px dashed #d4a900; padding: 10px 14px; font-size: 13px; font-family: monospace; color: #665200; margin-bottom: 20px; border-radius: 6px; }
+
+    @media (max-width: 768px) {
+      body { font-size: 17px; }
+      h1 { font-size: 32px; }
+      h2 { font-size: 24px; }
+      .t-rec { padding: 56px 0; }
+      .t-grid-2 { grid-template-columns: 1fr; gap: 32px; }
+    }
+  </style>
+</head>
+
+<body>
+
+
+<!-- ============================================================
+     TILDA-BLOCK: TM601 (Header / Sticky-Menu)
+     STATIC HEADER — identisch zu Homepage und allen Subpages.
+     ============================================================ -->
+<nav class="t-menu" style="position:sticky; top:0; z-index:100; background:#fff; border-bottom:1px solid var(--fb-border); padding:16px 0;">
+  <div class="t-container" style="display:flex; justify-content:space-between; align-items:center;">
+    <a href="/" style="font-weight:700; font-size:22px; color:var(--fb-purple);">Flowbeaver</a>
+    <ul style="display:flex; gap:24px; list-style:none; align-items:center; flex-wrap:wrap;">
+      <li><a href="/produkt" style="color:#000; font-weight:500;">Produkt</a></li>
+      <li><a href="/branchenreport" style="color:#000; font-weight:500;">Branchenreport</a></li>
+      <li><a href="/blog" style="color:#000; font-weight:500;">Ressourcen</a></li>
+      <li><a href="/ueber" style="color:#000; font-weight:500;">Über uns</a></li>
+      <li><a href="/kontakt" style="color:#000; font-weight:500; border-bottom:2px solid var(--fb-purple);">Kontakt</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<!-- ============================================================
+     TILDA-BLOCK: T030 (Heading + Sub-Heading)
+     INHALT: Hero — Direkter Kontakt-Frame
+     EMPFEHLUNG 6 v1: Tilda-Floskel "Wir lieben es..." raus,
+     "Sie erreichen Andreas direkt" rein.
+     ============================================================ -->
+<section class="t-rec" id="rec-hero">
+  <div class="t-narrow">
+    <div class="draft-note">HERO · Tilda T030. Standard-Kontakt-Frame, ohne Marketing-CTAs.</div>
+    <h1>Kontakt</h1>
+    <p style="font-size:19px;">
+      Bei Fragen oder Anliegen erreichen Sie uns über die folgenden Wege oder schreiben Sie uns direkt über das Formular.
+    </p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     TILDA-BLOCK: T702 (Form mit Sidebar) oder T123 Zero
+     INHALT: Adresse + Kontaktdaten (links) + Formular (rechts)
+     ============================================================ -->
+<section class="t-rec" id="kontakt-form">
+  <div class="t-container">
+    <div class="draft-note">FORM-BLOCK · Tilda T702 oder Zero. Linke Spalte: Adresse + Kontaktdaten. Rechte Spalte: Formular.</div>
+
+    <div class="t-grid-2">
+
+      <!-- Linke Spalte: Anschrift und direkte Kontaktwege -->
+      <div>
+        <h2>Flowbeaver GmbH</h2>
+        <p style="font-size:17px; line-height:1.7;">
+          Wilhelmstraße 111<br>
+          10963 Berlin
+        </p>
+
+        <p style="margin-top:24px; font-size:17px; line-height:1.9;">
+          <span style="color:var(--fb-text-light);">E-Mail:</span> <a href="mailto:info@flowbeaver.de">info@flowbeaver.de</a><br>
+          <span style="color:var(--fb-text-light);">Telefon:</span> <a href="tel:+493020169735">+49&nbsp;30&nbsp;20169735</a><br>
+          <span style="color:var(--fb-text-light);">LinkedIn:</span> <a href="https://www.linkedin.com/in/schwarzkopf">Andreas Schwarzkopf</a>
+        </p>
+
+        <p style="margin-top:24px; font-size:15px; color:var(--fb-text-light);">
+          Geschäftsführer: Andreas Schwarzkopf
+        </p>
+      </div>
+
+      <!-- Rechte Spalte: Formular -->
+      <div>
+        <h2>Schreiben Sie uns</h2>
+
+        <!--
+          NOTE: In Tilda wird dieses Formular durch den Standard-
+          T702- oder TF704-Block ersetzt. Die Form-Verarbeitung
+          (Empfaenger, Spam-Schutz, DSGVO-Hinweis) liegt dann in
+          den Tilda-Form-Settings.
+        -->
+        <form class="t-form" action="#" method="POST" style="margin-top:24px;">
+          <div class="t-input-block">
+            <label for="kontakt-name">Name</label>
+            <input class="t-input" id="kontakt-name" name="name" type="text" required placeholder="Vor- und Nachname">
+          </div>
+          <div class="t-input-block">
+            <label for="kontakt-email">E-Mail</label>
+            <input class="t-input" id="kontakt-email" name="email" type="email" required placeholder="ihre@kanzlei.de">
+          </div>
+          <div class="t-input-block">
+            <label for="kontakt-nachricht">Ihre Nachricht</label>
+            <textarea class="t-textarea" id="kontakt-nachricht" name="nachricht" required placeholder="Worum geht es?"></textarea>
+          </div>
+
+          <p style="font-size:13px; color:var(--fb-text-light); margin:0;">
+            Ihre Daten werden zur Beantwortung verarbeitet. Details in der <a href="/datenschutz">Datenschutzerklärung</a>.
+          </p>
+
+          <div>
+            <button type="submit" class="t-btn">Absenden</button>
+          </div>
+        </form>
+
+        <p style="margin-top:20px; font-size:14px; color:var(--fb-text-light);">
+          Für eine 15-Minuten-Demo: <a href="/#demo">zur Demo-Anfrage →</a>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     TILDA-BLOCK: T390 (Footer)
+     IDENTISCH zu Homepage v4 und About-Seite.
+     ============================================================ -->
+<footer class="t-rec" data-record-type="390" style="background:#111; color:#fff; padding:48px 0 32px; border-bottom:none;">
+  <div class="t-container">
+    <div style="display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; align-items:start;">
+      <div>
+        <div style="font-weight:700; font-size:22px; color:#fff; margin-bottom:16px;">Flowbeaver</div>
+        <p style="font-size:15px; opacity:.7; line-height:1.55; margin:0 0 16px;">Das KI-Vorsystem für die vorbereitende Buchhaltung in Steuerkanzleien. DATEV-Ergänzung, kein Ersatz.</p>
+        <a href="/#demo" style="display:inline-block; background:var(--fb-purple); color:#fff; padding:10px 18px; border-radius:8px; font-weight:500; font-size:15px;">15-Min-Demo buchen</a>
+      </div>
+      <div>
+        <div style="font-size:13px; text-transform:uppercase; letter-spacing:1px; opacity:.5; margin-bottom:12px;">Kontakt</div>
+        <p style="font-size:15px; line-height:1.7; margin:0;">
+          <a href="mailto:info@flowbeaver.de" style="color:#fff; opacity:.9; display:block; margin-bottom:6px;">info@flowbeaver.de</a>
+          <a href="tel:+493020169735" style="color:#fff; opacity:.9; display:block; margin-bottom:6px;">+49 30 20169735</a>
+          <a href="https://www.linkedin.com/in/schwarzkopf" style="color:#fff; opacity:.9; display:block;">Andreas auf LinkedIn</a>
+        </p>
+      </div>
+      <div>
+        <div style="font-size:13px; text-transform:uppercase; letter-spacing:1px; opacity:.5; margin-bottom:12px;">Produkt</div>
+        <p style="font-size:15px; line-height:1.7; margin:0;">
+          <a href="/produkt" style="color:#fff; opacity:.9; display:block; margin-bottom:6px;">Produkt</a>
+          <a href="/branchenreport" style="color:#fff; opacity:.9; display:block; margin-bottom:6px;">Branchenreport</a>
+          <a href="/blog" style="color:#fff; opacity:.9; display:block;">Ressourcen</a>
+        </p>
+      </div>
+      <div>
+        <div style="font-size:13px; text-transform:uppercase; letter-spacing:1px; opacity:.5; margin-bottom:12px;">Unternehmen</div>
+        <p style="font-size:15px; line-height:1.7; margin:0;">
+          <a href="/ueber" style="color:#fff; opacity:.9; display:block; margin-bottom:6px;">Über uns</a>
+          <a href="/kontakt" style="color:#fff; opacity:.9; display:block; margin-bottom:6px;">Kontakt</a>
+          <a href="/datenschutz" style="color:#fff; opacity:.9; display:block; margin-bottom:6px;">Datenschutz</a>
+          <a href="/impressum" style="color:#fff; opacity:.9; display:block; margin-bottom:6px;">Impressum</a>
+          <a href="/agb" style="color:#fff; opacity:.9; display:block;">AGB</a>
+        </p>
+      </div>
+    </div>
+    <div style="border-top:1px solid #333; margin-top:40px; padding-top:20px; font-size:13px; opacity:.5; text-align:center;">
+      © 2026 Flowbeaver GmbH, Berlin
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>

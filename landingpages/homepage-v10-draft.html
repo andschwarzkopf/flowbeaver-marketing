@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flowbeaver Tilda Edits (Strategie-Tuning v10)</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Source Sans Pro", Arial, sans-serif;
+    background: #f4f4f4;
+    color: #2d3038;
+    line-height: 1.5;
+    padding: 40px 20px;
+  }
+  .wrap { max-width: 1100px; margin: 0 auto; }
+
+  /* Edit-Plan Header */
+  .edit-plan {
+    background: #fff;
+    border-radius: 12px;
+    padding: 32px 40px;
+    margin-bottom: 32px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .edit-plan h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #1a1a1a;
+  }
+  .edit-plan .subtitle {
+    color: #6b7280;
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+  .edit-plan ol { padding-left: 24px; }
+  .edit-plan ol li { margin-bottom: 10px; font-size: 15px; }
+  .edit-plan strong { color: #52267a; }
+
+  /* Stimmigkeits-Tabelle */
+  .composition {
+    background: #fff;
+    border-radius: 12px;
+    padding: 32px 40px;
+    margin-bottom: 32px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .composition h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #1a1a1a;
+  }
+  .composition .lead {
+    color: #6b7280;
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+  .composition table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  .composition th {
+    text-align: left;
+    padding: 10px 14px;
+    background: #f3f4f6;
+    color: #374151;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #e5e7eb;
+  }
+  .composition td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #e5e7eb;
+    vertical-align: top;
+  }
+  .composition .pill {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  .pill.outside { background: #fef3c7; color: #92400e; }
+  .pill.bridge { background: #ddd6fe; color: #5b21b6; }
+  .pill.inside { background: #d1fae5; color: #065f46; }
+  .pill.both { background: #dbeafe; color: #1e40af; }
+
+  /* Block-Karten */
+  .block-card {
+    background: #fff;
+    border-radius: 12px;
+    margin-bottom: 28px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .block-header {
+    background: #2d3038;
+    color: #fff;
+    padding: 18px 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .block-header .badge {
+    background: #52267a;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .block-header .badge.new { background: #16a34a; }
+  .block-header h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+  }
+  .block-header .tilda-ref {
+    margin-left: auto;
+    font-size: 13px;
+    color: #9ca3af;
+    font-family: "SF Mono", Monaco, Consolas, monospace;
+  }
+  .block-instruction {
+    padding: 16px 32px;
+    background: #fffbeb;
+    border-bottom: 1px solid #fde68a;
+    font-size: 14px;
+    color: #78350f;
+  }
+  .block-instruction strong { color: #1a1a1a; }
+
+  /* Diff-Layout */
+  .diff {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  .diff > div { padding: 24px 32px; }
+  .diff .old {
+    background: #fef2f2;
+    border-right: 1px solid #fecaca;
+  }
+  .diff .new { background: #f0fdf4; }
+  .diff .label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .diff .old .label { color: #b91c1c; }
+  .diff .new .label { color: #15803d; }
+  .diff p { font-size: 15px; margin-bottom: 8px; }
+  .highlight { background: #fef08a; padding: 1px 3px; border-radius: 2px; }
+
+  /* Tilda-Stil-Vorschau */
+  .preview-section {
+    background: #fff;
+    margin-bottom: 28px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .preview-label {
+    background: #ede9fe;
+    color: #5b21b6;
+    padding: 10px 32px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .tilda-preview {
+    padding: 60px 32px;
+    text-align: center;
+  }
+  .tilda-preview h1 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.15;
+    margin-bottom: 24px;
+    letter-spacing: -0.5px;
+  }
+  .tilda-preview .lead {
+    font-size: 19px;
+    line-height: 1.55;
+    color: #4b5563;
+    max-width: 760px;
+    margin: 0 auto 32px;
+  }
+  .tilda-preview .cta-btn {
+    display: inline-block;
+    background: #52267a;
+    color: #fff;
+    padding: 14px 32px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  /* Mandanten-Vision Block */
+  .vision-block {
+    background: linear-gradient(135deg, #faf5ff 0%, #eff6ff 100%);
+    padding: 50px 32px;
+    text-align: center;
+    border-top: 1px solid #e9d5ff;
+    border-bottom: 1px solid #e9d5ff;
+  }
+  .vision-block .eyebrow {
+    color: #52267a;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .vision-block h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+  .vision-block p {
+    font-size: 17px;
+    line-height: 1.6;
+    color: #4b5563;
+    max-width: 720px;
+    margin: 0 auto 12px;
+  }
+  .vision-block .meta {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #6b7280;
+    font-style: italic;
+  }
+
+  /* Code-Boxen */
+  .code-box {
+    background: #1e293b;
+    color: #e2e8f0;
+    padding: 24px 32px;
+    font-family: "SF Mono", Monaco, Consolas, monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    overflow-x: auto;
+    white-space: pre;
+  }
+  .code-box .comment { color: #94a3b8; }
+  .code-box .tag { color: #f472b6; }
+  .code-box .attr { color: #fbbf24; }
+  .code-box .text { color: #d1fae5; }
+
+  /* DATEV-Ergänzung 3-Spalten Vorschau */
+  .three-col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    padding: 50px 32px;
+  }
+  .three-col .col {
+    text-align: left;
+  }
+  .three-col .col h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #1a1a1a;
+  }
+  .three-col .col p {
+    font-size: 15px;
+    line-height: 1.55;
+    color: #4b5563;
+  }
+  .col-number {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    background: #52267a;
+    color: #fff;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  /* Footer-Hinweis */
+  .footer-note {
+    background: #fff;
+    padding: 24px 32px;
+    border-radius: 12px;
+    font-size: 14px;
+    color: #6b7280;
+    text-align: center;
+    margin-top: 32px;
+  }
+
+  .stylenote {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 24px;
+    font-size: 14px;
+    color: #15803d;
+  }
+  .stylenote strong { color: #14532d; }
+
+  .changelog {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 24px;
+    font-size: 14px;
+    color: #1e40af;
+  }
+  .changelog strong { color: #1e3a8a; }
+  .changelog ul { margin-top: 8px; padding-left: 20px; }
+  .changelog ul li { margin-bottom: 4px; }
+
+  @media (max-width: 768px) {
+    .diff { grid-template-columns: 1fr; }
+    .diff .old { border-right: none; border-bottom: 1px solid #fecaca; }
+    .three-col { grid-template-columns: 1fr; }
+    .tilda-preview h1 { font-size: 30px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ================================================== -->
+  <!-- EDIT-PLAN: Übersicht                                -->
+  <!-- ================================================== -->
+  <div class="edit-plan">
+    <h1>Flowbeaver, Strategie-Tuning der Landing Page (v10)</h1>
+    <p class="subtitle">Drei Mini-Änderungen plus FAQ-Ergänzung. Alle anderen Inhalte bleiben unangetastet. Vorher/Nachher pro Block, plus fertiges HTML zum Copy-Paste in Tilda.</p>
+
+    <div class="changelog">
+      <strong>Änderungen v10 gegenüber v9:</strong>
+      <ul>
+        <li>Brückensatz „Beide Probleme entstehen aus drei Reibungen im Belegfluss." am Ende der Engpass-Sektion ersatzlos gestrichen</li>
+        <li>Grund: Der Satz behauptet eine kausale Mapping-Beziehung zwischen den zwei Problemen und den drei Reibungen, die in der Realität nicht sauber 1:1 ist. Die Drei-Reibungen-Sektion auf der Seite hat eigene Mini-Headlines und steht für sich selbst, sie braucht keine Anmoderation.</li>
+        <li>Effekt: Die zwei klar benannten Probleme stehen unkommentiert, das wirkt eindringlicher als eine schwächende Schluss-Brücke.</li>
+      </ul>
+      <strong style="display:block;margin-top:14px;">Änderungen v9 gegenüber v8:</strong>
+      <ul>
+        <li>Engpass-Sektion zwischen Branchenreport und Drei-Reibungen wird umgeschrieben: aus dem Brückentext mit „qualifizierte Mitarbeiterstunden in der vorbereitenden Buchhaltung" werden zwei klar benannte Probleme: <strong>Kapazitätsengpässe</strong> und <strong>sinkende Margen</strong></li>
+        <li>Verbindung zur 43,8-Prozent-Statistik aus dem Branchenreport oben wird explizit gemacht (vorher isolierte Zahl, jetzt direkte Konsequenz)</li>
+        <li>Sprachebene: Kanzleiinhaber-Sprache („Personalkosten fressen die Marge auf") statt Fachsprech</li>
+        <li>Edit-Plan-Nummerierung folgt jetzt der Seitenreihenfolge: Block 1 Hero, Block 2 Engpass, Block 3 DATEV-Ergänzung, Block 4 Vision</li>
+      </ul>
+      <strong style="display:block;margin-top:14px;">Änderungen v8 gegenüber v7:</strong>
+      <ul>
+        <li>Hero-Sub-Headline: „auch bei Splitbuchungen" wird zu „auch <strong>als</strong> Splitbuchungen" (semantisch korrekt: Flowbeaver <em>erzeugt</em> Splitbuchungen aus Belegpositionen, es <em>erkennt</em> sie nicht aus dem Beleg)</li>
+        <li>Schreibweise-Hinweis: „Splitbuchung" mit einem T ist die etablierte Form (Gabler, wissen.de, Finmatics, Sage, DATEV-Community). „Splittbuchung" mit zwei T existiert auch, ist aber zweite Wahl.</li>
+      </ul>
+      <strong style="display:block;margin-top:14px;">Änderungen v7 gegenüber v6:</strong>
+      <ul>
+        <li>Hero-Sub-Headline um Splitbuchungen-Hinweis ergänzt (Trigger-Wort, das den ICP-Schmerz adressiert)</li>
+        <li>Hero spricht jetzt von „Ergebnis" statt „Buchungsstapel" (technisch sauber für DUO und KanzleiRW)</li>
+        <li>Hero-Schluss präzisiert: „Ohne Software-Umstellung für Ihr Team. Ohne neue Abläufe." (löst den Widerspruch zu Schritt 1, der eine Flowbeaver-Oberfläche impliziert)</li>
+        <li>Schritt 3 Header: „Import in DUO oder Kanzlei-Rechnungswesen" wird zu „Prüfen und Buchen in DUO oder Kanzlei-Rechnungswesen" (verb-aktiv, kein „Import"-Mehraufwand-Signal)</li>
+        <li>Schritt 3 Body: präzisiert auf „FiBu-Team" und „tägliche Buchungsarbeit" (löst den gleichen Widerspruch wie im Hero)</li>
+      </ul>
+    </div>
+
+    <div class="stylenote">
+      <strong>Stilregel für alle Texte:</strong> Keine Em-Dashes (Gedankenstriche). Stattdessen Komma, Punkt oder Doppelpunkt. Das ist auf der bestehenden Seite konsequent so umgesetzt und bleibt bei den Edits beibehalten.
+    </div>
+    <ol>
+      <li><strong>Block 1, Hero:</strong> Sub-Headline um Splitbuchungen erweitern, neutral mit „Ergebnis" statt „Buchungsstapel" formulieren, Schlusssatz präzisieren. Headline bleibt.</li>
+      <li><strong>Block 2 NEU, Engpass-Sektion:</strong> Brückenabsatz zwischen Branchenreport und Drei-Reibungen wird zu zwei klar benannten Problemen umgeschrieben. Macht die abstrakten Branchenzahlen emotional greifbar.</li>
+      <li><strong>Block 3, „DATEV-Ergänzung, nicht DATEV-Ersatz":</strong> Schritt 3 wird verb-aktiv und präzisiert. Schritte 1 und 2 bleiben unverändert.</li>
+      <li><strong>Block 4 NEU, Vision-Teaser „Auf der Roadmap":</strong> Kleiner dezenter Block für die Mandanten-Frontend-Roadmap. Position: zwischen ROI-Rechner und Andreas-Block.</li>
+      <li><strong>Bonus, FAQ-Ergänzung:</strong> Eine zusätzliche Frage „Was kommt als Nächstes?" am Ende des FAQ-Akkordeons.</li>
+    </ol>
+  </div>
+
+  <!-- ================================================== -->
+  <!-- STIMMIGKEITS-CHECK: Komposition aller Elemente      -->
+  <!-- ================================================== -->
+  <div class="composition">
+    <h2>Stimmigkeits-Check: So passen Hero, Schritte 1 bis 3 und FAQ zusammen</h2>
+    <p class="lead">Drei-Akt-Aufbau: außerhalb DATEV, Brücke, in DATEV. Jedes Element der Seite hat einen klaren Ort und eine klare Tätigkeit. Keine Aussage widerspricht einer anderen.</p>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:18%">Element</th>
+          <th style="width:18%">Subjekt</th>
+          <th style="width:18%">Tätigkeit</th>
+          <th style="width:14%">Ort</th>
+          <th>Aussage</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Hero</strong></td>
+          <td>Flowbeaver, dann Ihr Team</td>
+          <td>liest, kontiert, prüft</td>
+          <td><span class="pill both">beide Welten</span></td>
+          <td>„Ergebnis" deckt DUO und KanzleiRW ab. „Ohne Software-Umstellung für Ihr Team" lässt offen, dass es eine Flowbeaver-UI gibt.</td>
+        </tr>
+        <tr>
+          <td><strong>Schritt 1</strong></td>
+          <td>Flowbeaver</td>
+          <td>vorbereiten</td>
+          <td><span class="pill outside">außerhalb DATEV</span></td>
+          <td>Ehrlich: Es gibt einen Verarbeitungsschritt vor DATEV. Hier liegen auch die Screenshots der Flowbeaver-Oberfläche.</td>
+        </tr>
+        <tr>
+          <td><strong>Schritt 2 (heute)</strong></td>
+          <td>Daten</td>
+          <td>übergeben</td>
+          <td><span class="pill bridge">Brücke</span></td>
+          <td>CSV-Buchungsstapel + ZIP-Belegbilder für Kanzlei-Rechnungswesen.</td>
+        </tr>
+        <tr>
+          <td><strong>Schritt 2 (geplant)</strong></td>
+          <td>Daten</td>
+          <td>übergeben</td>
+          <td><span class="pill bridge">Brücke</span></td>
+          <td>Belegbilderservice + Rechnungsdatenservice für DUO. Ehrlich als „geplant" markiert.</td>
+        </tr>
+        <tr>
+          <td><strong>Schritt 3</strong></td>
+          <td>FiBu-Team</td>
+          <td>prüfen und buchen</td>
+          <td><span class="pill inside">in DATEV</span></td>
+          <td>„Wie gewohnt" funktioniert für beide Welten, weil das Team in der DATEV-Umgebung bleibt.</td>
+        </tr>
+        <tr>
+          <td><strong>FAQ „DATEV ändern"</strong></td>
+          <td>Kanzlei</td>
+          <td>nichts ändern</td>
+          <td><span class="pill inside">in DATEV</span></td>
+          <td>„Flowbeaver klinkt sich vor DATEV ein" bestätigt den Drei-Akt-Aufbau noch einmal.</td>
+        </tr>
+        <tr>
+          <td><strong>FAQ „automatisch?"</strong></td>
+          <td>FiBu-Team</td>
+          <td>freigeben</td>
+          <td><span class="pill inside">in DATEV</span></td>
+          <td>„Nein. Vorschläge, keine Buchungen" passt zu „Prüfen und Buchen" in Schritt 3.</td>
+        </tr>
+        <tr>
+          <td><strong>Vision-Block</strong></td>
+          <td>Mandanten</td>
+          <td>einwerfen</td>
+          <td><span class="pill outside">vor außerhalb DATEV</span></td>
+          <td>Roadmap-Erweiterung: noch eine Stufe vor Schritt 1.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ================================================== -->
+  <!-- BLOCK 1: HERO, Sub-Headline                         -->
+  <!-- ================================================== -->
+  <div class="block-card">
+    <div class="block-header">
+      <span class="badge">Edit</span>
+      <h2>Block 1: Hero, Sub-Headline tunen</h2>
+      <span class="tilda-ref">Tilda Hero-Block (oberster Block)</span>
+    </div>
+    <div class="block-instruction">
+      <strong>So gehst du vor in Tilda:</strong> Den obersten Block öffnen, „Content"-Tab, Description-Feld, alten Text durch neuen ersetzen. Headline („Das KI-Vorsystem für Steuerkanzleien") und CTA bleiben unverändert.
+    </div>
+
+    <div class="diff">
+      <div class="old">
+        <div class="label">Aktuell auf der Seite</div>
+        <p>Flowbeaver liest Mandantenbelege, erkennt den Geschäftsvorfall und kontiert nach SKR03 oder SKR04 vor. Ihr Team prüft den Buchungsstapel und importiert ihn in DATEV Kanzlei-Rechnungswesen. Ohne neue Software. Ohne Umstellung bestehender Prozesse.</p>
+      </div>
+      <div class="new">
+        <div class="label">Neu</div>
+        <p>Flowbeaver liest Mandantenbelege, erkennt den Geschäftsvorfall und kontiert nach SKR03 oder SKR04 vor, <span class="highlight">auch als Splitbuchungen</span>. Ihr Team prüft <span class="highlight">das Ergebnis 1:1 wie heute</span>, in DATEV Unternehmen Online oder Kanzlei-Rechnungswesen. <span class="highlight">Ohne Software-Umstellung für Ihr Team. Ohne neue Abläufe.</span></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Render-Vorschau Hero -->
+  <div class="preview-section">
+    <div class="preview-label">Render-Vorschau (so sieht es auf der Seite aus)</div>
+    <div class="tilda-preview">
+      <h1>Das KI-Vorsystem für Steuerkanzleien</h1>
+      <p class="lead">Flowbeaver liest Mandantenbelege, erkennt den Geschäftsvorfall und kontiert nach SKR03 oder SKR04 vor, auch als Splitbuchungen. Ihr Team prüft das Ergebnis 1:1 wie heute, in DATEV Unternehmen Online oder Kanzlei-Rechnungswesen. Ohne Software-Umstellung für Ihr Team. Ohne neue Abläufe.</p>
+      <a href="#" class="cta-btn">Demo buchen (15 Min.)</a>
+    </div>
+  </div>
+
+  <!-- ================================================== -->
+  <!-- BLOCK 2: NEU - Engpass-Sektion                      -->
+  <!-- ================================================== -->
+  <div class="block-card">
+    <div class="block-header">
+      <span class="badge">Edit</span>
+      <h2>Block 2: Engpass-Sektion zwischen Branchenreport und Drei-Reibungen</h2>
+      <span class="tilda-ref">Text-Block (TX02 / TX16 oder ähnlich)</span>
+    </div>
+    <div class="block-instruction">
+      <strong>So gehst du vor in Tilda:</strong> Den Text-Block mit der Überschrift „Wo diese Zahlen in der Kanzlei ankommen" öffnen. Die Überschrift bleibt. Der darunterliegende Brückenabsatz wird komplett ersetzt durch zwei klar benannte Probleme. Die darunterstehende Drei-Reibungen-Sektion bleibt vollständig unverändert (sie liefert jetzt die Ursachen für die zwei Probleme).
+    </div>
+
+    <div class="diff">
+      <div class="old">
+        <div class="label">Aktuell auf der Seite</div>
+        <p><strong>Wo diese Zahlen in der Kanzlei ankommen</strong></p>
+        <p style="margin-top:8px">Der Druck aus diesen Zahlen trifft immer denselben Engpass: qualifizierte Mitarbeiterstunden in der vorbereitenden Buchhaltung. Sie sind seltener und teurer als 2018. Drei Reibungen wirken darauf, jede mit eigener Wirkung.</p>
+      </div>
+      <div class="new">
+        <div class="label">Neu</div>
+        <p><strong>Wo diese Zahlen in der Kanzlei ankommen</strong></p>
+        <p style="margin-top:8px">Der Druck aus diesen Zahlen erzeugt zwei Probleme in jeder wachstumsorientierten Kanzlei:</p>
+        <p style="margin-top:12px"><strong>Problem 1: Kapazitätsengpässe.</strong> Wachstum scheitert nicht an fehlender Nachfrage, sondern an fehlenden Mitarbeiterstunden.</p>
+        <p style="margin-top:8px"><strong>Problem 2: Sinkende Margen.</strong> Die Personalkosten fressen die Marge auf. 43,8 % gehen heute in Personal, 2018 waren es 37 %.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Render-Vorschau Engpass-Sektion -->
+  <div class="preview-section">
+    <div class="preview-label">Render-Vorschau (so sieht der neue Text auf der Seite aus)</div>
+    <div style="padding:50px 32px;max-width:760px;margin:0 auto;">
+      <h2 style="font-size:26px;font-weight:700;color:#1a1a1a;margin-bottom:18px;">Wo diese Zahlen in der Kanzlei ankommen</h2>
+      <p style="font-size:17px;line-height:1.6;color:#4b5563;margin-bottom:18px;">Der Druck aus diesen Zahlen erzeugt zwei Probleme in jeder wachstumsorientierten Kanzlei:</p>
+      <p style="font-size:17px;line-height:1.6;color:#4b5563;margin-bottom:14px;"><strong style="color:#1a1a1a;">Problem 1: Kapazitätsengpässe.</strong> Wachstum scheitert nicht an fehlender Nachfrage, sondern an fehlenden Mitarbeiterstunden.</p>
+      <p style="font-size:17px;line-height:1.6;color:#4b5563;"><strong style="color:#1a1a1a;">Problem 2: Sinkende Margen.</strong> Die Personalkosten fressen die Marge auf. 43,8 % gehen heute in Personal, 2018 waren es 37 %.</p>
+    </div>
+  </div>
+
+  <!-- ================================================== -->
+  <!-- BLOCK 3: DATEV-Ergänzung, Schritt 3                 -->
+  <!-- ================================================== -->
+  <div class="block-card">
+    <div class="block-header">
+      <span class="badge">Edit</span>
+      <h2>Block 3: „DATEV-Ergänzung, nicht DATEV-Ersatz", Schritt 3</h2>
+      <span class="tilda-ref">3-Spalten-Block (TE304 oder ähnlich)</span>
+    </div>
+    <div class="block-instruction">
+      <strong>So gehst du vor in Tilda:</strong> Den 3-Spalten-Block mit den Schritten 1, 2, 3 öffnen, nur die <strong>dritte Spalte</strong> bearbeiten. Schritt 1 („Vorbereitung außerhalb von DATEV") und Schritt 2 („DATEV-konforme Übergabe") bleiben unverändert. Die Einleitung über den Spalten („Flowbeaver greift in den Prozess ein, bevor DATEV zum Zug kommt…") bleibt auch.
+    </div>
+
+    <div class="diff">
+      <div class="old">
+        <div class="label">Aktuelle Spalte 3</div>
+        <p><strong>Import in Kanzlei-Rechnungswesen</strong></p>
+        <p style="margin-top:8px">Ihr Team prüft die Vorschläge und bucht wie gewohnt. Keine neuen Masken, kein Parallelsystem.</p>
+      </div>
+      <div class="new">
+        <div class="label">Neue Spalte 3</div>
+        <p><strong>Prüfen und Buchen in DUO oder Kanzlei-Rechnungswesen</strong></p>
+        <p style="margin-top:8px">Ihr FiBu-Team arbeitet wie gewohnt in DATEV, ob in Unternehmen Online oder Kanzlei-Rechnungswesen. Keine neue Software für die tägliche Buchungsarbeit.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Render-Vorschau 3-Spalten -->
+  <div class="preview-section">
+    <div class="preview-label">Render-Vorschau Spalte 3 (im Kontext der drei Spalten)</div>
+    <div class="three-col">
+      <div class="col">
+        <span class="col-number">1</span>
+        <h3>Vorbereitung außerhalb von DATEV</h3>
+        <p>Flowbeaver liest jeden Beleg, ordnet ihn zu und kontiert nach SKR03 oder SKR04. Alles geschieht vor dem DATEV-Prozess.</p>
+        <p style="margin-top:8px;font-size:12px;color:#16a34a;font-weight:600;">↑ unverändert</p>
+      </div>
+      <div class="col">
+        <span class="col-number">2</span>
+        <h3>DATEV-konforme Übergabe</h3>
+        <p>Der Buchungsstapel als CSV, Belegbilder als ZIP, strukturiert nach Mandant und Buchungsperiode. Geplant: Anbindung an Belegbilderservice und Rechnungsdatenservice für eine durchgängige Übergabe an DATEV Unternehmen Online.</p>
+        <p style="margin-top:8px;font-size:12px;color:#16a34a;font-weight:600;">↑ unverändert</p>
+      </div>
+      <div class="col" style="background:#f0fdf4;padding:24px;border-radius:8px;margin:-24px;">
+        <span class="col-number">3</span>
+        <h3>Prüfen und Buchen in DUO oder Kanzlei-Rechnungswesen</h3>
+        <p>Ihr FiBu-Team arbeitet wie gewohnt in DATEV, ob in Unternehmen Online oder Kanzlei-Rechnungswesen. Keine neue Software für die tägliche Buchungsarbeit.</p>
+        <p style="margin-top:8px;font-size:12px;color:#15803d;font-weight:600;">↑ neu</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================== -->
+  <!-- BLOCK 4: NEUER VISION-BLOCK                         -->
+  <!-- ================================================== -->
+  <div class="block-card">
+    <div class="block-header">
+      <span class="badge new">Neu</span>
+      <h2>Block 4: Mandanten-Frontend Vision-Teaser</h2>
+      <span class="tilda-ref">Neuer Block (CR12 / TE304 / Zero-Block)</span>
+    </div>
+    <div class="block-instruction">
+      <strong>So gehst du vor in Tilda:</strong> Neuen Block einfügen <strong>zwischen dem ROI-Rechner-Block</strong> („Was Flowbeaver in Ihrer Kanzlei spart") <strong>und dem Andreas-Block</strong> („Gebaut von jemandem, der den Schmerz kennt"). Empfohlener Block-Typ: ein einfacher Cover-Block (CR12) mit Eyebrow-Text, Headline und Beschreibung. Dezent halten: keine Buttons, keine CTAs, kein Bild. Es ist bewusst ein leiser Roadmap-Hinweis, kein Verkaufsblock.
+    </div>
+
+    <div class="diff" style="grid-template-columns: 1fr;">
+      <div class="new">
+        <div class="label">Neuer Block-Inhalt</div>
+        <p style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#52267a;margin-bottom:8px;">Eyebrow (kleine Vorzeile)</p>
+        <p style="margin-bottom:16px"><strong>Auf der Roadmap</strong></p>
+
+        <p style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#52267a;margin-bottom:8px;">Headline</p>
+        <p style="margin-bottom:16px"><strong>Auch Ihre Mandanten profitieren.</strong></p>
+
+        <p style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#52267a;margin-bottom:8px;">Beschreibung</p>
+        <p>Wir arbeiten daran, auch die Belegannahme auf Mandantenseite radikal zu vereinfachen. Statt Belegart auswählen, Häkchen setzen und kategorisieren: Beleg einwerfen, fertig. Klärfälle erscheinen beim Mandanten als kurze To-do-Liste, nicht als E-Mail-Flut.</p>
+        <p style="margin-top:8px">Sie als Kanzlei sehen am Ende das gleiche Bild wie heute: alles in DATEV. Nur dass die Belege bereits geprüft, vollständig und vorkontiert ankommen.</p>
+
+        <p style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#52267a;margin-bottom:8px;margin-top:16px;">Meta-Zeile (klein, kursiv)</p>
+        <p style="font-style:italic;color:#6b7280">Wir entwickeln dieses Modul gemeinsam mit unseren ersten Kanzleien.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Render-Vorschau Vision-Block -->
+  <div class="preview-section">
+    <div class="preview-label">Render-Vorschau (so sieht der neue Block auf der Seite aus)</div>
+    <div class="vision-block">
+      <div class="eyebrow">Auf der Roadmap</div>
+      <h2>Auch Ihre Mandanten profitieren.</h2>
+      <p>Wir arbeiten daran, auch die Belegannahme auf Mandantenseite radikal zu vereinfachen. Statt Belegart auswählen, Häkchen setzen und kategorisieren: Beleg einwerfen, fertig. Klärfälle erscheinen beim Mandanten als kurze To-do-Liste, nicht als E-Mail-Flut.</p>
+      <p>Sie als Kanzlei sehen am Ende das gleiche Bild wie heute: alles in DATEV. Nur dass die Belege bereits geprüft, vollständig und vorkontiert ankommen.</p>
+      <p class="meta">Wir entwickeln dieses Modul gemeinsam mit unseren ersten Kanzleien.</p>
+    </div>
+  </div>
+
+  <!-- HTML für Zero-Block -->
+  <div class="block-card">
+    <div class="block-header">
+      <span class="badge">HTML-Code</span>
+      <h2>Falls du Zero-Block nutzen willst (statt Standard-Block)</h2>
+    </div>
+    <div class="block-instruction">
+      <strong>Optional:</strong> Wenn du den Block nicht über einen Standard-Tilda-Block bauen willst, sondern lieber 1:1 dieses Layout, kannst du folgenden HTML-Code in einen Zero-Block oder T123 (HTML-Code) einfügen.
+    </div>
+    <div class="code-box"><span class="comment">&lt;!-- Vision-Block: Mandanten-Frontend Roadmap-Teaser --&gt;</span>
+<span class="tag">&lt;section</span> <span class="attr">style</span>=<span class="text">"background:linear-gradient(135deg,#faf5ff 0%,#eff6ff 100%);
+                  padding:80px 24px;text-align:center;
+                  border-top:1px solid #e9d5ff;border-bottom:1px solid #e9d5ff;"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attr">style</span>=<span class="text">"max-width:760px;margin:0 auto;font-family:'Source Sans Pro',Arial,sans-serif;"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">style</span>=<span class="text">"color:#52267a;font-size:13px;font-weight:700;
+                    letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;"</span><span class="tag">&gt;</span>
+      Auf der Roadmap
+    <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;h2</span> <span class="attr">style</span>=<span class="text">"font-size:36px;font-weight:700;color:#1a1a1a;
+                   margin-bottom:24px;line-height:1.2;"</span><span class="tag">&gt;</span>
+      Auch Ihre Mandanten profitieren.
+    <span class="tag">&lt;/h2&gt;</span>
+    <span class="tag">&lt;p</span> <span class="attr">style</span>=<span class="text">"font-size:18px;line-height:1.6;color:#4b5563;margin-bottom:14px;"</span><span class="tag">&gt;</span>
+      Wir arbeiten daran, auch die Belegannahme auf Mandantenseite radikal
+      zu vereinfachen. Statt Belegart auswählen, Häkchen setzen und
+      kategorisieren: Beleg einwerfen, fertig. Klärfälle erscheinen beim
+      Mandanten als kurze To-do-Liste, nicht als E-Mail-Flut.
+    <span class="tag">&lt;/p&gt;</span>
+    <span class="tag">&lt;p</span> <span class="attr">style</span>=<span class="text">"font-size:18px;line-height:1.6;color:#4b5563;margin-bottom:14px;"</span><span class="tag">&gt;</span>
+      Sie als Kanzlei sehen am Ende das gleiche Bild wie heute: alles in
+      DATEV. Nur dass die Belege bereits geprüft, vollständig und
+      vorkontiert ankommen.
+    <span class="tag">&lt;/p&gt;</span>
+    <span class="tag">&lt;p</span> <span class="attr">style</span>=<span class="text">"margin-top:24px;font-size:15px;color:#6b7280;font-style:italic;"</span><span class="tag">&gt;</span>
+      Wir entwickeln dieses Modul gemeinsam mit unseren ersten Kanzleien.
+    <span class="tag">&lt;/p&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/section&gt;</span></div>
+  </div>
+
+  <!-- ================================================== -->
+  <!-- FAQ-ERGÄNZUNG                                       -->
+  <!-- ================================================== -->
+  <div class="block-card">
+    <div class="block-header">
+      <span class="badge new">Bonus</span>
+      <h2>FAQ-Ergänzung: „Was kommt als Nächstes?"</h2>
+      <span class="tilda-ref">FAQ-Akkordeon-Block (TE423 o.ä.)</span>
+    </div>
+    <div class="block-instruction">
+      <strong>So gehst du vor in Tilda:</strong> Den FAQ-Block öffnen, eine neue Frage hinzufügen, idealerweise <strong>nach „Wie startet eine Zusammenarbeit?"</strong> als letzten Eintrag. So weiß der Besucher: Hier endet das FAQ, und blickt mit einem leisen „Was kommt noch?" auf die Roadmap.
+    </div>
+
+    <div class="diff" style="grid-template-columns: 1fr;">
+      <div class="new">
+        <div class="label">Neue FAQ-Frage</div>
+        <p><strong>Frage:</strong></p>
+        <p style="margin-bottom:16px">Was kommt als Nächstes?</p>
+
+        <p><strong>Antwort:</strong></p>
+        <p>Auf der Roadmap steht ein Mandanten-Frontend, das die Belegannahme auf Mandantenseite radikal vereinfacht: ohne Belegart-Auswahl, ohne Häkchen-Klickerei, mit Klärfällen als To-do-Liste statt E-Mail-Flut. Für Sie als Kanzlei landet das Ergebnis weiterhin in DATEV, einfach mit besser vorbereiteten Belegen. Wir entwickeln das Modul gemeinsam mit unseren ersten Kanzleien und nehmen Beta-Plätze über die 15-Minuten-Demo entgegen.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer-Hinweis -->
+  <div class="footer-note">
+    <p><strong>Was nicht angefasst wird:</strong> Headline „Das KI-Vorsystem für Steuerkanzleien", Branchenreport-Block, Drei-Reibungen-Sektion mit den Mini-Headlines („Blockierter Belegfluss", „Gebundene Personalkapazität", „Stressige Lastspitzen"), 3-Spalten „Wie Flowbeaver diese Engpässe auflöst", Tabellen-Beispiel mit polnischer Rechnung, Datenschutz-Sektion, ROI-Rechner, Pricing („299 € pro Monat"), Andreas-Block, CTA-Block, gesamtes restliches FAQ. Alles andere bleibt 1:1 wie es ist.</p>
+  </div>
+
+</div>
+</body>
+</html>

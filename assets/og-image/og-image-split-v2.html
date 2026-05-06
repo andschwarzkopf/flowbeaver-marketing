@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Flowbeaver OG Image — Split v2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --fb-purple: #52267a;
+    --fb-dark-red: #3c0f04;
+    --fb-text: #404040;
+    --fb-black: #000000;
+    --fb-white: #ffffff;
+    --fb-border: #e0e0e0;
+    --fb-bg-soft: #f7f7f9;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+    font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+    background: var(--fb-white);
+  }
+
+  .og {
+    width: 1200px;
+    height: 630px;
+    display: grid;
+    grid-template-columns: 720px 480px;
+  }
+
+  /* LEFT — White with logo + table */
+  .left {
+    background: var(--fb-white);
+    padding: 56px 56px 56px 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .logo {
+    height: 70px;
+    display: block;
+    align-self: flex-start;
+  }
+
+  .ui-card {
+    border: 1px solid var(--fb-border);
+    border-radius: 10px;
+    background: var(--fb-white);
+    overflow: hidden;
+  }
+
+  .ui-card-header {
+    background: var(--fb-bg-soft);
+    padding: 14px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--fb-black);
+    border-bottom: 1px solid var(--fb-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .ui-card-header-meta {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--fb-text);
+  }
+
+  .ui-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+
+  .ui-table th {
+    text-align: left;
+    padding: 11px 20px;
+    font-weight: 500;
+    font-size: 11px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    border-bottom: 1px solid var(--fb-border);
+  }
+
+  .ui-table td {
+    padding: 12px 20px;
+    color: var(--fb-text);
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .ui-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .ui-table .num {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .ui-table .konto {
+    color: var(--fb-purple);
+    font-weight: 600;
+  }
+
+  .ui-table .summe-row td {
+    background: #f7f5fa;
+    font-weight: 600;
+    color: var(--fb-black);
+    border-top: 1px solid var(--fb-border);
+  }
+
+  .badge-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: #f3eef8;
+    color: var(--fb-purple);
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .badge-check {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--fb-purple);
+    color: white;
+    display: grid;
+    place-items: center;
+    font-size: 9px;
+  }
+
+  /* RIGHT — Lila with claim */
+  .right {
+    background: var(--fb-purple);
+    padding: 64px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: var(--fb-white);
+  }
+
+  .claim-block {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    margin-top: 8px;
+  }
+
+  .claim {
+    font-size: 46px;
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.8px;
+    color: var(--fb-white);
+  }
+
+  .subline {
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.85);
+  }
+
+  .trust-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.82);
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .trust-tick {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.18);
+    color: var(--fb-white);
+    display: grid;
+    place-items: center;
+    font-size: 10px;
+    font-weight: 700;
+  }
+
+</style>
+</head>
+<body>
+  <div class="og">
+    <!-- LEFT — white with logo + UI -->
+    <div class="left">
+      <img src="logo-f-l.png" alt="Flowbeaver" class="logo">
+
+      <div class="ui-card">
+        <div class="ui-card-header">
+          Kontierung — METRO Deutschland GmbH
+          <span class="ui-card-header-meta">08.03.2026</span>
+        </div>
+        <table class="ui-table">
+          <thead>
+            <tr>
+              <th>Konto</th>
+              <th>Bezeichnung</th>
+              <th class="num">Soll</th>
+              <th class="num">Haben</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="konto">0400</td>
+              <td>Betriebsausstattung</td>
+              <td class="num">930,95</td>
+              <td class="num">—</td>
+            </tr>
+            <tr>
+              <td class="konto">1576</td>
+              <td>Abziehbare Vorsteuer 19 %</td>
+              <td class="num">195,61</td>
+              <td class="num">—</td>
+            </tr>
+            <tr>
+              <td class="konto">4930</td>
+              <td>Bürobedarf</td>
+              <td class="num">98,60</td>
+              <td class="num">—</td>
+            </tr>
+            <tr>
+              <td class="konto">70017</td>
+              <td>METRO Deutschland GmbH</td>
+              <td class="num">—</td>
+              <td class="num">1.225,16</td>
+            </tr>
+            <tr class="summe-row">
+              <td colspan="2">Summe</td>
+              <td class="num">1.225,16</td>
+              <td class="num">1.225,16</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="badge-row">
+        <div class="badge">
+          <span class="badge-check">&#10003;</span>
+          DATEV-Export bereit
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT — lila with claim -->
+    <div class="right">
+      <div class="claim-block">
+        <div class="claim">Das KI-Vorsystem für Steuerkanzleien.</div>
+        <div class="subline">Belege lesen, Geschäftsvorfall erkennen, nach SKR03 vorkontieren. DATEV-kompatibel, ohne neue Software.</div>
+      </div>
+
+      <div class="trust-stack">
+        <div class="trust-item"><span class="trust-tick">&#10003;</span>DATEV-Buchungsstapel</div>
+        <div class="trust-item"><span class="trust-tick">&#10003;</span>SKR03 / SKR04</div>
+        <div class="trust-item"><span class="trust-tick">&#10003;</span>Hosting in Deutschland</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

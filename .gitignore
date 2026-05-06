@@ -4,3 +4,18 @@
 test-results/
 __pycache__/
 *.pyc
+
+# Playwright runtime/cache
+.playwright-mcp/
+
+# Site audit screenshots (working artefacts, nicht im Repo)
+audit-*.png
+section-*.png
+flowbeaver-*.png
+verify-*.png
+
+# LinkedIn-Scrapes am Root (enthalten Profil-IDs, sollen lokal bleiben)
+# Brand-Assets in assets/linkedin/ bleiben im Repo
+/linkedin-*.yml
+/linkedin-*.png
+/linkedin-*.txt

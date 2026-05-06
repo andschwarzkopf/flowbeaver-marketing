@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="de">
+<!--
+  ============================================================
+  FLOWBEAVER /ueber — ENTWURF v1 (Tilda-Block-Format, 2026-05-01)
+  ============================================================
+  Grundlage: Empfehlung 1 (kritisch) aus
+  landingpages/empfehlungen-2026-05-01.md.
+  Biografie-Quelle: Lebenslauf Andreas Schwarzkopf (Stand 01.10.2025)
+  + LinkedIn-Profil linkedin.com/in/schwarzkopf.
+
+  Kernaenderungen gegenueber Tilda-Live-About:
+    - Solo-Founder konsistent zur Homepage. Lilia Koch kommt aktuell
+      nicht vor (Empfehlung: ganz raus), Wiederaufnahme erst, wenn
+      ihre Rolle definiert ist.
+    - Buzzword-Sperrliste eingehalten: kein "Aera der KI", kein
+      "Bruecke zwischen Mensch und Maschine", kein
+      "Auf Augenhoehe / Praxisorientiert / Menschenzentriert".
+    - Produkt-Frame: KI-Vorsystem fuer Steuerkanzleien, nicht
+      KI-Beratungs-Agentur.
+    - Title-Tag: "Ueber uns | Flowbeaver".
+    - Biografie aus echten CV-Stationen: Danco 1997, MAGIX 2005-2010,
+      Rusonyx/Parallels Moskau, Lot Internet 2011-15 mit Exit,
+      Founder Institute Palo Alto, mehrere Mercedes-Benz-Mandate,
+      LinkedIn Top Voice AI 2024.
+    - Sprachen-Notiz (Russisch Muttersprache + Deutsch + Englisch)
+      eingebaut, weil sie das Flowbeaver-Sprachverstaendnis-Profil
+      glaubwuerdig macht.
+
+  Email durchgehend info@flowbeaver.de.
+  LinkedIn: https://www.linkedin.com/in/schwarzkopf
+-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Über uns | Flowbeaver</title>
+  <meta name="description" content="Flowbeaver wird von Andreas Schwarzkopf gebaut. Diplom-Kaufmann, drei verkaufte Unternehmen, 15 Jahre produktive KI-Entwicklung, dreisprachig.">
+  <link rel="canonical" href="https://flowbeaver.de/ueber">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap">
+
+  <style>
+    :root {
+      --fb-purple: #52267a;
+      --fb-purple-dark: #3d1c5c;
+      --fb-dark-red: #3c0f04;
+      --fb-text: #404040;
+      --fb-text-light: #606060;
+      --fb-bg-light: #fafafa;
+      --fb-bg-card: #faf7fd;
+      --fb-border: #e0e0e0;
+      --fb-radius: 10px;
+      --fb-font: 'DM Sans', 'TildaSans', Arial, sans-serif;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--fb-font); font-size: 18px; line-height: 1.6; color: var(--fb-text); background: #fff; }
+    h1, h2, h3, h4 { color:#000; line-height:1.25; font-weight:700; }
+    h1 { font-size: 44px; color: var(--fb-dark-red); line-height:1.15; margin-bottom: 20px; }
+    h2 { font-size: 30px; margin-bottom: 20px; }
+    h3 { font-size: 22px; font-weight: 600; margin-bottom: 12px; }
+    p  { font-size: 18px; line-height: 1.6; margin-bottom: 18px; }
+    a  { color: var(--fb-purple); text-decoration: none; }
+    a:hover { color: var(--fb-purple-dark); }
+
+    .t-rec        { padding: 80px 0; border-bottom: 1px solid var(--fb-border); }
+    .t-rec_bg     { background: var(--fb-bg-light); }
+    .t-rec_card   { background: var(--fb-bg-card); }
+    .t-container  { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .t-narrow     { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+    .t-uppertitle { font-size: 13px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--fb-text-light); font-weight: 600; margin-bottom: 12px; }
+    .t-grid-2     { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    .t-grid-3     { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .t-card       { border: 1px solid var(--fb-border); border-radius: var(--fb-radius); padding: 28px; background: #fff; }
+
+    .t-btn { display:inline-block; background: var(--fb-purple); color:#fff; font-family: var(--fb-font); font-size: 18px; font-weight: 500; padding: 14px 28px; border-radius: var(--fb-radius); border: none; cursor: pointer; transition: background .2s ease-in-out; }
+    .t-btn:hover { background: var(--fb-purple-dark); color: #fff; }
+
+    .draft-note { background: #fffbe6; border: 1px dashed #d4a900; padding: 10px 14px; font-size: 13px; font-family: monospace; color: #665200; margin-bottom: 20px; border-radius: 6px; }
+
+    /* Stationen-Liste: kompakte Zeitleiste */
+    .stationen { list-style: none; padding: 0; margin: 0; }
+    .stationen li {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 24px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--fb-border);
+      align-items: baseline;
+    }
+    .stationen li:last-child { border-bottom: none; }
+    .stationen .jahr { font-weight: 600; color: var(--fb-text-light); font-size: 15px; letter-spacing: 0.4px; }
+    .stationen .titel { font-weight: 600; color: #000; }
+    .stationen .firma { color: var(--fb-text-light); font-size: 16px; }
+
+    @media (max-width: 768px) {
+      body { font-size: 17px; }
+      h1 { font-size: 32px; }
+      h2 { font-size: 24px; }
+      .t-rec { padding: 56px 0; }
+      .t-grid-2, .t-grid-3 { grid-template-columns: 1fr; gap: 24px; }
+      .stationen li { grid-template-columns: 100px 1fr; gap: 16px; }
+    }
+  </style>
+</head>
+
+<body>
+
+
+<!-- ============================================================
+     TILDA-BLOCK: TM601 (Header / Sticky-Menu)
+     STATIC HEADER — identisch zu Homepage und allen Subpages.
+     ============================================================ -->
+<nav class="t-menu" style="position:sticky; top:0; z-index:100; background:#fff; border-bottom:1px solid var(--fb-border); padding:16px 0;">
+  <div class="t-container" style="display:flex; justify-content:space-between; align-items:center;">
+    <a href="/" style="font-weight:700; font-size:22px; color:var(--fb-purple);">Flowbeaver</a>
+    <ul style="display:flex; gap:24px; list-style:none; align-items:center; flex-wrap:wrap;">
+      <li><a href="/produkt" style="color:#000; font-weight:500;">Produkt</a></li>
+      <li><a href="/branchenreport" style="color:#000; font-weight:500;">Branchenreport</a></li>
+      <li><a href="/blog" style="color:#000; font-weight:500;">Ressourcen</a></li>
+      <li><a href="/ueber" style="color:#000; font-weight:500; border-bottom:2px solid var(--fb-purple);">Über uns</a></li>
+      <li><a href="/kontakt" style="color:#000; font-weight:500;">Kontakt</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<!-- ============================================================
+     TILDA-BLOCK: T030 (Heading + Sub-Heading)
+     INHALT: Hero — Solo-Founder-Story, ein Satz.
+     ============================================================ -->
+<section class="t-rec" id="rec-hero">
+  <div class="t-narrow">
+    <div class="draft-note">HERO · Tilda T030. Solo-Founder-Story konsistent zur Homepage. Keine Buzzwords.</div>
+    <div class="t-uppertitle">Über uns</div>
+    <h1>Wer hinter Flowbeaver steht</h1>
+    <p style="font-size:21px; color:var(--fb-text);">
+      Flowbeaver entwickelt das KI-Vorsystem für die vorbereitende Buchhaltung in Steuerkanzleien. Hier erfahren Sie, wer dahinter steht und warum das Vorsystem entstanden ist.
+    </p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     TILDA-BLOCK: T127 (Text + Image, 2 Spalten)
+     INHALT: Foto + Kurzbiografie mit konkreten Substanz-Punkten
+     ============================================================ -->
+<section class="t-rec" id="rec-portrait">
+  <div class="t-container">
+    <div class="draft-note">PORTRAIT · Tilda T127. Drei Saeulen aus der echten Vita. Russisch-Muttersprache als Glaubwuerdigkeitsanker fuer das Sprachverstaendnis-Wedge.</div>
+    <div class="t-grid-2">
+      <div>
+        <div style="background:#f7f7fa; border:1px dashed #bbb; border-radius:var(--fb-radius); height:420px; display:flex; align-items:center; justify-content:center; color:#999; text-align:center;">
+          [PLATZHALTER: Portraitfoto Andreas Schwarzkopf<br>(assets/andreas-schwarzkopf.jpg verfügbar)]
+        </div>
+      </div>
+      <div>
+        <h2>Andreas Schwarzkopf</h2>
+        <p style="font-size:15px; color:var(--fb-text-light); text-transform:uppercase; letter-spacing:1px; margin-bottom:24px;">Gründer und Geschäftsführer, Flowbeaver GmbH</p>
+
+        <p>Diplom-Kaufmann der Hochschule für Wirtschaft und Recht Berlin, Schwerpunkte Marketing und Wirtschaftsinformatik. Daraus kommt das Verständnis für Rechnungswesen-Logik, das Flowbeaver braucht.</p>
+
+        <p>15 Jahre KI in produktiven Systemen, zuletzt für die Mercedes-Benz Bank AG. KI in Umgebungen mit Audit-Pflicht und null Toleranz für unsaubere Daten – die Disziplin, die Sie für Mandantendaten brauchen.</p>
+
+        <p style="font-size:15px; color:var(--fb-text-light); margin-top:24px;">
+          Stationen vor Flowbeaver: u.&nbsp;a. Mercedes-Benz Bank, BlueYonder/JDA, Lot Internet (Exit 2015). Vollständig auf <a href="https://www.linkedin.com/in/schwarzkopf">LinkedIn</a>.
+        </p>
+
+        <p style="margin-top:28px;">
+          <a href="https://www.linkedin.com/in/schwarzkopf">LinkedIn</a> &middot;
+          <a href="mailto:info@flowbeaver.de">info@flowbeaver.de</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     TILDA-BLOCK: T030 (Heading + Mehrere Absaetze)
+     INHALT: Warum Flowbeaver — die ehrliche Antwort
+     ============================================================ -->
+<section class="t-rec t-rec_bg" id="rec-warum">
+  <div class="t-narrow">
+    <div class="draft-note">WARUM · Tilda T030. Persoenliche Begruendung in Andreas' Voice. Erinnert an Eigen-Buchhaltung in Danco/MAGIX/Rusonyx, schliesst mit dem Dreiklang-Konzept.</div>
+    <h2>Warum Flowbeaver?</h2>
+    <p>Mir war die Zeit für manuelle Belegarbeit immer zu schade. In drei eigenen Unternehmen über 25 Jahre habe ich denselben Kreislauf gesehen: Belege landen, jemand sortiert, jemand tippt, jemand fragt nach. Die Steuerkanzlei macht es genauso, nur mit der vielfachen Belegmenge.</p>
+    <p>Eine Lösung, die mich wirklich überzeugt hätte, gab es nicht. Also habe ich sie gebaut. Flowbeaver ist eine DATEV-Ergänzung, kein Ersatz: Vorarbeit außerhalb von DATEV, Übergabe im Standardformat, Ihre Kanzlei bucht weiter wie gewohnt.</p>
+  </div>
+</section>
+
+
+<!--
+  WERDEGANG-Section entfernt (Slim-Cut 2026-05-02): Steuerberater-Vendor-About
+  braucht keinen vollstaendigen CV. Stationen-Verweis steht jetzt im Portrait-
+  Block als Mini-Zeile mit LinkedIn-Link.
+-->
+
+
+<!-- ============================================================
+     TILDA-BLOCK: T504 (3 Cards Equal)
+     INHALT: Wie ich arbeite — drei nuechterne Punkte
+     ============================================================ -->
+<section class="t-rec t-rec_bg" id="rec-arbeitsweise">
+  <div class="t-container">
+    <div class="draft-note">ARBEITSWEISE · Tilda T504. Ersetzt das alte Buzzword-Triptychon durch drei konkrete Aussagen, die Substanz haben.</div>
+    <div style="max-width:760px; margin:0 auto 32px;">
+      <h2>Wie ich mit Kanzleien arbeite</h2>
+      <p>Drei Festlegungen, die das Verhältnis zur Kanzlei pragmatisch halten.</p>
+    </div>
+    <div class="t-grid-3">
+      <div class="t-card">
+        <h3>Direkter Draht</h3>
+        <p style="margin:0;">Sie schreiben uns direkt, ohne Support-Ticket und ohne Vertriebsebene. Wer in der ersten Runde dabei ist, formt das Produkt mit: Feedback fließt in Tagen ins Produkt.</p>
+      </div>
+      <div class="t-card">
+        <h3>Praxis-Check vor Vertrag</h3>
+        <p style="margin:0;">Nach der 15-Minuten-Demo kommen 30 echte Belege aus Ihrem Alltag. Sie sehen, was durchläuft und was als Klärfall zurückkommt. Danach entscheiden Sie.</p>
+      </div>
+      <div class="t-card">
+        <h3>Kein Lock-in</h3>
+        <p style="margin:0;">Es gibt keine Setup-Gebühr, und Sie können monatlich kündigen. Stellen Sie in den ersten 30 Tagen fest, dass Flowbeaver nicht zu Ihrer Kanzlei passt, erstatten wir die Gebühr vollständig zurück.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     TILDA-BLOCK: T142 (Heading + Button)
+     INHALT: Demo-CTA, identisch zur Homepage
+     ============================================================ -->
+<section class="t-rec t-rec_card" id="rec-cta">
+  <div class="t-narrow" style="text-align:center;">
+    <div class="draft-note" style="text-align:left;">CTA · Tilda T142. Verweist auf /#demo (MS-Bookings auf der Homepage).</div>
+    <h2>Wenn Sie sich ein Bild machen wollen</h2>
+    <p>15 Minuten, direkt mit mir. Wenn der Fit nicht da ist, sage ich Ihnen das in derselben Sitzung.</p>
+    <p style="margin-top:24px;"><a href="/#demo" class="t-btn">Demo anfragen (15 Min.)</a></p>
+    <p style="margin-top:16px; font-size:15px; color:var(--fb-text-light);">
+      Sie erhalten anschließend eine E-Mail, in der Sie einen Termin direkt buchen oder eigene Vorschläge schicken können.
+    </p>
+    <p style="margin-top:8px; font-size:15px; color:var(--fb-text-light);">
+      Lieber direkt schreiben? <a href="mailto:info@flowbeaver.de">info@flowbeaver.de</a> &middot; <a href="tel:+493020169735">+49&nbsp;30&nbsp;20169735</a>
+    </p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     TILDA-BLOCK: T390 (Footer)
+     IDENTISCH zu Homepage v4 und Kontakt-Seite.
+     ============================================================ -->
+<footer class="t-rec" data-record-type="390" style="background:#111; color:#fff; padding:48px 0 32px; border-bottom:none;">
+  <div class="t-container">
+    <div style="display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; align-items:start;">
+      <div>
+        <div style="font-weight:700; font-size:22px; color:#fff; margin-bottom:16px;">Flowbeaver</div>
+        <p style="font-size:15px; opacity:.7; line-height:1.55; margin:0 0 16px;">Das KI-Vorsystem für die vorbereitende Buchhaltung in Steuerkanzleien. DATEV-Ergänzung, kein Ersatz.</p>
+        <a href="/#demo" style="display:inline-block; background:var(--fb-purple); color:#fff; padding:10px 18px; border-radius:8px; font-weight:500; font-size:15px;">15-Min-Demo buchen</a>
+      </div>
+      <div>
+        <div style="font-size:13px; text-transform:uppercase; letter-spacing:1px; opacity:.5; margin-bottom:12px;">Kontakt</div>
+        <p style="font-size:15px; line-height:1.7; margin:0;">
+          <a href="mailto:info@flowbeaver.de" style="color:#fff; opacity:.9; display:block; margin-bottom:6px;">info@flowbeaver.de</a>
+          <a href="tel:+493020169735" style="color:#fff; opacity:.9; display:block; margin-bottom:6px;">+49 30 20169735</a>
+          <a href="https://www.linkedin.com/in/schwarzkopf" style="color:#fff; opacity:.9; display:block;">Andreas auf LinkedIn</a>
+        </p>
+      </div>
+      <div>
+        <div style="font-size:13px; text-transform:uppercase; letter-spacing:1px; opacity:.5; margin-bottom:12px;">Produkt</div>
+        <p style="font-size:15px; line-height:1.7; margin:0;">
+          <a href="/produkt" style="color:#fff; opacity:.9; display:block; margin-bottom:6px;">Produkt</a>
+          <a href="/branchenreport" style="color:#fff; opacity:.9; display:block; margin-bottom:6px;">Branchenreport</a>
+          <a href="/blog" style="color:#fff; opacity:.9; display:block;">Ressourcen</a>
+        </p>
+      </div>
+      <div>
+        <div style="font-size:13px; text-transform:uppercase; letter-spacing:1px; opacity:.5; margin-bottom:12px;">Unternehmen</div>
+        <p style="font-size:15px; line-height:1.7; margin:0;">
+          <a href="/ueber" style="color:#fff; opacity:.9; display:block; margin-bottom:6px;">Über uns</a>
+          <a href="/kontakt" style="color:#fff; opacity:.9; display:block; margin-bottom:6px;">Kontakt</a>
+          <a href="/datenschutz" style="color:#fff; opacity:.9; display:block; margin-bottom:6px;">Datenschutz</a>
+          <a href="/impressum" style="color:#fff; opacity:.9; display:block; margin-bottom:6px;">Impressum</a>
+          <a href="/agb" style="color:#fff; opacity:.9; display:block;">AGB</a>
+        </p>
+      </div>
+    </div>
+    <div style="border-top:1px solid #333; margin-top:40px; padding-top:20px; font-size:13px; opacity:.5; text-align:center;">
+      © 2026 Flowbeaver GmbH, Berlin
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>

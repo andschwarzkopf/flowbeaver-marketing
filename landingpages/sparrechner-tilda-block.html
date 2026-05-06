@@ -1,0 +1,445 @@
+<!-- ============================================================
+     FLOWBEAVER SPARRECHNER — Self-contained Tilda HTML-Block
+     ============================================================
+     Enthaelt CSS + HTML + JS in einem einzigen Content-Element.
+     Defaults: 1.500 Belege, 5 Min/Beleg, 40 EUR/Std., 70% Ersparnis.
+     Konstanten in JS: FLATRATE = 299, SAVINGS_RATE = 0.7
+     ============================================================ -->
+
+<style>
+.fb-calculator,
+.fb-calculator * {
+    font-family: 'TildaSans', Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+.fb-calculator {
+    color: #404040;
+    line-height: 1.5;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ----- Slider-Gruppen ----- */
+
+.fb-slider-group {
+    margin-bottom: 28px;
+}
+
+.fb-slider-label {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #404040;
+    font-weight: 400;
+}
+
+.fb-slider-container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.fb-slider {
+    flex: 1 1 auto;
+    min-width: 0;
+    height: 4px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #d6e9e3;
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+}
+
+.fb-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #52267a;
+    cursor: pointer;
+    border: none;
+}
+
+.fb-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #52267a;
+    cursor: pointer;
+    border: none;
+}
+
+.fb-slider-value {
+    flex: 0 0 auto;
+    min-width: 80px;
+    padding: 10px 16px;
+    background: #f7f7fa;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 18px;
+    color: #404040;
+}
+
+/* ----- Calculate-Button (vor Ergebnis) ----- */
+
+.fb-calculate-btn {
+    display: block;
+    margin-left: auto;
+    margin-top: 16px;
+    background: #52267a;
+    color: #fff;
+    font-family: 'TildaSans', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 14px 28px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+}
+
+.fb-calculate-btn:hover {
+    background: #3d1c5c;
+}
+
+/* ----- Ergebnis-Sektion: 2-Spalten-Layout ----- */
+
+.fb-results-section {
+    display: none;
+}
+
+.fb-results-section.active {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+}
+
+.fb-results-box {
+    min-width: 0;
+}
+
+/* ----- Ergebnis-Anzeige ----- */
+
+.fb-results-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #606060;
+    margin: 0 0 12px 0;
+    line-height: 1.3;
+}
+
+.fb-current-cost {
+    margin-bottom: 24px;
+}
+
+.fb-cost-label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #606060;
+    margin: 0 0 8px 0;
+    line-height: 1.4;
+}
+
+.fb-cost-value {
+    font-size: 36px;
+    font-weight: 700;
+    color: #000;
+    line-height: 1.1;
+}
+
+/* ----- Savings-Box (lila Akzent) ----- */
+
+.fb-savings-box {
+    background: #faf5ff;
+    border: 1px solid #e6d9f0;
+    border-left: 4px solid #52267a;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin: 24px 0;
+}
+
+.fb-savings-row {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 12px 0;
+}
+
+.fb-savings-row + .fb-savings-row {
+    border-top: 1px solid #e6d9f0;
+}
+
+.fb-savings-label {
+    font-size: 14px;
+    color: #404040;
+    line-height: 1.4;
+}
+
+.fb-savings-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000;
+    line-height: 1.1;
+}
+
+.fb-savings-row:last-child .fb-savings-label,
+.fb-savings-row:last-child .fb-savings-value {
+    color: #52267a;
+}
+
+.fb-savings-row:last-child .fb-savings-value {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* ----- Reality-Check + CTA ----- */
+
+.fb-reality-check {
+    margin: 20px 0;
+    color: #606060;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.fb-waitlist-btn {
+    display: inline-block;
+    background: #52267a;
+    color: #fff;
+    font-family: 'TildaSans', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 14px 28px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s ease-in-out;
+}
+
+.fb-waitlist-btn:hover {
+    background: #3d1c5c;
+    color: #fff;
+}
+
+/* ----- Mobile ----- */
+
+@media (max-width: 768px) {
+    .fb-results-section.active {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .fb-cost-value {
+        font-size: 28px;
+    }
+
+    .fb-savings-value {
+        font-size: 22px;
+    }
+
+    .fb-savings-row:last-child .fb-savings-value {
+        font-size: 26px;
+    }
+}
+</style>
+
+<div class="fb-calculator">
+
+    <!-- Eingabe-Sektion -->
+    <div class="fb-slider-section" id="fbSliderSection">
+
+        <div class="fb-slider-group">
+            <label class="fb-slider-label">
+                Wie lange dauert die Bearbeitung eines Belegs im Schnitt? (Minuten)
+            </label>
+            <div class="fb-slider-container">
+                <input type="range" class="fb-slider" id="fbTimeSlider" min="2" max="12" value="5" step="1">
+                <div class="fb-slider-value" id="fbTimeValue">5</div>
+            </div>
+        </div>
+
+        <div class="fb-slider-group">
+            <label class="fb-slider-label">
+                Wie viele Belege bearbeitet Ihr Team pro Monat?
+            </label>
+            <div class="fb-slider-container">
+                <input type="range" class="fb-slider" id="fbInvoicesSlider" min="200" max="10000" value="1500" step="100">
+                <div class="fb-slider-value" id="fbInvoicesValue">1500</div>
+            </div>
+        </div>
+
+        <div class="fb-slider-group">
+            <label class="fb-slider-label">
+                Wie hoch sind Ihre Personalkosten in der Belegverarbeitung? (Vollkosten &euro;/Std.)
+            </label>
+            <div class="fb-slider-container">
+                <input type="range" class="fb-slider" id="fbWageSlider" min="30" max="60" value="40" step="5">
+                <div class="fb-slider-value" id="fbWageValue">40</div>
+            </div>
+        </div>
+
+        <button class="fb-calculate-btn" onclick="fbCalculateSavings()">
+            Ersparnis berechnen
+        </button>
+
+    </div>
+
+    <!-- Ergebnis-Sektion -->
+    <div class="fb-results-section" id="fbResultsSection">
+
+        <!-- Linke Spalte: Slider zum Nachjustieren -->
+        <div class="fb-results-box">
+
+            <div class="fb-slider-group">
+                <label class="fb-slider-label">
+                    Wie lange dauert die Bearbeitung eines Belegs im Schnitt? (Minuten)
+                </label>
+                <div class="fb-slider-container">
+                    <input type="range" class="fb-slider" id="fbTimeSlider2" min="2" max="12" value="5" step="1" onchange="fbUpdateCalculation()">
+                    <div class="fb-slider-value" id="fbTimeValue2">5</div>
+                </div>
+            </div>
+
+            <div class="fb-slider-group">
+                <label class="fb-slider-label">
+                    Wie viele Belege bearbeitet Ihr Team pro Monat?
+                </label>
+                <div class="fb-slider-container">
+                    <input type="range" class="fb-slider" id="fbInvoicesSlider2" min="200" max="10000" value="1500" step="100" onchange="fbUpdateCalculation()">
+                    <div class="fb-slider-value" id="fbInvoicesValue2">1500</div>
+                </div>
+            </div>
+
+            <div class="fb-slider-group">
+                <label class="fb-slider-label">
+                    Wie hoch sind Ihre Personalkosten in der Belegverarbeitung? (Vollkosten &euro;/Std.)
+                </label>
+                <div class="fb-slider-container">
+                    <input type="range" class="fb-slider" id="fbWageSlider2" min="30" max="60" value="40" step="5" onchange="fbUpdateCalculation()">
+                    <div class="fb-slider-value" id="fbWageValue2">40</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Rechte Spalte: Ergebnis -->
+        <div class="fb-results-box">
+
+            <h3 class="fb-results-title">Aktuell gebundene Kapazit&auml;t</h3>
+
+            <div class="fb-current-cost">
+                <div class="fb-cost-value" id="fbCurrentHours">125 Stunden</div>
+            </div>
+
+            <div class="fb-current-cost">
+                <h3 class="fb-cost-label">Mit Flowbeaver gebunden (bei 70 % Zeitersparnis):</h3>
+                <div class="fb-cost-value" id="fbFlowbeaverHours">38 Stunden</div>
+            </div>
+
+            <div class="fb-savings-box">
+                <div class="fb-savings-row">
+                    <div class="fb-savings-label">Frei f&uuml;r andere Arbeit:</div>
+                    <div class="fb-savings-value" id="fbSavedHours">87 Stunden</div>
+                </div>
+                <div class="fb-savings-row">
+                    <div class="fb-savings-label">Freie Kapazit&auml;t in Euro:</div>
+                    <div class="fb-savings-value" id="fbSavedCosts">3.480 Euro</div>
+                </div>
+                <div class="fb-savings-row">
+                    <div class="fb-savings-label">Netto nach 299 &euro; Flatrate:</div>
+                    <div class="fb-savings-value" id="fbNetSavings">3.181 Euro / Monat</div>
+                </div>
+            </div>
+
+            <div class="fb-reality-check">
+                Lassen Sie diese Zahl im 15-Minuten-Gespr&auml;ch belastbar machen. Direkt mit dem Gr&uuml;nder, kein Vertrieb dazwischen.
+            </div>
+
+            <a class="fb-waitlist-btn" href="#popup:demo" role="button" aria-haspopup="dialog">
+                Demo buchen (15 Min.)
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+// Flowbeaver Sparrechner - scoped IIFE, vermeidet globale Namenskonflikte.
+// Konstanten:
+//   FLATRATE     - monatliche Flowbeaver-Kosten in Euro
+//   SAVINGS_RATE - angenommene Zeitersparnis (0.7 = 70%)
+// Hinweis: Wenn SAVINGS_RATE geaendert wird, auch das Label
+// "bei 70 % Zeitersparnis" im HTML anpassen.
+(function() {
+    var FLATRATE = 299;
+    var SAVINGS_RATE = 0.7;
+
+    // Eingabe-Slider live mit Anzeige verbinden
+    document.getElementById('fbTimeSlider').oninput = function() {
+        document.getElementById('fbTimeValue').textContent = this.value;
+    };
+    document.getElementById('fbInvoicesSlider').oninput = function() {
+        document.getElementById('fbInvoicesValue').textContent = this.value;
+    };
+    document.getElementById('fbWageSlider').oninput = function() {
+        document.getElementById('fbWageValue').textContent = this.value;
+    };
+
+    // Ergebnis-Slider live mit Anzeige verbinden
+    document.getElementById('fbTimeSlider2').oninput = function() {
+        document.getElementById('fbTimeValue2').textContent = this.value;
+    };
+    document.getElementById('fbInvoicesSlider2').oninput = function() {
+        document.getElementById('fbInvoicesValue2').textContent = this.value;
+    };
+    document.getElementById('fbWageSlider2').oninput = function() {
+        document.getElementById('fbWageValue2').textContent = this.value;
+    };
+
+    // Globale Handler fuer onclick / onchange im HTML
+    window.fbCalculateSavings = function() {
+        var time = parseInt(document.getElementById('fbTimeSlider').value);
+        var invoices = parseInt(document.getElementById('fbInvoicesSlider').value);
+        var wage = parseInt(document.getElementById('fbWageSlider').value);
+
+        document.getElementById('fbTimeSlider2').value = time;
+        document.getElementById('fbTimeValue2').textContent = time;
+        document.getElementById('fbInvoicesSlider2').value = invoices;
+        document.getElementById('fbInvoicesValue2').textContent = invoices;
+        document.getElementById('fbWageSlider2').value = wage;
+        document.getElementById('fbWageValue2').textContent = wage;
+
+        fbUpdateCalculation();
+
+        document.getElementById('fbSliderSection').style.display = 'none';
+        document.getElementById('fbResultsSection').classList.add('active');
+    };
+
+    window.fbUpdateCalculation = function() {
+        var time = parseInt(document.getElementById('fbTimeSlider2').value);
+        var invoices = parseInt(document.getElementById('fbInvoicesSlider2').value);
+        var wage = parseInt(document.getElementById('fbWageSlider2').value);
+
+        var currentHours = Math.round((invoices * time) / 60);
+        var flowbeaverHours = Math.round((invoices * time * (1 - SAVINGS_RATE)) / 60);
+        var savedHours = currentHours - flowbeaverHours;
+        var savedCosts = Math.round(savedHours * wage);
+        var netSavings = savedCosts - FLATRATE;
+
+        document.getElementById('fbCurrentHours').textContent = currentHours.toLocaleString('de-DE') + ' Stunden';
+        document.getElementById('fbFlowbeaverHours').textContent = flowbeaverHours.toLocaleString('de-DE') + ' Stunden';
+        document.getElementById('fbSavedHours').textContent = savedHours.toLocaleString('de-DE') + ' Stunden';
+        document.getElementById('fbSavedCosts').textContent = savedCosts.toLocaleString('de-DE') + ' Euro';
+        document.getElementById('fbNetSavings').textContent = netSavings.toLocaleString('de-DE') + ' Euro / Monat';
+    };
+})();
+</script>

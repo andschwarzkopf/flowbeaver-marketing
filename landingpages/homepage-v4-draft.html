@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="de">
+<!--
+  ============================================================
+  FLOWBEAVER HOMEPAGE — ENTWURF v4 (Tilda-Block-Format, 2026-05-01)
+  ============================================================
+  Grundlage: homepage-v3-draft.html + landingpages/empfehlungen-2026-05-01.md.
+  Struktur: jeder Abschnitt entspricht 1:1 einem Tilda-Block-Typ.
+  Header-Kommentare dokumentieren den empfohlenen T-Block.
+
+  v4-Aenderungen gegenueber v3 (alle 10 Empfehlungen):
+    1. About-Seite separat (about-v1-draft.html), nicht hier
+    2. Demo-CTA (REVIDIERT 2026-05-01): Iframe-Variante verworfen wegen
+       UX. Tilda-Popup-Form bleibt, Erwartungstext steht VOR dem Klick.
+       Booking-Link wandert in die Bestaetigungs-Email
+       (email/demo-anfrage-bestaetigung.md).
+    3. Mobile-Tabelle: Stacked-Card-Variante in Block 4
+    4. Branchenreport: NEU als Block 2.5 (zwischen Problem und Antwort)
+    5. Sparrechner-Result-CTA: Wortlaut praeziser
+    6. Kontakt-Seite separat (kontakt-v1-draft.html), Footer-Link aktualisiert
+    7. Block 7 H2 ABGELEHNT: "Schmerzen" bleibt, "Engpaesse" wuerde
+       Steuerberater-Insider-Wissen implizieren, das Andreas nicht hat
+    8. Block 6 Pricing: AKTUELLER EINFUEHRUNGSPREIS-Stil entdramatisiert
+    9. Footer: LinkedIn + Andreas-Profil ergaenzt; Hero-Loop bleibt Asset-TODO
+    10. Footer: Email, Telefon, LinkedIn, Mini-CTA
+
+  Email durchgehend: info@flowbeaver.de (vorher accounting@).
+  LinkedIn-URL: https://www.linkedin.com/in/schwarzkopf
+  MS-Bookings-URL (in Email-Template):
+    https://outlook.office.com/book/Flowbeaver@k-d-a.de/?ismsaljsauthenabled
+-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flowbeaver – KI-Vorsystem für Steuerkanzleien</title>
+  <meta name="description" content="Flowbeaver liest Mandantenbelege, ordnet zu und kontiert vor. Ihr Team prueft und bucht in DATEV. Ohne Systemwechsel.">
+  <link rel="canonical" href="https://flowbeaver.de/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap">
+
+  <!--
+    GLOBAL DESIGN TOKENS
+    In Tilda werden diese als Site-Settings (Schriften + Farbpalette) gepflegt.
+    Hier zentral, damit der Draft im Browser ohne Tilda-Runtime laeuft.
+  -->
+  <style>
+    :root {
+      --fb-purple: #52267a;
+      --fb-purple-dark: #3d1c5c;
+      --fb-dark-red: #3c0f04;
+      --fb-text: #404040;
+      --fb-text-light: #606060;
+      --fb-bg-light: #fafafa;
+      --fb-bg-card: #faf7fd;
+      --fb-border: #e0e0e0;
+      --fb-mint: #d6e9e3;
+      --fb-radius: 10px;
+      --fb-font: 'DM Sans', 'TildaSans', Arial, sans-serif;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--fb-font);
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--fb-text);
+      background: #fff;
+    }
+    h1, h2, h3, h4 { color:#000; line-height:1.25; font-weight:700; }
+    h1 { font-size: 44px; color: var(--fb-dark-red); line-height:1.15; }
+    h2 { font-size: 30px; }
+    h3 { font-size: 22px; font-weight: 600; }
+    h4 { font-size: 18px; font-weight: 600; line-height: 1.3; }
+    p  { font-size: 18px; line-height: 1.6; }
+    a  { color: var(--fb-purple); text-decoration: none; }
+    a:hover { color: var(--fb-purple-dark); }
+
+    /* Tilda-Standard-Klassen (vereinfacht) */
+    .t-rec        { padding: 80px 0; border-bottom: 1px solid var(--fb-border); }
+    .t-rec_bg     { background: var(--fb-bg-light); }
+    .t-rec_card   { background: var(--fb-bg-card); }
+    .t-container  { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .t-narrow     { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+    .t-col        { display: block; }
+    .t-grid-2     { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .t-grid-3     { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+    .t-uppertitle { font-size: 13px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--fb-text-light); font-weight: 600; margin-bottom: 12px; }
+    .t-title      { margin-bottom: 20px; }
+    .t-descr      { font-size: 18px; color: var(--fb-text); margin-bottom: 20px; }
+    .t-text       { font-size: 18px; color: var(--fb-text); margin-bottom: 16px; }
+
+    /* Buttons (Tilda: t-btn) */
+    .t-btn {
+      display: inline-block;
+      background: var(--fb-purple);
+      color: #fff;
+      font-family: var(--fb-font);
+      font-size: 18px;
+      font-weight: 500;
+      padding: 14px 28px;
+      border-radius: var(--fb-radius);
+      border: none;
+      cursor: pointer;
+      transition: background .2s ease-in-out;
+      text-align: center;
+    }
+    .t-btn:hover { background: var(--fb-purple-dark); color: #fff; }
+    .t-btn-sub { font-size: 14px; color: var(--fb-text-light); margin-top: 10px; }
+
+    /* Card (Tilda: t-card) */
+    .t-card {
+      border: 1px solid var(--fb-border);
+      border-radius: var(--fb-radius);
+      padding: 28px;
+      background: #fff;
+    }
+
+    /* Block-Notiz (nur fuer Draft, in Tilda nicht uebernehmen) */
+    .draft-note {
+      background: #fffbe6;
+      border: 1px dashed #d4a900;
+      padding: 10px 14px;
+      font-size: 13px;
+      font-family: monospace;
+      color: #665200;
+      margin-bottom: 20px;
+      border-radius: 6px;
+    }
+
+    @media (max-width: 768px) {
+      body { font-size: 17px; }
+      h1 { font-size: 32px; }
+      h2 { font-size: 24px; }
+      .t-rec { padding: 56px 0; }
+      .t-grid-2, .t-grid-3 { grid-template-columns: 1fr; gap: 24px; }
+    }
+  </style>
+</head>
+
+<body>
+
+
+<!-- ============================================================
+     TILDA-BLOCK: TM601 (Header / Sticky-Menu)
+     STATIC HEADER — 1x pro Site, kein Content-Block.
+     ============================================================ -->
+<nav class="t-menu" style="position:sticky; top:0; z-index:100; background:#fff; border-bottom:1px solid var(--fb-border); padding:16px 0;">
+  <div class="t-container" style="display:flex; justify-content:space-between; align-items:center;">
+    <a href="/" class="t-menu__logo" style="font-weight:700; font-size:22px; color:var(--fb-purple);">Flowbeaver</a>
+    <ul style="display:flex; gap:24px; list-style:none; align-items:center; flex-wrap:wrap;">
+      <li><a href="/produkt" style="color:#000; font-weight:500;">Produkt</a></li>
+      <li><a href="/branchenreport" style="color:#000; font-weight:500;">Branchenreport</a></li>
+      <li><a href="/blog" style="color:#000; font-weight:500;">Ressourcen</a></li>
+      <li><a href="/ueber" style="color:#000; font-weight:500;">Über uns</a></li>
+      <li><a href="/kontakt" style="color:#000; font-weight:500;">Kontakt</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<!-- ============================================================
+     TILDA-BLOCK: T816 (Cover, Image rechts, 1 CTA + Subline)
+     ALTERNATIVEN: T123 (Cover Full-Width), T133
+     INHALT: Block 1 Hero
+     v4: Hero-Asset bleibt Platzhalter. TODO Punkt 9 Trust:
+         6-Sek-Produkt-Loop ("Beleg rein -> Vorschlag raus") als
+         MP4 oder GIF anstelle des statischen Mockups.
+     ============================================================ -->
+<section class="t-rec" id="rec-hero" data-record-type="816">
+  <div class="t-container">
+    <div class="draft-note">BLOCK 1 HERO · Tilda T816. Hero-Visual bleibt Platzhalter. Empfehlung 9: kurzes Produkt-Loop-MP4 ersetzt das statische Mockup, sobald gerendert.</div>
+    <div class="t-grid-2">
+      <div class="t-col">
+        <h1 class="t-title">Das KI-Vorsystem für Steuerkanzleien</h1>
+        <p class="t-descr" style="font-size:21px;">
+          Flowbeaver liest Mandantenbelege, erkennt den Geschäftsvorfall und kontiert nach SKR03 oder SKR04 vor. Ihr Team prüft den Buchungsstapel und importiert ihn in DATEV Kanzlei-Rechnungswesen. Ohne neue Software. Ohne Umstellung bestehender Prozesse.
+        </p>
+        <p><a href="#demo" class="t-btn">Demo buchen (15 Min.)</a></p>
+        <p class="t-btn-sub">Direkt mit dem Gründer, kein Vertrieb dazwischen.</p>
+      </div>
+      <div class="t-col">
+        <div style="background:#f7f7fa; border:1px dashed #bbb; border-radius:var(--fb-radius); min-height:340px; display:flex; align-items:center; justify-content:center; color:#999; text-align:center;">
+          [PLATZHALTER: Produkt-Loop 6 Sek.<br>„Beleg rein → Vorschlag raus"<br>(siehe Empfehlung 9, Trust-Erweiterung)]
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     TILDA-BLOCK: T030 (Heading + Text + Bullet-List)
+     ALTERNATIVEN: T142, TX02
+     INHALT: Block 2 Teil 1 — Drei Zahlen
+     ============================================================ -->
+<section class="t-rec" id="rec-zahlen" data-record-type="030">
+  <div class="t-narrow">
+    <div class="draft-note">BLOCK 2 PROBLEM-ZAHLEN · Tilda T030. Drei STAX-/SWI-Zahlen mit Quellen.</div>
+    <div class="t-uppertitle">Die Lage in den Kanzleien</div>
+    <h2 class="t-title">Drei Zahlen, die den Druck erklären</h2>
+    <ul style="padding-left:1.25rem;">
+      <li style="margin-bottom:10px;">Nur <strong>23,2&nbsp;%</strong> der Einzelkanzleien konnten 2024 ihre offenen Stellen besetzen (STAX 2024, BStBK/Allensbach).</li>
+      <li style="margin-bottom:10px;"><strong>43,8&nbsp;%</strong> des Kanzleiumsatzes gehen mittlerweile in Personalkosten, 2018 waren es noch 37&nbsp;% (STAX 2024).</li>
+      <li style="margin-bottom:10px;"><strong>91,6&nbsp;%</strong> halten KI für relevant, <strong>~30&nbsp;%</strong> setzen sie aktiv ein (SWI Finance / Handelsblatt).</li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     TILDA-BLOCK: T142 (Text + Button, kompakt)
+     INHALT: NEU v4 — Branchenreport-Inline-CTA
+     EMPFEHLUNG 4: Top-of-Funnel-Asset zwischen Problem und Antwort
+     einbauen, damit Hand-Raiser nicht erst nach Pricing landen.
+     ============================================================ -->
+<section class="t-rec t-rec_card" id="rec-report-inline" data-record-type="142">
+  <div class="t-narrow" style="text-align:center;">
+    <div class="draft-note" style="text-align:left;">NEU v4 (Empfehlung 4) · Tilda T142. Branchenreport-CTA zwischen Problem-Sektion und Antwort-Sektion. Faengt Leser ab, die noch nicht demo-reif sind.</div>
+    <div class="t-uppertitle">Branchenreport 2026</div>
+    <h2 class="t-title" style="font-size:26px;">Sie wollen die Lage erstmal mit Quellen lesen?</h2>
+    <p class="t-text">28 Seiten, 21 Quellen aus BStBK, ifo, DATEV, KPMG. „KI in der Steuerkanzlei 2026". Kostenlos als PDF.</p>
+    <p style="margin-top:24px;"><a href="/branchenreport" class="t-btn">Report jetzt herunterladen</a></p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     TILDA-BLOCK: T030 (Heading + Text + Sub-Headlines + Prosa)
+     INHALT: Block 2 Teil 2 — Drei Reibungen
+     ============================================================ -->
+<section class="t-rec" id="rec-reibungen" data-record-type="030">
+  <div class="t-narrow">
+    <div class="draft-note">BLOCK 2 PROBLEM-REIBUNGEN · Tilda T030 mit eingebetteten H4-Headlines (entspricht Tilda Zero-Text-Block oder T194).</div>
+    <h3 style="margin-bottom:16px;">Wo diese Zahlen in der Kanzlei ankommen</h3>
+    <p class="t-text">Der Druck aus diesen Zahlen trifft immer denselben Engpass: qualifizierte Mitarbeiterstunden in der vorbereitenden Buchhaltung. Sie sind seltener und teurer als 2018. Drei Reibungen wirken darauf, jede mit eigener Wirkung.</p>
+
+    <h4 style="margin-top:32px; margin-bottom:8px;">Blockierter Belegfluss</h4>
+    <p class="t-text">Den Belegfluss bremsen Rückfragen-Schleifen mit dem Mandanten. Fremdsprachige Rechnungen, unklare Positionen, untypische Lieferanten: Die Bearbeitung stoppt, weil beim Mandanten nachgefragt werden muss. Die Antwort kommt ein bis drei Tage später und ist oft selbst erklärungsbedürftig. Der Vorgang liegt offen, ohne dass jemand aktiv daran arbeitet.</p>
+
+    <h4 style="margin-top:24px; margin-bottom:8px;">Gebundene Personalkapazität</h4>
+    <p class="t-text">Routinearbeit vor der Kontierung kostet Stunden: Sortieren, Dublettencheck, schlechte Scans nachpflegen, Positionen aus PDFs heraustippen. Diese Tätigkeiten beanspruchen genau die Fachkräfte, die laut STAX zu 59,1&nbsp;% nicht zu finden sind.</p>
+
+    <h4 style="margin-top:24px; margin-bottom:8px;">Stressige Lastspitzen</h4>
+    <p class="t-text">Belege kommen geballt vor jeder Frist. Neu ist nicht die Welle, sondern der fehlende Puffer. Die Umsatzsteuer-Voranmeldung am 10. zieht den Vormonat in wenige Tage zusammen. Solange Stellen unbesetzt bleiben, fehlt die Reserve, die früher abfederte: Krankmeldung wird zum Fristrisiko, Urlaub zur Verschiebung. Abschlüsse, Steuererklärungen, Beratung und alles andere rutscht mit jeder Welle weiter nach hinten.</p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     TILDA-BLOCK: T504 (3 Cards Equal)
+     ALTERNATIVEN: TE301
+     INHALT: Block 3 — Wie Flowbeaver an den drei Reibungen ansetzt
+     ============================================================ -->
+<section class="t-rec" id="rec-antwort" data-record-type="504">
+  <div class="t-container">
+    <div class="draft-note">BLOCK 3 ANTWORT · Tilda T504 (3 Cards Equal). 1:1-Bezug auf die drei Reibungen aus Block 2.</div>
+    <h2 class="t-title" style="text-align:center; margin-bottom:40px;">Wie Flowbeaver an allen drei Reibungen ansetzt</h2>
+    <div class="t-grid-3">
+      <div class="t-card">
+        <h3>Belege ohne Rückfragen</h3>
+        <p class="t-text" style="margin:0;">Das Sprachmodell liest jeden Beleg inhaltlich aus: Untypische Lieferanten werden eingeordnet, unklare Positionen aufgelöst, fremdsprachige Rechnungen übersetzt. Lieferant, Leistung und Geschäftsvorfall stehen am Ende verständlich im Stapel. Wo bisher nachgefragt werden musste, liegt ein vorbereiteter Vorschlag.</p>
+      </div>
+      <div class="t-card">
+        <h3>Routine fällt weg</h3>
+        <p class="t-text" style="margin:0;">Die Mechanik vor der Kontierung übernimmt Flowbeaver: Sortieren, Dublettenprüfung, Scan-Aufbereitung, Positions-Extraktion. Ihre Mitarbeiter steigen dort ein, wo Entscheidungsarbeit beginnt: bei der Prüfung der Vorschläge und bei Fällen, die eine Bewertung brauchen.</p>
+      </div>
+      <div class="t-card">
+        <h3>Lastspitzen werden tragbar</h3>
+        <p class="t-text" style="margin:0;">Mandanten liefern weiter in Wellen. Pro Beleg bleibt aber deutlich weniger Arbeit auf dem Schreibtisch. Die Kanzlei ist nicht mehr in der Welle gefangen und gewinnt Freiraum und Wachstumsmöglichkeiten zurück.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     TILDA-BLOCK: T123 (Zero-Block / Custom HTML)
+     INHALT: Block 4 — Konkreter Belegdurchlauf mit Vergleichs-Tabelle
+     EMPFEHLUNG 3 v4: Mobile-Variante als gestapelte Vergleichskarten.
+     Desktop-Tabelle bleibt unveraendert. Mobile (<=768px) blendet
+     Tabelle aus, zeigt stattdessen pro Funktion eine Karte mit
+     "Klassisch x / Flowbeaver -" Status. Keine horizontale Scroll-
+     Mechanik mehr.
+     ============================================================ -->
+<section class="t-rec t-rec_bg" id="rec-szenario" data-record-type="123">
+  <div class="t-narrow">
+    <div class="draft-note">BLOCK 4 SZENARIO · Tilda T123 Zero-Block (Custom HTML). Empfehlung 3 v4: Desktop-Tabelle bleibt, Mobile bekommt gestapelte Karten via .fb-compare-stack (in CSS unten gesteuert).</div>
+    <h2 class="t-title">Wie ein Belegdurchlauf konkret aussieht</h2>
+
+    <p class="t-text">Eine polnische Hotelrechnung für eine Projektreise, am Mittwochabend in das Mandantenpostfach geladen. Drei Positionen: Übernachtung, Frühstück, städtische Tourismusabgabe. Alle Beträge in Złoty, alle Bezeichnungen auf Polnisch.</p>
+
+    <!-- DESKTOP-TABELLE (sichtbar >=769px) -->
+    <div class="fb-compare-table" style="margin-top:32px; border:1px solid var(--fb-border); border-radius:var(--fb-radius); overflow:hidden; background:#fff;">
+
+      <div style="display:grid; grid-template-columns:2fr 1fr 1fr; padding:20px 24px; border-bottom:1px solid var(--fb-border); align-items:center;">
+        <div style="font-weight:700; color:#000;">Funktion</div>
+        <div style="font-weight:600; color:var(--fb-text-light); text-align:center; font-size:13px; text-transform:uppercase; letter-spacing:0.8px;">Klassische Belegverarbeitung</div>
+        <div style="font-weight:600; color:var(--fb-purple); text-align:center; font-size:13px; text-transform:uppercase; letter-spacing:0.8px;">Flowbeaver</div>
+      </div>
+
+      <div class="fb-row" style="display:grid; grid-template-columns:2fr 1fr 1fr; padding:16px 24px; border-bottom:1px solid var(--fb-border); align-items:center;">
+        <div>Lieferant, Betrag und Datum erfassen</div>
+        <div style="text-align:center;"><span class="fb-yes">✓</span></div>
+        <div style="text-align:center;"><span class="fb-yes">✓</span></div>
+      </div>
+
+      <div class="fb-row" style="display:grid; grid-template-columns:2fr 1fr 1fr; padding:16px 24px; background:#fafafa; border-bottom:1px solid var(--fb-border); align-items:center;">
+        <div>Fremdwährung in Euro umrechnen</div>
+        <div style="text-align:center;"><span class="fb-yes">✓</span></div>
+        <div style="text-align:center;"><span class="fb-yes">✓</span></div>
+      </div>
+
+      <div class="fb-row" style="display:grid; grid-template-columns:2fr 1fr 1fr; padding:16px 24px; border-bottom:1px solid var(--fb-border); align-items:center;">
+        <div>Positionen inhaltlich erfassen</div>
+        <div style="text-align:center;"><span class="fb-no">✕</span></div>
+        <div style="text-align:center;"><span class="fb-yes">✓</span></div>
+      </div>
+
+      <div class="fb-row" style="display:grid; grid-template-columns:2fr 1fr 1fr; padding:16px 24px; background:#fafafa; border-bottom:1px solid var(--fb-border); align-items:center;">
+        <div>Fremdsprachige Begriffe deuten <span style="color:var(--fb-text-light); font-size:14px;">(z.&nbsp;B. opłata miejscowa)</span></div>
+        <div style="text-align:center;"><span class="fb-no">✕</span></div>
+        <div style="text-align:center;"><span class="fb-yes">✓</span></div>
+      </div>
+
+      <div class="fb-row" style="display:grid; grid-template-columns:2fr 1fr 1fr; padding:16px 24px; border-bottom:1px solid var(--fb-border); align-items:center;">
+        <div>Geschäftsvorfall einordnen</div>
+        <div style="text-align:center;"><span class="fb-no">✕</span></div>
+        <div style="text-align:center;"><span class="fb-yes">✓</span></div>
+      </div>
+
+      <div class="fb-row" style="display:grid; grid-template-columns:2fr 1fr 1fr; padding:16px 24px; background:#fafafa; border-bottom:1px solid var(--fb-border); align-items:center;">
+        <div>Steuerlich relevante Aufteilung erkennen <span style="color:var(--fb-text-light); font-size:14px;">(z.&nbsp;B. Verpflegungspauschale)</span></div>
+        <div style="text-align:center;"><span class="fb-no">✕</span></div>
+        <div style="text-align:center;"><span class="fb-yes">✓</span></div>
+      </div>
+
+      <div class="fb-row" style="display:grid; grid-template-columns:2fr 1fr 1fr; padding:16px 24px; align-items:center;">
+        <div>SKR03/SKR04-Vorkontierung erstellen</div>
+        <div style="text-align:center;"><span class="fb-no">✕</span></div>
+        <div style="text-align:center;"><span class="fb-yes">✓</span></div>
+      </div>
+
+    </div>
+
+    <!-- MOBILE-STACK (sichtbar <=768px) — Empfehlung 3 v4 -->
+    <div class="fb-compare-stack" style="display:none; margin-top:24px;">
+      <div class="fb-stack-card">
+        <div class="fb-stack-feature">Lieferant, Betrag und Datum erfassen</div>
+        <div class="fb-stack-row"><span class="fb-stack-label">Klassisch</span><span class="fb-yes">✓</span></div>
+        <div class="fb-stack-row"><span class="fb-stack-label">Flowbeaver</span><span class="fb-yes">✓</span></div>
+      </div>
+      <div class="fb-stack-card">
+        <div class="fb-stack-feature">Fremdwährung in Euro umrechnen</div>
+        <div class="fb-stack-row"><span class="fb-stack-label">Klassisch</span><span class="fb-yes">✓</span></div>
+        <div class="fb-stack-row"><span class="fb-stack-label">Flowbeaver</span><span class="fb-yes">✓</span></div>
+      </div>
+      <div class="fb-stack-card">
+        <div class="fb-stack-feature">Positionen inhaltlich erfassen</div>
+        <div class="fb-stack-row"><span class="fb-stack-label">Klassisch</span><span class="fb-no">✕</span></div>
+        <div class="fb-stack-row"><span class="fb-stack-label">Flowbeaver</span><span class="fb-yes">✓</span></div>
+      </div>
+      <div class="fb-stack-card">
+        <div class="fb-stack-feature">Fremdsprachige Begriffe deuten <span style="color:var(--fb-text-light); font-size:13px;">(z.&nbsp;B. opłata miejscowa)</span></div>
+        <div class="fb-stack-row"><span class="fb-stack-label">Klassisch</span><span class="fb-no">✕</span></div>
+        <div class="fb-stack-row"><span class="fb-stack-label">Flowbeaver</span><span class="fb-yes">✓</span></div>
+      </div>
+      <div class="fb-stack-card">
+        <div class="fb-stack-feature">Geschäftsvorfall einordnen</div>
+        <div class="fb-stack-row"><span class="fb-stack-label">Klassisch</span><span class="fb-no">✕</span></div>
+        <div class="fb-stack-row"><span class="fb-stack-label">Flowbeaver</span><span class="fb-yes">✓</span></div>
+      </div>
+      <div class="fb-stack-card">
+        <div class="fb-stack-feature">Steuerlich relevante Aufteilung erkennen <span style="color:var(--fb-text-light); font-size:13px;">(z.&nbsp;B. Verpflegungspauschale)</span></div>
+        <div class="fb-stack-row"><span class="fb-stack-label">Klassisch</span><span class="fb-no">✕</span></div>
+        <div class="fb-stack-row"><span class="fb-stack-label">Flowbeaver</span><span class="fb-yes">✓</span></div>
+      </div>
+      <div class="fb-stack-card">
+        <div class="fb-stack-feature">SKR03/SKR04-Vorkontierung erstellen</div>
+        <div class="fb-stack-row"><span class="fb-stack-label">Klassisch</span><span class="fb-no">✕</span></div>
+        <div class="fb-stack-row"><span class="fb-stack-label">Flowbeaver</span><span class="fb-yes">✓</span></div>
+      </div>
+    </div>
+
+    <p style="margin-top:24px; font-weight:600;">Mittwochabend 150 Mandantenbelege hochladen, Donnerstag früh den fertigen Buchungsstapel prüfen.</p>
+  </div>
+
+  <style>
+    .fb-yes, .fb-no {
+      display: inline-flex;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      color: #fff;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .fb-yes { background: #2d7d46; }
+    .fb-no  { background: #b22020; }
+
+    .fb-stack-card {
+      border: 1px solid var(--fb-border);
+      border-radius: var(--fb-radius);
+      padding: 16px 20px;
+      margin-bottom: 12px;
+      background: #fff;
+    }
+    .fb-stack-feature {
+      font-weight: 600;
+      color: #000;
+      margin-bottom: 12px;
+      line-height: 1.35;
+    }
+    .fb-stack-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+    }
+    .fb-stack-row + .fb-stack-row { border-top: 1px solid #f0eaf5; }
+    .fb-stack-label {
+      font-size: 14px;
+      color: var(--fb-text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      font-weight: 600;
+    }
+    .fb-stack-row:last-child .fb-stack-label { color: var(--fb-purple); }
+
+    @media (max-width: 768px) {
+      .fb-compare-table { display: none !important; }
+      .fb-compare-stack { display: block !important; }
+    }
+  </style>
+</section>
+
+
+<!-- ============================================================
+     TILDA-BLOCK: TM301 (Timeline / Numbered Steps)
+     INHALT: Block 5 — DATEV-Ergänzung
+     ============================================================ -->
+<section class="t-rec" id="rec-datev" data-record-type="TM301">
+  <div class="t-container">
+    <div class="draft-note">BLOCK 5 DATEV-ERGAENZUNG · Tilda TM301 (3-Step Timeline). Numbered Steps fuehren in DATEV.</div>
+    <div style="max-width:760px; margin:0 auto;">
+      <h2 class="t-title">DATEV-Ergänzung, nicht DATEV-Ersatz</h2>
+      <p class="t-text">Flowbeaver greift in den Prozess ein, bevor DATEV zum Zug kommt. Die Vorarbeit (Lesen, Zuordnen, Kontieren) passiert außerhalb, danach läuft in Ihrer Kanzlei alles wie gewohnt. Kein Umstieg, kein Parallelsystem, keine Einarbeitung in neue Masken.</p>
+
+      <h3 style="margin-top:40px;">So kommt das Ergebnis in DATEV</h3>
+
+      <div style="margin-top:24px;">
+        <div style="display:grid; grid-template-columns:60px 1fr; gap:20px; align-items:start; padding-bottom:32px; position:relative;">
+          <div style="position:relative;">
+            <div style="width:40px; height:40px; border-radius:50%; background:var(--fb-purple); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:600;">1</div>
+            <div style="position:absolute; left:19px; top:48px; bottom:-32px; width:2px; background:var(--fb-border);"></div>
+          </div>
+          <div>
+            <h4>Vorbereitung außerhalb von DATEV</h4>
+            <p class="t-text" style="margin:0;">Flowbeaver liest jeden Beleg, ordnet ihn zu und kontiert nach SKR03 oder SKR04. Alles geschieht vor dem DATEV-Prozess.</p>
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:60px 1fr; gap:20px; align-items:start; padding-bottom:32px; position:relative;">
+          <div style="position:relative;">
+            <div style="width:40px; height:40px; border-radius:50%; background:var(--fb-purple); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:600;">2</div>
+            <div style="position:absolute; left:19px; top:48px; bottom:-32px; width:2px; background:var(--fb-border);"></div>
+          </div>
+          <div>
+            <h4>DATEV-konforme Übergabe</h4>
+            <p class="t-text" style="margin:0;">Der Buchungsstapel als CSV, Belegbilder als ZIP, strukturiert nach Mandant und Buchungsperiode.</p>
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:60px 1fr; gap:20px; align-items:start;">
+          <div>
+            <div style="width:40px; height:40px; border-radius:50%; background:var(--fb-purple); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:600;">3</div>
+          </div>
+          <div>
+            <h4>Import in Kanzlei-Rechnungswesen</h4>
+            <p class="t-text" style="margin:0;">Ihr Team prüft die Vorschläge und bucht wie gewohnt. Keine neuen Masken, kein Parallelsystem.</p>
+          </div>
+        </div>
+      </div>
+
+      <p style="margin-top:24px; font-size:15px; color:var(--fb-text-light);">Perspektivisch geplant: Anbindung an Belegbilderservice und Rechnungsdatenservice für eine durchgängige Übergabe an DATEV Unternehmen Online.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     TILDA-BLOCK: T504 (3 Cards Equal)
+     INHALT: Block 5B — Datenschutz-Karten
+     ============================================================ -->
+<section class="t-rec" id="rec-compliance" data-record-type="504">
+  <div class="t-container">
+    <div class="draft-note">BLOCK 5B COMPLIANCE · Tilda T504 (3 Cards). Detailtiefe (AVV, RLS, GoBD) lebt auf /compliance.</div>
+    <div style="max-width:760px; margin:0 auto 32px;">
+      <h2 class="t-title">Datenschutz auf Berufsträger-Niveau</h2>
+      <p class="t-text">Mandantendaten sind Berufsgeheimnis. Flowbeaver behandelt sie mit demselben Schutzmaßstab, den auch Sie als Berufsträger schulden, nicht nur als DSGVO-Pflicht.</p>
+    </div>
+    <div class="t-grid-3">
+      <div class="t-card">
+        <h3>Schweigepflicht über DSGVO hinaus</h3>
+        <p class="t-text" style="margin:0;">Bei Flowbeaver sind alle handelnden Personen (heute der Gründer, künftige Mitarbeiter genauso) nach §203 StGB und §62a StBerG zur Verschwiegenheit verpflichtet. Derselbe Schutzstandard, den Sie als Berufsträger schulden.</p>
+      </div>
+      <div class="t-card">
+        <h3>Kein US-Hyperscaler</h3>
+        <p class="t-text" style="margin:0;">Hosting bei Hetzner in Deutschland, KI-Verarbeitung bei Mistral in Frankreich. Kein AWS, kein Azure, kein Google Cloud. Damit liegt kein US-CLOUD-Act-Risiko über Ihren Mandantendaten.</p>
+      </div>
+      <div class="t-card">
+        <h3>Keine automatischen Buchungen</h3>
+        <p class="t-text" style="margin:0;">Jeder Kontierungsvorschlag passiert die Prüfung Ihres Teams. Alle KI-Schritte sind nachvollziehbar und damit dem Transparenz-Prinzip des EU AI Acts entsprechend. Entscheidung und Verantwortung bleiben in Ihrer Kanzlei.</p>
+      </div>
+    </div>
+    <p style="text-align:center; margin-top:32px; font-size:15px; color:var(--fb-text-light);">Vollständige Übersicht zu AVV, Subunternehmern, Mandantenisolation, GoBD-Einordnung und Löschkonzept auf Anfrage als PDF.</p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     TILDA-BLOCK: T123 (Zero-Block / Custom HTML)
+     INHALT: Block 6 — Sparrechner + Pricing
+     EMPFEHLUNG 5 v4: Sparrechner-Result hat eigenen CTA mit
+                       praezisem Wortlaut.
+     EMPFEHLUNG 8 v4: AKTUELLER EINFUEHRUNGSPREIS-Caption als
+                       Caption-Style (kleiner, normale Kapitalisierung,
+                       weniger Sale-Banner-Anmutung).
+     ============================================================ -->
+<section class="t-rec" id="rec-roi" data-record-type="123">
+  <div class="t-narrow">
+    <div class="draft-note">BLOCK 6 ROI · Tilda T123 Zero-Block. Empfehlung 5: Sparrechner-Result-CTA praeziser. Empfehlung 8: Pricing-Caption entdramatisiert.</div>
+    <h2 class="t-title">Was Flowbeaver in Ihrer Kanzlei spart</h2>
+    <p class="t-text">Belegvolumen, Bearbeitungszeit und Stundensatz variieren von Kanzlei zu Kanzlei. Geben Sie Ihre Zahlen ein und sehen Sie, was bei Ihnen herauskommt.</p>
+
+    <!-- ============================================================
+         SPARRECHNER — Self-contained (CSS + HTML + JS)
+         Quelle: sparrechner-tilda-block.html (unveraendert ausser CTA-Text)
+         ============================================================ -->
+    <style>
+      .fb-calculator, .fb-calculator * { font-family: var(--fb-font); box-sizing: border-box; }
+      .fb-calculator { color: var(--fb-text); line-height: 1.5; max-width: 960px; margin: 0 auto; padding: 0; }
+      .fb-slider-group { margin-bottom: 28px; }
+      .fb-slider-label { display:block; margin-bottom:12px; font-size:16px; line-height:1.4; color:var(--fb-text); font-weight:400; }
+      .fb-slider-container { display:flex; align-items:center; gap:16px; }
+      .fb-slider { flex:1 1 auto; min-width:0; height:4px; -webkit-appearance:none; appearance:none; background:var(--fb-mint); border-radius:2px; outline:none; cursor:pointer; }
+      .fb-slider::-webkit-slider-thumb { -webkit-appearance:none; appearance:none; width:20px; height:20px; border-radius:50%; background:var(--fb-purple); cursor:pointer; border:none; }
+      .fb-slider::-moz-range-thumb { width:20px; height:20px; border-radius:50%; background:var(--fb-purple); cursor:pointer; border:none; }
+      .fb-slider-value { flex:0 0 auto; min-width:80px; padding:10px 16px; background:#f7f7fa; border-radius:8px; text-align:center; font-weight:600; font-size:18px; color:var(--fb-text); }
+      .fb-calculate-btn { display:block; margin-left:auto; margin-top:16px; background:var(--fb-purple); color:#fff; font-family:var(--fb-font); font-size:18px; font-weight:500; padding:14px 28px; border-radius:var(--fb-radius); border:none; cursor:pointer; transition:background .2s ease-in-out; }
+      .fb-calculate-btn:hover { background:var(--fb-purple-dark); }
+      .fb-results-section { display:none; }
+      .fb-results-section.active { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start; }
+      .fb-results-box { min-width:0; }
+      .fb-results-title { font-size:16px; font-weight:600; color:var(--fb-text-light); margin:0 0 12px 0; line-height:1.3; }
+      .fb-current-cost { margin-bottom:24px; }
+      .fb-cost-label { font-size:16px; font-weight:500; color:var(--fb-text-light); margin:0 0 8px 0; line-height:1.4; }
+      .fb-cost-value { font-size:36px; font-weight:700; color:#000; line-height:1.1; }
+      .fb-savings-box { background:#faf5ff; border:1px solid #e6d9f0; border-left:4px solid var(--fb-purple); border-radius:var(--fb-radius); padding:20px 24px; margin:24px 0; }
+      .fb-savings-row { display:flex; flex-direction:column; gap:4px; padding:12px 0; }
+      .fb-savings-row + .fb-savings-row { border-top:1px solid #e6d9f0; }
+      .fb-savings-label { font-size:14px; color:var(--fb-text); line-height:1.4; }
+      .fb-savings-value { font-size:24px; font-weight:700; color:#000; line-height:1.1; }
+      .fb-savings-row:last-child .fb-savings-label, .fb-savings-row:last-child .fb-savings-value { color:var(--fb-purple); }
+      .fb-savings-row:last-child .fb-savings-value { font-size:28px; font-weight:700; }
+      .fb-reality-check { margin:20px 0; color:var(--fb-text-light); font-size:15px; line-height:1.5; }
+      .fb-waitlist-btn { display:inline-block; background:var(--fb-purple); color:#fff; font-family:var(--fb-font); font-size:18px; font-weight:500; padding:14px 28px; border-radius:var(--fb-radius); border:none; cursor:pointer; text-decoration:none; transition:background .2s ease-in-out; }
+      .fb-waitlist-btn:hover { background:var(--fb-purple-dark); color:#fff; }
+      @media (max-width:768px) {
+        .fb-results-section.active { grid-template-columns:1fr; gap:32px; }
+        .fb-cost-value { font-size:28px; }
+        .fb-savings-value { font-size:22px; }
+        .fb-savings-row:last-child .fb-savings-value { font-size:26px; }
+      }
+    </style>
+
+    <div class="fb-calculator">
+      <div class="fb-slider-section" id="fbSliderSection">
+        <div class="fb-slider-group">
+          <label class="fb-slider-label">Wie lange dauert die Bearbeitung eines Belegs im Schnitt? (Minuten)</label>
+          <div class="fb-slider-container">
+            <input type="range" class="fb-slider" id="fbTimeSlider" min="2" max="12" value="5" step="1">
+            <div class="fb-slider-value" id="fbTimeValue">5</div>
+          </div>
+        </div>
+        <div class="fb-slider-group">
+          <label class="fb-slider-label">Wie viele Belege bearbeitet Ihr Team pro Monat?</label>
+          <div class="fb-slider-container">
+            <input type="range" class="fb-slider" id="fbInvoicesSlider" min="200" max="10000" value="1500" step="100">
+            <div class="fb-slider-value" id="fbInvoicesValue">1500</div>
+          </div>
+        </div>
+        <div class="fb-slider-group">
+          <label class="fb-slider-label">Wie hoch sind Ihre Personalkosten in der Belegverarbeitung? (Vollkosten &euro;/Std.)</label>
+          <div class="fb-slider-container">
+            <input type="range" class="fb-slider" id="fbWageSlider" min="30" max="60" value="40" step="5">
+            <div class="fb-slider-value" id="fbWageValue">40</div>
+          </div>
+        </div>
+        <button class="fb-calculate-btn" onclick="fbCalculateSavings()">Ersparnis berechnen</button>
+      </div>
+
+      <div class="fb-results-section" id="fbResultsSection">
+        <div class="fb-results-box">
+          <div class="fb-slider-group">
+            <label class="fb-slider-label">Wie lange dauert die Bearbeitung eines Belegs im Schnitt? (Minuten)</label>
+            <div class="fb-slider-container">
+              <input type="range" class="fb-slider" id="fbTimeSlider2" min="2" max="12" value="5" step="1" onchange="fbUpdateCalculation()">
+              <div class="fb-slider-value" id="fbTimeValue2">5</div>
+            </div>
+          </div>
+          <div class="fb-slider-group">
+            <label class="fb-slider-label">Wie viele Belege bearbeitet Ihr Team pro Monat?</label>
+            <div class="fb-slider-container">
+              <input type="range" class="fb-slider" id="fbInvoicesSlider2" min="200" max="10000" value="1500" step="100" onchange="fbUpdateCalculation()">
+              <div class="fb-slider-value" id="fbInvoicesValue2">1500</div>
+            </div>
+          </div>
+          <div class="fb-slider-group">
+            <label class="fb-slider-label">Wie hoch sind Ihre Personalkosten in der Belegverarbeitung? (Vollkosten &euro;/Std.)</label>
+            <div class="fb-slider-container">
+              <input type="range" class="fb-slider" id="fbWageSlider2" min="30" max="60" value="40" step="5" onchange="fbUpdateCalculation()">
+              <div class="fb-slider-value" id="fbWageValue2">40</div>
+            </div>
+          </div>
+        </div>
+        <div class="fb-results-box">
+          <h3 class="fb-results-title">Aktuell gebundene Kapazität</h3>
+          <div class="fb-current-cost">
+            <div class="fb-cost-value" id="fbCurrentHours">125 Stunden</div>
+          </div>
+          <div class="fb-current-cost">
+            <h3 class="fb-cost-label">Mit Flowbeaver gebunden (bei 70 % Zeitersparnis):</h3>
+            <div class="fb-cost-value" id="fbFlowbeaverHours">38 Stunden</div>
+          </div>
+          <div class="fb-savings-box">
+            <div class="fb-savings-row">
+              <div class="fb-savings-label">Frei für andere Arbeit:</div>
+              <div class="fb-savings-value" id="fbSavedHours">87 Stunden</div>
+            </div>
+            <div class="fb-savings-row">
+              <div class="fb-savings-label">Freie Kapazität in Euro:</div>
+              <div class="fb-savings-value" id="fbSavedCosts">3.480 Euro</div>
+            </div>
+            <div class="fb-savings-row">
+              <div class="fb-savings-label">Netto nach 299 &euro; Flatrate:</div>
+              <div class="fb-savings-value" id="fbNetSavings">3.181 Euro / Monat</div>
+            </div>
+          </div>
+          <!-- EMPFEHLUNG 5 v4: praeziser CTA-Wortlaut -->
+          <div class="fb-reality-check">
+            Diese Zahl in der 15-Minuten-Demo gegen Ihre Belege rechnen.
+          </div>
+          <a class="fb-waitlist-btn" href="#demo" role="button">Demo buchen (15 Min.)</a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function() {
+        var FLATRATE = 299;
+        var SAVINGS_RATE = 0.7;
+        document.getElementById('fbTimeSlider').oninput = function(){ document.getElementById('fbTimeValue').textContent = this.value; };
+        document.getElementById('fbInvoicesSlider').oninput = function(){ document.getElementById('fbInvoicesValue').textContent = this.value; };
+        document.getElementById('fbWageSlider').oninput = function(){ document.getElementById('fbWageValue').textContent = this.value; };
+        document.getElementById('fbTimeSlider2').oninput = function(){ document.getElementById('fbTimeValue2').textContent = this.value; };
+        document.getElementById('fbInvoicesSlider2').oninput = function(){ document.getElementById('fbInvoicesValue2').textContent = this.value; };
+        document.getElementById('fbWageSlider2').oninput = function(){ document.getElementById('fbWageValue2').textContent = this.value; };
+        window.fbCalculateSavings = function(){
+          var time = parseInt(document.getElementById('fbTimeSlider').value);
+          var invoices = parseInt(document.getElementById('fbInvoicesSlider').value);
+          var wage = parseInt(document.getElementById('fbWageSlider').value);
+          document.getElementById('fbTimeSlider2').value = time;
+          document.getElementById('fbTimeValue2').textContent = time;
+          document.getElementById('fbInvoicesSlider2').value = invoices;
+          document.getElementById('fbInvoicesValue2').textContent = invoices;
+          document.getElementById('fbWageSlider2').value = wage;
+          document.getElementById('fbWageValue2').textContent = wage;
+          fbUpdateCalculation();
+          document.getElementById('fbSliderSection').style.display = 'none';
+          document.getElementById('fbResultsSection').classList.add('active');
+        };
+        window.fbUpdateCalculation = function(){
+          var time = parseInt(document.getElementById('fbTimeSlider2').value);
+          var invoices = parseInt(document.getElementById('fbInvoicesSlider2').value);
+          var wage = parseInt(document.getElementById('fbWageSlider2').value);
+          var currentHours = Math.round((invoices * time) / 60);
+          var flowbeaverHours = Math.round((invoices * time * (1 - SAVINGS_RATE)) / 60);
+          var savedHours = currentHours - flowbeaverHours;
+          var savedCosts = Math.round(savedHours * wage);
+          var netSavings = savedCosts - FLATRATE;
+          document.getElementById('fbCurrentHours').textContent = currentHours.toLocaleString('de-DE') + ' Stunden';
+          document.getElementById('fbFlowbeaverHours').textContent = flowbeaverHours.toLocaleString('de-DE') + ' Stunden';
+          document.getElementById('fbSavedHours').textContent = savedHours.toLocaleString('de-DE') + ' Stunden';
+          document.getElementById('fbSavedCosts').textContent = savedCosts.toLocaleString('de-DE') + ' Euro';
+          document.getElementById('fbNetSavings').textContent = netSavings.toLocaleString('de-DE') + ' Euro / Monat';
+        };
+      })();
+    </script>
+
+    <!-- EMPFEHLUNG 8 v4: Pricing-Card mit entdramatisierter Caption -->
+    <div style="background:#fff; border:1px solid var(--fb-border); border-left:4px solid var(--fb-purple); border-radius:var(--fb-radius); padding:32px; margin:32px 0;">
+      <p style="font-size:36px; font-weight:700; color:#000; margin-bottom:8px; line-height:1.1;">299 € pro Monat</p>
+      <p style="font-size:18px; margin-bottom:12px;">Flatrate, monatlich kündbar. Schon ab 10 FiBu-Mandaten rechnet es sich.</p>
+      <p style="font-size:14px; color:var(--fb-text-light); margin-bottom:0;">Einführungspreis &mdash; gilt dauerhaft für die ersten zehn Kanzleien. Spätere Einstiege starten zu höheren Konditionen.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     TILDA-BLOCK: T127 (Text + Image, 2 Spalten)
+     INHALT: Block 7 — Gruender
+     EMPFEHLUNG 7 v4: H2 "Schmerzen" -> "Engpaesse"
+     ============================================================ -->
+<section class="t-rec" id="rec-gruender" data-record-type="127">
+  <div class="t-container">
+    <div class="draft-note">BLOCK 7 GRUENDER · Tilda T127. Empfehlung 7 ABGELEHNT: „Engpässe kennen" wuerde Insider-Wissen ueber Steuerkanzleien implizieren, das Andreas als Nicht-Steuerberater nicht hat. „Ihre Schmerzen" bleibt — universeller und ehrlicher.</div>
+    <h2 class="t-title" style="text-align:center; margin-bottom:40px;">Gebaut von jemandem, der den Schmerz kennt</h2>
+    <div class="t-grid-2">
+      <div class="t-col">
+        <div style="background:#f7f7fa; border:1px dashed #bbb; border-radius:var(--fb-radius); height:320px; display:flex; align-items:center; justify-content:center; color:#999;">
+          [PLATZHALTER: Foto Andreas Schwarzkopf]
+        </div>
+      </div>
+      <div class="t-col">
+        <p class="t-text"><strong>Andreas Schwarzkopf</strong><br>Diplom-Kaufmann, 15 Jahre KI in produktiven Systemen, zuletzt für die Mercedes-Benz Bank AG. Geschäftsführer der Flowbeaver GmbH.</p>
+
+        <blockquote style="border-left:3px solid var(--fb-purple); padding:8px 16px; margin:20px 0; font-style:italic; color:var(--fb-text-light);">
+          Mir war die Zeit für manuelle Belegarbeit immer zu schade. In drei eigenen Unternehmen über 25 Jahre habe ich denselben Kreislauf gesehen, und eine Lösung, die mich wirklich überzeugt hätte, gab es nicht. Also habe ich sie gebaut.
+        </blockquote>
+
+        <p class="t-text">Flowbeaver entwickelt sich gemeinsam mit den ersten Kanzleien. Wer in der ersten Runde dabei ist, formt das Produkt mit: Feedback fließt in Tagen ins Produkt — keine Support-Tickets, keine Vertriebsebene, kein Marketing-Filter dazwischen.</p>
+
+        <p class="t-text">
+          <a href="https://www.linkedin.com/in/schwarzkopf">LinkedIn</a> &middot;
+          <a href="mailto:info@flowbeaver.de">info@flowbeaver.de</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     TILDA-BLOCK: T504 (3 Cards Equal)
+     INHALT: Block 8 — Ressourcen
+     EMPFEHLUNG 4 v4: Branchenreport ist bereits oben (Block 2.5).
+     Hier bleiben LinkedIn + Community-Praesenz. Dritte Karte:
+     Gruender-Direktkontakt.
+     ============================================================ -->
+<section class="t-rec t-rec_bg" id="rec-ressourcen" data-record-type="504">
+  <div class="t-container">
+    <div class="draft-note">BLOCK 8 RESSOURCEN · Tilda T504. Branchenreport-Karte ist nach oben gewandert (Empfehlung 4). Hier bleiben drei Lese-/Kontakt-Wege.</div>
+    <div style="max-width:760px; margin:0 auto 32px;">
+      <h2 class="t-title">Wenn Sie uns erst einmal lesen wollen</h2>
+      <p class="t-text">Bevor wir miteinander sprechen, können Sie sich durch die Arbeit lesen, die wir veröffentlichen. Drei Orte, an denen Sie Flowbeaver heute schon finden.</p>
+    </div>
+    <div class="t-grid-3">
+      <div class="t-card">
+        <h3>LinkedIn</h3>
+        <p class="t-text">Produktfortschritt, Kanzleigespräche, Notizen aus der Entwicklung. Ein bis zwei Beiträge pro Woche.</p>
+        <p style="margin:0;"><a href="https://www.linkedin.com/in/schwarzkopf">Andreas auf LinkedIn →</a></p>
+      </div>
+      <div class="t-card">
+        <h3>Community-Präsenz</h3>
+        <p class="t-text">Wir sind lesbar und ansprechbar in der DATEV-Community, bei „Steuerberater unter sich" und auf newgen.tax. Wenn Sie dort Fragen stellen, antworten wir.</p>
+        <p style="margin:0;"><a href="mailto:info@flowbeaver.de">Kontakt zum Gründer →</a></p>
+      </div>
+      <div class="t-card">
+        <h3>Branchenreport 2026</h3>
+        <p class="t-text">28 Seiten, 21 Quellen aus BStBK, ifo, DATEV, KPMG. „KI in der Steuerkanzlei 2026". Kostenlos als PDF.</p>
+        <p style="margin:0;"><a href="/branchenreport">Report herunterladen →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     TILDA-BLOCK: T142 (Heading + CTA, oeffnet Tilda-Popup-Form)
+     INHALT: Block 9 — Demo-Anfrage
+     EMPFEHLUNG 2 v4 (revidiert 2026-05-01): Iframe-Variante verworfen
+                       (gravierende UX-Probleme). Stattdessen Variante B
+                       umgesetzt: Tilda-Popup-Form bleibt, Erwartung wird
+                       VOR dem Klick klar gemacht. Bestaetigungs-Email
+                       enthaelt den MS-Bookings-Link (siehe
+                       email/demo-anfrage-bestaetigung.md).
+     MS-Bookings-URL (fuer Email-Template):
+       https://outlook.office.com/book/Flowbeaver@k-d-a.de/?ismsaljsauthenabled
+     ============================================================ -->
+<section class="t-rec" id="demo" data-record-type="142">
+  <div class="t-narrow">
+    <div class="draft-note">BLOCK 9 DEMO · Tilda T142, CTA oeffnet das bestehende Tilda-Popup-Lead-Form. Empfehlung 2 v4: Iframe verworfen wegen UX. Erwartung wird oberhalb des Buttons gesetzt: Anfrage senden -> Einladung mit Slot-Link kommt per Mail.</div>
+    <div style="text-align:center;">
+      <h2 class="t-title">15 Minuten, direkt mit dem Gründer</h2>
+
+      <!--
+        EMPFEHLUNG 2 v4: Mindest-Erwartung VOR dem Klick. Wer den
+        Button drueckt, soll wissen, dass jetzt KEIN Slot-Picker
+        kommt, sondern eine Mail. Mehr nicht.
+        Tilda-Popup-Form (T702-Pop oder TF704) haengt am #popup-demo.
+      -->
+      <p style="margin:24px 0 8px;"><a href="#popup-demo" class="t-btn">Demo anfragen (15 Min.)</a></p>
+      <p class="t-btn-sub">Sie erhalten anschließend eine E-Mail, in der Sie einen Termin direkt buchen oder uns eigene Vorschläge schicken können.</p>
+    </div>
+
+    <p style="text-align:center; margin-top:32px; font-size:15px; color:var(--fb-text-light);">
+      Lieber direkt schreiben oder anrufen? <a href="mailto:info@flowbeaver.de">info@flowbeaver.de</a> &middot; <a href="tel:+493020169735">+49&nbsp;30&nbsp;20169735</a>
+    </p>
+
+    <p style="text-align:center; margin-top:24px; font-size:15px; color:var(--fb-text-light);">
+      Wir nehmen aktuell maximal zehn Kanzleien parallel in die Einführung auf, damit das Vorsystem im Kanzleialltag wirklich ankommt.
+    </p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     TILDA-BLOCK: TN08 (FAQ Accordion)
+     ALTERNATIVEN: TN801, T520
+     INHALT: Block 10 — Haeufige Fragen
+     ============================================================ -->
+<section class="t-rec" id="rec-faq" data-record-type="TN08">
+  <div class="t-narrow">
+    <div class="draft-note">BLOCK 10 FAQ · Tilda TN08 (Accordion). 10 Eintraege. Reihenfolge: Was -> Wie -> Kosten/Risiken -> Recht -> Onboarding.</div>
+    <h2 class="t-title">Häufige Fragen</h2>
+
+    <details style="border-bottom:1px solid var(--fb-border); padding:16px 0;">
+      <summary style="cursor:pointer; font-weight:600; font-size:18px; color:#000;">Was macht Flowbeaver genau?</summary>
+      <p class="t-text" style="margin-top:12px;">Flowbeaver ist ein KI-Vorsystem für die vorbereitende Buchhaltung. Das System liest jeden Eingangs- und Ausgangsbeleg, identifiziert den Lieferanten, ordnet die Positionen zu und schlägt eine Kontierung nach SKR03 oder SKR04 vor. Am Ende steht ein DATEV-kompatibler Buchungsstapel. Prüfung und Import in DATEV bleiben bei Ihrem Team.</p>
+    </details>
+
+    <details style="border-bottom:1px solid var(--fb-border); padding:16px 0;">
+      <summary style="cursor:pointer; font-weight:600; font-size:18px; color:#000;">Bucht Flowbeaver automatisch?</summary>
+      <p class="t-text" style="margin-top:12px;">Nein. Flowbeaver erzeugt Vorschläge, keine Buchungen. Jeder Vorschlag passiert die Prüfung Ihres Teams. Kein Beleg wird ohne menschliche Freigabe gebucht, auch eine bewusste Entscheidung mit Blick auf den EU AI Act.</p>
+    </details>
+
+    <details style="border-bottom:1px solid var(--fb-border); padding:16px 0;">
+      <summary style="cursor:pointer; font-weight:600; font-size:18px; color:#000;">Welche Belege werden aktuell unterstützt?</summary>
+      <p class="t-text" style="margin-top:12px;">Rechnungseingang und Rechnungsausgang. Wir starten bewusst fokussiert: lieber zwei Belegarten mit hoher Qualität als zehn mit Lücken. Kassenbelege, Bankauszüge und weitere folgen, sobald die Erkennung dort dieselbe Tiefe erreicht.</p>
+    </details>
+
+    <details style="border-bottom:1px solid var(--fb-border); padding:16px 0;">
+      <summary style="cursor:pointer; font-weight:600; font-size:18px; color:#000;">Was passiert mit Problembelegen?</summary>
+      <p class="t-text" style="margin-top:12px;">Rechnungen mit fehlenden Angaben, Rechenfehlern oder Dubletten landen in einer Klärfälle-Liste mit konkretem Hinweis, was zu prüfen ist. Flowbeaver rät nicht. Unklare Fälle entscheiden Ihre Mitarbeiter.</p>
+    </details>
+
+    <details style="border-bottom:1px solid var(--fb-border); padding:16px 0;">
+      <summary style="cursor:pointer; font-weight:600; font-size:18px; color:#000;">Müssen wir an DATEV etwas ändern?</summary>
+      <p class="t-text" style="margin-top:12px;">Nein. Ihr DATEV-Setup (Kanzlei-Rechnungswesen, Unternehmen Online, Mandantenstruktur) bleibt unangetastet. Flowbeaver klinkt sich vor DATEV in den Prozess ein und übergibt das fertige Ergebnis im Standardformat.</p>
+    </details>
+
+    <details style="border-bottom:1px solid var(--fb-border); padding:16px 0;">
+      <summary style="cursor:pointer; font-weight:600; font-size:18px; color:#000;">Was ist der Unterschied zu DATEV Buchungsassistent oder ASR?</summary>
+      <p class="t-text" style="margin-top:12px;">Der DATEV-Buchungsassistent und ASR arbeiten mit Mustererkennung auf deutschen Rechnungslayouts. Flowbeaver versteht den Inhalt eines Belegs (Lieferant, Leistung, Geschäftsvorfall) sprach- und layoutunabhängig. Spürbar wird der Unterschied bei fremdsprachigen Rechnungen, ungewöhnlichen Layouts und Belegen mit mehreren gemischten Positionen.</p>
+    </details>
+
+    <details style="border-bottom:1px solid var(--fb-border); padding:16px 0;">
+      <summary style="cursor:pointer; font-weight:600; font-size:18px; color:#000;">Was kostet Flowbeaver?</summary>
+      <p class="t-text" style="margin-top:12px;">299 € pro Monat als Flatrate, unabhängig vom Belegvolumen, monatlich kündbar. Keine Setup-Gebühr, keine Pro-Beleg-Abrechnung, keine versteckten Staffeln. Aktueller Einführungspreis für die ersten zehn Kanzleien.</p>
+    </details>
+
+    <details style="border-bottom:1px solid var(--fb-border); padding:16px 0;">
+      <summary style="cursor:pointer; font-weight:600; font-size:18px; color:#000;">Welche Risiken gibt es?</summary>
+      <p class="t-text" style="margin-top:12px;">Im schlimmsten Fall landen einzelne Belege als Klärfall statt als fertiger Vorschlag. Verloren geht nichts, weil alles zur Prüfung bleibt. Sollten Sie in den ersten 30 Tagen feststellen, dass Flowbeaver nicht zu Ihrer Kanzlei passt, erstatten wir die Gebühr vollständig zurück.</p>
+    </details>
+
+    <details style="border-bottom:1px solid var(--fb-border); padding:16px 0;">
+      <summary style="cursor:pointer; font-weight:600; font-size:18px; color:#000;">Ist das DSGVO-konform?</summary>
+      <p class="t-text" style="margin-top:12px;">Ja. Server in Deutschland (Hetzner), LLM-Verarbeitung bei Mistral in Frankreich, kein US-Hyperscaler. Für jede Kanzlei schließen wir einen Auftragsverarbeitungsvertrag nach Art. 28 DSGVO. Vollständige Compliance-Dokumentation auf Anfrage.</p>
+    </details>
+
+    <details style="padding:16px 0;">
+      <summary style="cursor:pointer; font-weight:600; font-size:18px; color:#000;">Wie startet eine Zusammenarbeit?</summary>
+      <p class="t-text" style="margin-top:12px;">Mit einer 15-Minuten-Demo, in der wir Ihre Belegeingänge besprechen und prüfen, ob Flowbeaver zu Ihrer Kanzlei passt. Ist der Fit da, folgt ein Praxis-Check: Sie schicken 30 echte Belege aus Ihrem Alltag, ich zeige Ihnen, was automatisch durchläuft und was als Klärfall zurückkommt. Erst danach entscheiden Sie, ob Sie mit Flowbeaver starten.</p>
+    </details>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     TILDA-BLOCK: T390 (Footer mit Mehrspalten + CTA)
+     ALTERNATIVEN: T192, T390A
+     INHALT: Footer
+     EMPFEHLUNG 10 v4: Email + Telefon + LinkedIn + Mini-Demo-CTA
+                        zusaetzlich zu den Pflichtlinks. Footer wird
+                        zum zweiten Conversion-Netz.
+     ============================================================ -->
+<footer class="t-rec" id="rec-footer" data-record-type="390" style="background:#111; color:#fff; padding:48px 0 32px; border-bottom:none;">
+  <div class="t-container">
+    <div class="draft-note" style="background:#222; border-color:#666; color:#ddd;">FOOTER · Tilda T390 (Mehrspalten-Footer mit CTA). Empfehlung 10: Email, Telefon, LinkedIn, Mini-Demo-CTA als zweites Conversion-Netz.</div>
+
+    <div style="display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; align-items:start;">
+
+      <div>
+        <div style="font-weight:700; font-size:22px; color:#fff; margin-bottom:16px;">Flowbeaver</div>
+        <p style="font-size:15px; opacity:.7; line-height:1.55; margin:0 0 16px;">Das KI-Vorsystem für die vorbereitende Buchhaltung in Steuerkanzleien. DATEV-Ergänzung, kein Ersatz.</p>
+        <a href="#demo" style="display:inline-block; background:var(--fb-purple); color:#fff; padding:10px 18px; border-radius:8px; font-weight:500; font-size:15px;">15-Min-Demo buchen</a>
+      </div>
+
+      <div>
+        <div style="font-size:13px; text-transform:uppercase; letter-spacing:1px; opacity:.5; margin-bottom:12px;">Kontakt</div>
+        <p style="font-size:15px; line-height:1.7; margin:0;">
+          <a href="mailto:info@flowbeaver.de" style="color:#fff; opacity:.9; display:block; margin-bottom:6px;">info@flowbeaver.de</a>
+          <a href="tel:+493020169735" style="color:#fff; opacity:.9; display:block; margin-bottom:6px;">+49 30 20169735</a>
+          <a href="https://www.linkedin.com/in/schwarzkopf" style="color:#fff; opacity:.9; display:block;">Andreas auf LinkedIn</a>
+        </p>
+      </div>
+
+      <div>
+        <div style="font-size:13px; text-transform:uppercase; letter-spacing:1px; opacity:.5; margin-bottom:12px;">Produkt</div>
+        <p style="font-size:15px; line-height:1.7; margin:0;">
+          <a href="/produkt" style="color:#fff; opacity:.9; display:block; margin-bottom:6px;">Produkt</a>
+          <a href="/branchenreport" style="color:#fff; opacity:.9; display:block; margin-bottom:6px;">Branchenreport</a>
+          <a href="/blog" style="color:#fff; opacity:.9; display:block;">Ressourcen</a>
+        </p>
+      </div>
+
+      <div>
+        <div style="font-size:13px; text-transform:uppercase; letter-spacing:1px; opacity:.5; margin-bottom:12px;">Unternehmen</div>
+        <p style="font-size:15px; line-height:1.7; margin:0;">
+          <a href="/ueber" style="color:#fff; opacity:.9; display:block; margin-bottom:6px;">Über uns</a>
+          <a href="/kontakt" style="color:#fff; opacity:.9; display:block; margin-bottom:6px;">Kontakt</a>
+          <a href="/datenschutz" style="color:#fff; opacity:.9; display:block; margin-bottom:6px;">Datenschutz</a>
+          <a href="/impressum" style="color:#fff; opacity:.9; display:block; margin-bottom:6px;">Impressum</a>
+          <a href="/agb" style="color:#fff; opacity:.9; display:block;">AGB</a>
+        </p>
+      </div>
+
+    </div>
+
+    <div style="border-top:1px solid #333; margin-top:40px; padding-top:20px; font-size:13px; opacity:.5; text-align:center;">
+      © 2026 Flowbeaver GmbH, Berlin
+    </div>
+  </div>
+
+  <style>
+    @media (max-width: 768px) {
+      footer .t-container > div:first-of-type + div { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+      footer .t-container > div { grid-template-columns: 1fr !important; }
+    }
+  </style>
+</footer>
+
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Flowbeaver — LinkedIn Personal Cover v3 (3168×792 @2x)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --fb-purple: #52267a;
+    --fb-white: #ffffff;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    width: 3168px;
+    height: 792px;
+    overflow: hidden;
+    font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+    background: var(--fb-purple);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: geometricPrecision;
+  }
+
+  .banner {
+    position: relative;
+    width: 3168px;
+    height: 792px;
+    background: var(--fb-purple);
+    overflow: hidden;
+  }
+
+  /* Logo dezent oben rechts, klein */
+  .logo-mark {
+    position: absolute;
+    top: 100px;
+    right: 160px;
+    width: 200px;
+    height: 200px;
+    /* Brand-Lila PNG → reines Weiß */
+    filter: brightness(0) invert(1);
+  }
+
+  /* Claim: zentriert auf der Bühne */
+  .claim {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    font-size: 132px;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -3.2px;
+    color: var(--fb-white);
+    white-space: nowrap;
+  }
+</style>
+</head>
+<body>
+  <div class="banner">
+    <img class="logo-mark" src="../og-image/logo-f-4.png" alt="">
+    <div class="claim">Ein Belegturbo für Ihre FiBu.</div>
+  </div>
+</body>
+</html>

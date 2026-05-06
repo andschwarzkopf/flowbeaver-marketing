@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Flowbeaver — LinkedIn Personal Cover v1 (1584×396)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --fb-purple: #52267a;
+    --fb-purple-dark: #3d1c5c;
+    --fb-white: #ffffff;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    width: 1584px;
+    height: 396px;
+    overflow: hidden;
+    font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+    background: var(--fb-purple);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: geometricPrecision;
+  }
+
+  .banner {
+    position: relative;
+    width: 1584px;
+    height: 396px;
+    background: linear-gradient(120deg, #52267a 0%, #3d1c5c 100%);
+    overflow: hidden;
+  }
+
+  /* Subtle accent line right side */
+  .accent-line {
+    position: absolute;
+    right: 360px;
+    top: 70px;
+    bottom: 70px;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.14);
+    z-index: 1;
+  }
+
+  /* Logo-Container: F-Mark via CSS-Mask, weiß eingefärbt */
+  .logo-mark {
+    position: absolute;
+    right: 110px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 230px;
+    height: 280px;
+    background-color: #ffffff;
+    -webkit-mask-image: url(../og-image/logo-f-l.png);
+    mask-image: url(../og-image/logo-f-l.png);
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    -webkit-mask-position: left center;
+    mask-position: left center;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    opacity: 0.20;
+    z-index: 1;
+  }
+
+  .text-block {
+    position: absolute;
+    left: 96px;
+    top: 64px;
+    z-index: 2;
+  }
+
+  .brand {
+    font-size: 110px;
+    font-weight: 700;
+    line-height: 1.0;
+    letter-spacing: -2.5px;
+    color: var(--fb-white);
+    margin-bottom: 24px;
+  }
+
+  .promise {
+    font-size: 44px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    color: rgba(255, 255, 255, 0.94);
+  }
+
+  /* Domain marker at right edge, very subtle */
+  .domain {
+    position: absolute;
+    right: 92px;
+    bottom: 36px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.55);
+    z-index: 2;
+  }
+</style>
+</head>
+<body>
+  <div class="banner">
+    <div class="accent-line"></div>
+    <div class="logo-mark"></div>
+    <div class="text-block">
+      <div class="brand">Flowbeaver</div>
+      <div class="promise">Ein Belegturbo für Ihre FiBu.</div>
+    </div>
+    <div class="domain">flowbeaver.de</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,262 @@
+/* ============================================================
+   FLOWBEAVER SPARRECHNER — Stylesheet
+   ============================================================
+   Brand-Farben:    Lila #52267a, Hover #3d1c5c
+   Schrift:         TildaSans, Arial, sans-serif
+   Radius / Spacing: passend zur Homepage (.btn-primary, .card)
+
+   Erwartet die HTML-Struktur des Block-6-Sparrechners:
+   .fb-calculator > .fb-slider-section / .fb-results-section
+   ============================================================ */
+
+.fb-calculator,
+.fb-calculator * {
+    font-family: 'TildaSans', Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+.fb-calculator {
+    color: #404040;
+    line-height: 1.5;
+    max-width: 100%;
+}
+
+/* ----- Slider-Gruppen ----- */
+
+.fb-slider-group {
+    margin-bottom: 28px;
+}
+
+.fb-slider-label {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #404040;
+    font-weight: 400;
+}
+
+.fb-slider-container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.fb-slider {
+    flex: 1 1 auto;
+    min-width: 0;
+    height: 4px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #d6e9e3;
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+}
+
+.fb-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #52267a;
+    cursor: pointer;
+    border: none;
+}
+
+.fb-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #52267a;
+    cursor: pointer;
+    border: none;
+}
+
+.fb-slider-value {
+    flex: 0 0 auto;
+    min-width: 80px;
+    padding: 10px 16px;
+    background: #f7f7fa;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 18px;
+    color: #404040;
+}
+
+/* ----- Calculate-Button (vor Ergebnis) ----- */
+
+.fb-calculate-btn {
+    display: inline-block;
+    background: #52267a;
+    color: #fff;
+    font-family: 'TildaSans', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 14px 28px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 16px;
+    transition: background 0.2s ease-in-out;
+}
+
+.fb-calculate-btn:hover {
+    background: #3d1c5c;
+}
+
+/* ----- Ergebnis-Sektion: 2-Spalten-Layout ----- */
+
+.fb-results-section {
+    display: none;
+}
+
+.fb-results-section.active {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+}
+
+.fb-results-box {
+    min-width: 0; /* erlaubt korrekte Grid-Schrumpfung */
+}
+
+/* ----- Ergebnis-Anzeige ----- */
+
+.fb-results-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #606060;
+    margin: 0 0 12px 0;
+    line-height: 1.3;
+}
+
+.fb-current-cost {
+    margin-bottom: 24px;
+}
+
+.fb-cost-label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #606060;
+    margin: 0 0 8px 0;
+    line-height: 1.4;
+}
+
+.fb-cost-value {
+    font-size: 36px;
+    font-weight: 700;
+    color: #000;
+    line-height: 1.1;
+}
+
+/* ----- Savings-Box (lila Akzent) ----- */
+
+.fb-savings-box {
+    background: #faf5ff;
+    border: 1px solid #e6d9f0;
+    border-left: 4px solid #52267a;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin: 24px 0;
+}
+
+.fb-savings-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding: 10px 0;
+}
+
+.fb-savings-row + .fb-savings-row {
+    border-top: 1px solid #e6d9f0;
+}
+
+.fb-savings-label {
+    font-size: 15px;
+    color: #404040;
+    line-height: 1.4;
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.fb-savings-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+    text-align: right;
+    white-space: nowrap;
+    flex: 0 0 auto;
+}
+
+/* Letzte Zeile (Netto) hervorheben */
+.fb-savings-row:last-child .fb-savings-label,
+.fb-savings-row:last-child .fb-savings-value {
+    font-weight: 700;
+    color: #52267a;
+}
+
+.fb-savings-row:last-child .fb-savings-value {
+    font-size: 22px;
+}
+
+/* ----- Reality-Check + CTA ----- */
+
+.fb-reality-check {
+    margin: 20px 0;
+    color: #606060;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.fb-waitlist-btn {
+    display: inline-block;
+    background: #52267a;
+    color: #fff;
+    font-family: 'TildaSans', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 14px 28px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s ease-in-out;
+}
+
+.fb-waitlist-btn:hover {
+    background: #3d1c5c;
+    color: #fff;
+}
+
+/* ----- Mobile ----- */
+
+@media (max-width: 768px) {
+    .fb-results-section.active {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .fb-cost-value {
+        font-size: 28px;
+    }
+
+    .fb-savings-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .fb-savings-value {
+        font-size: 22px;
+        text-align: left;
+    }
+
+    .fb-savings-row:last-child .fb-savings-value {
+        font-size: 24px;
+    }
+}

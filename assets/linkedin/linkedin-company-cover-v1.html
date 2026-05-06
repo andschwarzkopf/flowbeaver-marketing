@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Flowbeaver — LinkedIn Company Cover v1 (4200×700)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --fb-purple: #52267a;
+    --fb-white: #ffffff;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    width: 4200px;
+    height: 700px;
+    overflow: hidden;
+    font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+    background: var(--fb-purple);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: geometricPrecision;
+  }
+
+  .banner {
+    position: relative;
+    width: 4200px;
+    height: 700px;
+    background: var(--fb-purple);
+    overflow: hidden;
+  }
+
+  .accent-line {
+    position: absolute;
+    right: 220px;
+    top: 160px;
+    bottom: 160px;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.14);
+  }
+
+  .accent-mark {
+    position: absolute;
+    right: 180px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .accent-label {
+    font-size: 26px;
+    font-weight: 500;
+    letter-spacing: 3.4px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.55);
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+
+  .content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 48px;
+    padding: 0 520px;
+  }
+
+  .eyebrow {
+    font-size: 26px;
+    font-weight: 500;
+    letter-spacing: 5.5px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.65);
+  }
+
+  .headline {
+    font-size: 124px;
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -2.6px;
+    color: var(--fb-white);
+    max-width: 2800px;
+  }
+
+  .trust-row {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    font-size: 30px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.78);
+  }
+
+  .trust-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.45);
+  }
+</style>
+</head>
+<body>
+  <div class="banner">
+    <div class="accent-line"></div>
+    <div class="accent-mark">
+      <span class="accent-label">flowbeaver.de</span>
+    </div>
+
+    <div class="content">
+      <div class="eyebrow">Vorbereitende Buchhaltung — automatisiert</div>
+      <div class="headline">Das KI-Vorsystem für Steuerkanzleien.</div>
+      <div class="trust-row">
+        <span>DATEV-Buchungsstapel</span>
+        <span class="trust-dot"></span>
+        <span>SKR03 / SKR04</span>
+        <span class="trust-dot"></span>
+        <span>Hosting in Deutschland</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

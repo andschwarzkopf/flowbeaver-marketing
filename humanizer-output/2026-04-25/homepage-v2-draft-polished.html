@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="de">
+<!--
+  ============================================================
+  FLOWBEAVER HOMEPAGE — ENTWURF v2.1 (nach Humanizer-Pass 2)
+  ============================================================
+  Pass 2 Aenderungen:
+    - Block 2: Fett-Punkt-Erklaerung-Muster aufgeloest, Absatz-Eroeffnungen variiert
+    - Block 3: <em>Antwort auf X.</em>-Stubs entfernt (mechanische 1:1-Beschriftung weg)
+    - Block 3: Meta-Saetze ("Jede Karte adressiert...") gestrichen
+    - Block 4: Passiv-Parallel-Konstruktion in Para 3 in Fragmente aufgebrochen
+    - Block 5: Em-Dash-Parenthese in Klammern umgewandelt
+    - Em-Dashes im Fliesstext: 8 -> 1 (Brand Voice: max. 2)
+    - Sonstiges: kleine Rhythmus-Glaettungen
+-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flowbeaver – KI-Vorsystem fuer Steuerkanzleien</title>
+  <meta name="description" content="Flowbeaver liest Mandantenbelege, ordnet zu und kontiert vor. Ihr Team prueft und bucht in DATEV. Ohne Systemwechsel.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap">
+  <style>
+    :root{--fb-purple:#52267a;--fb-dark-red:#3c0f04;--fb-text:#404040;--fb-black:#000;--fb-hover:#606060;--fb-white:#fff;--fb-footer:#111;--fb-border:#e0e0e0;--fb-radius:10px;--fb-font:'DM Sans',system-ui,sans-serif;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:var(--fb-font);font-size:20px;line-height:1.6;color:var(--fb-text);background:var(--fb-white);}
+    h1,h2,h3{color:var(--fb-black);line-height:1.25;font-weight:700;}
+    h1{font-size:44px;color:var(--fb-dark-red);line-height:1.15;margin-bottom:20px;}
+    h2{font-size:26px;margin-bottom:20px;}
+    h3{font-size:22px;font-weight:600;margin-bottom:12px;}
+    p{margin-bottom:20px;}
+    a{color:var(--fb-purple);text-decoration:none;}
+    a:hover{color:var(--fb-hover);}
+    ul{padding-left:1.25rem;margin-bottom:20px;}
+    li{margin-bottom:8px;}
+    section{padding:80px 24px;border-bottom:1px solid var(--fb-border);}
+    .container{max-width:960px;margin:0 auto;}
+    .narrow{max-width:720px;margin:0 auto;}
+    .btn-primary{display:inline-block;background:var(--fb-purple);color:var(--fb-white);font-size:20px;font-weight:500;padding:14px 28px;border-radius:var(--fb-radius);border:none;cursor:pointer;transition:.2s ease-in-out;}
+    .btn-primary:hover{background:#3d1c5c;color:var(--fb-white);}
+    .btn-sub{font-size:14px;color:var(--fb-hover);margin-top:10px;}
+    .card{border:1px solid var(--fb-border);border-radius:var(--fb-radius);padding:24px;background:var(--fb-white);}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
+    .zitat{border-left:3px solid var(--fb-purple);padding:8px 16px;margin:20px 0;font-style:italic;color:var(--fb-hover);}
+    .szenario{background:#faf7fd;border-radius:var(--fb-radius);padding:40px;margin:24px 0;}
+    .block-note{background:#fffbe6;border:1px dashed #d4a900;padding:10px 14px;font-size:13px;font-family:monospace;color:#665200;margin-bottom:20px;border-radius:6px;}
+    nav.top{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;border-bottom:1px solid var(--fb-border);position:sticky;top:0;background:var(--fb-white);z-index:100;}
+    nav.top ul{display:flex;gap:24px;list-style:none;padding:0;margin:0;align-items:center;}
+    nav.top a{color:var(--fb-black);font-weight:500;font-size:16px;}
+    footer{background:var(--fb-footer);color:var(--fb-white);padding:40px 24px;text-align:center;font-size:14px;}
+    footer a{color:var(--fb-white);opacity:.7;margin:0 12px;}
+    @media(max-width:768px){.grid-3,.grid-2{grid-template-columns:1fr;}h1{font-size:32px;}h2{font-size:22px;}section{padding:60px 20px;}.szenario{padding:24px;}}
+  </style>
+</head>
+
+<body>
+
+<!-- ============================================================
+     NAVIGATION — [QUELLE: NEW]
+     ============================================================ -->
+<nav class="top">
+  <div><strong style="font-size:22px;color:var(--fb-purple);">Flowbeaver</strong></div>
+  <ul>
+    <li><a href="/produkt">Produkt</a></li>
+    <li><a href="/branchenreport">Branchenreport</a></li>
+    <li><a href="/blog">Ressourcen</a></li>
+    <li><a href="/ueber">Über</a></li>
+    <li><a href="/kontakt">Kontakt</a></li>
+  </ul>
+</nav>
+
+
+<!-- ============================================================
+     BLOCK 1: HERO — [HUMANIZED v2.1: Em-Dash raus, Fragment-Rhythmus]
+     ============================================================ -->
+<section id="hero">
+  <div class="container grid-2">
+    <div>
+      <div class="block-note">BLOCK 1 HERO · Em-Dash-Konstruktion in Fragment-Rhythmus aufgeloest. „Ohne neue Software. Ohne Umstellung." liest sich punchier.</div>
+      <h1>Das KI-Vorsystem für Steuerkanzleien</h1>
+      <p style="font-size:22px;color:var(--fb-text);">
+        Flowbeaver liest Mandantenbelege, erkennt den Geschäftsvorfall und kontiert nach SKR03 oder SKR04 vor. Ihr Team prüft den Buchungsstapel und importiert ihn in DATEV Kanzlei-Rechnungswesen. Ohne neue Software. Ohne Umstellung bestehender Prozesse.
+      </p>
+      <p><a href="#demo" class="btn-primary">Demo buchen (15 Min.)</a></p>
+      <p class="btn-sub">Direkt mit dem Gründer, kein Vertrieb dazwischen.</p>
+    </div>
+    <div>
+      <div style="background:#f7f7fa;border:1px dashed #bbb;border-radius:var(--fb-radius);min-height:320px;display:flex;align-items:center;justify-content:center;color:#999;text-align:center;">
+        [PLATZHALTER: Screenshot Beleg-Durchlauf<br>oder Prozess-Mockup]
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BLOCK 2: PROBLEM — [HUMANIZED v2.1]
+     Pass 2: Drei mechanische **Bold.**-Absatzeroeffnungen aufgeloest,
+     jede Eroeffnung verschieden, Em-Dash raus.
+     ============================================================ -->
+<section id="problem">
+  <div class="narrow">
+    <div class="block-note">BLOCK 2 PROBLEM · v2.1: Fett-Punkt-Erklaerung-Muster (drei parallele **Bold.**-Absatzstarts) entfernt. Eroeffnungen variiert: „Den groessten Anteil...", „Daneben binden...", „Hinzu kommt...". Em-Dash bei „in Wellen –" durch Komma ersetzt.</div>
+    <h2>Die Lage in den Kanzleien</h2>
+    <h3 style="margin-top:0;">Drei Zahlen, die den Druck erklären</h3>
+    <ul>
+      <li>Nur <strong>23,2 %</strong> der Einzelkanzleien konnten 2024 ihre offenen Stellen besetzen (STAX 2024, BStBK/Allensbach).</li>
+      <li><strong>43,8 %</strong> des Kanzleiumsatzes gehen mittlerweile in Personalkosten, 2018 waren es noch 37 % (STAX 2024).</li>
+      <li><strong>91,6 %</strong> halten KI für relevant, <strong>~30 %</strong> setzen sie aktiv ein (SWI Finance / Handelsblatt).</li>
+    </ul>
+
+    <h3 style="margin-top:40px;">Wo diese Zahlen in der Kanzlei ankommen</h3>
+    <p>Der Druck aus diesen Zahlen trifft immer denselben Engpass: qualifizierte Mitarbeiterstunden in der vorbereitenden Buchhaltung.</p>
+
+    <p>Den größten Anteil verschlingen Rückfragen-Schleifen mit dem Mandanten. Fremdsprachige Rechnungen, unklare Positionen, handschriftliche Quittungen: Die Bearbeitung hält an, weil beim Mandanten nachgefragt werden muss. Die Antwort kommt ein bis drei Tage später und ist oft selbst erklärungsbedürftig.</p>
+
+    <p>Daneben binden Routinearbeiten genau die Fachkräfte, die laut STAX zu 59,1 % nicht zu finden sind: Sortieren, Dublettencheck, schlechte Scans nachpflegen, Positionen aus PDFs heraustippen.</p>
+
+    <p>Hinzu kommt der Monatsrhythmus. Belege treffen geballt zum Monatsanfang ein, dann zum Quartalsende, dann zum Jahreswechsel. Fehlt jemand im Team, verschiebt sich der Druck direkt in Abschlüsse, Beratung und Neugeschäft.</p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BLOCK 3: WIE ES LAEUFT — [HUMANIZED v2.1]
+     Pass 2: <em>Antwort auf X.</em>-Stubs entfernt, Meta-Intro gekuerzt,
+     Em-Dashes raus, Satzbau pro Karte unterschiedlich.
+     ============================================================ -->
+<section id="ablauf">
+  <div class="container">
+    <div class="block-note">BLOCK 3 ANTWORT · v2.1: Mechanische „Antwort auf X."-Stubs in jeder Karte entfernt. Meta-Erklaerung („Jede Karte adressiert... in derselben Reihenfolge") gestrichen — die Reihenfolge erklaert sich selbst. Em-Dashes pro Karte in Punkte/Doppelpunkte umgewandelt.</div>
+    <h2>Wie Flowbeaver diese drei Engpässe auflöst</h2>
+    <div class="grid-3" style="margin-top:32px;">
+      <div class="card">
+        <h3>Belege, die sich selbst erklären</h3>
+        <p>Das Sprachmodell liest jeden Beleg inhaltlich aus, auch auf Italienisch, Englisch oder Polnisch. Lieferant, Leistung und Geschäftsvorfall stehen am Ende in deutscher Kanzleisprache. Wo bisher nachgefragt werden musste, liegt jetzt ein vorbereiteter Vorschlag im Stapel.</p>
+      </div>
+      <div class="card">
+        <h3>Routinearbeit verlässt den Schreibtisch</h3>
+        <p>Die Mechanik vor der Kontierung übernimmt Flowbeaver: Sortieren, Dublettenprüfung, Scan-Aufbereitung, Positions-Extraktion. Ihre Mitarbeiter steigen dort ein, wo Entscheidungsarbeit beginnt: bei der Prüfung der Vorschläge und bei Fällen, die eine Bewertung brauchen.</p>
+      </div>
+      <div class="card">
+        <h3>Belege laufen täglich statt in Wellen</h3>
+        <p>Weil die Vorkontierung entkoppelt von der Team-Prüfung läuft, verteilt sich die Belegarbeit über die Woche. Was am Monatsanfang bisher ein Berg war, ist ein weitgehend vorbereiteter Stapel. Abschlüsse, Beratung und Neugeschäft bleiben im Zeitplan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BLOCK 4: KONKRETER DURCHLAUF — [HUMANIZED v2.1]
+     Pass 2: Passiv-Parallel-Konstruktion ("wird... werden... wird")
+     in Fragment-Aufzaehlung umgewandelt. Em-Dash in Para 2 raus.
+     ============================================================ -->
+<section id="szenario" style="background:#fafafa;">
+  <div class="narrow">
+    <div class="block-note">BLOCK 4 SZENARIO · v2.1: Passiv-Parallelismus in Para 3 („wird identifiziert... werden ausgewiesen... wird erkannt") in Fragment-Stil aufgebrochen — direkter, weniger maschinell.</div>
+    <h2>Wie ein Belegdurchlauf konkret aussieht</h2>
+    <div class="szenario">
+      <p>Eine italienische Hotelrechnung für eine Projektreise, am Mittwochabend in das Mandantenpostfach geladen. Drei Positionen: Übernachtung, Frühstück, städtische Tourismusabgabe (imposta di soggiorno). Alle Beträge in Euro, alle Bezeichnungen auf Italienisch.</p>
+      <p>Eine klassische OCR liefert hier den Rechnungsbetrag, das Rechnungsdatum und den Lieferantennamen. Die Positionen bleiben ein Textblock. Den muss das Team am nächsten Morgen sortieren, oder der Mandant muss nachliefern, weil niemand im Team die italienischen Begriffe zuordnet.</p>
+      <p>Flowbeaver liest die Rechnung inhaltlich. Hotel als Lieferant. Übernachtung und Frühstück getrennt ausgewiesen, relevant für die Kürzung der Verpflegungspauschale. Tourismusabgabe als Reisenebenkosten. Die SKR03-Vorkontierung liegt am Donnerstagmorgen als Vorschlag im Buchungsstapel, nicht als Klärfall. Die Rückfrage beim Mandanten entfällt.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BLOCK 5: DATEV + SICHERHEIT — [HUMANIZED v2.1]
+     Pass 2: Em-Dash-Parenthese in Klammern umgewandelt.
+     ============================================================ -->
+<section id="datev">
+  <div class="container">
+    <div class="block-note">BLOCK 5 DATEV + SICHERHEIT · v2.1: „Die Vorarbeit – Lesen, Zuordnen, Kontieren – passiert" → Klammer-Form. Liest sich ruhiger.</div>
+    <h2>DATEV-Ergänzung, nicht DATEV-Ersatz</h2>
+    <p>Flowbeaver greift in den Prozess ein, bevor DATEV zum Zug kommt. Die Vorarbeit (Lesen, Zuordnen, Kontieren) passiert außerhalb, danach läuft in Ihrer Kanzlei alles wie gewohnt. Kein Umstieg, kein Parallelsystem, keine Einarbeitung in neue Masken.</p>
+
+    <h3>So kommt das Ergebnis in DATEV</h3>
+    <ul>
+      <li>DATEV-CSV-Buchungsstapel, direkt importierbar in Kanzlei-Rechnungswesen</li>
+      <li>Belegbilder als ZIP, strukturiert nach Mandant und Buchungsperiode</li>
+      <li>Perspektivisch: Anbindung an Belegbilderservice und Rechnungsdatenservice für eine durchgängige Übergabe an DATEV Unternehmen Online</li>
+    </ul>
+
+    <h3>Datenschutz, konkret</h3>
+    <ul>
+      <li>Server und Datenhaltung ausschließlich in Deutschland</li>
+      <li>Alle LLM-Verarbeitungsschritte in Rechenzentren innerhalb der EU, kein Datentransfer in Drittstaaten</li>
+      <li>Auftragsverarbeitungsvertrag nach Art. 28 DSGVO für jede Kanzlei</li>
+      <li>Belege werden nach Übergabe des Buchungsstapels gelöscht; nur anonymisierte Buchungsmuster fließen in die Verbesserung der Erkennung</li>
+      <li>Human-in-the-Loop: Automatisch gebucht wird nichts, jeder Vorschlag passiert die Prüfung Ihres Teams</li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BLOCK 6: ROI — [unveraendert]
+     ============================================================ -->
+<section id="roi">
+  <div class="narrow">
+    <div class="block-note">BLOCK 6 ROI · v2.1 unveraendert. Prosa-Rahmen mit konkreter Rechnung — keine KI-Muster auffaellig.</div>
+    <h2>Ein Rechenbeispiel</h2>
+    <p>Angenommen, eine Kanzlei verarbeitet rund 500 Eingangsbelege pro Monat über zehn Buchführungsmandate. Wenn die Bearbeitung heute im Schnitt fünf Minuten pro Beleg dauert, entspricht das 42 Stunden Belegarbeit im Monat. Setzt man 35 € Vollkosten pro Stunde an, binden diese Stunden etwa 1.470 € an Personalkapazität.</p>
+    <p>Laufen 90 Prozent der Belege mit Flowbeaver automatisch durch, bleiben für das Team noch vier Stunden echte Prüf- und Klärarbeit übrig. Die Rechnung sieht dann so aus:</p>
+    <ul>
+      <li>Vorher: 42 Stunden Belegarbeit, ca. 1.470 € gebundene Personalkapazität</li>
+      <li>Nachher: 4 Stunden Prüfung und Ausnahmen, ca. 140 € Personalkapazität</li>
+      <li>Differenz: 38 Stunden und rund 1.330 € freie Kapazität im Monat</li>
+      <li>Abzüglich 299 € Flowbeaver-Flatrate: 1.031 € netto pro Monat</li>
+    </ul>
+    <p>Die Annahmen variieren mit Kanzleigröße, Belegmix und Mitarbeiterstruktur. Der interaktive Rechner auf der Produkt-Seite rechnet mit Ihren eigenen Zahlen.</p>
+    <p><a href="/produkt#rechner">Zum interaktiven Sparrechner →</a></p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BLOCK 7: GRUENDER — [unveraendert]
+     Andreas' direkter Stil (Ich-Parallel-Konstruktion) bleibt — Voice.
+     ============================================================ -->
+<section id="gruender">
+  <div class="container">
+    <div class="block-note">BLOCK 7 GRÜNDER · v2.1 unveraendert. „Ich bin... Ich bin..."-Parallelstart ist bewusst Andreas' direkte Stimme, nicht KI-Muster.</div>
+    <h2>Wer Flowbeaver baut</h2>
+    <div class="grid-2">
+      <div>
+        <div style="background:#f7f7fa;border:1px dashed #bbb;border-radius:var(--fb-radius);height:280px;display:flex;align-items:center;justify-content:center;color:#999;">
+          [PLATZHALTER: Foto Andreas Schwarzkopf]
+        </div>
+      </div>
+      <div>
+        <p><strong>Andreas Schwarzkopf</strong><br>
+        Gründer &amp; Geschäftsführer, Flowbeaver GmbH<br>
+        Diplom-Kaufmann. 15 Jahre KI-Entwicklung, zuletzt bei Mercedes-Benz Bank.</p>
+
+        <p class="zitat">Ich bin kein Steuerberater. Ich bin der Techniker, der das Werkzeug baut. Was gute vorbereitende Buchhaltung heißt, lerne ich von den Kanzleien, mit denen ich arbeite. Die KI-Seite bringe ich mit.</p>
+
+        <p>Flowbeaver ist aktuell ein Ein-Mann-Unternehmen. Sie sprechen direkt mit dem Menschen, der am Produkt baut. Kein Support-Ticket, keine Vertriebsebene. Wenn Sie in der ersten Runde dabei sind, landet Ihr Feedback innerhalb von Tagen im Produkt.</p>
+
+        <p>
+          <a href="https://www.linkedin.com/in/andreas-schwarzkopf">LinkedIn</a> &middot;
+          <a href="mailto:accounting@flowbeaver.de">accounting@flowbeaver.de</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BLOCK 8: RESSOURCEN — [HUMANIZED v2.1]
+     Pass 2: Em-Dashes in den Karten zu Punkten gemacht.
+     ============================================================ -->
+<section id="ressourcen" style="background:#fafafa;">
+  <div class="container">
+    <div class="block-note">BLOCK 8 RESSOURCEN · v2.1: Em-Dashes in Karte 1 und Karte 2 zu Punkten/Kommas konvertiert.</div>
+    <h2>Wenn Sie uns erst einmal lesen wollen</h2>
+    <p>Bevor wir miteinander sprechen, können Sie sich durch die Arbeit lesen, die wir veröffentlichen. Drei Orte, an denen Sie Flowbeaver heute schon finden:</p>
+    <div class="grid-3" style="margin-top:24px;">
+      <div class="card">
+        <h3>Branchenreport 2026</h3>
+        <p>„KI in der Steuerkanzlei 2026". 28 Seiten, 21 Quellen aus BStBK, ifo, DATEV, KPMG und weiteren Häusern. Kostenlos als PDF.</p>
+        <p><a href="/branchenreport">Report herunterladen →</a></p>
+      </div>
+      <div class="card">
+        <h3>LinkedIn</h3>
+        <p>Produktfortschritt, Kanzleigespräche, Notizen aus der Entwicklung. Ein bis zwei Beiträge pro Woche, meist vom Gründer selbst.</p>
+        <p><a href="https://www.linkedin.com/in/andreas-schwarzkopf">Andreas auf LinkedIn →</a></p>
+      </div>
+      <div class="card">
+        <h3>Community-Präsenz</h3>
+        <p>Wir sind lesbar und ansprechbar in der DATEV-Community, bei „Steuerberater unter sich" und auf newgen.tax. Wenn Sie dort Fragen stellen, antworten wir.</p>
+        <p><a href="mailto:accounting@flowbeaver.de">Kontakt zum Gründer →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BLOCK 9: DEMO-CTA — [HUMANIZED v2.1]
+     Em-Dash bewusst behalten — sinnvoller Kontrast.
+     ============================================================ -->
+<section id="demo">
+  <div class="narrow" style="text-align:center;">
+    <div class="block-note" style="text-align:left;">BLOCK 9 DEMO · v2.1: Inhaltlich unveraendert. Der einzige verbleibende Em-Dash im Dokument („nicht sauber einarbeiten – das ist keine Marketing-Mechanik...") bleibt — klassischer Kontrast-Einsatz, keine Inflation.</div>
+    <h2>15 Minuten, direkt mit dem Gründer</h2>
+    <p>Wir schauen uns gemeinsam an, wie Belege heute in Ihre Kanzlei kommen, wo im Prozess die Zeit versickert und für welche Mandantengruppen Flowbeaver sich rechnet. Wenn der Fit nicht da ist, sage ich Ihnen das in derselben Sitzung. Wenn er da ist, besprechen wir den nächsten Schritt: einen Praxis-Check mit 30 echten Belegen aus Ihrer Kanzlei.</p>
+    <p style="margin:32px 0;"><a href="/termin" class="btn-primary">Demo buchen (15 Min.)</a></p>
+    <p style="font-size:16px;color:var(--fb-hover);">
+      Kapazitätshinweis: Ich betreue jede Kanzlei in der Einführung persönlich. Mehr als acht bis zehn parallel lassen sich so nicht sauber einarbeiten – das ist keine Marketing-Mechanik, sondern die Realität eines Ein-Personen-Unternehmens.
+    </p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BLOCK 10: FAQ KURZ — [HUMANIZED v2.1]
+     Pass 2: Em-Dash in ASR-Antwort durch Komma ersetzt.
+     ============================================================ -->
+<section id="faq">
+  <div class="narrow">
+    <div class="block-note">BLOCK 10 FAQ · v2.1: Em-Dash bei „Lieferant, Leistung, Geschäftsvorfall – sprach- und layoutunabhängig" zu Komma.</div>
+    <h2>Häufige Fragen</h2>
+
+    <h3>Was macht Flowbeaver genau?</h3>
+    <p>Flowbeaver ist ein KI-Vorsystem für die vorbereitende Buchhaltung. Das System liest jeden Eingangsbeleg, identifiziert den Lieferanten, ordnet die Positionen zu und schlägt eine Kontierung nach SKR03 oder SKR04 vor. Am Ende steht ein DATEV-kompatibler Buchungsstapel. Prüfung und Import in DATEV bleiben bei Ihrem Team.</p>
+
+    <h3>Müssen wir an DATEV etwas ändern?</h3>
+    <p>Nein. Ihr DATEV-Setup (Kanzlei-Rechnungswesen, Unternehmen Online, Mandantenstruktur) bleibt unangetastet. Flowbeaver klinkt sich vor DATEV in den Prozess ein und übergibt das fertige Ergebnis im Standardformat.</p>
+
+    <h3>Was ist der Unterschied zu DATEV Buchungsassistent oder ASR?</h3>
+    <p>Der DATEV-Buchungsassistent und ASR arbeiten mit klassischer Mustererkennung, trainiert überwiegend auf deutschen Rechnungslayouts. Flowbeaver versteht den Inhalt eines Belegs: Lieferant, Leistung, Geschäftsvorfall, sprach- und layoutunabhängig. Bei Standardrechnungen deutscher Lieferanten ist der Abstand kleiner. Spürbar wird der Unterschied bei fremdsprachigen Rechnungen, ungewöhnlichen Layouts und Belegen mit mehreren gemischten Positionen.</p>
+
+    <h3>Was kostet Flowbeaver?</h3>
+    <p>299 € pro Monat als Flatrate, unabhängig vom Belegvolumen, monatlich kündbar. Keine Setup-Gebühr, keine Pro-Beleg-Abrechnung, keine versteckten Staffeln.</p>
+
+    <h3>Ist das DSGVO-konform?</h3>
+    <p>Daten liegen ausschließlich auf Servern in Deutschland, LLM-Verarbeitungen laufen in Rechenzentren innerhalb der EU. Keine dauerhafte Belegspeicherung. Für jede Kanzlei schließen wir einen Auftragsverarbeitungsvertrag nach Art. 28 DSGVO.</p>
+
+    <h3>Wie startet eine Zusammenarbeit?</h3>
+    <p>Mit einer 15-Minuten-Demo, in der wir Ihre Belegeingänge besprechen und prüfen, ob Flowbeaver zu Ihrer Kanzlei passt. Ist der Fit da, folgt ein Praxis-Check: Sie schicken 30 echte Belege aus Ihrem Alltag, ich zeige Ihnen, was automatisch durchläuft und was als Klärfall zurückkommt. Erst danach entscheiden Sie, ob Sie mit Flowbeaver starten.</p>
+
+    <p style="margin-top:32px;"><a href="/produkt#faq">Ausführliche FAQ auf der Produkt-Seite →</a></p>
+  </div>
+</section>
+
+
+<footer>
+  <p>© 2026 Flowbeaver GmbH, Berlin</p>
+  <p style="margin-top:12px;">
+    <a href="/">Home</a>
+    <a href="/ueber">Über</a>
+    <a href="/kontakt">Kontakt</a>
+    <a href="/datenschutz">Datenschutz</a>
+    <a href="/impressum">Impressum</a>
+    <a href="/agb">AGB</a>
+  </p>
+</footer>
+
+</body>
+</html>

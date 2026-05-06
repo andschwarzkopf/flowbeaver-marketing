@@ -17,12 +17,34 @@
       "Read(//Users/andreas/.claude/skills/**)",
       "Bash(ls /Users/andreas/Documents/Git/flowbeaver-marketing/assets/*.jpg /Users/andreas/Documents/Git/flowbeaver-marketing/assets/*.png /Users/andreas/Documents/Git/flowbeaver-marketing/assets/*.jpeg)",
       "Bash(find /Users/andreas/Documents/Git/flowbeaver-marketing -maxdepth 2 -name *.jpg -o -name *.png -o -name *.jpeg)",
-      "Bash(ls -la /Users/andreas/Documents/Git/flowbeaver-marketing/assets/andreas-schwarzkopf.*)"
+      "Bash(ls -la /Users/andreas/Documents/Git/flowbeaver-marketing/assets/andreas-schwarzkopf.*)",
+      "mcp__playwright__browser_resize",
+      "Bash(python3 -m http.server 8766)",
+      "Bash(python3 -c \"from PIL import Image; img = Image.open\\('/Users/andreas/Documents/Git/flowbeaver-marketing/assets/og-image/logo-f-l.png'\\); print\\(f'Size: {img.size}, Mode: {img.mode}'\\)\")",
+      "Read(//Users/andreas/Documents/_Flowbeaver/Marketing/Logo & Design/**)",
+      "Bash(md5 -q \"/Users/andreas/Documents/_Flowbeaver/Marketing/Logo & Design/logo-f-l.png\" /Users/andreas/Documents/Git/flowbeaver-marketing/assets/og-image/logo-f-l.png)",
+      "Bash(python3 -m http.server 8767)",
+      "Bash(python3 -m http.server 8769)",
+      "Bash(mkdir -p /tmp/fb-audit)",
+      "Bash(curl -s -A \"Mozilla/5.0\" \"https://www.flowbeaver.de/?cb=$\\(date +%s\\)\" -o /tmp/fb-audit/homepage.html)",
+      "Bash(kill 42645 42651 42652 42653 49242 18797)",
+      "Read(//Users/andreas/Documents/Buchhaltung/GMBH/Bewerbungen/Lebenslauf/**)",
+      "WebFetch(domain:www.linkedin.com)",
+      "WebFetch(domain:flowbeaver.de)",
+      "Bash(python3 -m http.server 8765)",
+      "Bash(sips -g pixelWidth -g pixelHeight /Users/andreas/Documents/Git/flowbeaver-marketing/assets/linkedin/linkedin-banner-v1.png)",
+      "Bash(sips -g pixelWidth -g pixelHeight -g format -g profile /Users/andreas/Documents/Git/flowbeaver-marketing/assets/linkedin/linkedin-page-cover-4200x700.png /Users/andreas/Documents/Git/flowbeaver-marketing/assets/linkedin/linkedin-page-cover-4200x700.jpg)",
+      "Bash(echo \"Server PID: $!\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8765/assets/linkedin/linkedin-personal-cover-v1.html)"
     ],
     "additionalDirectories": [
       "/Users/andreas/.claude/skills/flowbeaver-marketing",
       "/Users/andreas/Documents/Git/flowbeaver-marketing",
-      "/Users/andreas/.claude/skills/flowbeaver-marketing/humanizer"
+      "/Users/andreas/.claude/skills/flowbeaver-marketing/humanizer",
+      "/Users/andreas/Documents/Git/flowbeaver-marketing/humanizer-output/2026-04-25",
+      "/private/tmp",
+      "/tmp",
+      "/Users/andreas/Library/Caches/ms-playwright/mcp-chrome-376d03b"
     ]
   }
 }
