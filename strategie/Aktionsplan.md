@@ -758,3 +758,82 @@ Markt-Momentaufnahme. Verkauft paradoxerweise besser.
    mit Systemnamen — oder anonymisiert durchführen)
 5. Entscheidung: eigene Domain/Landingpage für das Belegset oder Teil des
    Hauptauftritts
+
+## 12. Vision-Launch Säule B — 3-Wochen-Sprint (Mai 2026)
+
+**Status:** Aktiv ab 06. Mai 2026. Master-Referenz: `Vision-Mandanten-Agent.md`.
+Strategische Einordnung: `Positionierung.md` Sections 1.3 + 6.5, `STRATEGY.md`
+Roadmap-Erweiterung Mai 2026.
+
+**Ziel des Sprints:** Demand-Test für Säule B (Mandanten-Agent). Wenn ≥ 3
+Partnerkanzlei-Bewerbungen mit ICP-Fit eingehen, wird die Entwicklung priorisiert.
+Bis dahin: Vision wird kommuniziert, aber nicht entwickelt.
+
+### 12.1 Awareness-Stufen-Mapping
+
+| Stufe | Erkenntnis-Niveau | Hook-Logik | Format / Asset | CTA |
+|---|---|---|---|---|
+| **1 Unaware** | "Mein Wachstum läuft" | STAX-Daten konfrontieren: Personalkosten 43,8 %, 59,1 % offene Stellen | LinkedIn Edu + Blog Cornerstone | Zahlen / Fakten — kein CTA |
+| **2 Problem aware** | "Personal ist das Problem" | Reframe: nicht Personal, sondern Belegarbeit + Mandantenkommunikation | LinkedIn Story + Blog | Branchenreport-Download |
+| **3 Solution aware** | "Wir digitalisieren — DUO, andere Portale" | Reframe: Mandant scheitert an Portal-Komplexität, nicht an Digitalisierungs-Wille | Blog Vergleich + Webinar-Block | Webinar-Anmeldung |
+| **4 Product aware** | "KI-Tools für Buchhaltung gibt es viele" | Differenzierung: Wir lösen Mandantenseite + Kanzleiseite — Mandant per WhatsApp, kein Portal-Lernen | Vision-LP + Behind-the-Scenes-Post + Demo-Video | Vision-LP-Sign-up / Demo |
+| **5 Most aware** | "Flowbeaver kenne ich" | Direct: 3–5 Partnerkanzleien für Säule-B-Entwicklung | Direct-Post + DM-Outbound + LP-Bewerbungsformular | Partnerkanzlei-Bewerbung |
+
+### 12.2 Wochenplan
+
+**Woche 1 (06.–12. Mai) — Stufen 1+2 aufbauen, Origin-Story setzen, Web-Assets vorbereiten**
+
+- LinkedIn Post #1 (Stufe 1, Pain): "Sie wachsen — und Ihre Marge schrumpft." STAX-43,8 %-Reframe.
+- LinkedIn Post #2 (Stufe 4, Origin): Unternehmer-zu-Unternehmer-Post. Master-Formulierung aus Vision-Mandanten-Agent.md Abschnitt 4.
+- Blog Cornerstone #1 (Stufe 3): "Warum die Digitalisierung der Mandanten an einer Mauer scheitert" (~1.500 Wörter, DUO als Beispiel moderat).
+- Vision-LP-Entwurf fertigstellen (Inhalt + Wireframe), noch nicht live.
+- Homepage-v10 + Produkt-Draft: Roadmap-Sektion entwerfen (lokal).
+
+**Woche 2 (13.–19. Mai) — Vision live schalten**
+
+- Vision-LP `/mandanten-agent` live (mit Brevo-Bewerbungsformular, Tag "Vision-Interest").
+- Homepage-v10 Hero-Erweiterung live (Zwei-Säulen-Tease + Verlinkung Vision-LP).
+- Produkt-Draft Roadmap-Sektion live.
+- LinkedIn Post #3 (Stufe 4, konkret): "Mandant fotografiert Beleg per WhatsApp — und der Rest läuft." Demo-Szenario.
+- Blog Cornerstone #2 (Stufe 4): "Das Mandantenportal, das kein Portal ist" (~1.200 Wörter). Vision-Beschreibung + Säule-B-Mechanik.
+- LinkedIn Post #4 (Stufe 5, Direct): "Wir suchen 3 Partnerkanzleien." Klar, kurz, mit Link zur Vision-LP.
+
+**Woche 3 (20.–26. Mai) — Demand-Test laufen lassen, Webinar updaten**
+
+- LinkedIn Post #5 (Stufe 1+2): "Kapazität ist Ihre Wachstumsbremse." STAX-Recap + Pain-Verstärkung.
+- LinkedIn Post #6 (Stufe 3): "Was Wachstumskanzleien anders machen." Reframe-Post.
+- Blog #3 (Stufe 2): "Kapazität als Wachstumsbremse" (~1.000 Wörter). Pain-Problems-Prize-Logik (ohne Daniel-Priestley-Namedrop).
+- Webinar-Skript: Outlook-Slot 5 Min ergänzen ("Was wir mit Partnerkanzleien als Nächstes bauen").
+- Welcome-E-Mail-Sequenz: Vision-Absatz in E-Mail #2 oder #3 ergänzen.
+- KPI-Auswertung am Ende Woche 3 → Vorbereitung Decision-Gate Woche 4.
+
+### 12.3 KPIs
+
+| KPI | Ziel Ende Woche 3 |
+|---|---|
+| Partnerkanzlei-Bewerbungen über Vision-LP | ≥ 3 mit ICP-Fit |
+| Vision-LP Sessions | ≥ 200 |
+| Vision-LP Conversion-Rate | ≥ 2 % |
+| LinkedIn-Impressionen pro Vision-Post (organisch) | ≥ 1.000 |
+| LinkedIn-DMs mit Vision-Bezug | ≥ 5 |
+| Webinar-Q&A-Fragen zu Säule B | ≥ 2 pro Webinar |
+
+### 12.4 Decision-Gate Mitte Juni 2026
+
+| Demand-Signal | Entscheidung |
+|---|---|
+| ≥ 3 Partnerkanzlei-Bewerbungen mit ICP-Fit | **Säule B priorisieren** — Entwicklung starten, Säule-A-Beta läuft parallel |
+| 1–2 Bewerbungen | **Vision weiter teasern** — Content-Maschine läuft, keine Entwicklungs-Kapazität binden |
+| 0 Bewerbungen | **Vision pausieren** — Origin-Story behalten, Säule A bleibt voller Fokus |
+
+### 12.5 Brand-Disziplin im Sprint
+
+Verbindlich für jeden Asset, der in diesem Sprint produziert wird (Detail in
+`Vision-Mandanten-Agent.md` Abschnitt 5):
+
+- Säule B immer als Roadmap framen ("wir bauen", "kommt", "Partnerkanzleien gesucht"). Niemals als bestehende Funktion implizieren.
+- DUO darf namentlich als Beispiel für komplexes Mandantenportal genannt werden — niemals als Synonym für DATEV. DATEV-Ergänzungs-Position bleibt unangefochten.
+- Lieferantenportal-Abholung-Vendor anonym ("automatische Abholung aus Lieferantenportalen").
+- Origin-Story nur an 4 Stellen prominent: About-Sektion, Vision-LP-About-Block, Positionierung.md 1.2, ein dezidierter LinkedIn-Post.
+- Frame-Sprache: Wachstum, Marge, Prozessoptimierung, Kapazität (Unternehmer-zu-Unternehmer). Detail-Sprache (Belegtypen, OCR, ASR) bleibt im Detail.
+- Kein Startup-Jargon, keine Emojis, "Sie"-Anrede, korrekte Umlaute.

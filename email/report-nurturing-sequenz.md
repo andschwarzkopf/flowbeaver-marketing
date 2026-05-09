@@ -130,3 +130,35 @@ Falls Sie erst testen möchten: Schicken Sie mir 30 echte Belege, und ich zeige 
 
 Viele Grüße
 Andreas
+
+---
+
+## E-Mail 5 (optional, ab Mai 2026): Vision Mandanten-Agent
+
+**Versand:** Tag 18 nach Download. Nur an Empfänger, die mindestens eine der vorherigen vier E-Mails geöffnet haben (Brevo-Filter setzen).
+**Awareness-Stufe:** 4 — Product aware
+**Ziel:** Vision Säule B sichtbar machen, Partnerkanzlei-Anfragen sammeln
+
+**Betreff-Variante A:** Was als Nächstes kommt — der Mandanten-Agent
+**Betreff-Variante B:** Wir suchen drei bis fünf Partnerkanzleien
+
+**Text:**
+
+Hallo [Vorname],
+
+eine letzte E-Mail aus dieser Serie — und gleichzeitig der Hinweis auf etwas, an dem wir gerade arbeiten.
+
+Im Branchenreport haben wir gesehen, dass 59 Prozent der Kanzleien die mangelnde digitale Mandanten-Reife als größtes Hemmnis nennen. Genau hier setzt die zweite Säule von Flowbeaver an, an der wir mit ersten Partnerkanzleien arbeiten.
+
+Konkret: Mandanten liefern Belege per WhatsApp, E-Mail oder über die automatische Abholung aus Lieferantenportalen. Ein KI-Agent klärt offene Fragen direkt mit ihnen — fehlende Belege, schlechte Scans, mehrdeutige Geschäftsvorfälle. Etwa neun von zehn Belegen laufen ohne menschliches Anfassen durch. Ihr Team sieht am Ende einen vollständigen Buchungsstapel im DATEV-Workflow.
+
+Der Mandanten-Agent ist Roadmap. Wir suchen drei bis fünf Partnerkanzleien, mit denen wir das Werkzeug von Anfang an in echten Kanzleiprozessen aufbauen — nicht im stillen Kämmerlein. Voraussetzungen: wachstumsorientierte Kanzlei mit mindestens 4 Mitarbeitern, DATEV als Hauptsystem, Bereitschaft zur Workflow-Offenheit.
+
+Wenn Sie für sich oder Ihre Kanzlei sagen "genau das wäre der Hebel" — die Vision und das Bewerbungsformular sind hier:
+
+**[Button: Vision Mandanten-Agent ansehen]**
+
+Decision-Gate Mitte Juni 2026. Bei drei oder mehr Bewerbungen mit gutem Fit startet die Entwicklung sofort.
+
+Viele Grüße
+Andreas

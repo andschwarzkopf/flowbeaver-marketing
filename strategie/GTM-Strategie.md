@@ -35,6 +35,17 @@ ist auf 12 Wochen angelegt und basiert auf drei Grundprinzipien:
 | will, muss sich qualifizieren -- nicht du.                            |
 +-----------------------------------------------------------------------+
 
+**Update Mai 2026 — Zwei-Säulen-Architektur:** Parallel zur Beta für Säule A
+(Vorkontierung) startet ein 3-Wochen-Vision-Sprint für Säule B (Mandanten-Agent
+auf WhatsApp / E-Mail / Drag-and-Drop / Lieferantenportal-Abholung). Säule B ist
+explizit Roadmap und wird nur bei positivem Demand-Test (≥ 3 Partnerkanzlei-
+Bewerbungen bis Mitte Juni 2026) entwickelt. Beide Säulen folgen dem Daniel-
+Priestley-Frame "hardest problem I can solve" und sprechen die Kanzlei-Inhaberschaft
+auf Augenhöhe an: Unternehmer zu Unternehmer, Sprache von Wachstum, Marge,
+Prozessoptimierung, Kapazität — nicht Tech zu Steuerberater. Detail in
+`STRATEGY.md` (Abschnitt "Roadmap-Erweiterung Mai 2026"), `Aktionsplan.md`
+(Section 12), Master-Referenz `Vision-Mandanten-Agent.md`.
+
 **1. Strategischer Rahmen**
 
 **1.1 Das Grundproblem im Vertrieb**

@@ -272,6 +272,24 @@
 
 ---
 
+## Outlook: Was als Nächstes kommt — der Mandanten-Agent (5 Minuten)
+
+> Bevor wir zum Abschluss kommen — ein kurzer Ausblick auf die Roadmap, weil viele Kanzleiinhaber, mit denen ich spreche, nach genau einem Punkt fragen.
+
+> Heute räumt Flowbeaver die Vorkontierung ab. Belege werden extrahiert, zugeordnet, vorkontiert — und in Ihren DATEV-Workflow übergeben. Das ist Säule A. Sie läuft, sie ist im Beta, das haben Sie gerade gesehen.
+
+> Die zweite Säule, an der wir gerade mit ersten Partnerkanzleien arbeiten, geht weiter — sie verlagert die Belegerfassung und Klärung dorthin, wo sie eigentlich hingehört: zu Ihrem Mandanten, in seinen täglichen Werkzeugen.
+
+> Konkret: Ihr Mandant fotografiert einen Beleg per WhatsApp. Oder leitet eine Rechnung per E-Mail weiter. Oder sie wird automatisch aus seinem Telekom- oder Strom-Lieferantenportal abgeholt. Ein KI-Agent klärt offene Fragen direkt mit ihm: fehlender Beleg, schlechter Scan, mehrdeutige Geschäftsvorfälle. Etwa neun von zehn Belegen laufen ohne menschliches Anfassen durch. Ihr Team sieht am Ende einen vollständigen Buchungsstapel im DATEV-Workflow — und eine deutlich kleinere Restmenge echter Klärfälle, die Steuerfachwissen brauchen.
+
+> Warum erzähle ich Ihnen das in diesem Webinar? Weil das die zweite Hälfte der Logistik adressiert, die heute Personalkapazität verbrennt. Mandantenportale wie DATEV Unternehmen Online sind ein wertvolles Werkzeug für strukturierte Mandanten — sie funktionieren aber bei vielen kleineren Mandanten nicht, weil die schlicht nicht regelmäßig in einem Portal arbeiten. Der Mandanten-Agent adressiert genau diese Hälfte.
+
+> Ich bin transparent: Säule B ist Roadmap. Wir bauen sie mit drei bis fünf Partnerkanzleien gemeinsam, weil das nur funktioniert, wenn echte Mandantenstrukturen, echte Belegtypen und echte Workflows einfließen. Wer im Webinar sitzt und denkt "genau das wäre der Hebel für meine Kanzlei" — auf der Vision-Seite kann man sich als Partnerkanzlei bewerben. Den Link schicke ich gleich noch einmal mit der Follow-up-E-Mail.
+
+> Decision-Gate ist Mitte Juni. Bei drei oder mehr Bewerbungen mit gutem Fit startet die Entwicklung sofort.
+
+---
+
 ## Abschluss (1 Minute)
 
 > Vielen Dank für Ihre Zeit und Ihre Fragen. Ich fasse zusammen:

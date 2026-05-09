@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="de">
+<!--
+  ============================================================
+  FLOWBEAVER VISION-LP — MANDANTEN-AGENT — ENTWURF v1
+  ============================================================
+  URL-Vorschlag: /mandanten-agent
+
+  Zweck: Demand-Test fuer Saeule B (Mandanten-Agent). Kommuniziert die Vision,
+  sammelt Bewerbungen von Partnerkanzleien (3-5 fuer die gemeinsame Entwicklung).
+  Master-Referenz: strategie/Vision-Mandanten-Agent.md
+  Strategische Einbettung: Positionierung.md 1.3/6.5, STRATEGY.md "Roadmap-Erweiterung",
+                            Aktionsplan.md Section 12.
+
+  Brand-Disziplin:
+  - Saeule B IMMER als Roadmap framen ("wir bauen", "Partnerkanzleien gesucht")
+  - DUO darf namentlich als Beispiel auftauchen — nicht als DATEV-Synonym
+  - Lieferantenportal-Vendor anonym ("automatische Abholung aus Lieferantenportalen")
+  - Frame: Unternehmer zu Unternehmer (Wachstum, Marge, Prozessoptimierung, Kapazitaet)
+  - Origin-Story Andreas als Mandant: einmal prominent im About-Block
+-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mandanten-Agent (Roadmap) – Flowbeaver</title>
+  <meta name="description" content="Belege fließen aus dem Mandantenalltag in die Kanzlei – per WhatsApp, E-Mail, Drag-and-Drop oder automatisch aus Lieferantenportalen. Wir bauen den Mandanten-Agenten mit 3 bis 5 Partnerkanzleien gemeinsam.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap">
+  <style>
+    :root{--fb-purple:#52267a;--fb-dark-red:#3c0f04;--fb-text:#404040;--fb-black:#000;--fb-hover:#606060;--fb-white:#fff;--fb-footer:#111;--fb-border:#e0e0e0;--fb-radius:10px;--fb-font:'DM Sans',system-ui,sans-serif;--fb-soft:#faf7fd;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:var(--fb-font);font-size:20px;line-height:1.6;color:var(--fb-text);background:var(--fb-white);}
+    h1,h2,h3{color:var(--fb-black);line-height:1.25;font-weight:700;}
+    h1{font-size:44px;color:var(--fb-dark-red);line-height:1.15;margin-bottom:20px;}
+    h2{font-size:30px;margin-bottom:20px;}
+    h3{font-size:22px;font-weight:600;margin-bottom:12px;}
+    p{margin-bottom:20px;}
+    a{color:var(--fb-purple);text-decoration:none;}
+    a:hover{color:var(--fb-hover);}
+    ul{padding-left:1.25rem;margin-bottom:20px;}
+    li{margin-bottom:8px;}
+    section{padding:72px 24px;border-bottom:1px solid var(--fb-border);}
+    .container{max-width:960px;margin:0 auto;}
+    .narrow{max-width:720px;margin:0 auto;}
+    .btn-primary{display:inline-block;background:var(--fb-purple);color:var(--fb-white);font-size:20px;font-weight:500;padding:14px 28px;border-radius:var(--fb-radius);border:none;cursor:pointer;transition:.2s ease-in-out;}
+    .btn-primary:hover{background:#3d1c5c;color:var(--fb-white);}
+    .roadmap-pill{display:inline-block;background:#fef3c7;color:#92400e;padding:6px 14px;border-radius:999px;font-size:14px;font-weight:600;letter-spacing:0.4px;text-transform:uppercase;margin-bottom:20px;}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+    .channel-card{border:1px solid var(--fb-border);border-radius:var(--fb-radius);padding:24px;background:var(--fb-white);}
+    .channel-card h3{font-size:18px;color:var(--fb-purple);margin-bottom:8px;}
+    .channel-card p{font-size:16px;line-height:1.5;margin-bottom:0;}
+    .step{display:flex;gap:24px;margin-bottom:32px;align-items:flex-start;}
+    .step-num{flex-shrink:0;width:48px;height:48px;border-radius:50%;background:var(--fb-purple);color:var(--fb-white);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px;}
+    .step-body h3{margin-bottom:6px;}
+    .step-body p{margin-bottom:8px;font-size:18px;}
+    .quote{background:var(--fb-soft);border-left:4px solid var(--fb-purple);padding:24px 28px;margin:24px 0;border-radius:0 var(--fb-radius) var(--fb-radius) 0;}
+    .quote p{font-style:italic;font-size:19px;margin-bottom:12px;color:var(--fb-black);}
+    .quote .source{font-style:normal;font-size:14px;color:var(--fb-text);margin-bottom:0;}
+    .pilot-box{border:2px solid var(--fb-purple);border-radius:var(--fb-radius);padding:32px;background:var(--fb-soft);}
+    .pilot-box h2{margin-bottom:12px;}
+    .pilot-box ul{margin-bottom:24px;}
+    .form-row{margin-bottom:18px;}
+    .form-row label{display:block;font-weight:600;font-size:15px;margin-bottom:6px;color:var(--fb-black);}
+    .form-row input,.form-row select,.form-row textarea{width:100%;padding:12px 14px;border:1px solid var(--fb-border);border-radius:var(--fb-radius);font-family:inherit;font-size:16px;background:var(--fb-white);}
+    .form-row textarea{resize:vertical;min-height:90px;}
+    .form-note{font-size:13px;color:var(--fb-hover);margin-bottom:0;margin-top:8px;}
+    .hero{background:linear-gradient(180deg,var(--fb-soft) 0%,var(--fb-white) 100%);padding:96px 24px 80px;text-align:left;}
+    .sub{font-size:22px;color:var(--fb-text);margin-bottom:32px;line-height:1.5;}
+    nav.top{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;border-bottom:1px solid var(--fb-border);position:sticky;top:0;background:var(--fb-white);z-index:100;}
+    nav.top ul{display:flex;gap:24px;list-style:none;padding:0;margin:0;align-items:center;}
+    nav.top a{color:var(--fb-black);font-weight:500;font-size:16px;}
+    nav.top .logo{font-weight:700;color:var(--fb-purple);font-size:20px;}
+    footer{background:var(--fb-footer);color:var(--fb-white);padding:40px 24px;text-align:center;font-size:14px;}
+    footer a{color:var(--fb-white);text-decoration:underline;}
+    @media (max-width:760px){
+      h1{font-size:32px;}
+      h2{font-size:24px;}
+      .grid-2,.grid-3{grid-template-columns:1fr;gap:20px;}
+      .hero{padding:48px 24px;}
+      section{padding:56px 20px;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- ==========================================================
+     NAV (minimal — fokussierte Conversion-Seite)
+     ========================================================== -->
+<nav class="top">
+  <a href="/" class="logo">Flowbeaver</a>
+  <ul>
+    <li><a href="#wie">Wie es funktioniert</a></li>
+    <li><a href="#partner">Partnerkanzlei werden</a></li>
+  </ul>
+</nav>
+
+<!-- ==========================================================
+     HERO
+     Frame: Unternehmer zu Unternehmer.
+     Pain im Header, Roadmap-Pill explizit.
+     ========================================================== -->
+<section class="hero">
+  <div class="container">
+    <span class="roadmap-pill">Roadmap · Wir suchen 3 bis 5 Partnerkanzleien</span>
+    <h1>Belege fließen automatisch aus dem Mandantenalltag in Ihre Kanzlei.</h1>
+    <p class="sub">Per WhatsApp, E-Mail, Drag-and-Drop oder über die automatische Abholung aus Lieferantenportalen. Ein KI-Agent klärt offene Fragen direkt mit dem Mandanten — fehlende Belege, schlechte Scans, mehrdeutige Geschäftsvorfälle. Ihr Team sieht am Ende einen vollständigen, vorkontierten Buchungsstapel im DATEV-Workflow.</p>
+    <a href="#partner" class="btn-primary">Als Partnerkanzlei bewerben</a>
+  </div>
+</section>
+
+<!-- ==========================================================
+     PAIN / REFRAME
+     Wachstumsbremse Belegarbeit. STAX-Daten 43,8 % als Anker.
+     Frame: Unternehmer zu Unternehmer.
+     ========================================================== -->
+<section>
+  <div class="narrow">
+    <h2>Wachstum scheitert nicht am Markt. Es scheitert an Belegarbeit.</h2>
+    <p>43,8 Prozent Personalkosten — das ist der Branchendurchschnitt 2024 (STAX/Allensbach). 2018 waren es noch 37 Prozent. Jede neue Stelle drückt die Marge weiter; 59,1 Prozent der offenen Stellen bleiben unbesetzt. Wer wachsen will, kommt an einer einfachen Frage nicht vorbei: <strong>Wo kommt die Kapazität her, die wir nicht einstellen können?</strong></p>
+
+    <p>Die ehrliche Antwort liegt nicht im Stellenmarkt. Sie liegt in der Arbeit, die heute Ihre Personalkapazität verbrennt: das Sortieren, Nachfragen und Klären rund um Mandantenbelege. Die Hand voll Stunden pro Mandant und Monat, die nichts mit Ihrer eigentlichen fachlichen Leistung zu tun hat.</p>
+
+    <p>Mandantenportale wie DATEV Unternehmen Online sind ein wertvolles Werkzeug — aber kein Werkzeug, das jeder Mandant lernt. Viele Mandanten haben weder Zeit noch Lust, ein neues Portal zu bedienen. Sie schicken weiter Schuhkarton-Belege, fotografieren in WhatsApp, mailen PDFs einzeln. Genau hier setzt der Mandanten-Agent an.</p>
+  </div>
+</section>
+
+<!-- ==========================================================
+     LÖSUNG / KANÄLE
+     Was der Mandant tatsächlich tut — in seinen eigenen Werkzeugen.
+     ========================================================== -->
+<section style="background:var(--fb-soft);">
+  <div class="container">
+    <h2 style="text-align:center;margin-bottom:12px;">Werkzeuge, die der Mandant ohnehin nutzt.</h2>
+    <p style="text-align:center;max-width:680px;margin:0 auto 40px;">Kein Portal, kein Login, keine Schulung. Der Mandant bedient, was er aus seinem Alltag kennt — der KI-Agent macht den Rest.</p>
+
+    <div class="grid-3">
+      <div class="channel-card">
+        <h3>WhatsApp</h3>
+        <p>Beleg fotografieren, an die Kanzlei-Nummer schicken. Kein Kommentar nötig.</p>
+      </div>
+      <div class="channel-card">
+        <h3>E-Mail</h3>
+        <p>Rechnung weiterleiten oder Foto senden. Auch von vier verschiedenen Mandanten-Adressen.</p>
+      </div>
+      <div class="channel-card">
+        <h3>Drag-and-Drop</h3>
+        <p>Datei in eine Mini-Oberfläche ziehen. Keine Formulare, keine Pflichtfelder.</p>
+      </div>
+      <div class="channel-card">
+        <h3>Lieferantenportale</h3>
+        <p>Telekom, Strom, Cloud-Tools — Rechnungen werden automatisch abgeholt. Der Mandant macht nichts.</p>
+      </div>
+      <div class="channel-card">
+        <h3>Klärung im Chat</h3>
+        <p>Wenn etwas unklar ist, fragt der Agent direkt im selben Kanal nach. Keine E-Mail-Schleife über die Kanzlei.</p>
+      </div>
+      <div class="channel-card">
+        <h3>DATEV-Übergabe</h3>
+        <p>Geklärte und vorkontierte Belege fließen über DUO, Rechnungsdatenservice oder Buchungsdatenservice in den Buchungsstapel.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================
+     WIE ES FUNKTIONIERT — KONKRET
+     ========================================================== -->
+<section id="wie">
+  <div class="narrow">
+    <h2>Wie der Mandanten-Agent in der Praxis arbeitet.</h2>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <h3>Beleg trifft ein</h3>
+        <p>Foto, PDF, oder automatisch abgeholt. Egal woher — der Agent ordnet ihn dem Mandanten und dem Geschäftsvorfall zu.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <h3>Klar oder Klärfall — der Agent entscheidet</h3>
+        <p>Etwa neun von zehn Belegen laufen ohne menschliches Anfassen durch. Bei den anderen fragt der Agent gezielt nach: <em>"Zu Ihrer Kartenzahlung am 14. Mai über 87,40 Euro bei OBI haben wir noch keinen Beleg. Können Sie ihn fotografieren und antworten?"</em></p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <h3>Pingpong direkt mit dem Mandanten</h3>
+        <p>Schlechter Scan, mehrdeutiger Geschäftsvorfall, formal fehlerhafter Beleg — der Agent klärt das im selben Kanal, in dem der Beleg kam. Die Kanzlei wird nicht eingebunden.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <h3>Vollständiger Stapel im DATEV-Workflow</h3>
+        <p>Geklärte Belege fließen vorkontiert in DUO, Rechnungsdatenservice oder Buchungsdatenservice. Ihr Team sieht im DATEV-Workflow einen vollständigen Stapel — plus die kleine Restmenge echter Sonderfälle, die Fachwissen brauchen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================
+     ÜBER UNS / ORIGIN-STORY
+     Master-Formulierung aus Vision-Mandanten-Agent.md Section 4
+     Frame: Unternehmer zu Unternehmer
+     ========================================================== -->
+<section style="background:var(--fb-soft);" id="about">
+  <div class="narrow">
+    <h2>Warum es Flowbeaver gibt.</h2>
+
+    <div class="quote">
+      <p>"Ich bin seit über 30 Jahren Unternehmer. Ich kenne Wachstumsdruck, ich kenne Margenstress, ich kenne den Personalengpass — nicht aus Beratung, sondern aus eigener Verantwortung. Und ich bin gleichzeitig Mandant einer Steuerkanzlei, also auf der Seite, die jeden Monat den Beleg-Schuhkarton zusammensucht. Beides zusammen ist der Grund, warum es Flowbeaver gibt: Ich baue das Werkzeug, das ich mir als Mandant immer gewünscht hätte — und das gleichzeitig der Kanzlei genau die Last abnimmt, die heute Wachstum blockiert."</p>
+      <p class="source">— Andreas Schwarzkopf, Gründer Flowbeaver</p>
+    </div>
+
+    <p>Andreas ist nicht Steuerberater. Er ist Diplom-Kaufmann, seit 30 Jahren Unternehmer und seit 15 Jahren in der KI-Entwicklung tätig (unter anderem bei Mercedes-Benz). Die fachliche Steuer-Tiefe holen wir uns in der Entwicklung des Mandanten-Agenten von den Partnerkanzleien — Unternehmer baut für Unternehmer.</p>
+  </div>
+</section>
+
+<!-- ==========================================================
+     ROADMAP / DECISION-GATE — TRANSPARENT
+     ========================================================== -->
+<section>
+  <div class="narrow">
+    <h2>Wo wir gerade stehen.</h2>
+
+    <p><strong>Säule A — heute, im Beta.</strong> Die automatisierte Vorkontierung läuft. Belege werden extrahiert, zugeordnet, vorkontiert. Erste Kanzleien arbeiten produktiv mit dem System.</p>
+
+    <p><strong>Säule B — der Mandanten-Agent. In Entwicklung, ab Mitte 2026.</strong> Damit die Lösung von Anfang an in echten Kanzleiprozessen funktioniert, suchen wir 3 bis 5 Partnerkanzleien für die gemeinsame Entwicklung. Wir entwickeln nicht im stillen Kämmerlein und liefern dann ab — wir bauen mit Ihnen, an Ihren Mandantenstrukturen, mit Ihren typischen Belegtypen.</p>
+
+    <p>Wenn bis Mitte Juni 2026 mindestens drei Partnerkanzleien gefunden sind, startet die Entwicklung sofort. Andernfalls wird die Idee weiter geprüft, aber nicht umgesetzt — wir bauen nur, was wirklich gebraucht wird.</p>
+  </div>
+</section>
+
+<!-- ==========================================================
+     PARTNER-CTA + FORMULAR
+     ========================================================== -->
+<section id="partner" style="background:var(--fb-soft);">
+  <div class="narrow">
+    <div class="pilot-box">
+      <h2>Als Partnerkanzlei bewerben</h2>
+      <p>Drei bis fünf Plätze. Voraussetzungen sind überschaubar:</p>
+      <ul>
+        <li>Wachstumsorientierte Kanzlei mit mindestens 4 Mitarbeitern</li>
+        <li>DATEV als Hauptsystem</li>
+        <li>Bereitschaft, in der gemeinsamen Entwicklung Workflows offen zu legen</li>
+        <li>Ein Ansprechpartner aus der Kanzlei für den Aufbau-Prozess</li>
+      </ul>
+
+      <form action="https://app.brevo.com/" method="POST" novalidate>
+        <input type="hidden" name="form_tag" value="vision-mandanten-agent-partnerkanzlei">
+
+        <div class="form-row">
+          <label for="name">Ihr Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-row">
+          <label for="kanzlei">Kanzlei</label>
+          <input type="text" id="kanzlei" name="kanzlei" required>
+        </div>
+        <div class="form-row">
+          <label for="email">E-Mail-Adresse</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-row">
+          <label for="mitarbeiter">Mitarbeiter (gesamt)</label>
+          <select id="mitarbeiter" name="mitarbeiter" required>
+            <option value="">bitte wählen</option>
+            <option value="4-9">4 bis 9</option>
+            <option value="10-24">10 bis 24</option>
+            <option value="25-50">25 bis 50</option>
+            <option value="50plus">über 50</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="belege">Belegvolumen pro Monat (Schätzung)</label>
+          <select id="belege" name="belege" required>
+            <option value="">bitte wählen</option>
+            <option value="unter5000">unter 5.000</option>
+            <option value="5000-10000">5.000 bis 10.000</option>
+            <option value="10000-25000">10.000 bis 25.000</option>
+            <option value="25000plus">über 25.000</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="motivation">Was ist Ihre größte Belegarbeits-Frustration heute?</label>
+          <textarea id="motivation" name="motivation" placeholder="Stichwort reicht — wir melden uns für ein Gespräch"></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary">Bewerbung absenden</button>
+        <p class="form-note">Wir antworten persönlich innerhalb von 48 Stunden. Keine automatische Welcome-Sequenz, keine Werbung. Bewerbungen werden vertraulich behandelt.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================
+     FOOTER
+     ========================================================== -->
+<footer>
+  <p>Flowbeaver GmbH · KI-Vorsystem für die vorbereitende Buchhaltung · <a href="/">flowbeaver.de</a></p>
+  <p style="margin-top:12px;font-size:12px;opacity:0.7;">Säule B (Mandanten-Agent) ist Roadmap und befindet sich in der Demand-Validierung. Verfügbarkeit, Funktionsumfang und Lieferzeitpunkt hängen vom Ergebnis der Partnerkanzlei-Suche ab.</p>
+</footer>
+
+</body>
+</html>

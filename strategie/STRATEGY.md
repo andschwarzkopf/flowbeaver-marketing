@@ -56,6 +56,7 @@ Landingpage `/ki-belegerkennung`: 15 Sessions, 33,3% Bounce, 72,6s Engagement.
 | **KI Belegerkennung** | 100–300 | ~60% | Star-Keyword — einziges mit Conversions (alte Kampagne) |
 | **Fachkräftemangel StB** | 300–800 | ~70% | Emotional — besser für LinkedIn als Google |
 | **Digitalisierung Steuerkanzlei** | 300–800 | ~80% | Gut — natürlicher ICP-Filter |
+| **Mandantenkommunikation / WhatsApp Buchhaltung** | unbekannt (Hypothese) | ~60% | Vision-Wedge — Säule B Roadmap, Suchvolumen muss noch validiert werden |
 
 ### Drei Kern-Erkenntnisse
 
@@ -203,9 +204,67 @@ Phase 3 (12 Monate):  Entscheidung basierend auf Daten —
 
 ---
 
+## Roadmap-Erweiterung Mai 2026: Säule B — Mandanten-Agent
+
+Im Mai 2026 wird die Produktvision um eine zweite Säule erweitert. Sie steht
+bewusst auf Roadmap-Status und wird erst nach einem positiven Demand-Test
+(Mitte Juni 2026) entwickelt — Hypothese: wir sprechen damit den eigentlichen
+Wachstumsschmerz der ICP an, nicht nur die Belegerfassungs-Mechanik.
+
+**Säule A (heute, Beta produktiv):** automatisierte Vorkontierung. Kanzleimitarbeiter
+sieht einen vollständig vorkontierten Buchungsstapel im DATEV-Workflow.
+
+**Säule B (Roadmap, Partnerkanzleien gesucht):** KI-Agent für die Mandantenseite.
+Mandant liefert Belege per WhatsApp, E-Mail, Drag-and-Drop oder über automatische
+Abholung aus Lieferantenportalen. Der Agent klärt Klärfälle direkt mit dem Mandanten
+— fehlende Belege, schlechte Scans, mehrdeutige Geschäftsvorfälle, formal fehlerhafte
+Belege. Rund 90 % der Belege laufen ohne menschliches Anfassen durch. Daten fließen
+über DUO / Rechnungsdatenservice / Buchungsdatenservice in den Buchungsstapel.
+
+**Warum jetzt — strategisch:** Die bisherige Differenzierung ("LLM versteht jede
+Sprache → weniger Rückfragen am Beleg") ist eine Wertversprechen-Schicht. Säule B
+adressiert die darunterliegende Wachstumsfrage: Kanzleien können nicht wachsen, weil
+Belegarbeit + Mandantenrückfragen die Personalkapazität verbrennen. Personalkosten
+liegen bei 43,8 % vom Umsatz (STAX 2024) — jede neue Stelle frisst die Marge.
+Säule B verspricht: Wachstum entkoppelt sich vom Headcount. Daniel-Priestley-Logik
+("hardest problem I can solve") ist die ICP-Schärfung dahinter — weg von "tech-affin",
+hin zu "wachstumsorientiert + Kapazitätsdruck + Margendruck".
+
+**Demand-Test (3-Wochen-Sprint, Detail in `Aktionsplan.md` Section 12):**
+
+- Vision-LP `/mandanten-agent` mit Partnerkanzlei-Bewerbungsformular
+- Homepage-Hero und Produkt-Seite um Roadmap-Sektion erweitert
+- 6 LinkedIn-Posts entlang der 5 Awareness-Stufen
+- 3 Cornerstone-Blog-Artikel (Stufen 2 / 3 / 4)
+- Webinar-Skript um 5-Min-Outlook-Block ergänzt
+- Welcome-E-Mail um Vision-Absatz erweitert
+
+**Decision-Gate Mitte Juni 2026:**
+
+| Demand-Signal | Entscheidung |
+|---|---|
+| ≥ 3 Partnerkanzlei-Bewerbungen mit ICP-Fit | Säule B priorisieren — Entwicklung starten |
+| 1–2 Bewerbungen | Vision weiter teasern, keine Entwicklungs-Kapazität binden |
+| 0 Bewerbungen | Vision pausieren, Säule A bleibt voller Fokus |
+
+**Verhältnis zum Dual-Track:** Säule B betrifft zunächst nur den Kanzlei-Track.
+Der Unternehmens-Track bleibt unverändert (kein Mandanten-Konzept dort). Master-
+Referenz für alle Säule-B-Inhalte: `Vision-Mandanten-Agent.md`.
+
+---
+
 ## Aktionsplan — nach Wirkung sortiert
 
 ### A. Sofort umsetzbar (diese/nächste Woche)
+
+**0. Vision-Launch Säule B (parallel, 3-Wochen-Sprint)**
+- Vision-LP `/mandanten-agent` mit Partnerkanzlei-Bewerbungsformular
+- Homepage-Hero und Produkt-Seite um Roadmap-Sektion erweitern
+- 6 LinkedIn-Posts entlang der 5 Awareness-Stufen
+- 3 Cornerstone-Blog-Artikel
+- Webinar-Outlook-Block + Welcome-Mail-Erweiterung
+- Detail-Plan in `Aktionsplan.md` Section 12. Master-Referenz: `Vision-Mandanten-Agent.md`.
+- Demand-Test als KPI: ≥ 3 Partnerkanzlei-Bewerbungen → Säule-B-Entwicklung starten.
 
 **1. Branchenreport-Landingpage + Ads-Kampagne B**
 - Report existiert, Landingpage in Arbeit

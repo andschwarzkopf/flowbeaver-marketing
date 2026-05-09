@@ -66,3 +66,38 @@
   - Ziel-Keywords: buchhaltung fachkräftemangel lösung, steuerberater mandate ablehnen
   - Inhalt: Problem-Awareness, Stufe 2
   - Datei: `seo/artikel/fachkraeftemangel-kanzlei-loesungen.md`
+
+---
+
+## Phase 4: Vision-Track Säule B (Mai 2026)
+
+**Sprint-Kontext:** Begleitet den Vision-Launch Säule B (Mandanten-Agent). Master-Referenz: `strategie/Vision-Mandanten-Agent.md`. Detail-Plan: `strategie/Aktionsplan.md` Section 12.
+
+**Brand-Disziplin:** Vision als Roadmap framen. DUO darf namentlich als Beispiel für komplexes Mandantenportal genannt werden (nie als DATEV-Synonym). Vendor für Lieferantenportal-Abholung anonym. Frame Unternehmer-zu-Unternehmer (Wachstum, Marge, Kapazität).
+
+### Artikel 8 — Cornerstone Stufe 3 (Solution Aware)
+- [ ] **"Warum die Digitalisierung der Mandanten an einer Mauer scheitert"**
+  - Ziel-Keywords: mandantenportal akzeptanz, mandanten digitalisierung steuerkanzlei, DUO mandanten
+  - Awareness-Stufe: 3 (Solution aware → Reframe Mandantenseite)
+  - Inhalt: Warum Mandantenportale wie DUO bei vielen Mandanten an Komplexität scheitern; Reframe nicht "Schulungsproblem", sondern "Werkzeug-Problem"; Brücke zur Vision Säule B.
+  - Länge: ~1.500 Wörter
+  - CTA: Webinar-Anmeldung + Vision-LP
+  - Datei: `seo/artikel/mandanten-digitalisierung-mauer.md`
+
+### Artikel 9 — Cornerstone Stufe 4 (Product Aware)
+- [ ] **"Das Mandantenportal, das kein Portal ist: Wie ein KI-Agent Belegerfassung übernimmt"**
+  - Ziel-Keywords: belegerfassung mandant whatsapp, ki agent buchhaltung, mandanten belege automatisch
+  - Awareness-Stufe: 4 (Product aware → Vision-Beschreibung)
+  - Inhalt: Säule B konkret; vier Eingangskanäle (WhatsApp, E-Mail, Drag-and-Drop, Lieferantenportal); Klärungs-Mechanik des Agenten; ~90 % automatisch-Logik; DATEV-Integration.
+  - Länge: ~1.200 Wörter
+  - CTA: Vision-LP / Partnerkanzlei-Bewerbung
+  - Datei: `seo/artikel/mandanten-agent-kein-portal.md`
+
+### Artikel 10 — Cornerstone Stufe 2 (Problem Aware)
+- [ ] **"Kapazität statt Personal: Warum wachstumsorientierte Kanzleien das Wachstumsthema neu denken müssen"**
+  - Ziel-Keywords: kanzlei wachstum personalmangel, steuerkanzlei skalieren ohne personal, personalkosten steuerkanzlei
+  - Awareness-Stufe: 2 (Problem aware → Reframe)
+  - Inhalt: STAX-Daten 43,8 % Personalkosten, 59,1 % offene Stellen; Pain-Problems-Prize-Logik (ohne Daniel-Priestley-Namedrop); Kapazitäts- statt Personal-Frame.
+  - Länge: ~1.000 Wörter
+  - CTA: Branchenreport-Download
+  - Datei: `seo/artikel/kapazitaet-statt-personal-kanzlei.md`

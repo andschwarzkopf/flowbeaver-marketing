@@ -11,6 +11,15 @@ Februar 2026 | Version 1.0
 Letzte Ergänzung: April 2026 | Version 1.1 (geschärfter Differenziator, Gründer-Positionierung, Dual-Track)
 Vertraulich | Flowbeaver GmbH
 
+**Changelog Mai 2026**
+
+- Abschnitt 1.2 erweitert: zweite Perspektive "Andreas als erlebter Mandant" als Origin-Story-Anker für Säule B
+- Abschnitt 1.3 neu: Zwei-Säulen-Architektur (Säule A produktiv + Säule B in Entwicklung)
+- Abschnitt 6.5 neu: Zwei-Säulen-Disziplin (Säule A operativ kommunizieren, Säule B als Roadmap)
+- Abschnitt 7.2 erweitert: Wachstumskanzlei-Botschaft auf Pain/Prize statt Vorkontierungs-Mechanik
+- Abschnitt 7.3 ergänzt: "Mandantenportal als komplette Lösung" als Don't
+- Vision-Master-Dokument: `Vision-Mandanten-Agent.md`
+
 **Changelog April 2026**
 
 - Abschnitt 1.1 neu: geschärfter Differenziator "LLM versteht jede Sprache → weniger Rückfragen"
@@ -76,27 +85,90 @@ Dieser Differenziator ist in allen Außenkommunikationen der Leitsatz
 Er ersetzt nicht den Dreiklang (LLM + KI-OCR + Regeln) als technologische
 Grundlage, sondern übersetzt ihn in den konkreten Kundenvorteil.
 
-**1.2 Gründer-Positionierung: Techniker, nicht Kanzlei-Insider**
+**1.2 Gründer-Positionierung: Unternehmer zu Unternehmer**
 
 Andreas Schwarzkopf ist nicht Steuerberater und tarnt sich auch nicht
-als einer. Die Gründer-Positionierung lautet: *Techniker, der das Werkzeug
-für die Kanzlei baut — und die Kanzlei als Expertin in den Prozess einbezieht.*
-Die Grundlage ist 15 Jahre KI-Erfahrung (u.a. Mercedes-Benz) plus Diplom-Kaufmann
-mit Buchhaltungsverständnis; der Zugang zur Branche entsteht über
-Community-Präsenz, nicht über vorgespielte Insider-Identität.
+als einer. Aber er ist seit über 30 Jahren selbst Unternehmer — er kennt
+Wachstum, Margenstress, Personalengpass und Prozessoptimierung aus eigener
+Tätigkeit. Genau auf dieser Ebene begegnet er der Kanzleiinhaberschaft:
+nicht als Tech-Berater zum Steuerberater, sondern als **Unternehmer zum
+Unternehmer**. Eine Steuerkanzlei ist in erster Linie ein Unternehmen mit
+Personal, Prozessen, Mandantenstruktur und Wachstumsambition — die fachliche
+Leistung steht obendrauf, nicht darunter.
+
+Die Gründer-Positionierung lautet: *Unternehmer mit Gesamtlösungskompetenz,
+der die wachstumshemmende Belegarbeit abräumt — kaufmännisch fundiert,
+technologisch tief, aus eigener Mandanten-Erfahrung gelernt.* Vier Schichten
+tragen diese Position, in dieser Reihenfolge:
+
+- **Unternehmer (primär).** Über 30 Jahre eigene unternehmerische Verantwortung.
+  Die Sprache jeder Kanzleiinhaberin, die wachsen will: Wachstum, Marge,
+  Personalkosten, Prozessoptimierung, Kapazität, Skaleneffekte.
+- **Diplom-Kaufmann mit Buchhaltungsverständnis.** Kein Insider, aber
+  substantiell fundiert: BWL, Bilanzierung, Buchführung sind Werkzeuge,
+  nicht Geheimwissen.
+- **Mandant der eigenen Steuerkanzlei.** Kennt die Belegarbeit aus eigener
+  Erfahrung. Hat sie gehasst. Baut, was er sich als Mandant immer
+  gewünscht hätte — und was gleichzeitig der Kanzlei massiv Last abnimmt.
+- **15 Jahre KI-Erfahrung (u.a. Mercedes-Benz).** Werkzeug, mit dem die
+  Lösung gebaut wird — kein Selbstzweck, kein Brand-Frame. Die Technologie
+  steht im Dienst des unternehmerischen Problems, nicht umgekehrt.
 
 Konkrete Folgen für die Kommunikation:
 
-- **Ehrlichkeit schlägt Tarnung.** Website und LinkedIn dürfen explizit sagen,
-  dass Flowbeaver aus der Technik heraus entsteht. Kein "wir kennen den
-  Kanzleialltag" ohne Beleg.
+- **Augenhöhe Unternehmer-zu-Unternehmer.** Die Kanzleiinhaberin ist
+  Unternehmerin mit einem Unternehmen — nicht primär Fach-Spezialistin.
+  Frame-Sprache: Wachstum, Marge, Prozessoptimierung, Kapazität.
+  Detail-Sprache (Belegtypen, OCR-Erkennungsraten, ASR-Konfiguration)
+  bleibt im Detail, nicht im Frame.
+- **Ehrlichkeit schlägt Tarnung.** "Wir kennen den Kanzleialltag" wird
+  nicht behauptet — wir kennen den Unternehmensalltag und die Belegarbeit
+  aus Mandantensicht. Steuerfachliche Tiefe holen wir uns von den
+  Partnerkanzleien in der gemeinsamen Entwicklung.
 - **Solo-Founder ist Vorteil:** direkter Zugang, schnelle Iteration,
-  White-Glove-Beta. Nicht als Schwäche rahmen.
-- **Kein Startup-Jargon:** "erste Runde" statt "Pioneer-Kohorte",
-  "Ergänzung" statt "Disruption". Der Ton ist leise, technisch, spezifisch
-  (Belegtypen, Zahlen, Fehlermuster) — nicht laut.
+  persönliche Erreichbarkeit. Maximal 1–2× pro Asset als Brand-Versprechen,
+  nicht über jede Sektion verteilt.
+- **Kein Startup-Jargon.** "erste Runde" statt "Pioneer-Kohorte", "Ergänzung"
+  statt "Disruption". Der Ton ist sachlich, spezifisch, unternehmerisch —
+  nicht laut, nicht hypeartig, nicht tech-verliebt.
 - **Keine Stock-Fotos lachender Buchhalter.** Keine Emojis. Keine
   Dark-Patterns. Belege statt Meinungen.
+
+**1.3 Die Zwei-Säulen-Architektur (Roadmap-Erweiterung Mai 2026)**
+
+Flowbeaver hat heute eine produktive Säule und eine Roadmap-Säule. Beide tragen
+denselben technologischen Kern (LLM + KI-OCR + deterministische Regeln) und enden
+im selben Ergebnis: ein DATEV-kompatibler Buchungsstapel.
+
++-----------------------------------------------------------------------+
+| **Zwei-Säulen-Architektur**                                           |
+|                                                                       |
+| **Säule A — Vorkontierung (heute, produktiv).** Belege werden         |
+| extrahiert, zugeordnet, vorkontiert. Kanzleimitarbeiter prüft den     |
+| Stapel im DATEV-Workflow. Differenzierung: LLM versteht Belege jeder  |
+| Sprache, was Rückfragen am Beleg selbst reduziert.                    |
+|                                                                       |
+| **Säule B — Mandanten-Agent (in Entwicklung, sucht Partnerkanzleien).**|
+| Mandant liefert Belege per WhatsApp, E-Mail, Drag-and-Drop oder über  |
+| automatische Abholung aus Lieferantenportalen. Ein KI-Agent klärt     |
+| Klärfälle direkt mit dem Mandanten — fehlende Belege, schlechte Scans,|
+| unklare Geschäftsvorfälle, formal fehlerhafte Belege. Rund 90 % der   |
+| Belege laufen automatisch durch. Daten fließen über DUO /             |
+| Rechnungsdatenservice / Buchungsdatenservice in den Buchungsstapel.   |
+| Differenzierung: Mandant arbeitet mit Werkzeugen, die er ohnehin      |
+| täglich nutzt — kein Portal-Lernen.                                   |
++-----------------------------------------------------------------------+
+
+Säule A bleibt der operative Beta-Inhalt für die ersten zahlenden Kunden.
+Säule B ist explizit als Roadmap markiert. Sie wird erst nach einem positiven
+Demand-Test (Mitte Juni 2026, siehe `Aktionsplan.md` Section 12) entwickelt
+und dann mit 3–5 Partnerkanzleien gemeinsam gebaut.
+
+Die Zwei-Säulen-Logik schärft die ICP-Definition: aus "wachstumsorientiert mit
+DATEV-Affinität" wird "wachstumsorientiert + Kapazitätsdruck + Margendruck".
+Tech-Affinität wird sekundär — Säule B macht die Werkzeugbedienung sogar einfacher,
+weil der Mandant kein Portal mehr lernen muss. Die ausführliche Pain-Problems-Prize-
+Logik steht im Master-Dokument `Vision-Mandanten-Agent.md` (Abschnitt 2).
 
 **2. DATEV: Marktstellung & Ökosystem**
 
@@ -481,6 +553,47 @@ jedes deutsche Buchhaltungssystem fließt — am prominentesten DATEV, aber
 eben nicht ausschließlich. Das erweitert den Markt, ohne die Kernaussage
 zu brechen.
 
+**6.5 Zwei-Säulen-Disziplin (Mai 2026)**
+
+Mit der Roadmap-Erweiterung um den Mandanten-Agenten (siehe Abschnitt 1.3)
+kommen zwei Produktsäulen ins Messaging — und damit die Pflicht, sie nicht
+zu vermischen. Beta-Kunden zahlen heute für Säule A. Säule B ist Roadmap und
+wird mit Partnerkanzleien gemeinsam gebaut, sobald der Demand-Test positiv
+ausfällt (Aktionsplan.md Section 12).
+
+  ----------------------- ----------------------------- -----------------------------
+  **Dimension**           **Säule A — Vorkontierung**   **Säule B — Mandanten-Agent**
+
+  **Status**              Produktiv (Beta läuft)        Roadmap, Partnerkanzleien
+                                                        gesucht
+
+  **Was wird verkauft**   299 €/Monat Beta-Slot,        Bewerbung als Partnerkanzlei
+                          6-Monatiger Vertrag           (eigener Vertragsstrang)
+
+  **Sprachregelung**      "wir liefern", "ist da",      "wir bauen", "kommt", "in
+                          "funktioniert heute"          Entwicklung", "Partnerkanzleien
+                                                        gesucht"
+
+  **Wo prominent**        Waitlist-LP, Webinar-Demo,    Vision-LP, Homepage-Roadmap,
+                          Beta-Onboarding               Webinar-Outlook (5 Min am Ende),
+                                                        dezidierte LinkedIn-Posts
+
+  **Wo nicht**            -                             Beta-Vertragsunterlagen,
+                                                        Pricing-Folie, FAQ "Was bekomme
+                                                        ich heute"
+  ----------------------- ----------------------------- -----------------------------
+
++-----------------------------------------------------------------------+
+| **Positionierungsregel Nr. 3 (Zwei-Säulen-Disziplin)**                |
+|                                                                       |
+| Säule A wird operativ kommuniziert. Säule B wird als Roadmap          |
+| kommuniziert. Beides nie verschwimmen lassen — eine Aussage,          |
+| die offen lässt, ob etwas heute oder erst übermorgen funktioniert,    |
+| zerstört Vertrauen schneller als jede ehrliche Lücke. Säule B nie auf |
+| die gleiche Aktivitäts-Ebene wie Säule A heben. Master-Referenz für   |
+| Säule-B-Inhalte: `Vision-Mandanten-Agent.md`.                         |
++-----------------------------------------------------------------------+
+
 **7. Messaging-Framework**
 
 **7.1 Elevator Pitch (30 Sekunden)**
@@ -516,6 +629,14 @@ zu brechen.
   (Buchhaltungsleitung,               fremdsprachigen und exotischen Belegen umgeht.
   Finance-Manager) —                  Weniger Rückfragen, saubere Buchungsstapel für
   Unternehmens-Track**                Ihr DATEV oder Ihren Steuerberater.\"
+
+  **Wachstumsorientierte              \"Sie wachsen — und Ihre Marge schrumpft. Personal-
+  Kanzleiinhaberin (Pain/Prize-       kosten machen 43,8 % des Umsatzes aus, jede neue
+  Frame, Mai 2026)**                  Stelle frisst die Marge. Flowbeaver räumt die
+                                      Belegarbeit ab, die heute Personalkapazität
+                                      verbrennt — Säule A heute, Mandanten-Agent in
+                                      Entwicklung. Wachstum wird wieder eine Margenfrage,
+                                      keine Personalfrage.\"
   ----------------------------------- ----------------------------------------------------
 
 **7.3 Messaging-Dont\'s**
@@ -540,6 +661,16 @@ Landing Page, E-Mails) zu vermeiden:
 
   Günstigste Lösung               **\"Premium-Automatisierung für
                                   wachsende Kanzleien\"**
+
+  Mandantenportal als komplette   **\"Werkzeuge, mit denen Mandanten
+  Lösung darstellen (impliziert,  arbeiten, ohne ein Portal lernen
+  jeder Mandant kommt mit         zu müssen — WhatsApp, E-Mail,
+  DUO/Portal klar)                Drag-and-Drop, automatische Abholung\"**
+
+  Wir als Tech-Anbieter zur       **Unternehmer zu Unternehmer:
+  Steuerkanzlei                   Wachstum, Marge, Prozessoptimierung,
+                                  Kapazität — die fachliche Steuer-
+                                  Tiefe holen sich die Partnerkanzleien**
   ------------------------------- ---------------------------------------
 
 **8. SWOT-Analyse: Flowbeaver**

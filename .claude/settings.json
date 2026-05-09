@@ -35,7 +35,12 @@
       "Bash(sips -g pixelWidth -g pixelHeight /Users/andreas/Documents/Git/flowbeaver-marketing/assets/linkedin/linkedin-banner-v1.png)",
       "Bash(sips -g pixelWidth -g pixelHeight -g format -g profile /Users/andreas/Documents/Git/flowbeaver-marketing/assets/linkedin/linkedin-page-cover-4200x700.png /Users/andreas/Documents/Git/flowbeaver-marketing/assets/linkedin/linkedin-page-cover-4200x700.jpg)",
       "Bash(echo \"Server PID: $!\")",
-      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8765/assets/linkedin/linkedin-personal-cover-v1.html)"
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8765/assets/linkedin/linkedin-personal-cover-v1.html)",
+      "Bash(awk '{print $NF}')",
+      "WebFetch(domain:handbuch.fibuscan.de)",
+      "WebFetch(domain:fibudata.net)",
+      "WebFetch(domain:www.invoicefetcher.com)",
+      "WebFetch(domain:www.kanzlei.land)"
     ],
     "additionalDirectories": [
       "/Users/andreas/.claude/skills/flowbeaver-marketing",
