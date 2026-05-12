@@ -652,19 +652,104 @@ Keine Vanity-Metriken. Nur operative Kennzahlen.
 
 ---
 
-## 18. Häufige Fehler
+## 18. Conversion-Erwartungen und Webinar-Hebel
 
-### 18.1 Zu früh skalieren
+Outbound funktioniert nur, wenn die Erwartungs-Kalibrierung stimmt. Wer 50 % Conversion erwartet, gibt nach Anruf 5 auf. Wer realistisch rechnet, hält die Disziplin durch. Parallel dazu ist das Webinar der wichtigste Skalierungs-Hebel — damit der Solo-Founder nicht jeden Lead 1-zu-1 betreuen muss.
+
+### 18.1 Conversion-Trichter
+
+Realistische Quoten für die ersten 30-50 Anrufe (vor Routine-Aufbau):
+
+| Stufe | Unerfahren | Nach 100+ Anrufen |
+|---|---|---|
+| Anwahl → Inhaber direkt erreicht | 20-25 % | 30-40 % |
+| Inhaber → Ja zur Filterfrage | 30-40 % | 50-60 % |
+| Filterfrage-Ja → Demo-Termin | 25-35 % | 40-50 % |
+| Demo → Vertrag | 25-30 % | 30-40 % |
+| **Gesamt: Anruf → Vertrag** | **~1,5-2 %** | **~3-4 %** |
+
+Plus Parallel-Funnel über Branchenreport-E-Mail-Adressen: aus "Kommt nicht in Frage" werden 10-20 % Email-Leads, die in 3-6 Monaten zurückkommen können.
+
+### 18.2 Zeitfenster bis 5 Erstkunden
+
+| Szenario | Wochen | Anruf-Aufwand/Woche | Bedingungen |
+|---|---|---|---|
+| Schnell | 6-8 | 60-80 | Listen-Pipeline steht, Skill-Sprung schnell |
+| **Realistisch** | **10-14** | **30-50** | Solo-Founder-Doppellast, Listen müssen nachgeliefert werden, Demo-Cancel 20 % |
+| Vorsichtig | 16-20 | 20-30 | Wenig Anruf-Zeit, längere Bedenkzeit, Skript-Iterationen |
+
+**Planungsgröße: 3 Monate mental einplanen.** Wenn schneller, ist es ein Bonus.
+
+### 18.3 Webinar als Skalierungs-Hebel
+
+Webinar ist 1-zu-Viele statt 1-zu-1 und entlastet den Solo-Founder vom "Auf-Händen-Tragen" jedes Leads. Eine Stunde Webinar mit 20 Anmeldungen ersetzt 20 Einzel-Termine.
+
+**Operative Kombination Cold Call + Webinar:**
+
+```
+Cold Call (30 Kanzleien)
+   ├── 4-8 wollen Demo                  → individuell (1-zu-1, OK)
+   ├── 10-15 nehmen Branchenreport      → in Webinar-Sequenz
+   └── Rest                             → LinkedIn-Touchpoint
+
+Webinar (monatlich, fester Termin)
+   ├── 15-25 Anmeldungen aus Reportern + LinkedIn + Empfehlungen
+   ├── 10-15 Live-Teilnahme (50-60 % Standard)
+   ├── 5-8 schauen Aufzeichnung         → asynchron, null Andreas-Zeit
+   └── 2-4 Demo-Anfragen aus Webinar    → individuell
+```
+
+### 18.4 Vier Optimierungen für minimalen Touch-Overhead
+
+**1. Aufzeichnung sofort an alle Angemeldeten.** Wer nicht teilnimmt, bekommt das Video — kein Nachhol-Termin, kein 1-zu-1-Replay. 60 % der Anmeldungen konsumieren asynchron.
+
+**2. FAQ-Block am Webinar-Ende standardisieren.** Die zehn häufigsten Fragen einmal vorbereiten, im Webinar abhandeln. Damit fallen 80 % der 1-zu-1-Nachfragen weg.
+
+**3. Demo-Booking-Link direkt im Webinar (und Aufzeichnung).** Calendly oder ähnlich — wer Demo will, bucht selbst. Spart pro Lead 15-20 Minuten Koordination.
+
+**4. Webinar als monatliches Asset, gleicher Termin.** "Jeden ersten Donnerstag um 17 Uhr" — wer nicht kann, kommt nächsten Monat. Pipeline wird automatisch, ohne neue Cold Calls.
+
+### 18.5 Wann der Hebel kippt
+
+Ab Webinar Nr. 3 stabilisiert sich die Anmeldezahl auf 15-25. Ab dann liefert das Webinar mehr Demos pro Monat als ein Cold-Call-Tag. Realistisch: 8-10 Wochen nach Webinar-Start.
+
+**Erste Webinar-Iteration nicht nach Anmeldezahl bewerten.** Nr. 1 hat realistisch 5-10 Anmeldungen, Nr. 2 etwa 10-15, ab Nr. 3 stabil 15+. Webinar-Aufbau ist eine Pipeline, kein Schalter.
+
+### 18.6 Wer wird eingeladen — legitim und nicht legitim
+
+| Segment | Einladen? | Begründung |
+|---|---|---|
+| Inhaber-Gespräch geführt, neutral oder offen | Ja | Legitimes Interesse, B2B nach § 7 UWG |
+| Branchenreport per E-Mail erhalten | Ja | Natürliche zweite Stufe der Sequenz |
+| Inhaber sagte "kommt nicht in Frage" | **Nein** | Opt-out wurde signalisiert, Respekt entscheidet langfristig |
+| Vorzimmer-Block ohne Inhaber-Kontakt | Eingeschränkt | Über Kanzlei-Adresse, nicht persönlich |
+| Webinar-Teilnehmer Vormonate | Ja | Wiederkehrender Touchpoint |
+
+**Segmentierungs-Spalte:** In der CSV `Folge-Aktion` mit Werten `Demo` / `Webinar` / `Report` / `LinkedIn-only` / `Pause`. Daraus speist sich das Webinar-Einladungs-Segment automatisch.
+
+### 18.7 Wachstumsbremsen, die das Zeitfenster verlängern
+
+**Bottleneck 1: Solo-Founder-Doppellast.** Produkt + Demos + neue Cold Calls parallel → 60-Stunden-Wochen-Burnout. Bewusst Tage trennen: 2 Tage Anrufe, 2 Tage Demo+Vertrag, 1 Tag Produkt.
+
+**Bottleneck 2: Vertragsabschluss-Zyklus.** Demo "Ja, das ist gut" → Team-Abstimmung, Datenschutz-Check, 2-4 Wochen. Aktiv nachfassen, nicht warten.
+
+**Bottleneck 3: Listen-Pipeline.** KW20-Liste muss stehen, bevor KW19 abgearbeitet ist. Listen-Loch = 2 Wochen Momentum-Verlust.
+
+---
+
+## 19. Häufige Fehler
+
+### 19.1 Zu früh skalieren
 Nicht zuerst 1.000 Datensätze sammeln.
 Erst 20–30 sauber prüfen und den Prozess schärfen.
 
-### 18.2 Zu generisch anschreiben
+### 19.2 Zu generisch anschreiben
 Ohne konkretes Signal wirkt jede Nachricht wie Spam.
 
-### 18.3 Zu schnell auf Demo gehen
+### 19.3 Zu schnell auf Demo gehen
 Demo ist zu früh. Erst Relevanz, dann Video, dann Eignungscheck.
 
-### 18.4 Falsche Zielpersonen
+### 19.4 Falsche Zielpersonen
 Nicht wahllos Mitarbeitende anschreiben.
 Priorität:
 
@@ -673,12 +758,12 @@ Priorität:
 3. Digitalisierungsverantwortliche
 4. FiBu-Leitung, wenn sinnvoll
 
-### 18.5 Zu weich auftreten
+### 19.5 Zu weich auftreten
 Wer zu freundlich, zu allgemein und zu hoffend schreibt, verliert Status.
 
 ---
 
-## 19. Die operative Regel für jeden Datensatz
+## 20. Die operative Regel für jeden Datensatz
 
 Jede Kanzlei in der Liste ist nur dann nützlich, wenn sie diese 3 Dinge enthält:
 
@@ -690,7 +775,7 @@ Wenn eines davon fehlt, ist der Datensatz noch nicht outbound-fähig.
 
 ---
 
-## 20. Startliste für morgen
+## 21. Startliste für morgen
 
 ### To-dos
 1. Spreadsheet mit 4 Tabs anlegen
@@ -707,7 +792,7 @@ Sondern der erste belastbare, wiederholbare Outbound-Loop.
 
 ---
 
-## 21. Abschlussformel
+## 22. Abschlussformel
 
 Der Kanal funktioniert nicht durch Lautstärke, sondern durch Präzision.
 

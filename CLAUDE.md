@@ -57,9 +57,16 @@ flowbeaver-marketing/
 ├── webinare/                          # Webinar-Skripte und Materialien
 ├── linkedin/                          # LinkedIn-Post-Entwürfe
 ├── email/                             # E-Mail-Sequenzen (Welcome, Webinar-Einladung, Follow-up)
+├── outbound/                          # Founder-led Outbound (Cold Calls, Discovery, Sales)
+│   ├── flowbeaver-outbound-playbook.md       # **Master-Doc** — ICP, Skript, Conversion, Webinar-Hebel
+│   ├── flowbeaver-outbound-operating-sheet.md
+│   ├── discovery/                            # Anruflisten, Übergabe-Dokumente
+│   └── docs/                                 # Sales-Cheatsheets, Vorzimmer-Anrufskript, Mantras
 └── assets/                            # Bild-Prompts, visuelle Assets
     └── hero-trichter-prompt.md
 ```
+
+**Outbound-Master-Doc:** [`outbound/flowbeaver-outbound-playbook.md`](outbound/flowbeaver-outbound-playbook.md) ist die zentrale Referenz für alle Anruf-, Discovery- und Sales-Entscheidungen. Enthält ICP-Scoring, Skripte, Conversion-Erwartungen (Section 18), Webinar-Skalierungs-Hebel und KPIs. Bei Fragen zum Outbound zuerst dort nachsehen.
 
 ---
 
