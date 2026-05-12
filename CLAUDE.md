@@ -5,7 +5,7 @@ KI-Vorsystem für die vorbereitende Buchhaltung in Steuerkanzleien. Kombiniert L
 
 ## Wichtigste Regeln
 - Flowbeaver ist eine DATEV-**Ergänzung**, niemals eine DATEV-Alternative
-- ICP: Wachstumsorientierte Steuerkanzleien mit ≥4 Mitarbeitern
+- ICP: Wachstumsorientierte Steuerkanzleien mit 4-10 Mitarbeitern
 - Sprache: Deutsch, "Sie"-Anrede, sachlich-selbstbewusst, keine Emojis
 - Solo-Founder (Andreas Schwarzkopf) = Vorteil, nicht Schwäche — direkter Zugang, schnelle Iteration
 - Kein Startup-Jargon: "Pioneer-Kohorte" → "erste Runde", "Disruption" → nicht verwenden

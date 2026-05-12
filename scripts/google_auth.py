@@ -7,6 +7,7 @@ Usage: python3 scripts/google_auth.py
 """
 
 import os
+import re
 import json
 from pathlib import Path
 from google_auth_oauthlib.flow import InstalledAppFlow
@@ -54,12 +55,20 @@ def main():
     print("\n=== Authentifizierung erfolgreich! ===\n")
     print(f"Refresh Token: {refresh_token}\n")
 
-    # Refresh Token in .env schreiben
+    # Refresh Token in .env schreiben (Zeile komplett ersetzen, nicht anhaengen)
     env_content = env_path.read_text()
-    env_content = env_content.replace(
-        'GOOGLE_REFRESH_TOKEN=',
-        f'GOOGLE_REFRESH_TOKEN={refresh_token}'
-    )
+    new_line = f'GOOGLE_REFRESH_TOKEN={refresh_token}'
+    if re.search(r'^GOOGLE_REFRESH_TOKEN=.*$', env_content, flags=re.MULTILINE):
+        env_content = re.sub(
+            r'^GOOGLE_REFRESH_TOKEN=.*$',
+            new_line,
+            env_content,
+            flags=re.MULTILINE,
+        )
+    else:
+        if not env_content.endswith('\n'):
+            env_content += '\n'
+        env_content += new_line + '\n'
     env_path.write_text(env_content)
     print("Refresh Token wurde in .env gespeichert.")
     print("Du kannst dieses Skript jetzt schliessen.")

@@ -79,6 +79,7 @@ Ich würde gern verstehen, ob das bei Ihnen ähnlich ist -- oder ob Sie das ande
 
 Mein Angebot: Ich teile mit Ihnen, was ich von anderen Kanzleien gelernt habe (anonym, natürlich). Im Gegenzug erzählen Sie mir, wie es bei Ihnen läuft. 20 Minuten, unkompliziert.
 
+
 Wäre das interessant für Sie?
 
 Viele Grüße
