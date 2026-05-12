@@ -6,6 +6,75 @@
 
 ---
 
+## Live-Cheatsheet für die Anrufe — Vorzimmer, Verkaufen, Software-Einwand
+
+**Voice (verbindlich):** Unternehmer zu Unternehmer (siehe `Vision-Mandanten-Agent.md` Section 5). Kein Studien-Versteck, keine Auswahl-Pose, keine Pioneer-Kohorte. Ehrlichkeit über das, was Flowbeaver ist (KI-Vorsystem für vorbereitende Buchhaltung) — und ehrlicher Tausch: Marktsicht gegen Praxis-Sicht.
+
+---
+
+### Vorzimmer: "Worum geht es?"
+
+**Standard:**
+
+> "Mein Name ist Andreas Schwarzkopf, Diplom-Kaufmann und Unternehmer. Worum es geht: Wachstum für Ihre Kanzlei — konkret, mehr Mandate annehmen können, auch wenn der Stellenmarkt nichts mehr hergibt. Ich entwickle ein KI-Vorsystem dafür und tausche meine Marktsicht zu den Hebeln gegen einen kurzen Austausch mit Frau/Herrn [Name]. Unternehmer zu Unternehmer. Ist sie/er kurz erreichbar?"
+
+**Kurzform (wenn das Vorzimmer knapp reagiert):**
+
+> "Andreas Schwarzkopf, Diplom-Kaufmann und Unternehmer. Mein Thema: Wachstum für wachsende Kanzleien wie Ihre — mehr Mandate mit der jetzigen Mannschaft, weil der Stellenmarkt nichts mehr hergibt. Ich entwickle ein KI-Vorsystem dafür und biete Frau/Herrn [Name] einen kurzen Austausch unter Unternehmern. Ist sie/er kurz dran?"
+
+**Bei Rückfrage "Was bringen Sie denn konkret mit?":**
+
+> "Eine Marktübersicht: was Finmatics, BuchhaltungsButler, DATEV ASR heute wirklich können, wo die Grenzen liegen, und wo der Hebel sitzt, den die meisten übersehen — die Mandantenkommunikation rund um unklare Belege. Das ist mein Beitrag zum Gespräch. Was ich von Frau/Herrn [Name] brauche: ihre/seine Sicht, wo in Ihrer Kanzlei die Mandate hängenbleiben."
+
+**Warum es durchkommt:**
+- "Wachstum für Ihre Kanzlei" — Boss-Reflex springt an. Welcher Inhaber will das nicht hören.
+- "Mehr Mandate mit der jetzigen Mannschaft, weil der Stellenmarkt nichts mehr hergibt" — sofortige Konkretisierung, raus aus dem Beratungs-Generikum. Trifft den 2026er-Schmerz an seinem schärfsten Punkt: nicht nur teuer (STAX 2024: 43,8 % Personalkosten), sondern für viele Kanzleien gar nicht mehr lösbar (59,1 % offene Stellen unbesetzt). Wer den Stellenmarkt 2026 ernst nimmt — Inhaber wie Vorzimmer — hört bei dieser Formulierung zu, weil sie ihre Realität trifft.
+- "Unternehmer zu Unternehmer" — entwaffnet den Verkäufer-Reflex des Vorzimmers.
+- "Tausch: Marktsicht gegen Austausch" — symmetrisch, nicht extraktiv.
+- "Kurzer Austausch" statt Minuten-Zahl — kein Defensiv-Trigger ("10 Min habe ich nicht").
+
+---
+
+### Inhaber: "Wollen Sie etwas verkaufen?"
+
+**Standard:**
+
+> "Heute nicht. Ich bin Diplom-Kaufmann und entwickle ein KI-Vorsystem für die vorbereitende Buchhaltung. Bevor das in die ersten Kanzleien geht, will ich mit Praktikern verstehen, ob es ein Problem löst, das es wirklich gibt — oder eines, das nur in meinem Kopf existiert. Falls bei Ihnen am Ende sichtbar wird, dass das relevant sein könnte, sprechen wir nochmal. Wenn nicht, war's ein kurzer Austausch, der für Sie kein Risiko hat."
+
+**Kurzform (mündlich straffer):**
+
+> "Heute nicht. Ich entwickle ein KI-Vorsystem für die vorbereitende Buchhaltung und führe Gespräche mit Praktikern, bevor die ersten Kanzleien damit arbeiten. Verkauft wird hier nichts — ich will verstehen, ob das, was ich baue, ein echtes Problem in Ihrer Kanzlei trifft."
+
+**Warum es funktioniert:**
+- "Heute nicht" — klare Antwort, kein Ausweichen, kein evasives "nicht unbedingt".
+- Ehrliche Identität: Diplom-Kaufmann + Unternehmer + Entwickler. Keine Tarnung.
+- Reziprozität ohne Druck — klares Exit-Versprechen.
+- Andreas-Voice: direkte Parallel-Konstruktion ("ein Problem, das es wirklich gibt — oder eines, das nur in meinem Kopf existiert").
+
+---
+
+### Einwand: "Wir sind gut versorgt. Unsere Software ist super."
+
+**Logik:** Nicht widerlegen — validieren, dann das Spielfeld eine Ebene tiefer verschieben: von "welche Software" zu "wieviel Zeit verbrennt drumherum". Die Frage am Ende zwingt zu einer konkreten Zahl, nicht zu einer Höflichkeitsfloskel.
+
+**Standard-Konter:**
+
+> "Verstehe — und das ist in der Regel auch so, sonst läuft die Kanzlei nicht. Was mich aber interessiert, sitzt eine Ebene tiefer und hat mit der Software wenig zu tun: die Rückfragen zwischen Mandant und Kanzlei, wenn ein Beleg nicht von selbst klar ist. Können Sie grob einschätzen, wieviele Stunden pro Woche bei Ihnen dafür draufgehen?"
+
+**Backup, falls er dichtmacht:**
+
+> "Verstehe. Letzte Frage dann — können Sie mit Ihrer jetzigen Mannschaft 20 % mehr Mandate annehmen, ohne dass die Marge zerbröselt? Wenn ja, ist das Gespräch für mich erledigt. Wenn nicht, sind wir genau im Thema."
+
+**Warum es funktioniert:**
+- Validierung statt Konfrontation — der Inhaber sieht keinen Streitpunkt, an dem er sich abarbeiten kann.
+- Pivot von Software-Frage auf Kapazitäts-/Margenfrage — das ist der echte Pain in 2026.
+- Hinter dem Konter steht STAX 2024 (Personalkosten 43,8 %, 59,1 % offene Stellen unbesetzt). Wenn der Inhaber widerspricht, widerspricht er Branchendaten — nicht dir.
+- Forcing-Question am Ende: "wieviele Stunden" oder "20 % mehr Mandate" — beides zwingt zu einer Antwort.
+
+**Wichtig zur Framing-Disziplin:** Den Rückfragen-Hebel nicht als bereits-validierten-Insight framen ("ich habe gefunden, dass ..."). Stattdessen als das, was Andreas im Gespräch *prüfen* will. Reason: Die Hypothese ist intern noch nicht community-validiert. Gilt für alle Anrufe.
+
+---
+
 ## Update KW19 v4 — Welle 2 abgeschlossen (Soll erreicht)
 
 > **Achtung:** v4 ist der aktuelle Stand. Alle weiter unten stehenden Abschnitte (v1, v2, v3) dienen als historische Referenz — als maßgeblich gilt v4.
