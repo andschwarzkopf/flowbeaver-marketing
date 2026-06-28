@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Flowbeaver — LinkedIn Personal Cover v4 (3168×792 @2x)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --fb-purple: #52267a;
+    --fb-white: #ffffff;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    width: 3168px;
+    height: 792px;
+    overflow: hidden;
+    font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+    background: var(--fb-purple);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: geometricPrecision;
+  }
+
+  .banner {
+    position: relative;
+    width: 3168px;
+    height: 792px;
+    background: var(--fb-purple);
+    overflow: hidden;
+  }
+
+  /* Logo dezent oben rechts, klein — Brand-Lila PNG → reines Weiß */
+  .logo-mark {
+    position: absolute;
+    top: 72px;
+    right: 160px;
+    width: 150px;
+    height: 150px;
+    filter: brightness(0) invert(1);
+    opacity: 0.92;
+  }
+
+  /* Headline: groß über die volle Breite */
+  .headline {
+    position: absolute;
+    left: 160px;
+    right: 160px;
+    top: 120px;
+    font-size: 164px;
+    font-weight: 700;
+    line-height: 1.0;
+    letter-spacing: -4px;
+    color: var(--fb-white);
+    white-space: nowrap;
+  }
+
+  /* Subline: beginnt in der horizontalen Mitte, läuft nach rechts */
+  .subline {
+    position: absolute;
+    left: 50%;
+    right: 160px;
+    top: 350px;
+    font-size: 88px;
+    font-weight: 400;
+    line-height: 1.22;
+    letter-spacing: -1.2px;
+    color: rgba(255, 255, 255, 0.85);
+  }
+</style>
+</head>
+<body>
+  <div class="banner">
+    <img class="logo-mark" src="../og-image/logo-f-4.png" alt="">
+    <div class="headline">Produktive KI für den Mittelstand</div>
+    <div class="subline">Sichere KI,<br>die Aufwand messbar senkt und<br>internes Wissen nutzbar macht.</div>
+  </div>
+</body>
+</html>

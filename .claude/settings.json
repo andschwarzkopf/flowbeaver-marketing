@@ -40,7 +40,12 @@
       "WebFetch(domain:handbuch.fibuscan.de)",
       "WebFetch(domain:fibudata.net)",
       "WebFetch(domain:www.invoicefetcher.com)",
-      "WebFetch(domain:www.kanzlei.land)"
+      "WebFetch(domain:www.kanzlei.land)",
+      "Bash(python3 -m http.server 8753)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8753/linkedin-personal-cover-v4.html)",
+      "WebFetch(domain:ankerkern.de)",
+      "Bash(pkill -f \"http.server 8799\")",
+      "Bash(rm -f slide-polish.png slide-final.png slide-playwright*.png)"
     ],
     "additionalDirectories": [
       "/Users/andreas/.claude/skills/flowbeaver-marketing",

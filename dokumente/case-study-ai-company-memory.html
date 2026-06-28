@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fallstudie: AI Company Memory | Flowbeaver AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --fb-purple: #52267a;
+      --fb-dark-red: #3c0f04;
+      --fb-black: #000000;
+      --fb-text: #404040;
+      --fb-text-secondary: #606060;
+      --fb-text-tertiary: #8a8a8a;
+      --fb-border: #e0e0e0;
+      --fb-white: #ffffff;
+      --fb-radius: 10px;
+      --fb-font: 'DM Sans', system-ui, -apple-system, sans-serif;
+      --page-max-width: 210mm;
+      --page-padding: 20mm;
+      --content-max-width: 700px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--fb-font);
+      color: var(--fb-text);
+      font-size: 1.05rem;
+      line-height: 1.6;
+      background: var(--fb-white);
+    }
+
+    a { color: var(--fb-purple); text-decoration: none; }
+
+    /* --- PRINT --- */
+    @page { size: A4; margin: 14mm 16mm 14mm 18mm; }
+
+    @media print {
+      body { font-size: 10pt; background: white; }
+      .no-print { display: none !important; }
+      a { color: inherit; text-decoration: none; }
+      .page-break { page-break-before: always; }
+      .avoid-break { page-break-inside: avoid; }
+      h1, h2, h3 { page-break-after: avoid; }
+      .stat-callout, .quote-box, .highlight-box, .sidebar-box, .cta-block, .chart-container { page-break-inside: avoid; }
+      .page { padding: 0; box-shadow: none; min-height: auto; margin: 0; max-width: none; }
+    }
+
+    /* --- SCREEN PREVIEW --- */
+    @media screen {
+      body { background: #e8e8e8; padding: 20px 0; }
+      .page {
+        background: white;
+        max-width: var(--page-max-width);
+        margin: 0 auto 20px;
+        padding: 18mm var(--page-padding);
+        box-shadow: 0 1px 8px rgba(0,0,0,0.1);
+        min-height: 297mm;
+      }
+    }
+
+    /* --- TYPOGRAFIE --- */
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      line-height: 1.14;
+      color: var(--fb-dark-red);
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--fb-black);
+      margin-bottom: 14px;
+      margin-top: 34px;
+      padding-bottom: 9px;
+    }
+
+    h2::after {
+      content: "";
+      display: block;
+      width: 40px;
+      height: 2px;
+      background: var(--fb-purple);
+      margin-top: 9px;
+    }
+
+    h3 {
+      font-size: 1.08rem;
+      font-weight: 600;
+      line-height: 1.4;
+      color: var(--fb-black);
+      margin-bottom: 8px;
+      margin-top: 22px;
+    }
+
+    p { margin-bottom: 14px; max-width: var(--content-max-width); }
+    strong { font-weight: 600; color: var(--fb-black); }
+
+    .eyebrow {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--fb-purple);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .fn-note { font-size: 0.72rem; color: var(--fb-text-tertiary); margin-top: 6px; line-height: 1.5; max-width: var(--content-max-width); }
+
+    /* --- HEADER --- */
+    .cs-header { padding-bottom: 2px; }
+    .brand-logo { font-size: 1.05rem; font-weight: 700; color: var(--fb-dark-red); letter-spacing: 0.01em; margin-bottom: 20px; }
+    .brand-logo span { color: var(--fb-purple); }
+    .cs-header .doc-subtitle {
+      font-size: 1.08rem; font-weight: 300; color: var(--fb-text-secondary);
+      max-width: 610px; margin-bottom: 22px; line-height: 1.5;
+    }
+
+    .headline-stats { display: flex; gap: 34px; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--fb-border); }
+    .headline-stat .hs-number { font-size: 1.8rem; font-weight: 700; color: var(--fb-purple); line-height: 1; }
+    .headline-stat .hs-label { font-size: 0.8rem; color: var(--fb-text-secondary); margin-top: 6px; line-height: 1.35; }
+
+    /* --- STAT CALLOUT --- */
+    .stat-callout { display: flex; gap: 20px; margin: 24px 0; }
+    .stat-item { flex: 1; text-align: center; padding: 20px 14px; border: 1px solid var(--fb-border); border-radius: var(--fb-radius); }
+    .stat-item .stat-number { font-size: 1.75rem; font-weight: 700; color: var(--fb-purple); line-height: 1.05; margin-bottom: 8px; }
+    .stat-item .stat-label { font-size: 0.82rem; color: var(--fb-text-secondary); line-height: 1.35; font-weight: 400; }
+
+    /* --- QUOTE / MACHER-STATEMENT --- */
+    .quote-box { border-left: 3px solid var(--fb-purple); padding: 6px 26px; margin: 24px 0; background: none; }
+    .quote-box .quote-text { font-size: 1.1rem; font-style: italic; color: var(--fb-dark-red); margin-bottom: 12px; line-height: 1.55; }
+    .quote-box .quote-source { font-size: 0.82rem; color: var(--fb-text-secondary); font-weight: 500; }
+
+    /* --- HIGHLIGHT BOX --- */
+    .highlight-box { background: white; border: 1px solid var(--fb-border); border-top: 2px solid var(--fb-purple); border-radius: var(--fb-radius); padding: 22px 28px; margin: 22px 0; }
+    .highlight-box h3 { color: var(--fb-black); margin-bottom: 10px; margin-top: 0; }
+    .highlight-box ul { list-style: none; padding: 0; }
+    .highlight-box li { padding: 8px 0 8px 24px; position: relative; font-size: 0.94rem; border-bottom: 0.5px solid var(--fb-border); max-width: none; }
+    .highlight-box li:last-child { border-bottom: none; }
+    .highlight-box li::before { content: "\2192"; position: absolute; left: 0; color: var(--fb-purple); font-weight: 600; }
+
+    /* --- STECKBRIEF --- */
+    .sidebar-box { border: 1px solid var(--fb-border); border-radius: var(--fb-radius); padding: 20px 26px; margin: 0 0 6px; font-size: 0.9rem; background: none; }
+    .steckbrief-grid { display: grid; grid-template-columns: 155px 1fr; gap: 6px 18px; }
+    .steckbrief-grid dt { font-weight: 600; color: var(--fb-black); font-size: 0.85rem; }
+    .steckbrief-grid dd { color: var(--fb-text-secondary); font-size: 0.9rem; }
+
+    /* --- CTA --- */
+    .cta-block { border: 1.5px solid var(--fb-purple); border-radius: var(--fb-radius); text-align: center; padding: 36px 36px; margin: 32px 0 6px; background: none; }
+    .cta-block h2 { color: var(--fb-dark-red); margin-top: 0; padding-bottom: 0; }
+    .cta-block h2::after { display: none; }
+    .cta-block p { color: var(--fb-text-secondary); max-width: 500px; margin: 0 auto 20px; }
+    .cta-block .btn-primary {
+      display: inline-block; background: var(--fb-purple); color: var(--fb-white);
+      font-weight: 500; padding: 13px 30px; text-decoration: none; font-size: 1.05rem;
+      letter-spacing: 0.01em; border-radius: var(--fb-radius); border: none;
+    }
+    .cta-block .cta-contact { font-size: 0.85rem; color: var(--fb-text-tertiary); margin-top: 16px; }
+
+    /* --- CHART --- */
+    .chart-container { margin: 22px 0; text-align: center; }
+    .chart-container svg { max-width: 100%; height: auto; }
+    .chart-container .chart-caption { font-size: 0.8rem; color: var(--fb-text-tertiary); margin-top: 8px; font-style: italic; }
+
+    .lead { font-size: 1.12rem; color: var(--fb-text); font-weight: 500; }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ===== HEADER ===== -->
+  <div class="cs-header">
+    <div class="brand-logo">Flowbeaver<span> AI</span></div>
+    <span class="eyebrow">Fallstudie &middot; AI Company Memory</span>
+    <h1>Verstreutes Firmenwissen wird zum sicheren Unternehmensged&auml;chtnis</h1>
+    <div class="doc-subtitle">Wie ein wissensintensiver Dienstleister mit &uuml;ber 100 Mitarbeitern das Wissen erschlossen hat, das er l&auml;ngst besa&szlig;. Rollenbasiert, belegt und unter eigener Kontrolle.</div>
+
+    <div class="headline-stats">
+      <div class="headline-stat">
+        <div class="hs-number">rund 40&nbsp;%<sup style="font-size:0.6em;color:var(--fb-text-tertiary)">*</sup></div>
+        <div class="hs-label">weniger R&uuml;ckfragen<br>an Fachexperten</div>
+      </div>
+      <div class="headline-stat">
+        <div class="hs-number">100+</div>
+        <div class="hs-label">Mitarbeiter mit einem<br>geteilten Wissensstand</div>
+      </div>
+      <div class="headline-stat">
+        <div class="hs-number">jede Antwort</div>
+        <div class="hs-label">mit Quellenangabe,<br>nachvollziehbar</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== AUSGANGSLAGE ===== -->
+  <h2>Ausgangslage</h2>
+
+  <p class="lead">Das Wissen war da. Es war nur nicht verf&uuml;gbar, wenn es gebraucht wurde.</p>
+
+  <p>&Uuml;ber Jahre gewachsen, lag das Erfahrungswissen verteilt: in Dokumenten, Tickets, E-Mails, Fachsystemen und in den K&ouml;pfen einzelner Experten. Das meiste fand nur, wer die richtige Person kannte. Das kostete t&auml;glich Kapazit&auml;t. Erfahrene Mitarbeiter beantworteten immer wieder dieselben Fragen, die Einarbeitung neuer Kollegen zog sich, und die Qualit&auml;t der Arbeit hing an wenigen Personen.</p>
+
+  <p>KI war gew&uuml;nscht, aber nicht um jeden Preis. Die Gesch&auml;ftsf&uuml;hrung stellte drei Bedingungen, bevor sie ein Projekt freigab.</p>
+
+  <div class="highlight-box avoid-break">
+    <h3>Die drei Bedingungen der Gesch&auml;ftsf&uuml;hrung</h3>
+    <ul>
+      <li><strong>Kein &uuml;berdimensioniertes Projekt.</strong> Am Ende sollte ein System stehen, das l&auml;uft, keine Pr&auml;sentation &uuml;ber das, was m&ouml;glich w&auml;re.</li>
+      <li><strong>Es muss im Echtbetrieb funktionieren.</strong> Eine Demo, die beeindruckt, im Tagesgesch&auml;ft aber scheitert, war keine Option.</li>
+      <li><strong>Daten und Know-how bleiben im Haus.</strong> Keine Kontrolle &uuml;ber sensibles Firmenwissen an eine US-Cloud abgeben, keine Antworten, denen man nicht trauen kann.</li>
+    </ul>
+  </div>
+
+  <!-- ===== STECKBRIEF ===== -->
+  <span class="eyebrow">Der Kunde auf einen Blick</span>
+  <div class="sidebar-box avoid-break">
+    <dl class="steckbrief-grid">
+      <dt>Branche</dt><dd>Wissensintensiver Dienstleister (anonymisiert)</dd>
+      <dt>Gr&ouml;&szlig;e</dt><dd>&Uuml;ber 100 Mitarbeiter</dd>
+      <dt>Region</dt><dd>Raum M&uuml;nchen</dd>
+      <dt>Eingesetzt</dt><dd>AI Company Memory</dd>
+      <dt>Wissensquellen</dt><dd>Dokumente, Tickets, E-Mails, Fachsysteme</dd>
+      <dt>Identit&auml;t &amp; Rechte</dt><dd>Single Sign-on (Microsoft Entra ID), rollenbasierte Zugriffe</dd>
+      <dt>Betrieb</dt><dd>Kontrollierte Umgebung, Daten unter Kundenkontrolle</dd>
+      <dt>KI-Schicht</dt><dd>Claude Enterprise, Agenten-Anbindung &uuml;ber MCP</dd>
+      <dt>Umsetzung</dt><dd>Zwei Senior-K&ouml;pfe, Festpreis-Einstieg</dd>
+    </dl>
+  </div>
+
+  <!-- ===== LÖSUNG ===== -->
+  <h2>Die L&ouml;sung: AI Company Memory</h2>
+
+  <p>Wir haben kein Wiki und keinen Chatbot gebaut, sondern eine sichere KI-Schicht auf dem vorhandenen Firmenwissen. Sie erschlie&szlig;t, was im Haus l&auml;ngst da ist, und macht es im richtigen Kontext verf&uuml;gbar: f&uuml;r Mitarbeitende, f&uuml;r Teams und f&uuml;r KI-Agenten.</p>
+
+  <p>Zwei Prinzipien standen dabei nicht zur Verhandlung. <strong>Jede Antwort kommt mit Quelle</strong>, damit sich pr&uuml;fen l&auml;sst, worauf sie beruht. Und <strong>die KI sieht nur, was die jeweilige Person sehen darf</strong>, gekoppelt an die Rechte, die im Haus ohnehin gelten. Der Mensch bleibt im Loop, wo Entscheidungen Verantwortung tragen.</p>
+
+  <div class="highlight-box avoid-break">
+    <h3>Was konkret gebaut wurde</h3>
+    <ul>
+      <li>Wissen aus Dokumenten, Tickets, E-Mails und Fachsystemen erschlossen, statt es in Silos liegen zu lassen.</li>
+      <li>Rollenbasierte Zugriffe &uuml;ber das bestehende Single Sign-on, ohne ein zweites Rechtesystem aufzubauen.</li>
+      <li>Antworten mit Quellenangabe, damit Menschen pr&uuml;fen k&ouml;nnen, worauf eine Auskunft beruht.</li>
+      <li>Eine Anbindung f&uuml;r KI-Agenten &uuml;ber MCP, mit freigegebenem Kontext statt generischer Prompts.</li>
+      <li>Betrieb in einer kontrollierten Umgebung, Daten und Know-how bleiben unter Kundenkontrolle.</li>
+    </ul>
+  </div>
+
+  <p>Umgesetzt von zwei Senior-K&ouml;pfen, die beide selbst bauen, kein Junior nach dem Verkaufsgespr&auml;ch. Der Einstieg lief &uuml;ber einen Festpreis, produktiv war das System nach <strong>[X Wochen]</strong>.</p>
+
+  <!-- ===== ERGEBNISSE ===== -->
+  <h2>Ergebnisse</h2>
+
+  <p>Der gr&ouml;&szlig;te Effekt war kein technischer, sondern ein betrieblicher: weniger Reibung im Alltag. Wissen ist dort verf&uuml;gbar, wo gearbeitet wird, und nicht mehr an einzelne Personen gebunden.</p>
+
+  <div class="stat-callout avoid-break">
+    <div class="stat-item">
+      <div class="stat-number">rund 40&nbsp;%<sup style="font-size:0.55em;color:var(--fb-text-tertiary)">*</sup></div>
+      <div class="stat-label">weniger R&uuml;ckfragen an Fachexperten</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">Minuten<sup style="font-size:0.55em;color:var(--fb-text-tertiary)">*</sup></div>
+      <div class="stat-label">statt langer Suche pro Anfrage</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">Tage statt Wochen<sup style="font-size:0.55em;color:var(--fb-text-tertiary)">*</sup></div>
+      <div class="stat-label">bis neue Mitarbeiter produktiv sind</div>
+    </div>
+  </div>
+
+  <div class="chart-container avoid-break">
+    <svg viewBox="0 0 440 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Recherchezeit pro Anfrage: vorher rund 15 Minuten, nachher unter 2 Minuten">
+      <rect x="6" y="14" width="170" height="120" fill="none" stroke="#e0e0e0" stroke-width="1" rx="6"/>
+      <text x="91" y="40" text-anchor="middle" font-size="9" font-weight="600" fill="#8a8a8a" letter-spacing="0.1em" font-family="DM Sans, sans-serif">VORHER</text>
+      <text x="91" y="82" text-anchor="middle" font-size="27" font-weight="700" fill="#606060" font-family="DM Sans, sans-serif">~15 Min.</text>
+      <text x="91" y="106" text-anchor="middle" font-size="10" fill="#8a8a8a" font-family="DM Sans, sans-serif">Suche pro Anfrage</text>
+      <line x1="190" y1="74" x2="244" y2="74" stroke="#52267a" stroke-width="1.5"/>
+      <polyline points="237,68 244,74 237,80" fill="none" stroke="#52267a" stroke-width="1.5" stroke-linejoin="round"/>
+      <rect x="258" y="14" width="176" height="120" fill="none" stroke="#52267a" stroke-width="1.5" rx="6"/>
+      <line x1="258" y1="20" x2="434" y2="20" stroke="#52267a" stroke-width="3" stroke-linecap="round"/>
+      <text x="346" y="40" text-anchor="middle" font-size="9" font-weight="600" fill="#52267a" letter-spacing="0.1em" font-family="DM Sans, sans-serif">NACHHER</text>
+      <text x="346" y="82" text-anchor="middle" font-size="27" font-weight="700" fill="#3c0f04" font-family="DM Sans, sans-serif">unter 2 Min.</text>
+      <text x="346" y="106" text-anchor="middle" font-size="10" fill="#606060" font-family="DM Sans, sans-serif">belegte Antwort mit Quelle</text>
+    </svg>
+    <p class="chart-caption">Recherchezeit pro Anfrage im Vergleich.<sup>*</sup></p>
+  </div>
+
+  <p>Genauso wichtig wie die Zahlen: Das Unternehmen hat die Kontrolle behalten. Antworten sind &uuml;ber ihre Quellen pr&uuml;fbar, die Daten blieben im Haus, und es gibt keine Abh&auml;ngigkeit von einem geschlossenen System, das sich sp&auml;ter nicht mehr abl&ouml;sen lie&szlig;e.</p>
+
+  <p class="fn-note">* Realistische Gr&ouml;&szlig;enordnungen aus dem Projektkontext; die finalen, vom Kunden freigegebenen Werte werden eingesetzt, sobald die Freigabe vorliegt. Die L&ouml;sungsfakten (Umfang, Architektur, Rechte- und Quellenmodell) sind belegt.</p>
+
+  <!-- ===== MACHER-STATEMENT ===== -->
+  <h2>In den Worten der Umsetzer</h2>
+
+  <div class="quote-box avoid-break">
+    <p class="quote-text">&bdquo;Wir verkaufen keine Folien und keinen Chatbot. Wir bauen das System selbst und koppeln es an die Rechte, die im Haus ohnehin gelten. Jede Antwort l&auml;sst sich bis zur Quelle zur&uuml;ckverfolgen. Und wenn KI das falsche Mittel w&auml;re, sagen wir das, bevor Budget verbrannt wird.&ldquo;</p>
+    <div class="quote-source">Andreas Schwarzkopf, Gr&uuml;nder Flowbeaver AI. Architektur und Umsetzung von zwei Senior-K&ouml;pfen, die beide selbst bauen.</div>
+  </div>
+
+  <!-- ===== CTA ===== -->
+  <div class="cta-block avoid-break">
+    <h2>Erschlie&szlig;en Sie das Wissen, das Sie l&auml;ngst haben</h2>
+    <p>Ein Erstgespr&auml;ch zu Ihrem KI-Projekt. 45 Minuten, kein Foliensatz, sondern ein Gespr&auml;ch mit den Leuten, die das System bauen. Am Ende wissen Sie, ob und wie sich Ihr Firmenwissen sicher erschlie&szlig;en l&auml;sst.</p>
+    <a href="https://flowbeaver.de" class="btn-primary">Erstgespr&auml;ch vereinbaren</a>
+    <div class="cta-contact">flowbeaver.de &middot; accounting@flowbeaver.de</div>
+  </div>
+
+</div>
+
+</body>
+</html>
