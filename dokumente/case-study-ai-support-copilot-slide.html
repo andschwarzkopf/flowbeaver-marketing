@@ -100,11 +100,11 @@
     .s-foot .right-foot { color: var(--fb-purple); font-weight: 600; }
 
     /* --- PRINT --- */
-    @page { size: A4 landscape; margin: 0; }
+    @page { size: 297mm 167mm; margin: 0; }
     @media print {
       html { margin: 0; padding: 0; }
-      body { margin: 0; padding: 0; background: white; width: 297mm; height: 209mm; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-      .slide { width: 296mm; height: 166.5mm; margin: 0; box-shadow: none; overflow: hidden; }
+      body { margin: 0; padding: 0; background: white; width: 297mm; height: 167mm; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+      .slide { width: 297mm; height: 167mm; margin: 0; box-shadow: none; overflow: hidden; border-radius: 0; }
     }
   </style>
 </head>

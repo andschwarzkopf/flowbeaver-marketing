@@ -124,7 +124,7 @@ In den letzten Jahren habe ich KI-Systeme gebaut, die im Echtbetrieb laufen. Ein
 
 Was dabei immer der Engpass war: Lieferzeit. Strategie, Architektur, Entwicklung, Verantwortung in einer Hand klingt gut. Aber ein Mensch hat nur zwei Hände.
 
-Deshalb arbeite ich jetzt mit [PARTNER] zusammen. Ein Senior-Engineer, der produktive RAG-Systeme selbst gebaut hat, vorher in technischer Verantwortung bei einer der führenden europäischen Initiativen für angewandte KI. Kein Berater. Einer, der baut.
+Deshalb arbeite ich jetzt mit [PARTNER] zusammen. Ein Senior-Engineer, der produktive RAG-Systeme selbst gebaut hat, vorher in technischer Verantwortung bei einer der führenden europäischen Initiativen für angewandte KI. Einer, der selbst baut.
 
 Was das für Unternehmen heißt, die KI ernst meinen: Sie sprechen mit zwei Leuten, die beide selbst am System arbeiten. Keine Folien, keine Junioren nach dem Vertragsabschluss. Festpreis-Einstieg, EU-Hosting, Evaluation gegen echte Fälle statt einer schönen Demo.
 

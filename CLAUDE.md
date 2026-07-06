@@ -1,4 +1,4 @@
-# Flowbeaver Marketing — Projektkontext
+# Flowbeaver Marketing, Projektkontext
 
 ## Was ist Flowbeaver?
 KI-Vorsystem für die vorbereitende Buchhaltung in Steuerkanzleien. Kombiniert LLM + KI-OCR + deterministische Regeln ("Dreiklang") für Belegextraktion, Zuordnung und Vorkontierung. Ergebnis: DATEV-kompatibler Buchungsstapel.
@@ -7,22 +7,24 @@ KI-Vorsystem für die vorbereitende Buchhaltung in Steuerkanzleien. Kombiniert L
 - Flowbeaver ist eine DATEV-**Ergänzung**, niemals eine DATEV-Alternative
 - ICP: Wachstumsorientierte Steuerkanzleien mit 4-10 Mitarbeitern
 - Sprache: Deutsch, "Sie"-Anrede, sachlich-selbstbewusst, keine Emojis
-- Solo-Founder (Andreas Schwarzkopf) = Vorteil, nicht Schwäche — direkter Zugang, schnelle Iteration
+- **Kein Em-Dash (`—`), niemals.** Auch kein `&mdash;` in HTML. Klassischer KI-Tell. Stattdessen Komma, Doppelpunkt, Klammern oder neuer Satz; als Trenner der Mittelpunkt `·`. Gilt für ALLE Ausgaben (Copy, Markdown, gebrandete HTML/PDF, LinkedIn, E-Mail). Details: Humanizer-Skill §9a.
+- Andreas ist in der Beratungsbranche und positioniert sich NIE als "kein Berater". Er berät strategisch UND setzt end-to-end um (Beratung von Anfang bis Ende, plus Umsetzung). Abgrenzung höchstens "Hands-on Entwicklung statt reiner Beratung", niemals "Unternehmer, kein Berater".
+- Solo-Founder (Andreas Schwarzkopf) = Vorteil, nicht Schwäche, direkter Zugang, schnelle Iteration
 - Kein Startup-Jargon: "Pioneer-Kohorte" → "erste Runde", "Disruption" → nicht verwenden
 
-## Branchendaten (STAX 2024 — BStBK/Allensbach)
+## Branchendaten (STAX 2024, BStBK/Allensbach)
 - Einzelkanzlei: Ø **4,5 Beschäftigte**, Umsatz 305.000 €, Gewinn 125.000 €
 - Berufsausübungsgesellschaft (BÄG): Ø **24 Beschäftigte**, Umsatz 1.265.000 €
-- **Personalkosten: 43,8 % vom Umsatz** (2018: 37 %) — massiver Anstieg
+- **Personalkosten: 43,8 % vom Umsatz** (2018: 37 %), massiver Anstieg
 - **59,1 % offene Stellen in Einzelkanzleien nicht besetzt**, nur 23,2 % konnten alle Stellen besetzen
-- Buchführung = 21–25 % des Kanzleiumsatzes — Kerngeschäft
+- Buchführung = 21–25 % des Kanzleiumsatzes, Kerngeschäft
 - Digitale Buchführung nach Belegen: 54,8 % (Einzelkanzleien), KI-Chatbots: 12,2 %
 - **Größte Digitalisierungshürden: organisatorischer Aufwand, innere Widerstände, mangelnde Zeit** (nicht Technik/Kosten)
 - Trend zu Pauschalvergütungen (32,4 %, 2018: 13,5 %) → Effizienz = Margenhebel
 - ICP-Einordnung: Flowbeaver-ICP (≥4 MA) = durchschnittliche bis große Einzelkanzleien + gesamtes BÄG-Segment
 
 ## Validierte Kunden-Insights
-- **Rückfragen sind der größte Zeitkiller** — nicht das Abtippen. Teams verbringen Stunden mit Mandanten-Kommunikation wegen unklarer Geschäftsvorfälle und fremdsprachiger Belege.
+- **Rückfragen sind der größte Zeitkiller**, nicht das Abtippen. Teams verbringen Stunden mit Mandanten-Kommunikation wegen unklarer Geschäftsvorfälle und fremdsprachiger Belege.
 - **Flowbeaver-Differenzierung:** LLM versteht jede Sprache und leitet aus exotischen Rechnungen klare Geschäftsvorfälle ab → weniger Rückfragen
 
 ---
@@ -32,13 +34,13 @@ KI-Vorsystem für die vorbereitende Buchhaltung in Steuerkanzleien. Kombiniert L
 ```
 flowbeaver-marketing/
 ├── CLAUDE.md                          # Dieses Dokument
-├── strategie/                         # Fundament — ändert sich selten
+├── strategie/                         # Fundament, ändert sich selten
 │   ├── GTM-Strategie.md
 │   ├── Positionierung.md
 │   ├── Kanalstrategie.md
 │   ├── Preiskalkulation.md
 │   └── Aktionsplan.md
-├── paid-ads/                          # Google Ads — ändert sich wöchentlich
+├── paid-ads/                          # Google Ads, ändert sich wöchentlich
 │   ├── inbox/                         # Neue Datenexporte hier ablegen
 │   ├── archiv/YYYY-MM/               # Verarbeitete Exporte
 │   ├── anzeigentexte/                 # Anzeigentext-Entwürfe
@@ -58,7 +60,7 @@ flowbeaver-marketing/
 ├── linkedin/                          # LinkedIn-Post-Entwürfe
 ├── email/                             # E-Mail-Sequenzen (Welcome, Webinar-Einladung, Follow-up)
 ├── outbound/                          # Founder-led Outbound (Cold Calls, Discovery, Sales)
-│   ├── flowbeaver-outbound-playbook.md       # **Master-Doc** — ICP, Skript, Conversion, Webinar-Hebel
+│   ├── flowbeaver-outbound-playbook.md       # **Master-Doc**, ICP, Skript, Conversion, Webinar-Hebel
 │   ├── flowbeaver-outbound-operating-sheet.md
 │   ├── discovery/                            # Anruflisten, Übergabe-Dokumente
 │   └── docs/                                 # Sales-Cheatsheets, Vorzimmer-Anrufskript, Mantras
